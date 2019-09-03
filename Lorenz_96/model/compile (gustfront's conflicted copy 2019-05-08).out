@@ -1,0 +1,324 @@
+running build
+running config_cc
+unifing config_cc, config, build_clib, build_ext, build commands --compiler options
+running config_fc
+unifing config_fc, config, build_clib, build_ext, build commands --fcompiler options
+running build_src
+build_src
+building extension "model" sources
+f2py options: []
+f2py:> /tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c
+creating /tmp/tmpg8e255k_/src.linux-x86_64-3.7
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+Reading fortran codes...
+	Reading file 'SFMT.f90' (format:free)
+	Reading file 'common_tools.f90' (format:free)
+	Reading file 'lorenzN.f90' (format:free)
+Post-processing...
+	Block: model
+			Block: mod_sfmt
+			Block: rshift128
+			Block: lshift128
+			Block: do_recursion
+			Block: gen_rand_all
+			Block: period_certification
+			Block: gen_rand32
+			Block: gen_rand64
+			Block: init_gen_rand
+			Block: genrand_res53
+			Block: common_tools
+				Block: com_mean
+				Block: com_stdev
+				Block: com_covar
+				Block: com_correl
+				Block: com_anomcorrel
+				Block: com_l2norm
+				Block: com_rms
+				Block: com_filter_lanczos
+				Block: com_rand
+				Block: com_randn
+				Block: com_interp_spline
+			Block: lorenzn
+				Block: lorenzn_core
+				Block: lorenzn_ss_core
+				Block: tinteg_rk4
+Post-processing (stage 2)...
+	Block: model
+		Block: unknown_interface
+			Block: mod_sfmt
+			Block: rshift128
+			Block: lshift128
+			Block: do_recursion
+			Block: gen_rand_all
+			Block: period_certification
+			Block: gen_rand32
+			Block: gen_rand64
+			Block: init_gen_rand
+			Block: genrand_res53
+			Block: common_tools
+				Block: com_mean
+				Block: com_stdev
+				Block: com_covar
+				Block: com_correl
+				Block: com_anomcorrel
+				Block: com_l2norm
+				Block: com_rms
+				Block: com_filter_lanczos
+				Block: com_rand
+				Block: com_randn
+				Block: com_interp_spline
+			Block: lorenzn
+				Block: lorenzn_core
+				Block: lorenzn_ss_core
+				Block: tinteg_rk4
+Building modules...
+	Building module "model"...
+		Constructing wrapper function "rshift128"...
+		  outtop,outbtm = rshift128(intop,inbtm,shift)
+		Constructing wrapper function "lshift128"...
+		  outtop,outbtm = lshift128(intop,inbtm,shift)
+		Constructing wrapper function "do_recursion"...
+		  rtop,rbtm = do_recursion(atop,abtm,btop,bbtm,ctop,cbtm,dtop,dbtm)
+		Constructing wrapper function "gen_rand_all"...
+		  gen_rand_all()
+		Constructing wrapper function "period_certification"...
+		  period_certification()
+		Creating wrapper for Fortran function "gen_rand32"("gen_rand32")...
+		Constructing wrapper function "gen_rand32"...
+		  gen_rand32 = gen_rand32()
+		Creating wrapper for Fortran function "gen_rand64"("gen_rand64")...
+		Constructing wrapper function "gen_rand64"...
+		  gen_rand64 = gen_rand64()
+		Constructing wrapper function "init_gen_rand"...
+		  init_gen_rand(seed)
+		Creating wrapper for Fortran function "genrand_res53"("genrand_res53")...
+		Constructing wrapper function "genrand_res53"...
+		  genrand_res53 = genrand_res53()
+		Constructing F90 module support for "mod_sfmt"...
+		  Variables: mexp n n32 n64 psfmt32 psfmt64 idx initialized pos1 sl1 sl2 sr1 sr2 msk12 msk34 msk_l parity1 parity2 parity3 parity4 parity
+		Constructing F90 module support for "common_tools"...
+		  Variables: r_size r_dble r_sngl pi gg rd cp re r_omega t0c undef
+			Constructing wrapper function "common_tools.com_mean"...
+			  amean = com_mean(var,[ndim])
+			Constructing wrapper function "common_tools.com_stdev"...
+			  aout = com_stdev(var,[ndim])
+			Constructing wrapper function "common_tools.com_covar"...
+			  cov = com_covar(var1,var2,[ndim])
+			Constructing wrapper function "common_tools.com_correl"...
+			  cor = com_correl(var1,var2,[ndim])
+			Constructing wrapper function "common_tools.com_anomcorrel"...
+			  cor = com_anomcorrel(var1,var2,varmean,[ndim])
+			Constructing wrapper function "common_tools.com_l2norm"...
+			  anorm = com_l2norm(var,[ndim])
+			Constructing wrapper function "common_tools.com_rms"...
+			  rmsv = com_rms(var,[ndim])
+			Constructing wrapper function "common_tools.com_filter_lanczos"...
+			  com_filter_lanczos(fc,var,[ndim])
+			Constructing wrapper function "common_tools.com_rand"...
+			  var = com_rand(ndim)
+			Constructing wrapper function "common_tools.com_randn"...
+			  var = com_randn(ndim,seed)
+			Constructing wrapper function "common_tools.com_interp_spline"...
+			  y5 = com_interp_spline(x,y,x5,[ndim,n])
+		Constructing F90 module support for "lorenzn"...
+			Constructing wrapper function "lorenzn.lorenzn_core"...
+			  xout = lorenzn_core(xin,force,dt,[nx])
+			Constructing wrapper function "lorenzn.lorenzn_ss_core"...
+			  xssout = lorenzn_ss_core(xssin,xin,dtss,css,bss,hint,[nx,nxss])
+			Constructing wrapper function "lorenzn.tinteg_rk4"...
+			  xout,xssout,dfout,rfout,ssfout,crfout,cout = tinteg_rk4(nt,ntout,x0,xss0,rf0,phi,sigma,c0,crf0,cphi,csigma,param,dt,dtss,[nens,nx,nxss,ncoef])
+	Wrote C/API module "model" to file "/tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c"
+	Fortran 77 wrappers are saved to "/tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers.f"
+	Fortran 90 wrappers are saved to "/tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers2.f90"
+  adding '/tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.c' to sources.
+  adding '/tmp/tmpg8e255k_/src.linux-x86_64-3.7' to include_dirs.
+copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.c -> /tmp/tmpg8e255k_/src.linux-x86_64-3.7
+copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.h -> /tmp/tmpg8e255k_/src.linux-x86_64-3.7
+  adding '/tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers.f' to sources.
+  adding '/tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers2.f90' to sources.
+build_src: building npy-pkg config files
+running build_ext
+customize UnixCCompiler
+customize UnixCCompiler using build_ext
+get_default_fcompiler: matching types: '['gnu95', 'intel', 'lahey', 'pg', 'absoft', 'nag', 'vast', 'compaq', 'intele', 'intelem', 'gnu', 'g95', 'pathf95', 'nagfor']'
+customize Gnu95FCompiler
+Found executable /usr/bin/gfortran
+customize Gnu95FCompiler
+customize Gnu95FCompiler using build_ext
+building 'model' extension
+compiling C sources
+C compiler: gcc -pthread -B /home/jruiz/anaconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
+
+creating /tmp/tmpg8e255k_/tmp
+creating /tmp/tmpg8e255k_/tmp/tmpg8e255k_
+creating /tmp/tmpg8e255k_/tmp/tmpg8e255k_/src.linux-x86_64-3.7
+compile options: '-I/tmp/tmpg8e255k_/src.linux-x86_64-3.7 -I/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/home/jruiz/anaconda3/include/python3.7m -c'
+gcc: /tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c
+gcc: /tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.c
+In file included from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1823:0,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.h:13,
+                 from /tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.c:2:
+/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^~~~~~~
+/tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.c: In function ‘format_def’:
+/tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.c:138:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (size < sizeof(notalloc)) {
+                  ^
+In file included from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1823:0,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.h:13,
+                 from /tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c:16:
+/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^~~~~~~
+/tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c: In function ‘PyInit_model’:
+/tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c:3201:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(i=0;f2py_routine_defs[i].name!=NULL;i++)
+   ^~~
+/tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c:3209:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+     {
+     ^
+At top level:
+/tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.c:189:12: warning: ‘f2py_size’ defined but not used [-Wunused-function]
+ static int f2py_size(PyArrayObject* var, ...)
+            ^~~~~~~~~
+compiling Fortran 90 module sources
+Fortran f77 compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC $FFLAGS
+Fortran f90 compiler: /usr/bin/gfortran -Wall -g -fno-second-underscore -fPIC $FFLAGS
+Fortran fix compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC $FFLAGS
+compile options: '-I/tmp/tmpg8e255k_/src.linux-x86_64-3.7 -I/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/home/jruiz/anaconda3/include/python3.7m -c'
+extra options: '-J/tmp/tmpg8e255k_/ -I/tmp/tmpg8e255k_/'
+gfortran:f90: SFMT.f90
+SFMT.f90:34:33:
+
+     integer,parameter:: N = (MEXP / 128 + 1)
+                                 1
+Warning: Integer division truncated to constant ‘155’ at (1) [-Winteger-division]
+SFMT.f90:511:21:
+
+         gen_rand32 = ibits(psfmt64(idx/2),32,32)
+                     1
+Warning: Possible change of value in conversion from INTEGER(8) to INTEGER(4) at (1) [-Wconversion]
+SFMT.f90:513:21:
+
+         gen_rand32 = ibits(psfmt64(idx/2),0,32)
+                     1
+Warning: Possible change of value in conversion from INTEGER(8) to INTEGER(4) at (1) [-Wconversion]
+SFMT.f90:638:21:
+
+         psfmt32(i) = ibits( temp64, 0, 32 )
+                     1
+Warning: Possible change of value in conversion from INTEGER(8) to INTEGER(4) at (1) [-Wconversion]
+SFMT.f90:528:14:
+
+     integer::i
+              1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+gfortran:f90: common_tools.f90
+common_tools.f90:60:14:
+
+   INTEGER :: i
+              1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+gfortran:f90: lorenzN.f90
+lorenzN.f90:191:14:
+
+     crf(ie,:)=cphi*crf(ie,:)+csigma(:)*random_forcing_scalar(1)  !AR1 process for the parameter evolution.
+              1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+lorenzN.f90:204:13:
+
+     rf(:,ie)=phi*rf(:,ie)+(1-phi**2.0)**(0.5)*sigma*random_forcing_vect(:)
+             1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+compiling Fortran sources
+Fortran f77 compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC $FFLAGS
+Fortran f90 compiler: /usr/bin/gfortran -Wall -g -fno-second-underscore -fPIC $FFLAGS
+Fortran fix compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC $FFLAGS
+compile options: '-I/tmp/tmpg8e255k_/src.linux-x86_64-3.7 -I/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/home/jruiz/anaconda3/include/python3.7m -c'
+extra options: '-J/tmp/tmpg8e255k_/ -I/tmp/tmpg8e255k_/'
+gfortran:f90: /tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers2.f90
+gfortran:f77: /tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers.f
+/usr/bin/gfortran -Wall -g -Wall -g -shared /tmp/tmpg8e255k_/tmp/tmpg8e255k_/src.linux-x86_64-3.7/modelmodule.o /tmp/tmpg8e255k_/tmp/tmpg8e255k_/src.linux-x86_64-3.7/fortranobject.o /tmp/tmpg8e255k_/SFMT.o /tmp/tmpg8e255k_/common_tools.o /tmp/tmpg8e255k_/lorenzN.o /tmp/tmpg8e255k_/tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers.o /tmp/tmpg8e255k_/tmp/tmpg8e255k_/src.linux-x86_64-3.7/model-f2pywrappers2.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7 -lgfortran -o ./model.cpython-37m-x86_64-linux-gnu.so
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /mnt/8f393b20-edef-413b-8754-3e1a3c7e252a/Dropbox/DATA/Kobe_ISDA_2018/RISDA_2018/model/.f2py_f2cmap file).
+Removing build directory /tmp/tmpg8e255k_
