@@ -475,7 +475,7 @@ def analysis_update_EMD( yo , xf , forward_operator , R , rtps_alpha , rejuv_par
     #con distribucion igual al posterior.
     #[distance , S ] = emd( aux_xf , np.copy(aux_xf)  , X_weights=np.ones(nens)/nens , Y_weights = w , return_flows= True) 
     D = cdist(aux_xf,aux_xf,'euclidean')
-    S=ot.emd(np.ones(nens)/nens,w,D,numItermax=1000000,log=False)
+    S=ot.emd(np.ones(nens)/nens,w,D,numItermax=1.0e9,log=False)
     S = nens * S
 
     aux_xa=np.zeros(np.shape(aux_xf))
