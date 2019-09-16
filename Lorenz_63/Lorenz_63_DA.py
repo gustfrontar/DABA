@@ -6,7 +6,7 @@ asimilacion de datos utilizando el modelo de Lorenz de 3 dimensiones (Lorenz63)
 
 """
 import numpy as np
-import scipy as sp
+import scipy.linalg as linalg 
 
 
 def gen_obs( h , da_exp )  :
@@ -464,7 +464,7 @@ def analysis_update_ETKF( yo , xf , forward_operator , R , Inflation )   :
     wabar = np.dot( Pahat , np.dot( ypert.transpose() , np.dot( Rinv , dy ) ) )
 
     # weight to update ensemble perturbations
-    Wa = sp.linalg.sqrtm( (nens-1)*Pahat )
+    Wa = linalg.sqrtm( (nens-1)*Pahat )
    
     xa_mean = xf_mean + np.dot( xf_pert , wabar )
         
@@ -476,7 +476,7 @@ def analysis_update_ETKF( yo , xf , forward_operator , R , Inflation )   :
 
        xa[:,iens]=xa_mean+xa_pert[:,iens]
 
-    Pa = np.cov( xa_pert , aweights=w ) 
+    Pa = np.cov( xa_pert ) 
    
     hxamean = forward_operator( xa_mean )
     hxfmean = forward_operator( xf_mean )
