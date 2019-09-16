@@ -402,7 +402,111 @@ def analysis_update_SIR( yo , xf , w_in , forward_operator , R , resampling = Tr
     OmB = yo - hxfmean
     OmA = yo - hxamean
 
-    return xa , xa_mean , Pa , OmB , OmA , w  
+    return xa , xa_mean , Pa , OmB , OmA , w
+
+def analysis_update_EMD( yo , xf , forward_operator , R , rtps_alpha , rejuv_param , multinf )   :
+
+    #from emd import emd
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Dada matrices R, un ensamble de campos preliminares y un conjunto de observaciones
+   #  calcula  los pesos optimos y hace el resampling.
+   #  Esta funcion se aplica al Earth Mover Distance Particle Filter
+   #  Este filtro aplica una transformacion deterministica que es aquella que permite
+   #  transformar el prior en el posterior con la minima redistribucion de masa (de probabilidad)
+   #
+   #  Esto es una transformacion que mueve las particulas una distancia minima tal que las particulas
+   #  finales describan el posterior mientras que las particulas iniciales describen el prior.
+   #
+   #  Este filtro presenta una alternativa deterministica al resampling estocastico.
+   #  Reich, S. (2013). A non-parametric ensemble transform method for bayesian inference.
+   #  SIAM J Sci Comput, 35:A2013–A2014.
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       w_in (nens)  - pesos de entrada
+   #       forward_operator - operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens)  - analysis ensemble
+   #       w(nens)  - weigths
+   #       S(nens,nens) - EM Flow matrix es la matriz que permite convertir el prior
+   #       en el posterior.
+   #
+   #---------------------------------------------
+
+    
+    #Obtengo la cantidad de miembros en el ensamble
+    [nvar , nens ]= xf.shape
+    
+    #Calculo la inversa de la matriz de covarianza    
+    Rinv = np.linalg.inv(R)
+    
+    [xf_mean , xf_pert] = mean_and_perts( xf )
+    
+    xf_pert = multinf * xf_pert
+    
+    for i in range(nens)  :
+        
+        xf[:,i] = xf_mean + xf_pert[:,i]
+        
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    for iens in range( nens ) :
+        yf = forward_operator( xf[:,iens] )
+        w[iens] = np.exp( -0.5 * np.dot( (yo-yf).transpose() , np.dot( Rinv , yo - yf ) ) )
+
+    #Normalizamos los pesos para que sumen 1.
+
+    w = w / np.sum(w)
+    
+
+    
+    #La rutina que calcula la matriz de transformacion espera que cada fila sea un miembro del ensamble
+    #y que cada columna sea una variable. En nuestro caso x viene al reves por eso tenemos que transponer
+    #la matriz para realizar estos calculos.
+    aux_xf = np.transpose(xf)
+    aux_xf_pert = np.transpose(xf_pert)
+    
+    #Esta funcion de C resuelve el problema de la distancia minima obteniendo la matriz
+    #de flujo S que permite convertir una muestra con distribucion igual al prior en otra muestra
+    #con distribucion igual al posterior.
+    #[distance , S ] = emd( aux_xf , np.copy(aux_xf)  , X_weights=np.ones(nens)/nens , Y_weights = w , return_flows= True) 
+    D = cdist(aux_xf,aux_xf,'euclidean')
+    S=ot.emd(np.ones(nens)/nens,w,D,numItermax=1000000,log=False)
+    S = nens * S
+
+    aux_xa=np.zeros(np.shape(aux_xf))
+    
+    tmp_rand = np.random.randn(nens,nens) / (nens-1)
+    
+    #Aplico en un solo paso la transformacion lineal y el rejuvenecimiento.
+    
+    aux_xa = np.dot( S , aux_xf ) + rejuv_param * np.dot( tmp_rand , aux_xf_pert  ) 
+    
+    xa=np.transpose(aux_xa)
+    
+    [xa_mean , xa_pert] = mean_and_perts( xa )
+    
+    #RTPS inflation.
+    xa_std = np.sum( np.std(xa_pert,axis=1) )
+    xf_std = np.sum( np.std(xf_pert,axis=1) )
+    
+    xa_pert = xa_pert * ( rtps_alpha * (xf_std - xa_std) / xa_std + 1)
+    
+    for i in range(0,nens) :
+        xa[:,i] = xa_pert[:,i] + xa_mean
+       
+    Pa = np.cov( xa_pert ) 
+    
+    hxamean = forward_operator( xa_mean )
+    hxfmean = forward_operator( np.mean(xf,1) )
+    OmB = yo - hxfmean
+    OmA = yo - hxamean
+
+    return xa , xa_mean , Pa , OmB , OmA , w , S  
 
 
 

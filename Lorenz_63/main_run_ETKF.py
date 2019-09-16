@@ -45,7 +45,7 @@ da_exp['p']=np.array([a,r,b])
 #------------------------------------------------------------
 
 da_exp['dt']=0.01            # Paso de tiempo para la integracion del modelo de Lorenz
-da_exp['numstep']=300       # Cantidad de ciclos de asimilacion.
+da_exp['numstep']=1000       # Cantidad de ciclos de asimilacion.
 da_exp['x0']=np.array([ 8.0 , 0.0 , 30.0 ])      # Condiciones iniciales para el spin-up del nature run (no cambiar)
 da_exp['numtrans']=600                           # Tiempo de spin-up para generar el nature run (no cambiar)
 
@@ -54,12 +54,12 @@ da_exp['numtrans']=600                           # Tiempo de spin-up para genera
 #------------------------------------------------------------
 
 da_exp['dx0'] = np.array([ 5.0 , 5.0 , 5.0 ])       # Error inicial de la estimacion. 
-da_exp['R0']=8.0                                    # Varianza del error de las observaciones.
+da_exp['R0']=2.0                                    # Varianza del error de las observaciones.
 da_exp['bst']=8                                     # Cantidad de pasos de tiempo entre 2 asimilaciones.
 da_exp['forecast_length'] = 20                      # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                   # Numero de variables en el modelo de Lorenz (no tocar)
 
-da_exp['EnsSize']=10                                 #Numero de miembros en el ensamble.
+da_exp['EnsSize']=50                                 #Numero de miembros en el ensamble.
 
 #Obtengo el numero de observaciones (lo obtengo directamente del forward operator)
 da_exp['nobs']=np.shape(forward_operator(np.array([0,0,0])))[0]
