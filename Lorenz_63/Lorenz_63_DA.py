@@ -310,10 +310,10 @@ def analysis_update_EnSRF( yo , xf , forward_operator , R , Inflation )   :
     for iobs in range( nobs )  :
         
         #HPHt + R
-        HPHtR = np.dot( ypert[iobs,:].transpose() , ypert[iobs,:] ) * (1/(nens-1)) + R[iobs,iobs]
-        PHt   = np.dot( xpert , ypert[iobs,:].transpose() ) * (1/(nens-1))
+        HPHtR = np.dot( ypert[iobs,:].transpose() , ypert[iobs,:] ) * (1.0/(nens-1.0)) + R[iobs,iobs]
+        PHt   = np.dot( xpert , ypert[iobs,:].transpose() ) * (1.0/(nens-1.0))
         K     = PHt * ( 1.0/ HPHtR )  #Si las observaciones se procesan serialmente entonces HPHtR es un escalar. 
-        YYj   = np.dot( ypert , ypert[iobs,:].transpose() ) * (1/(nens-1))
+        YYj   = np.dot( ypert , ypert[iobs,:].transpose() ) * (1.0/(nens-1.0))
         Ko    = YYj * ( 1.0 / HPHtR )  #Kalman gain para actualizar el estado en el espacio de las observaciones.
         #Calculamos alpha segun la ecuacion 13 de Whitaker y Hamill 
         alpha = 1.0 / ( 1.0 + np.sqrt(  R[iobs,iobs] / HPHtR ) )
@@ -332,7 +332,9 @@ def analysis_update_EnSRF( yo , xf , forward_operator , R , Inflation )   :
     for iens in range( nens ):
         xa[:,iens] = xa_mean + xpert[:,iens]
         
-    Pa = np.cov( xa_pert ) 
+    Pa = np.cov( xa_pert )
+    
+    #print(xf_mean,xa_mean)
    
     hxamean = forward_operator( xa_mean )
     hxfmean = forward_operator( xf_mean )
@@ -960,17 +962,17 @@ def analysis_verification( forward_operator , da_exp ) :
    
 def state_plot( da_exp ) :
    import matplotlib.pyplot as plt
-   from mpl_toolkits.mplot3d import Axes3D
+#   from mpl_toolkits.mplot3d import Axes3D
    
-   print('Evolucion del estado verdadero en 3D')
+#   print('Evolucion del estado verdadero en 3D')
    
-   #Graficamos la evolucion del modelo en 3D.
-   state=da_exp['state']
-   plt.figure()
-   ax  = plt.axes(projection="3d")
-   ax.plot3D(state[:,0],state[:,1],state[:,2],'blue')
+#   #Graficamos la evolucion del modelo en 3D.
+#   state=da_exp['state']
+#   plt.figure()
+#   ax  = plt.axes(projection="3d")
+#   ax.plot3D(state[:,0],state[:,1],state[:,2],'blue')
    
-   plt.savefig( da_exp['main_path'] + '/figs/' + da_exp['exp_id'] + '_3DTruePlot.png')
+#   plt.savefig( da_exp['main_path'] + '/figs/' + da_exp['exp_id'] + '_3DTruePlot.png')
    
    
 def forecast_error_plot( da_exp ) :

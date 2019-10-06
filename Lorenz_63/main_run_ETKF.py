@@ -59,7 +59,7 @@ da_exp['bst']=8                                     # Cantidad de pasos de tiemp
 da_exp['forecast_length'] = 20                      # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                   # Numero de variables en el modelo de Lorenz (no tocar)
 
-da_exp['EnsSize']=50                                 #Numero de miembros en el ensamble.
+da_exp['EnsSize']=10                                 #Numero de miembros en el ensamble.
 
 #Obtengo el numero de observaciones (lo obtengo directamente del forward operator)
 da_exp['nobs']=np.shape(forward_operator(np.array([0,0,0])))[0]

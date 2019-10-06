@@ -46,7 +46,7 @@ da_exp['p']=np.array([a,r,b])
 #------------------------------------------------------------
 
 da_exp['dt']=0.01            # Paso de tiempo para la integracion del modelo de Lorenz
-da_exp['numstep']=2000       # Cantidad de ciclos de asimilacion.
+da_exp['numstep']=1000       # Cantidad de ciclos de asimilacion.
 da_exp['x0']=np.array([ 8.0 , 0.0 , 30.0 ])      # Condiciones iniciales para el spin-up del nature run (no cambiar)
 da_exp['numtrans']=600                           # Tiempo de spin-up para generar el nature run (no cambiar)
 
@@ -213,16 +213,16 @@ da_exp = da.analysis_verification( forward_operator , da_exp ) #Calculamos el RM
 da.state_plot( da_exp )
 
 #Graficamos la evolucion del estado verdadero, del first guess y del analisis
-da.state_evolution( da_exp , 1000 , 1100 )  
+da.state_evolution( da_exp , 0 , 100 )  
 
 #Graficamos la evolucion del sistema en el espacio de las obs para el first guess, el analisis y las observaciones
-da.obs_evolution( da_exp , 1000 , 1100 , forward_operator )  
+da.obs_evolution( da_exp , 0 , 100 , forward_operator )  
 
 #Graficamos la evolucion del error del first guess y del analisis
-da.error_evolution( da_exp , 1000 , 1100 )  
+da.error_evolution( da_exp , 0 , 100 )  
 
 #Graficamos la evolucion del error total para el guess y para el analisis
-da.rmse_evolution( da_exp , 1000 , 1100 )  
+da.rmse_evolution( da_exp , 0 , 100 )  
 
 #Graficamos la evolucion del RMSE
 da.forecast_error_plot( da_exp ) 
