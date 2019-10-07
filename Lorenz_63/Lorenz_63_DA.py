@@ -761,7 +761,7 @@ def analysis_update_4DVAR( yo , xf , P , parameters , dt , bst , forward_model, 
    x_best[0,:] = x[:]
    
    for it in range( ntimes ) :
-      for i in range( bst ):
+      for i in range( int(bst) ):
          #Calculamos el propagante del modelo tangente lineal en toda la ventana.
          #Calculamos la trayectoria hacia adelante usando el modelo no lineal
          x = forward_model( x , parameters , dt )
@@ -828,7 +828,7 @@ def JGrad4DVAR( xb , x , parameters , dt , bst , yo , invP , invR , forward_mode
    L_total=np.identity(3)  #Inicializo el propagante del modelo tangente lineal.
    for it in range( ntimes ) :
        
-       for i in range( bst ):
+       for i in range( int(bst) ):
            #Calculamos el propagante del modelo tangente lineal en toda la ventana.
            #Calculamos el propagante del modelo tangente lineal en toda la ventana.
            L = tl_model( xf , parameters , dt )
