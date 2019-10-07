@@ -13,6 +13,4 @@ pip install spyder
 
 rm -fr .local/lib/
 
-cd $HOME
-git clone https://github.com/gustfrontar/DABA.git
 
