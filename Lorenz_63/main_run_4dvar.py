@@ -92,7 +92,7 @@ for i in range(da_exp['numtrans'])  :
 da_exp['state']=np.zeros((da_exp['numstep'],da_exp['nvars']))
 
 for i  in range( da_exp['numstep'] ) :
-    for j in range( da_exp['bst'] )      :
+    for j in range( int(da_exp['bst']) )      :
         x = model.forward_model( x , da_exp['p'] , da_exp['dt'] )
       
     da_exp['state'][i,:]=x
@@ -155,7 +155,7 @@ for i in tqdm( range(1,da_exp['numstep']) ) :
     #Integrate the forward non-linear model to obtain the first-guess
     
     for k in range(da_exp['forecast_length']) :
-       for j in range(da_exp['bst'])  :
+       for j in range( int(da_exp['bst']) )  :
            x = model.forward_model( x , da_exp['p'] , da_exp['dt'] )
        if ( i + k < da_exp['numstep'] ) :  #Solo para cerciorarme de que el pronostico no queda fuera del rango del experimento.
           da_exp['statef'][i+k,:,k]=x
