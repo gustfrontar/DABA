@@ -7,7 +7,7 @@
 
 #Importamos todos los modulos que van a ser usados en esta notebook
 
-from tqdm import tqdm       #Para generar la barra que indica el progreso del loop.
+#from tqdm import tqdm       #Para generar la barra que indica el progreso del loop.
 import numpy as np
 import Lorenz_63 as model
 import Lorenz_63_DA as da
@@ -46,7 +46,7 @@ da_exp['p']=np.array([a,r,b])
 #------------------------------------------------------------
 
 da_exp['dt']=0.01            # Paso de tiempo para la integracion del modelo de Lorenz
-da_exp['numstep']=2000       # Cantidad de ciclos de asimilacion.
+da_exp['numstep']=1000       # Cantidad de ciclos de asimilacion.
 da_exp['x0']=np.array([ 8.0 , 0.0 , 30.0 ])      # Condiciones iniciales para el spin-up del nature run (no cambiar)
 da_exp['numtrans']=600                           # Tiempo de spin-up para generar el nature run (no cambiar)
 
@@ -60,7 +60,7 @@ da_exp['forecast_length'] = 20                      # Plazo de pronostico (debe 
 da_exp['nvars']=3                                   # Numero de variables en el modelo de Lorenz (no tocar)
 
 #Obtengo el numero de observaciones (lo obtengo directamente del forward operator)
-da_exp['nobs']=np.shape(forward_operator(np.array([0,0,0])))[0]
+da_exp['nobs']=np.size(forward_operator(np.array([0,0,0])))
 
 #Definimos una matriz de error de las observaciones
 da_exp['R']=da_exp['R0']*np.identity(da_exp['nobs'])   #En esta formulacion asumimos que los errores 
@@ -71,8 +71,8 @@ da_exp['obs_bias']=np.zeros(da_exp['nobs'])            #que no estan correlacion
 da_exp['P_from_file']=False                             #Si vamos a leer la matriz P de un archivo.
 da_exp['P_to_file']=True                               #Si vamos a estimar y guardar la matriz P a partir de los pronosticos.
 
-#P=np.array([[0.6 , 0.5 , 0.0 ],[0.5 , 0.6 , 0.0 ],[0.0 , 0.0 , 1.0 ]])
-P=None
+P=8.0*np.array([[0.6 , 0.5 , 0.0 ],[0.5 , 0.6 , 0.0 ],[0.0 , 0.0 , 1.0 ]])
+#P=None
 
 
 #%%
@@ -140,7 +140,9 @@ da_exp['OmA']=np.zeros((da_exp['state'].shape[0],da_exp['yobs'].shape[1]))
 #de donde esta el sistema al tiempo inicial.
 da_exp['statea'][0,:]= np.nanmean( da_exp['state'] , 0 )
 
-for i in tqdm( range(1,da_exp['numstep']) ) :
+#for i in tqdm( range(1,da_exp['numstep']) ) :
+for i in range(1,da_exp['numstep'])  :
+    print(i)
 
     x=da_exp['statea'][i-1,:]
     #Vamos a hacer el pronostico de x con el modelo no lineal y el
@@ -172,22 +174,25 @@ da_exp = da.analysis_verification( forward_operator , da_exp ) #Calculamos el RM
 # Graficado 
 #------------------------------------------------------------
 
+
 #Graficos
+ini_time=900
+end_time=999
 
 #Graficamos la evolucion verdadera del sistema en 3D.
 da.state_plot( da_exp )
 
 #Graficamos la evolucion del estado verdadero, del first guess y del analisis
-da.state_evolution( da_exp , 1000 , 1100 )  
+da.state_evolution( da_exp , ini_time , end_time )  
 
 #Graficamos la evolucion del sistema en el espacio de las obs para el first guess, el analisis y las observaciones
-da.obs_evolution( da_exp , 1000 , 1100 , forward_operator )  
+da.obs_evolution( da_exp , ini_time , end_time , forward_operator )  
 
 #Graficamos la evolucion del error del first guess y del analisis
-da.error_evolution( da_exp , 1000 , 1100 )  
+da.error_evolution( da_exp , ini_time , end_time )  
 
 #Graficamos la evolucion del error total para el guess y para el analisis
-da.rmse_evolution( da_exp , 1000 , 1100 )  
+da.rmse_evolution( da_exp , ini_time , end_time )  
 
 #Graficamos la evolucion del RMSE
 da.forecast_error_plot( da_exp )  

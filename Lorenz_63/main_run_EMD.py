@@ -6,7 +6,7 @@
 
 
 #Importamos todos los modulos que van a ser usados en esta notebook
-from tqdm import tqdm
+#from tqdm import tqdm
 
 import numpy as np
 import Lorenz_63 as model
@@ -53,7 +53,7 @@ da_exp['numtrans']=600                           # Tiempo de spin-up para genera
 da_exp['dx0'] = np.array([ 5.0 , 5.0 , 5.0 ])       # Error inicial de la estimacion. 
 da_exp['R0']=2.0                                    # Varianza del error de las observaciones.
 da_exp['bst']=8                                     # Cantidad de pasos de tiempo entre 2 asimilaciones.
-da_exp['forecast_length'] = 2                      # Plazo de pronostico (debe ser al menos 1)
+da_exp['forecast_length'] = 20                      # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                   # Numero de variables en el modelo de Lorenz (no tocar)
 
 da_exp['EnsSize']=50                                 #Numero de miembros en el ensamble.
@@ -164,8 +164,10 @@ da_exp['Pa'][0,:,:] = np.cov( pert )
 da_exp['w'][0,:] = np.ones( da_exp['EnsSize'] ) * ( 1.0 / da_exp['EnsSize'] )
 
 
-for i in tqdm( range(1,da_exp['numstep']) ) :
-
+#for i in tqdm( range(1,da_exp['numstep']) ) :
+for i in range(1,da_exp['numstep']) :
+    print(i)
+    
     #Vamos a hacer el pronostico de x con el modelo no lineal y el
     #pronostico de la covarianza con el tangente lineal y el adjunto.
     #Integrate the forward non-linear model to obtain the first-guess

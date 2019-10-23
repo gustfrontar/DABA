@@ -66,11 +66,10 @@ def get_P( da_exp , P=None ) :
               fail=True
       if not da_exp['P_from_file'] or fail  :
          print('Estimamos P a partir del nature run')
-         da_exp['P0'] = 0.01  * np.matmul( da_exp['state'].transpose() , da_exp['state'] ) / ( da_exp['numstep'] -1 ) 
+         da_exp['P0'] = 0.01 * np.cov( da_exp['state'].transpose() )  
    else  :
        print('Vamos a usar una P definida por el usuario')
        da_exp['P0'] = P 
-       
        
    print('La matriz que vamos a usar es:')
    print(da_exp['P0'])
@@ -149,6 +148,7 @@ def analysis_update( yo , xf , P , forward_operator , forward_operator_tl , R ) 
    PHt=np.matmul( P  , H.transpose() )
    HPHt=np.matmul( H , PHt )
    HPHtinv=np.linalg.inv( HPHt + R )
+
    
    K = np.matmul( PHt , HPHtinv )
    #Aplicamos el forward operator
@@ -790,6 +790,7 @@ def JGrad3DVAR( update , innovation , H , invP , invR ) :
 
     # nablaJ = 2 inv(B) ( x-xb) - 2H' inv(R) ( y-h(x)) 
     nablaJ = 2 * np.dot( invP , update ) - 2* np.dot( H.transpose() , np.dot( invR , innovation ) )
+    #print(nablaJ)
 
     return nablaJ
 

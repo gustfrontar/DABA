@@ -28,3 +28,30 @@ def forward_operator_full_tl( state )  :
        H=np.identity(3)
     
        return H
+   
+def forward_operator_integral( state ) :
+       obs=np.sum( state )
+       
+       return obs
+       
+def forward_operator_integral_tl( state ) :
+   
+       H=np.ones( (1 , np.size(state)) )
+       return H
+    
+def forward_operator_nonlinear( state )  :
+       #Operador de las observaciones full que observa las 3 variables directamente
+
+       obs = np.power( state , 3 ) / 1000.0
+    
+       return obs
+
+def forward_operator_nonlinear_tl( state )  :
+    
+       #Tangente lineal del operador de las observaciones full que observa las 3 variables directamente
+    
+       H=np.diag( 3.0*np.power(state,2)/1000.0 )
+    
+       return H
+
+    
