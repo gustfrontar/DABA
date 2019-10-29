@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Oct 28 17:48:36 2019
-
+http://www.cmp.caltech.edu/~mcc/Chaos_Course/Lesson7/Lyapunov.pdf
 """
 # Inicializacion. Cargamos los modulos necesarios
 
@@ -223,4 +223,44 @@ plt.plot(np.log(da_exp['S'][1,-100:-1]),'g--' )
 plt.plot(np.log(da_exp['S'][2,-100:-1]),'b--' )
 
 plt.plot(np.log(da_exp['BE'][0,-100:-1]),'r:' )
+
+
+
+
+
+import plotly.graph_objects as go
+from plotly.offline import plot
+    
+ 
+fig = go.Figure(data=[go.Scatter3d(
+        x=da_exp['state'][:,0] ,
+        y=da_exp['state'][:,1] ,            
+        z=da_exp['state'][:,2] ,            
+        mode='markers' ,
+        marker=dict(
+                size=5,
+                color= da_exp['BE'][0,:] , 
+                colorscale='Viridis',
+                opacity=0.8)
+                    
+        )] )  
+plot(fig)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
