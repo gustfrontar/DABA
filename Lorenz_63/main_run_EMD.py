@@ -42,7 +42,7 @@ da_exp['p']=np.array([a,r,b])
 #------------------------------------------------------------
 
 da_exp['dt']=0.01            # Paso de tiempo para la integracion del modelo de Lorenz
-da_exp['numstep']=300       # Cantidad de ciclos de asimilacion.
+da_exp['numstep']=1000       # Cantidad de ciclos de asimilacion.
 da_exp['x0']=np.array([ 8.0 , 0.0 , 30.0 ])      # Condiciones iniciales para el spin-up del nature run (no cambiar)
 da_exp['numtrans']=600                           # Tiempo de spin-up para generar el nature run (no cambiar)
 
@@ -56,11 +56,11 @@ da_exp['bst']=8                                     # Cantidad de pasos de tiemp
 da_exp['forecast_length'] = 2                      # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                   # Numero de variables en el modelo de Lorenz (no tocar)
 
-da_exp['EnsSize']=50                                 #Numero de miembros en el ensamble.
+da_exp['EnsSize']=30                                 #Numero de miembros en el ensamble.
 
 da_exp['rtps_alpha'] = 0.0   #Relaxation to prior spread (Whitaker y Hamill 2012) # 0.6 es un buen parametro.
 da_exp['rejuv_param'] = 0.4  #Parametro de rejuvenecimiento (Acevedo y Reich 2017) #0.4 es un buen parametro
-da_exp['multinf']=1.45        #Inflacion multiplicativa (se aplica directamente a las perturbaciones)  #1.4 es un buen parametro.
+da_exp['multinf']=1.45       #Inflacion multiplicativa (se aplica directamente a las perturbaciones)  #1.4 es un buen parametro.
 
 #Obtengo el numero de observaciones (lo obtengo directamente del forward operator)
 da_exp['nobs']=np.shape(forward_operator(np.array([0,0,0])))[0]

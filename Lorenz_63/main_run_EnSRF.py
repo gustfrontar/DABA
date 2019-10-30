@@ -56,7 +56,7 @@ da_exp['numtrans']=600                           # Tiempo de spin-up para genera
 
 da_exp['dx0'] = np.array([ 5.0 , 5.0 , 5.0 ])       # Error inicial de la estimacion. 
 da_exp['R0']=2.0                                    # Varianza del error de las observaciones.
-da_exp['bst']=8                                     # Cantidad de pasos de tiempo entre 2 asimilaciones.
+da_exp['bst']=32                                     # Cantidad de pasos de tiempo entre 2 asimilaciones.
 da_exp['forecast_length'] = 20                       # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                   # Numero de variables en el modelo de Lorenz (no tocar)
 

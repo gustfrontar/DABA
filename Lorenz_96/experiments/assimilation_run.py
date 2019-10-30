@@ -151,9 +151,6 @@ for it in range( 1 , DALength  )         :
    #Run the ensemble forecast
    #print('Runing the ensemble')
 
-   #start = time.time()Hola Paola,
-Te sugiero intentar primero con Chrys Snyder (https://staff.ucar.edu/users/chriss). No se si el trabaja con GSI o no pero es un capo de EnKF en sus diferentes formas y de asimilacion de datos en mesoescala. Yo creo que trabajar con alguien que te pueda aportar tirar ideas piolas de experimentos para hacer es mucho mas rico. Seguramente si hay gente que trabaja con GSI  
-
    ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
    
    [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
