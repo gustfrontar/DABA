@@ -22,11 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
-<<<<<<< HEAD
 import nature_conf_ConstantParameter as conf
-=======
-import nature_conf_Topology as conf
->>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
 import os
 
 
