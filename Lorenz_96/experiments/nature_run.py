@@ -22,7 +22,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
+<<<<<<< HEAD
 import nature_conf_ConstantParameter as conf
+=======
+import nature_conf_Topology as conf
+>>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
 import os
 
 
@@ -201,6 +205,16 @@ if NatureConf['RunSave']   :
                       ,   ModelConf=ModelConf   , NatureConf=NatureConf 
                       ,   ObsConf=ObsConf       , GeneralConf=GeneralConf 
                       ,   XSSNature=XSSNature )
+   
+   
+   #Print XNature and XSSNature as a CSV
+   fileout=GeneralConf['DataPath'] + '/XNature.csv' 
+   np.savetxt(fileout, np.transpose( np.squeeze( XNature ) ), fmt="%6.2f", delimiter=",")
+   #np.squeeze(XNature).tofile(fileout,sep=',',format='%6.2f' , newline='\n' )
+
+   #Print XNature and XSSNature as a CSV
+   fileout=GeneralConf['DataPath'] + '/XSSNature.csv' 
+   np.savetxt(fileout, np.transpose( np.squeeze( XSSNature ) ), fmt="%6.2f", delimiter=",")
 
    print('Saving took ', time.time()-start, 'seconds.')
 

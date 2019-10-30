@@ -1,6 +1,7 @@
 #!/bin/bash
 
-COMPILER=f2py3
+#COMPILER=f2py3
+COMPILER=f2py
 FFLAGS='-O3'
 #FFLAGS='-O1 -fcheck=all'  #For debug
 

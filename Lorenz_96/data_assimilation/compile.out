@@ -7,6 +7,7 @@ running build_src
 build_src
 building extension "obsope" sources
 f2py options: []
+<<<<<<< HEAD
 f2py:> /tmp/tmp78e8wtie/src.linux-x86_64-3.7/obsopemodule.c
 creating /tmp/tmp78e8wtie/src.linux-x86_64-3.7
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
@@ -55,6 +56,53 @@ getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(re
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+=======
+f2py:> /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c
+creating /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+>>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
 Reading fortran codes...
 	Reading file 'netlib.f90' (format:fix)
 	Reading file 'SFMT.f90' (format:free)
@@ -261,6 +309,7 @@ getarrdims:warning: assumed shape array, using 0 instead of '*'
 			  obsloc = get_obs_location(ntype,nx,nt,time_density,space_density,no)
 			Constructing wrapper function "common_obs.itpl_2d"...
 			  var5 = itpl_2d(var,ri,rj,[nx,no])
+<<<<<<< HEAD
 	Wrote C/API module "obsope" to file "/tmp/tmp78e8wtie/src.linux-x86_64-3.7/obsopemodule.c"
 	Fortran 77 wrappers are saved to "/tmp/tmp78e8wtie/src.linux-x86_64-3.7/obsope-f2pywrappers.f"
 	Fortran 90 wrappers are saved to "/tmp/tmp78e8wtie/src.linux-x86_64-3.7/obsope-f2pywrappers2.f90"
@@ -270,12 +319,24 @@ copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortran
 copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.h -> /tmp/tmp78e8wtie/src.linux-x86_64-3.7
   adding '/tmp/tmp78e8wtie/src.linux-x86_64-3.7/obsope-f2pywrappers.f' to sources.
   adding '/tmp/tmp78e8wtie/src.linux-x86_64-3.7/obsope-f2pywrappers2.f90' to sources.
+=======
+	Wrote C/API module "obsope" to file "/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c"
+	Fortran 77 wrappers are saved to "/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers.f"
+	Fortran 90 wrappers are saved to "/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers2.f90"
+  adding '/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.c' to sources.
+  adding '/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7' to include_dirs.
+copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.c -> /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7
+copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.h -> /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7
+  adding '/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers.f' to sources.
+  adding '/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers2.f90' to sources.
+>>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
 build_src: building npy-pkg config files
 running build_ext
 customize UnixCCompiler
 customize UnixCCompiler using build_ext
 get_default_fcompiler: matching types: '['gnu95', 'intel', 'lahey', 'pg', 'absoft', 'nag', 'vast', 'compaq', 'intele', 'intelem', 'gnu', 'g95', 'pathf95', 'nagfor']'
 customize Gnu95FCompiler
+<<<<<<< HEAD
 Could not locate executable gfortran
 Could not locate executable f95
 customize IntelFCompiler
@@ -341,3 +402,171 @@ getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(re
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
 error: extension 'obsope' has Fortran sources but no Fortran compiler found
+=======
+Found executable /usr/bin/gfortran
+customize Gnu95FCompiler
+customize Gnu95FCompiler using build_ext
+building 'obsope' extension
+compiling C sources
+C compiler: gcc -pthread -B /home/jruiz/anaconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
+
+creating /tmp/tmpqlxn9_9q/tmp
+creating /tmp/tmpqlxn9_9q/tmp/tmpqlxn9_9q
+creating /tmp/tmpqlxn9_9q/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7
+compile options: '-I/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7 -I/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/home/jruiz/anaconda3/include/python3.7m -c'
+gcc: /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c
+gcc: /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.c
+In file included from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1823:0,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.h:13,
+                 from /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.c:2:
+/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^~~~~~~
+/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.c: In function ‘format_def’:
+/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.c:138:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (size < sizeof(notalloc)) {
+                  ^
+In file included from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1823:0,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.h:13,
+                 from /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c:16:
+/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^~~~~~~
+/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c: In function ‘PyInit_obsope’:
+/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c:5583:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+   for(i=0;f2py_routine_defs[i].name!=NULL;i++)
+   ^~~
+/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c:5588:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+     {
+     ^
+At top level:
+/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.c:184:12: warning: ‘f2py_size’ defined but not used [-Wunused-function]
+ static int f2py_size(PyArrayObject* var, ...)
+            ^~~~~~~~~
+compiling Fortran 90 module sources
+Fortran f77 compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3
+Fortran f90 compiler: /usr/bin/gfortran -Wall -g -fno-second-underscore -fPIC -O3
+Fortran fix compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC -O3
+compile options: '-I/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7 -I/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/home/jruiz/anaconda3/include/python3.7m -c'
+extra options: '-J/tmp/tmpqlxn9_9q/ -I/tmp/tmpqlxn9_9q/'
+gfortran:f90: SFMT.f90
+SFMT.f90:34:33:
+
+     integer,parameter:: N = (MEXP / 128 + 1)
+                                 1
+Warning: Integer division truncated to constant ‘155’ at (1) [-Winteger-division]
+SFMT.f90:511:21:
+
+         gen_rand32 = ibits(psfmt64(idx/2),32,32)
+                     1
+Warning: Possible change of value in conversion from INTEGER(8) to INTEGER(4) at (1) [-Wconversion]
+SFMT.f90:513:21:
+
+         gen_rand32 = ibits(psfmt64(idx/2),0,32)
+                     1
+Warning: Possible change of value in conversion from INTEGER(8) to INTEGER(4) at (1) [-Wconversion]
+SFMT.f90:638:21:
+
+         psfmt32(i) = ibits( temp64, 0, 32 )
+                     1
+Warning: Possible change of value in conversion from INTEGER(8) to INTEGER(4) at (1) [-Wconversion]
+SFMT.f90:528:14:
+
+     integer::i
+              1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+gfortran:f90: common_tools.f90
+common_tools.f90:60:14:
+
+   INTEGER :: i
+              1
+Warning: Unused variable ‘i’ declared at (1) [-Wunused-variable]
+gfortran:f90: common_obs_lorenzN.f90
+common_obs_lorenzN.f90:218:50:
+
+ INTEGER                    :: skipx , skipt , iobs , it , ix , tmpt , tmpx
+                                                  1
+Warning: Unused variable ‘iobs’ declared at (1) [-Wunused-variable]
+common_obs_lorenzN.f90:31:39:
+
+ INTEGER                    :: io , iloc, ie , it , ix         !Loop indices
+                                       1
+Warning: Unused variable ‘iloc’ declared at (1) [-Wunused-variable]
+common_obs_lorenzN.f90:31:48:
+
+ INTEGER                    :: io , iloc, ie , it , ix         !Loop indices
+                                                1
+Warning: Unused variable ‘it’ declared at (1) [-Wunused-variable]
+common_obs_lorenzN.f90:31:53:
+
+ INTEGER                    :: io , iloc, ie , it , ix         !Loop indices
+                                                     1
+Warning: Unused variable ‘ix’ declared at (1) [-Wunused-variable]
+compiling Fortran sources
+Fortran f77 compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3
+Fortran f90 compiler: /usr/bin/gfortran -Wall -g -fno-second-underscore -fPIC -O3
+Fortran fix compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC -O3
+compile options: '-I/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7 -I/home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/home/jruiz/anaconda3/include/python3.7m -c'
+extra options: '-J/tmp/tmpqlxn9_9q/ -I/tmp/tmpqlxn9_9q/'
+gfortran:fix: netlib.f90
+netlib.f90:851:0:
+
+          p = -s * s2 * c3 * el1 * e(l) / dl1
+ 
+Warning: ‘s2’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+netlib.f90:851:0: Warning: ‘c3’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+netlib.f90:693:0:
+
+          p = -s * s2 * c3 * el1 * e(l) / dl1
+ 
+Warning: ‘s2’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+netlib.f90:693:0: Warning: ‘c3’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+netlib.f90:407:0:
+
+                call dswap(imax,ap(im+1),1,ap(ik+1),1)
+ 
+Warning: ‘im’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+gfortran:f90: /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers2.f90
+gfortran:f77: /tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers.f
+/usr/bin/gfortran -Wall -g -Wall -g -shared /tmp/tmpqlxn9_9q/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsopemodule.o /tmp/tmpqlxn9_9q/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/fortranobject.o /tmp/tmpqlxn9_9q/SFMT.o /tmp/tmpqlxn9_9q/common_tools.o /tmp/tmpqlxn9_9q/common_obs_lorenzN.o /tmp/tmpqlxn9_9q/netlib.o /tmp/tmpqlxn9_9q/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers.o /tmp/tmpqlxn9_9q/tmp/tmpqlxn9_9q/src.linux-x86_64-3.7/obsope-f2pywrappers2.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7 -lgfortran -o ./obsope.cpython-37m-x86_64-linux-gnu.so
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/data_assimilation/.f2py_f2cmap file).
+Removing build directory /tmp/tmpqlxn9_9q
+>>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
