@@ -20,7 +20,7 @@ estado=np.zeros((ntimes,2))
 
 estado[0,:]=np.array([0.0,1.0])
 
-M=np.array([[2.0-(dt*dt)*omega_sq , -1.0 ],[1.0 , 0.0]])
+M=np.array([[1.0-(dt*dt)*omega_sq , dt ],[-dt*omega_sq , 1.0]])
 
 for it in range(1,ntimes)  :
     

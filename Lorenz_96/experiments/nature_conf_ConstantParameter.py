@@ -68,7 +68,7 @@ NatureConf['Length']=40                            #Nature run length in model t
 
 ObsConf= dict()
 
-ObsConf['Freq']=1                                    #Observation frequency in number of time steps (will also control nature run output frequency)
+ObsConf['Freq']=4                                    #Observation frequency in number of time steps (will also control nature run output frequency)
 
 #Observation location
 ObsConf['NetworkType']='regular'                     #Observation network type: REGULAR, RANDOM, FROMFILE

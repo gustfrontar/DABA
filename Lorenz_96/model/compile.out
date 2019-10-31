@@ -7,6 +7,59 @@ running build_src
 build_src
 building extension "model" sources
 f2py options: []
+<<<<<<< HEAD
+f2py:> /tmp/tmp7flenxva/src.linux-x86_64-3.7/modelmodule.c
+creating /tmp/tmp7flenxva/src.linux-x86_64-3.7
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+=======
 f2py:> /tmp/tmp4dfv9ey5/src.linux-x86_64-3.7/modelmodule.c
 creating /tmp/tmp4dfv9ey5/src.linux-x86_64-3.7
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/model/.f2py_f2cmap file).
@@ -54,6 +107,7 @@ getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(re
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/model/.f2py_f2cmap file).
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/model/.f2py_f2cmap file).
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/model/.f2py_f2cmap file).
+>>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
 Reading fortran codes...
 	Reading file 'SFMT.f90' (format:free)
 	Reading file 'common_tools.f90' (format:free)
@@ -171,6 +225,17 @@ Building modules...
 			  xssout = lorenzn_ss_core(xssin,xin,dtss,css,bss,hint,[nx,nxss])
 			Constructing wrapper function "lorenzn.tinteg_rk4"...
 			  xout,xssout,dfout,rfout,ssfout,crfout,cout = tinteg_rk4(nt,ntout,x0,xss0,rf0,phi,sigma,c0,crf0,cphi,csigma,param,dt,dtss,[nens,nx,nxss,ncoef])
+<<<<<<< HEAD
+	Wrote C/API module "model" to file "/tmp/tmp7flenxva/src.linux-x86_64-3.7/modelmodule.c"
+	Fortran 77 wrappers are saved to "/tmp/tmp7flenxva/src.linux-x86_64-3.7/model-f2pywrappers.f"
+	Fortran 90 wrappers are saved to "/tmp/tmp7flenxva/src.linux-x86_64-3.7/model-f2pywrappers2.f90"
+  adding '/tmp/tmp7flenxva/src.linux-x86_64-3.7/fortranobject.c' to sources.
+  adding '/tmp/tmp7flenxva/src.linux-x86_64-3.7' to include_dirs.
+copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.c -> /tmp/tmp7flenxva/src.linux-x86_64-3.7
+copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.h -> /tmp/tmp7flenxva/src.linux-x86_64-3.7
+  adding '/tmp/tmp7flenxva/src.linux-x86_64-3.7/model-f2pywrappers.f' to sources.
+  adding '/tmp/tmp7flenxva/src.linux-x86_64-3.7/model-f2pywrappers2.f90' to sources.
+=======
 	Wrote C/API module "model" to file "/tmp/tmp4dfv9ey5/src.linux-x86_64-3.7/modelmodule.c"
 	Fortran 77 wrappers are saved to "/tmp/tmp4dfv9ey5/src.linux-x86_64-3.7/model-f2pywrappers.f"
 	Fortran 90 wrappers are saved to "/tmp/tmp4dfv9ey5/src.linux-x86_64-3.7/model-f2pywrappers2.f90"
@@ -180,12 +245,77 @@ copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortran
 copying /home/jruiz/anaconda3/lib/python3.7/site-packages/numpy/f2py/src/fortranobject.h -> /tmp/tmp4dfv9ey5/src.linux-x86_64-3.7
   adding '/tmp/tmp4dfv9ey5/src.linux-x86_64-3.7/model-f2pywrappers.f' to sources.
   adding '/tmp/tmp4dfv9ey5/src.linux-x86_64-3.7/model-f2pywrappers2.f90' to sources.
+>>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
 build_src: building npy-pkg config files
 running build_ext
 customize UnixCCompiler
 customize UnixCCompiler using build_ext
 get_default_fcompiler: matching types: '['gnu95', 'intel', 'lahey', 'pg', 'absoft', 'nag', 'vast', 'compaq', 'intele', 'intelem', 'gnu', 'g95', 'pathf95', 'nagfor']'
 customize Gnu95FCompiler
+<<<<<<< HEAD
+Could not locate executable gfortran
+Could not locate executable f95
+customize IntelFCompiler
+Could not locate executable ifort
+Could not locate executable ifc
+customize LaheyFCompiler
+Could not locate executable lf95
+customize PGroupFCompiler
+Could not locate executable pgfortran
+customize AbsoftFCompiler
+Could not locate executable f90
+Could not locate executable f77
+customize NAGFCompiler
+customize VastFCompiler
+customize CompaqFCompiler
+Could not locate executable fort
+customize IntelItaniumFCompiler
+Could not locate executable efort
+Could not locate executable efc
+customize IntelEM64TFCompiler
+customize GnuFCompiler
+Could not locate executable g77
+customize G95FCompiler
+Could not locate executable g95
+customize PathScaleFCompiler
+Could not locate executable pathf95
+customize NAGFORCompiler
+Could not locate executable nagfor
+don't know how to compile Fortran code on platform 'posix'
+warning: build_ext: f77_compiler=None is not available.
+
+building 'model' extension
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/DABA/Lorenz_96/model/.f2py_f2cmap file).
+error: extension 'model' has Fortran sources but no Fortran compiler found
+=======
 Found executable /usr/bin/gfortran
 customize Gnu95FCompiler
 customize Gnu95FCompiler using build_ext
@@ -322,3 +452,4 @@ getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(re
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/model/.f2py_f2cmap file).
 getctype: "real(kind=r_size)" is mapped to C "float" (to override define dict(real = dict(r_size="<C typespec>")) in /home/jruiz/Dropbox/DATA/DABA/Lorenz_96/model/.f2py_f2cmap file).
 Removing build directory /tmp/tmp4dfv9ey5
+>>>>>>> 0a1cf61d8edb5c5298c4c1c78f19fad771a459c2
