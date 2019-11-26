@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
-import nature_conf_SpaceDependentParameter as conf
+import nature_conf_TwoScales as conf
 import os
 
 

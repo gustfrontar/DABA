@@ -1168,7 +1168,35 @@ def Ptrace_3d( da_exp ) :
                         )
             )])
        
-    plot(fig)   
+    plot(fig) 
+    
+def get_forecast( da_exp , ini_time ) :
+    
+    [ numstep , nvars , enssize , forecast_length ] = np.shape( da_exp['statefens'] )
+    
+    analysis=np.zeros( ( nvars , forecast_length ) )
+    nature  =np.zeros( ( nvars , forecast_length ) )
+    forecast=np.zeros( ( nvars , enssize , forecast_length ) )
+    
+    print(numstep,nvars,enssize,forecast_length)
+    
+    for k in range( forecast_length ) :
+          
+        
+            if ( ini_time + k < numstep ) :  #Solo para cerciorarme de que el pronostico no queda fuera del rango del experimento.
+               #En la variable statefens se guardan los pronosticos arrancando por el pronostico a bst pasos de tiempo.
+               #en el output de esta funcion el primer elemento del pronostico es el analisis. Y los subsiguientes son los pronosticos a los diferentes plazos.
+               
+               if ( k == 0 ) :
+                  forecast[:,:,k] = da_exp['stateaens'][ini_time+k,:,:]
+               else          :   
+                  forecast[:,:,k] = da_exp['statefens'][ini_time+k,:,:,k-1]
+                  
+               analysis[:,k]=da_exp['statea'][ini_time+k,:]
+               nature[:,k]=da_exp['state'][ini_time+k,:]
+    
+    return forecast , analysis , nature
+    
     
        
 def save_exp( da_exp )   :

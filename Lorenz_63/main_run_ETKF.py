@@ -194,6 +194,10 @@ for i in tqdm( range(1,da_exp['numstep']) ) :
     [ da_exp['stateaens'][i,:,:] , da_exp['statea'][i,:] , da_exp['Pa'][i,:,:] , da_exp['OmB'][i,:] , da_exp['OmA'][i,:] ] =da.analysis_update_ETKF(da_exp['yobs'][i,:],da_exp['statefens'][i,:,:,0],forward_operator,da_exp['R'],da_exp['MultInf'])
 
 
+
+
+
+
 #%%
 #------------------------------------------------------------
 # Verificacion del ciclo de los resultados

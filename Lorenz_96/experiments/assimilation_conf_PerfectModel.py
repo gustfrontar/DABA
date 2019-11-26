@@ -71,7 +71,7 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['NEns'] = 10                                  #Number of ensemble members
+DAConf['NEns'] = 50                                  #Number of ensemble members
 
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 
@@ -80,7 +80,7 @@ DAConf['TSFreq'] = 4                                 #Intra window ensemble outp
 
 DAConf['InfCoefs']=np.array([1.02,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
-DAConf['LocScales']=np.array([4.0,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScales']=np.array([0.2,-1.0])             #Localization scale is space and time (negative means no localization)
 
 #Initial state ensemble.
 DAConf['InitialXSigma']=1                            #Initial ensemble spread for state variables.

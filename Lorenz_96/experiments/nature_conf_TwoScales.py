@@ -19,12 +19,12 @@ ModelConf=dict()
 
 #General model section
 
-ModelConf['nx'] =  32                                 #Number of large-scale state variables
+ModelConf['nx'] =  8                                 #Number of large-scale state variables
 ModelConf['dt']  =0.005 #125                            #Time step for large-scale variables (do not change)
 
 #Forcing section
 
-ModelConf['Coef']=np.array([25,0,0])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... ) 
+ModelConf['Coef']=np.array([16,0,0])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... ) 
 
 ModelConf['NCoef']=np.size(ModelConf['Coef'])           #Get the total number of coefs.
 
