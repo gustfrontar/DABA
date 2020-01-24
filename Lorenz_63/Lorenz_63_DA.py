@@ -476,13 +476,13 @@ def analysis_update_EMD( yo , xf , forward_operator , R , rtps_alpha , rejuv_par
     #de flujo S que permite convertir una muestra con distribucion igual al prior en otra muestra
     #con distribucion igual al posterior.
     #[distance , S ] = emd( aux_xf , np.copy(aux_xf)  , X_weights=np.ones(nens)/nens , Y_weights = w , return_flows= True) 
-    D = cdist(aux_xf,aux_xf,'euclidean')
+    D = np.power( cdist(aux_xf,aux_xf,'euclidean') , 2 )
     S=ot.emd(np.ones(nens)/nens,w,D,numItermax=1.0e9,log=False)
     S = nens * S
 
     aux_xa=np.zeros(np.shape(aux_xf))
     
-    tmp_rand = np.random.randn(nens,nens) / (nens-1)
+    tmp_rand = np.random.randn(nens,nens) / np.sqrt(nens-1)
     
     #Aplico en un solo paso la transformacion lineal y el rejuvenecimiento.
     
@@ -509,6 +509,110 @@ def analysis_update_EMD( yo , xf , forward_operator , R , rtps_alpha , rejuv_par
     OmA = yo - hxamean
 
     return xa , xa_mean , Pa , OmB , OmA , w , S  
+
+
+def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rtps_alpha , rejuv_param , multinf )   :
+    #from emd import emd
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Dada matrices R, un ensamble de campos preliminares y un conjunto de observaciones
+   #  calcula  los pesos optimos y hace el resampling.
+   #  Esta funcion se aplica al Earth Mover Distance Particle Filter
+   #  Este filtro aplica una transformacion deterministica que es aquella que permite
+   #  transformar el prior en el posterior con la minima redistribucion de masa (de probabilidad)
+   #
+   #  Esto es una transformacion que mueve las particulas una distancia minima tal que las particulas
+   #  finales describan el posterior mientras que las particulas iniciales describen el prior.
+   #
+   #  Este filtro presenta una alternativa deterministica al resampling estocastico.
+   #  Reich, S. (2013). A non-parametric ensemble transform method for bayesian inference.
+   #  SIAM J Sci Comput, 35:A2013–A2014.
+   #  El metodo es una actualizacion del trabajo de Reich en donde pasa a ser un metodo
+   #  exacto en la varianza. Ademas se introduce un algoritmo iterativo mas eficiente para 
+   #  la solucion del problema del transporte optimo.
+   #  Acevedo et al. (2017) A Second Order Accurate Ensemble Transform Particle Filter. SIAM
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       w_in (nens)  - pesos de entrada
+   #       forward_operator - operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens)  - analysis ensemble
+   #       w(nens)  - weigths
+   #       S(nens,nens) - EM Flow matrix es la matriz que permite convertir el prior
+   #       en el posterior.
+   #
+   #---------------------------------------------
+
+    
+    #Obtengo la cantidad de miembros en el ensamble
+    [nvar , nens ]= xf.shape
+    
+    #Calculo la inversa de la matriz de covarianza    
+    Rinv = np.linalg.inv(R)
+    
+    [xf_mean , xf_pert] = mean_and_perts( xf )
+            
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    for iens in range( nens ) :
+        yf = forward_operator( xf[:,iens] )
+        w[iens] = np.exp( -0.5 * np.matmul( (yo-yf).transpose() , np.matmul( Rinv , yo - yf ) ) )
+
+    #Normalizamos los pesos para que sumen 1.
+
+    w = w / np.sum(w)
+    
+    #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
+    #con un parametro de regularizacion lambda. 
+    D = sinkhorn_ot( xf , w  )
+    #M = np.power( cdist(np.transpose(xf),np.transpose(xf),'euclidean') , 2 ) 
+    #D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens
+    #D=np.transpose( ot.bregman.sinkhorn(np.ones(nens)/nens,w,M,0.1,method='sinkhorn') )
+    #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
+    #que el metodo sea exacto en la varianza.
+    
+    delta = riccati_solver( D , w )
+    
+    #Correct the transformation matrix to ensure a second order exact transformation.
+    D = D + delta
+    
+    #print('Delta',delta)
+    
+    
+    #xa=np.zeros(np.shape(xf))
+    
+    tmp_rand = np.random.randn(nens,nens) / np.sqrt(nens-1)
+    
+    #Aplico en un solo paso la transformacion lineal y el rejuvenecimiento.
+    
+    xa = np.matmul( xf , D ) + rejuv_param * np.dot( xf_pert , tmp_rand ) 
+        
+    [xa_mean , xa_pert] = mean_and_perts( xa )
+    
+    #RTPS inflation.
+    #xa_std = np.sum( np.std(xa_pert,axis=1) )
+    #xf_std = np.sum( np.std(xf_pert,axis=1) )
+    
+    #xa_pert = xa_pert * ( rtps_alpha * (xf_std - xa_std) / xa_std + 1)
+    
+    #for i in range(0,nens) :
+    #    xa[:,i] = xa_pert[:,i] + xa_mean
+       
+    #Pa = np.cov( xa_pert ) 
+    
+    #hxamean = forward_operator( xa_mean )
+    #hxfmean = forward_operator( np.mean(xf,1) )
+    #OmB = yo - hxfmean
+    #OmA = yo - hxamean
+    Pa=np.nan
+    OmB=np.nan
+    OmA=np.nan
+
+    return xa , xa_mean , Pa , OmB , OmA , w , D  
 
 
 
@@ -886,6 +990,128 @@ def resample(weights):
     indexes[k:N] = np.searchsorted(cumulative_sum, ran1)
 
     return indexes
+
+def sinkhorn_ot( Xens , w , lam = 1.0 , stop_criteria = 1.0e-8 , max_iter = 5000 ):
+    #Solves the Sinkhorn optimal transport problem following Acevedo et al. 2017 SIAM
+    #Inputs
+    #Xens is the ensemble matrix. Each column is an ensemble member, each row is 
+    #a model variable.
+    #w is the weigth vector. w[i] is the weigth corresponding to the ensemble member
+    #stored in the i-th column of Xens
+    #lam is lambda regularization factor (large lambda leads to ETPF like transformations
+    #while small lamda leads to NETF like transformations with optimal rotation)
+    #stop_criteria is the convergence criteria for the iterative algorithm leading to the solution
+    #of the optimal transport problem.
+    #max_iter is the maximum number of iterations to be performed in the iterative algorithm.
+    from scipy.spatial.distance import cdist
+    
+    m = np.shape(Xens)[1]
+    v = np.shape(Xens)[0]
+    
+    #Construct matrix K (m x m)
+    #Note currently no normalization is applied in the computation of matrix K
+    v=np.ones((m))
+    u=np.ones((m))
+    K=np.zeros((m,m))
+    ones = np.ones((m,1))
+    sqdist = np.power( cdist(np.transpose(Xens),np.transpose(Xens),'euclidean') ,2)
+    
+    #print(np.max(sqdist))
+    
+    lnk =  -lam * ( sqdist )
+    
+    tmp = np.max( abs( lnk ) )
+    if tmp > 200.0 :
+        print('Warning: Lambda was reduced to keep filter stability')
+        lnk = lnk * 200.0 / tmp
+    
+    #Nomralizamos la matriz K 
+    #lnk = lnk - np.min(lnk) -lam
+    
+    K=np.exp(lnk) 
+    
+    #print(K)
+    #K= K * ( np.exp( -lam ) / np.min(K) )
+    
+    #print(K)
+    #print( np.max( -(1/lam) *np.log(K) ) )  
+    
+    #for i in range(m) :
+    #    for j in range(m) :
+    #        diff = np.sum( np.power( Xens[:,i] - Xens[:,j] , 2 ) )
+    #        K[i,j]=np.exp( -lam * diff )
+        
+    it_num = 0
+    while( True )  :
+        for i in range(m) :
+            u[i] = m * w[i] / np.dot( K[i,:] , v ) 
+        for i in range(m) :
+            v[i] = 1.0 / np.dot( K[i,:] , u ) 
+        
+        D = np.matmul( np.matmul( np.diag( u ) , K ) , np.diag( v ) )  
+        
+        w_tmp = np.squeeze( np.matmul(  (1/m) * D , ones ) )
+        
+        w_diff = w_tmp - w 
+        
+        metric = np.sqrt( np.dot( w_diff , w_diff ) )
+     
+        #print( metric )
+        
+        if  metric < stop_criteria  :
+            break
+        if np.isnan( metric ):
+            break
+            
+        it_num = it_num + 1
+        if( it_num == max_iter ) :
+            print('Warning: Iteration limit reached')
+            break
+    w_sum = np.zeros((m,1))
+    #La siguiente linea no esta igual al paper pero me parece que hay un error en el trabajo
+    #en la ecuacion 5.7. Poniendo los terminos como esta a continuacion se verifican las 
+    #restricciones que indica el paper, pero si se usa lo que dice la ecuacion 5.7 esas restricciones
+    #no se cumplen y el filtro diverge.
+    w_sum[:,0] = w_sum[:,0] - w_tmp + w 
+    
+    D = np.matmul( np.matmul( np.diag( u ) , K ) , np.diag( v ) ) + np.matmul( w_sum , np.transpose(ones) )
+
+    #print( (1.0/m)*np.matmul( D, ones ) )
+    #print( w )
+
+    
+    return D
+
+def riccati_solver( D , w_in , dt = 0.1 , stop_criteria = 1.0e-3 , iteration_limit = 5000 ) :
+    #Esta funcion resuelve 
+    
+    m = np.shape(D)[0]
+    ones = np.ones((m,1))
+    w=np.zeros((m,1))
+    w[:,0]=w_in
+    delta = np.zeros((m,m))
+    
+    W=np.diag(np.squeeze(w))
+    
+    B = D - np.matmul( w , np.transpose(ones) )
+    A = m * ( W - np.matmul( w , np.transpose(w) ) ) - np.matmul( B , np.transpose(B) )
+    
+    cont=True
+    it_num = 0 
+    while( cont ) :
+        delta_old = delta 
+        delta = delta + dt*( -np.matmul( B , delta) -np.matmul( delta , np.transpose(B) ) + A - np.matmul(delta,delta) )
+        it_num = it_num + 1
+        if( np.linalg.norm( delta - delta_old , np.inf ) < stop_criteria ) :
+            cont = False
+        if( it_num > iteration_limit ) :
+            cont = False
+            print('Warning: Iteration limit reached in Riccati solver')
+    
+    return delta
+    
+    
+    
    
 
 def analysis_verification( forward_operator , da_exp ) :
@@ -894,7 +1120,7 @@ def analysis_verification( forward_operator , da_exp ) :
    #  Esta funcion calcula el RMSE y BIAS del analisis, del first guess y de 
    #  las observaciones.
    #---------------------------------------------
-   spinup=200
+   spinup=1
    statea=da_exp['statea'][spinup:,:]
    statef=da_exp['statef'][spinup:,:,:]
    state =da_exp['state'][spinup:,:]
@@ -1031,12 +1257,17 @@ def obs_evolution( da_exp , ini_time , end_time , forward_operator )  :
     
     tmp_a=da_exp['statea'][ini_time:end_time,:]
     tmp_f=da_exp['statef'][ini_time:end_time,:,0]
+    tmp_fens=da_exp['statefens'][ini_time:end_time,:,:,0]
+    tmp_aens=da_exp['stateaens'][ini_time:end_time,:,:]
     tmp_t=da_exp['state'][ini_time:end_time,:]
 
     ntimes=tmp_a.shape[0]
+    nens=tmp_fens.shape[2]
     
     tmp_ao=np.zeros((ntimes,da_exp['nobs']))
     tmp_fo=np.zeros((ntimes,da_exp['nobs']))
+    tmp_foens=np.zeros((ntimes,da_exp['nobs'],nens))
+    tmp_aoens=np.zeros((ntimes,da_exp['nobs'],nens))
     tmp_to=np.zeros((ntimes,da_exp['nobs']))
     tmp_o=da_exp['yobs'][ini_time:end_time,:]
     
@@ -1044,7 +1275,9 @@ def obs_evolution( da_exp , ini_time , end_time , forward_operator )  :
        tmp_ao[it,:]=forward_operator( tmp_a[it,:] )
        tmp_fo[it,:]=forward_operator( tmp_f[it,:] )
        tmp_to[it,:]=forward_operator( tmp_t[it,:] )
-    
+       for iens in range(nens) :
+           tmp_foens[it,:,iens]=forward_operator( tmp_fens[it,:,iens] )
+           tmp_aoens[it,:,iens]=forward_operator( tmp_aens[it,:,iens] )
     for iobs in range( da_exp['nobs'] )  :
        
        plt.figure()
@@ -1054,10 +1287,13 @@ def obs_evolution( da_exp , ini_time , end_time , forward_operator )  :
        plt.plot(tmp_to[:,iobs],'g',label='True')
        plt.plot(tmp_ao[:,iobs],'r',label='Analysis')
        plt.plot(tmp_fo[:,iobs],'b',label='First guess')
+       for iens in range( nens ) :
+          plt.plot(tmp_foens[:,iobs,iens],'k',LineWidth=1)
+          plt.plot(tmp_aoens[:,iobs,iens],'r',LineWidth=1)
        
        plt.legend()
        plt.xlabel('Ciclos de asimilacion')
-       plt.ylabel('Variable')
+       plt.ylabel('Variable_')
        plt.grid()
 
        plt.savefig( da_exp['main_path'] + '/figs/' + da_exp['exp_id'] + '_ObsTimeSeries_Obs'+ str(iobs) + '.png')

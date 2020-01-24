@@ -29,6 +29,23 @@ def forward_operator_full_tl( state )  :
     
        return H
    
+def forward_operator_onlyx( state )  :
+       #Operador de las observaciones full que observa las 3 variables directamente
+    
+       obs = np.array(state[0])
+    
+       return obs
+
+def forward_operator_onlyx_tl( state )  :
+    
+       #Tangente lineal del operador de las observaciones full que observa las 3 variables directamente
+    
+       H=np.array([1,0,0])
+    
+       return H
+
+    
+   
 def forward_operator_integral( state ) :
        obs=np.sum( state )
        

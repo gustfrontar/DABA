@@ -18,7 +18,7 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_PerfectModel as conf         #Load the experiment configuration
+import assimilation_conf_PEMaxi as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
