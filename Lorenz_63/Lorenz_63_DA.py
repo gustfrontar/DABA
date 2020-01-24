@@ -221,7 +221,10 @@ def analysis_update_POEnKF( yo , xf , forward_operator , forward_operator_tl , R
     HPHt=np.matmul( H , PHt )
     HPHtinv=np.linalg.inv( HPHt + R )
    
-    K = np.matmul( PHt , HPHtinv ) 
+    if np.size( HPHtinv ) == 1 :
+        K = PHt * HPHtinv
+    else                       :
+        K = np.matmul( PHt , HPHtinv ) 
  
 
     xa = np.zeros( xf.shape )   
@@ -231,8 +234,11 @@ def analysis_update_POEnKF( yo , xf , forward_operator , forward_operator_tl , R
       yo_pert = yo.transpose() + np.random.multivariate_normal( np.zeros( yo.shape ) , R )
       #Calculo el analisis para este miembro
       hxf = forward_operator( xf[:,i] )
-      
-      xa[:,i] = xf[:,i] + np.dot( K , ( yo_pert - hxf ) )
+
+      if np.size( yo_pert ) == 1  :
+          xa[:,i] = xf[:,i] + K * ( yo_pert - hxf ) 
+      else                        :
+          xa[:,i] = xf[:,i] + np.dot( K , ( yo_pert - hxf ) )
       
     
     [xa_mean , xa_pert ] = mean_and_perts( xa )
@@ -511,7 +517,7 @@ def analysis_update_EMD( yo , xf , forward_operator , R , rtps_alpha , rejuv_par
     return xa , xa_mean , Pa , OmB , OmA , w , S  
 
 
-def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rtps_alpha , rejuv_param , multinf )   :
+def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rejuv_param , rejuv_perts = np.zeros(1) , rejuv_rand = np.zeros(1) )   :
     #from emd import emd
     from scipy.spatial.distance import cdist
     import ot
@@ -532,21 +538,9 @@ def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rtps_alpha , r
    #  exacto en la varianza. Ademas se introduce un algoritmo iterativo mas eficiente para 
    #  la solucion del problema del transporte optimo.
    #  Acevedo et al. (2017) A Second Order Accurate Ensemble Transform Particle Filter. SIAM
-   #
-   #  input:
-   #       yo      - observaciones
-   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
-   #       w_in (nens)  - pesos de entrada
-   #       forward_operator - operador de las observaciones (funcion)
-   #  output:
-   #       xa(dim,nens)  - analysis ensemble
-   #       w(nens)  - weigths
-   #       S(nens,nens) - EM Flow matrix es la matriz que permite convertir el prior
-   #       en el posterior.
-   #
+   #   #
    #---------------------------------------------
 
-    
     #Obtengo la cantidad de miembros en el ensamble
     [nvar , nens ]= xf.shape
     
@@ -554,7 +548,14 @@ def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rtps_alpha , r
     Rinv = np.linalg.inv(R)
     
     [xf_mean , xf_pert] = mean_and_perts( xf )
-            
+    
+    #Rejuvenetion can be introduced using the same ensemble particles or an independent
+    #set of particles (like in additive inflation). If rejuv_perts is None then ensemble perturbations will be used.
+    if rejuv_perts.all() == 0  :
+        rejuv_perts = xf_pert 
+    if rejuv_rand.all() == 0 :
+        rejuv_rand = np.random.randn(nens,nens) / np.sqrt(nens-1)
+    
     #Calculamos los pesos en base al likelihood de las observaciones 
     #dada cada una de las particulas.
     w=np.zeros( nens )
@@ -568,9 +569,9 @@ def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rtps_alpha , r
     
     #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
     #con un parametro de regularizacion lambda. 
-    D = sinkhorn_ot( xf , w  )
-    #M = np.power( cdist(np.transpose(xf),np.transpose(xf),'euclidean') , 2 ) 
-    #D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens
+    #D = sinkhorn_ot( xf , w  )
+    M = np.power( cdist(np.transpose(xf),np.transpose(xf),'euclidean') , 2 ) 
+    D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens
     #D=np.transpose( ot.bregman.sinkhorn(np.ones(nens)/nens,w,M,0.1,method='sinkhorn') )
     #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
     #que el metodo sea exacto en la varianza.
@@ -584,30 +585,15 @@ def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rtps_alpha , r
     
     
     #xa=np.zeros(np.shape(xf))
-    
-    tmp_rand = np.random.randn(nens,nens) / np.sqrt(nens-1)
+
     
     #Aplico en un solo paso la transformacion lineal y el rejuvenecimiento.
     
-    xa = np.matmul( xf , D ) + rejuv_param * np.dot( xf_pert , tmp_rand ) 
+    xa = np.matmul( xf , D ) + rejuv_param * np.dot( rejuv_perts , rejuv_rand ) 
         
     [xa_mean , xa_pert] = mean_and_perts( xa )
     
-    #RTPS inflation.
-    #xa_std = np.sum( np.std(xa_pert,axis=1) )
-    #xf_std = np.sum( np.std(xf_pert,axis=1) )
-    
-    #xa_pert = xa_pert * ( rtps_alpha * (xf_std - xa_std) / xa_std + 1)
-    
-    #for i in range(0,nens) :
-    #    xa[:,i] = xa_pert[:,i] + xa_mean
-       
-    #Pa = np.cov( xa_pert ) 
-    
-    #hxamean = forward_operator( xa_mean )
-    #hxfmean = forward_operator( np.mean(xf,1) )
-    #OmB = yo - hxfmean
-    #OmA = yo - hxamean
+
     Pa=np.nan
     OmB=np.nan
     OmA=np.nan
@@ -1022,7 +1008,7 @@ def sinkhorn_ot( Xens , w , lam = 1.0 , stop_criteria = 1.0e-8 , max_iter = 5000
     
     tmp = np.max( abs( lnk ) )
     if tmp > 200.0 :
-        print('Warning: Lambda was reduced to keep filter stability')
+        #print('Warning: Lambda was reduced to keep filter stability')
         lnk = lnk * 200.0 / tmp
     
     #Nomralizamos la matriz K 
