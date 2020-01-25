@@ -81,7 +81,7 @@ P=None
 #Definimos una matriz Q para compensar los efectos no lineales y posibles errores de modelo.
 da_exp['Q']=0.01 * np.identity(3)
 #Definimos la inflacion multiplicativa
-da_exp['MultInf']=1.1   
+da_exp['MultInf']=1.01   
 
 
 #%%

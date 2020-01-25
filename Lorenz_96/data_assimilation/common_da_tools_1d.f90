@@ -339,7 +339,7 @@ END SUBROUTINE da_etkf
 !=======================================================================
 !  L-PF DA for the 1D model
 !=======================================================================
-SUBROUTINE da_lpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xamean,xamode,xavar,obs,obsloc,ofens,Rdiag,loc_scale,wa)
+SUBROUTINE da_letpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag,loc_scale,wa)
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
@@ -349,11 +349,8 @@ REAL(r_size),INTENT(IN)    :: xloc(nx)                   !Location of state grid
 REAL(r_size),INTENT(IN)    :: tloc(nt)                   !Location of state grid points (time)
 REAL(r_size),INTENT(IN)    :: obsloc(no,2)               !Location of obs (space , time)
 REAL(r_size),INTENT(IN)    :: xfens(nx,nens,nvar,nt)     !Forecast state ensemble  
-REAL(r_size),INTENT(OUT)   :: xamean(nx,nvar,nt)         !Analysis ensemble mean 
-REAL(r_size),INTENT(OUT)   :: xamode(nx,nvar,nt)         !Analysis ensemble mode
-REAL(r_size),INTENT(OUT)   :: xavar(nx,nvar,nt)          !Analysis ensemble standard deviation
+REAL(r_size),INTENT(OUT)   :: xaens(nx,nens,nvar,nt)     !Analysis state ensemble
 REAL(r_size),INTENT(OUT)   :: wa(nx,nens)                !Posterior weigths
-REAL(r_size)               :: wamax
 
 REAL(r_size),INTENT(IN)    :: ofens(no,nens)
 REAL(r_size)               :: dens(no,nens)              !Ensemble mean in observation space and innovation
@@ -371,6 +368,8 @@ REAL(r_size),INTENT(IN)    :: loc_scale(2)                                      
 REAL(r_size)               :: wamean(nens)                                         !Mean analysis weights
 REAL(r_size)               :: grid_loc(2)
 REAL(r_size)               :: work1d(nx)
+
+REAL(r_size)               :: W(nens,nens) !LETKF transformation matrix
 
 INTEGER                    :: ix,ie,ke,it,iv,io
 REAL(r_size)               :: dx , tmp
@@ -414,37 +413,24 @@ DO it = 1,nt
   
     !Compute analysis weights
  
-    CALL lpf_core( nens,no_loc,dens_loc(1:no_loc,:),Rdiag_loc(1:no_loc),   &
-                    Rwf_loc(1:no_loc),wa(ix,:) )
+    CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),xfens(ix,:,it),Rdiag_loc(1:no_loc),   &
+                    Rwf_loc(1:no_loc),wa(ix,:),W )
 
 
     !Compute the updated ensemble mean, std and mode.
     wamax=0.0e0
    
     DO ie=1,nens
-       xamean(ix,:,it)=xamean(ix,:,it) + wa(ix,ie)*xfens(ix,ie,:,it)
-       IF( wa(ix,ie) > wamax )THEN
-         wamax=wa(ix,ie)
-         xamode(ix,:,it)=xfens(ix,ie,:,it)
-       ENDIF
+       xaens(ix,:,ie,it) = 0.0d0
+       DO je=1,nens
+         xaens(ix,:,ie,it) =  xaens(ix,:,ie,it) + xfens(ix,:,je,it) * W(je,ie)
+       ENDDO
     ENDDO
-
-    xavar(ix,:,it) = 0.0e0
-    DO ie=1,nens
-       xavar(ix,:,it)=xavar(ix,:,it) + ( wa(ix,ie)*(xfens(ix,ie,:,it)-xamean(ix,:,it))**2 )
-    ENDDO
-
    
    ELSE  
 
     !We don't have observations for this grid point. We can do nothing :(
-    DO iv = 1 , nvar 
-      CALL com_mean( nens , xfens(ix,iv,:,it) , xamean(ix,iv,it) )
-      CALL com_stdev( nens , xfens(ix,iv,:,it) , xavar(ix,iv,it) )
-      xavar(ix,iv,it) = xavar(ix,iv,it) ** 2
-      xamode(ix,iv,it) = xamean(ix,iv,it)
-
-    END DO 
+    xaens(ix,:,:,it) = xfens(ix,:,ie,it) 
 
    ENDIF
 
@@ -452,7 +438,14 @@ DO it = 1,nt
 
 END DO  
 
-END SUBROUTINE da_lpf
+
+!Perform particle rejuvenation on the global ensemble.
+
+!TODO TODO TODO....
+
+
+
+END SUBROUTINE da_letpf
 
 !=======================================================================
 !  R-LOCALIZATION for 1D models
