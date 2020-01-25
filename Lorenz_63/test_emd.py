@@ -45,7 +45,7 @@ R=R0*np.identity(nobs)   #En esta formulacion asumimos que los errores
                                                        #en diferentes observaciones son todos iguales y 
 P0=10.0*np.array([[0.6 , 0.5 , 0.0 ],[0.5 , 0.6 , 0.0 ],[0.0 , 0.0 , 1.0 ]])
 
-lam = 0.5
+lam = 200
 
 x=np.copy(x0)
 for i in range(numtrans)  :
