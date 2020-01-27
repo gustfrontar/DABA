@@ -57,9 +57,19 @@ def forward_operator_integral_tl( state ) :
        return H
     
 def forward_operator_nonlinear( state )  :
+       local_state = np.copy(state)
        #Operador de las observaciones full que observa las 3 variables directamente
 
-       obs = np.power( state , 3 ) / 1000.0
+       #obs = np.power( state , 3 ) / 3000.0
+       #obs = np.power( state + 20 , 2 ) / 100.0
+       #state[0] = state[0] + 25.0
+       #state[1] = state[1] + 25.0
+       #state[2] = state[2] + 25.0
+       local_state = local_state + np.array([18,23,-3])
+       
+       #print(np.shape(state
+       local_state[ local_state < 0.0001 ] = 0.0001
+       obs = np.log( local_state ) *10.0
     
        return obs
 
@@ -67,7 +77,9 @@ def forward_operator_nonlinear_tl( state )  :
     
        #Tangente lineal del operador de las observaciones full que observa las 3 variables directamente
     
-       H=np.diag( 3.0*np.power(state,2)/1000.0 )
+       #H=np.diag( 3.0*np.power(state,2)/3000.0 )
+       #H = np.diag( 2.0 * (state+20) / 100.0 )
+       H = 10.0*np.diag(  1.0 / (state+30.0) )
     
        return H
 

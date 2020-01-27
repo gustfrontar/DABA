@@ -79,7 +79,7 @@ DAConf['Twin'] = False                               #When True, model configura
 DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.02,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.02,0.0,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation , RejuvParameter
 
 DAConf['LocScales']=np.array([0.5,-1.0])             #Localization scale is space and time (negative means no localization)
 
@@ -102,4 +102,6 @@ DAConf['ParameterLocalizationType']=1                #1-Global parameter (no loc
  
 DAConf['LocScalesP']=np.array([3.0,-1.0])            #To be used with ParameterLocalizationTypes 2 or 3.
 
+DAConf['NTemps']=1                                   #Number of temper iterations 
 
+DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF

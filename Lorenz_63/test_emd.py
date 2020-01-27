@@ -45,7 +45,7 @@ R=R0*np.identity(nobs)   #En esta formulacion asumimos que los errores
                                                        #en diferentes observaciones son todos iguales y 
 P0=10.0*np.array([[0.6 , 0.5 , 0.0 ],[0.5 , 0.6 , 0.0 ],[0.0 , 0.0 , 1.0 ]])
 
-lam = 200
+lam = 40.0
 
 x=np.copy(x0)
 for i in range(numtrans)  :
@@ -87,7 +87,7 @@ w = w / np.sum(w)
     
 #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
 #con un parametro de regularizacion lambda. 
-D = da.sinkhorn_ot( statefens , w , lam = lam )
+D = da.sinkhorn_ot_robust( statefens , w , lam = lam )
 M = np.power( cdist(np.transpose(statefens),np.transpose(statefens),'euclidean') , 2 ) 
 D2=np.transpose( ot.emd(np.ones(EnsSize)/EnsSize,w,M,numItermax=1.0e9,log=False) ) * EnsSize
 #D=np.transpose( ot.bregman.sinkhorn(np.ones(EnsSize)/EnsSize,w,M,0.1,method='sinkhorn') )

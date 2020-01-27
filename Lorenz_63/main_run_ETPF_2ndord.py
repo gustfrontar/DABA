@@ -14,8 +14,8 @@ import Lorenz_63_DA as da
 
 
 #Seleccionar aqui el operador de las observaciones que se desea usar.
-from Lorenz_63_ObsOperator import forward_operator_nonlinear    as forward_operator
-from Lorenz_63_ObsOperator import forward_operator_nonlinear_tl as forward_operator_tl
+from Lorenz_63_ObsOperator import forward_operator_full    as forward_operator
+from Lorenz_63_ObsOperator import forward_operator_full_tl as forward_operator_tl
 
 # Configuracion del sistema del modelo y del sistema de asimilacion.
 da_exp=dict()  #Este diccionario va a contener las variables importantes para nuestro experimento.
@@ -50,14 +50,14 @@ da_exp['numstep']=1000
 da_exp['x0']=np.array([ 8.0 , 0.0 , 30.0 ])      # Condiciones iniciales para el spin-up del nature run (no cambiar)
 da_exp['numtrans']=600                           # Tiempo de spin-up para generar el nature run (no cambiar)
 
-da_exp['ntemp']=5                               # Numero de temperados (1 recupera un ciclo de DA tradicional)
+da_exp['ntemp']=1                               # Numero de temperados (1 recupera un ciclo de DA tradicional)
 
 #------------------------------------------------------------
 # Configuracion del sistema de asimilacion
 #------------------------------------------------------------
 
 da_exp['dx0'] = np.array([ 5.0 , 5.0 , 5.0 ])       # Error inicial de la estimacion. 
-da_exp['R0']=3.0                                    # Varianza del error de las observaciones.
+da_exp['R0']=2.0                                    # Varianza del error de las observaciones.
 da_exp['bst']=8                                    # Cantidad de pasos de tiempo entre 2 asimilaciones.
 da_exp['forecast_length'] = 2                      # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                  # Numero de variables en el modelo de Lorenz (no tocar)
@@ -65,7 +65,7 @@ da_exp['nvars']=3                                  # Numero de variables en el m
 da_exp['EnsSize']=30                                 #Numero de miembros en el ensamble.
 
 da_exp['rtps_alpha'] = 0.0   #Relaxation to prior spread (Whitaker y Hamill 2012) # 0.6 es un buen parametro.
-da_exp['rejuv_param'] = 0.40  #Parametro de rejuvenecimiento (Acevedo y Reich 2017) #0.4 es un buen parametro
+da_exp['rejuv_param'] = 0.0  #Parametro de rejuvenecimiento (Acevedo y Reich 2017) #0.4 es un buen parametro
 da_exp['multinf']=1.0       #Inflacion multiplicativa (se aplica directamente a las perturbaciones)  #1.4 es un buen parametro.
 
 #Obtengo el numero de observaciones (lo obtengo directamente del forward operator)
@@ -84,7 +84,7 @@ P=10.0*np.array([[0.6 , 0.5 , 0.0 ],[0.5 , 0.6 , 0.0 ],[0.0 , 0.0 , 1.0 ]])
 #P=None
 
 #Definimos una matriz Q para compensar los efectos no lineales y posibles errores de modelo.
-da_exp['Q']=0.0 * np.identity(3)
+da_exp['Q']=0.4 * np.identity(3)
 
 #%%
 #------------------------------------------------------------
@@ -206,7 +206,7 @@ for i in tqdm( range(1,da_exp['numstep']) ) :
     rejuv_param_temp = da_exp['rejuv_param'] * np.sqrt(gamma)
     stateens = np.copy( da_exp['statefens'][i,:,:,0] )
     for itemp in range( da_exp['ntemp'])  :  
-        [ stateens , state , da_exp['Pa'][i,:,:] , da_exp['OmB'][i,:] , da_exp['OmA'][i,:] , da_exp['w'][i,:] , S ] =da.analysis_update_ETPF_2ndord(da_exp['yobs'][i,:], stateens ,forward_operator, Rtemp , rejuv_param_temp )
+        [ stateens , state , da_exp['Pa'][i,:,:] , da_exp['OmB'][i,:] , da_exp['OmA'][i,:] , da_exp['w'][i,:] , S ] =da.analysis_update_ETPF_2ndord(da_exp['yobs'][i,:], stateens ,forward_operator, Rtemp , rejuv_param_temp , da_exp['rtps_alpha'] )
     da_exp['stateaens'][i,:,:] = np.copy( stateens )
     da_exp['statea'][i,:] = np.copy( state )
 
@@ -240,7 +240,7 @@ da.obs_evolution( da_exp , 1 , 100 , forward_operator )
 da.error_evolution( da_exp , 1 , 100 )  
 
 #Graficamos la evolucion del error total para el guess y para el analisis
-da.rmse_evolution( da_exp , 1 , 100 )  
+da.rmse_evolution( da_exp , 1 , 5000 )  
 
 #Graficamos la evolucion del RMSE
 da.forecast_error_plot( da_exp ) 

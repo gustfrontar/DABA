@@ -12,8 +12,8 @@ import Lorenz_63 as model
 import Lorenz_63_DA as da
 
 #Seleccionar aqui el operador de las observaciones que se desea usar.
-from Lorenz_63_ObsOperator import forward_operator_onlyx    as forward_operator
-from Lorenz_63_ObsOperator import forward_operator_onlyx_tl as forward_operator_tl
+from Lorenz_63_ObsOperator import forward_operator_nonlinear    as forward_operator
+from Lorenz_63_ObsOperator import forward_operator_nonlinear_tl as forward_operator_tl
 
 # Configuracion del sistema del modelo y del sistema de asimilacion.
 da_exp=dict()  #Este diccionario va a contener las variables importantes para nuestro experimento.
@@ -47,7 +47,7 @@ da_exp['pim']=np.array([a,r,b])
 #------------------------------------------------------------
 
 da_exp['dt']=0.01            # Paso de tiempo para la integracion del modelo de Lorenz
-da_exp['numstep']=100       # Cantidad de ciclos de asimilacion.
+da_exp['numstep']=1000       # Cantidad de ciclos de asimilacion.
 da_exp['x0']=np.array([ 8.0 , 0.0 , 30.0 ])      # Condiciones iniciales para el spin-up del nature run (no cambiar)
 da_exp['numtrans']=600                           # Tiempo de spin-up para generar el nature run (no cambiar)
 
@@ -56,7 +56,7 @@ da_exp['numtrans']=600                           # Tiempo de spin-up para genera
 #------------------------------------------------------------
 
 da_exp['dx0'] = np.array([ 5.0 , 5.0 , 5.0 ])       # Error inicial de la estimacion. 
-da_exp['R0']=8.0                                    # Varianza del error de las observaciones.
+da_exp['R0']=3.0                                    # Varianza del error de las observaciones.
 da_exp['bst']=12                                     # Cantidad de pasos de tiempo entre 2 asimilaciones.
 da_exp['forecast_length'] = 2                       # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                   # Numero de variables en el modelo de Lorenz (no tocar)
@@ -79,9 +79,9 @@ da_exp['P_to_file']=True                               #Si vamos a estimar y gua
 P=None
 
 #Definimos una matriz Q para compensar los efectos no lineales y posibles errores de modelo.
-da_exp['Q']=0.01 * np.identity(3)
+da_exp['Q']=0.2 * np.identity(3)
 #Definimos la inflacion multiplicativa
-da_exp['MultInf']=1.01   
+da_exp['MultInf']=1.00   
 
 
 #%%
@@ -227,7 +227,7 @@ da.obs_evolution( da_exp , 1 , 100 , forward_operator )
 da.error_evolution( da_exp , 1 , 100 )  
 
 #Graficamos la evolucion del error total para el guess y para el analisis
-da.rmse_evolution( da_exp , 1 , 100 )  
+da.rmse_evolution( da_exp , 1 , 1000 )  
 
 #Graficamos la evolucion del RMSE
 da.forecast_error_plot( da_exp ) 
