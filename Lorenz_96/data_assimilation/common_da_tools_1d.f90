@@ -337,9 +337,9 @@ ENDIF
 END SUBROUTINE da_etkf
 
 !=======================================================================
-!  L-PF DA for the 1D model
+!  L-ETPF DA for the 1D model
 !=======================================================================
-SUBROUTINE da_letpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag,loc_scale,wa)
+SUBROUTINE da_letpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag,loc_scale,rejv_param,wa)
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
@@ -351,6 +351,11 @@ REAL(r_size),INTENT(IN)    :: obsloc(no,2)               !Location of obs (space
 REAL(r_size),INTENT(IN)    :: xfens(nx,nens,nvar,nt)     !Forecast state ensemble  
 REAL(r_size),INTENT(OUT)   :: xaens(nx,nens,nvar,nt)     !Analysis state ensemble
 REAL(r_size),INTENT(OUT)   :: wa(nx,nens)                !Posterior weigths
+
+
+REAL(r_size)               :: xfpert(nx,nens,nvar,nt)    !State and parameter forecast perturbations
+REAL(r_size)               :: xfmean(nx,nvar,nt)         !State and parameter ensemble mean (forecast)
+REAL(r_size)               :: random_rejuv_matrix(ne,ne) !Random coefficients for particle rejuvenation.
 
 REAL(r_size),INTENT(IN)    :: ofens(no,nens)
 REAL(r_size)               :: dens(no,nens)              !Ensemble mean in observation space and innovation
@@ -364,12 +369,14 @@ REAL(r_size)               :: Rwf_loc(no)                                       
 REAL(r_size)               :: d_loc(no)                                            !Localized observation departure.
 INTEGER                    :: no_loc                                               !Number of observations in the local domain.
 REAL(r_size),INTENT(IN)    :: loc_scale(2)                                         !Localization scales (space,time)
+REAL(r_size),INTENT(IN)    :: rejuv_param
 
 REAL(r_size)               :: wamean(nens)                                         !Mean analysis weights
 REAL(r_size)               :: grid_loc(2)
 REAL(r_size)               :: work1d(nx)
 
 REAL(r_size)               :: W(nens,nens) !LETKF transformation matrix
+REAL(r_size)               :: inf_perts(nx,nens,nvar,nt) , tmp_mean
 
 INTEGER                    :: ix,ie,ke,it,iv,io
 REAL(r_size)               :: dx , tmp
@@ -382,6 +389,31 @@ d     =0.0d0
 wa=0.0d0
 
 dx=xloc(2)-xloc(1)    !Assuming regular grid
+
+
+!Initialization
+xfmean=0.0
+xfpert=0.0
+
+!Compute forecast ensemble mean and perturbations.
+
+DO it = 1,nt
+
+ DO ix = 1,nx
+
+  DO iv = 1,nvar
+
+   CALL com_mean( nens,xfens(ix,:,iv,it),xfmean(ix,iv,it) )
+
+   xfpert(ix,:,iv,it) = xfens(ix,:,iv,it) - xfmean(ix,iv,it)
+
+  END DO
+
+ END DO
+
+END DO
+
+
 
 !Compute mean departure and HXf
 
@@ -412,8 +444,9 @@ DO it = 1,nt
 
   
     !Compute analysis weights
+    CALL get_distance_matrix( ne , nvar , nt , xfens(ix,:,:,it) , m )
  
-    CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),xfens(ix,:,it),Rdiag_loc(1:no_loc),   &
+    CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),m,Rdiag_loc(1:no_loc),   &
                     Rwf_loc(1:no_loc),wa(ix,:),W )
 
 
@@ -438,11 +471,29 @@ DO it = 1,nt
 
 END DO  
 
+IF ( rejuv_param ) THEN
+   inf_perts = 0.0d0
+   !Perform particle rejuvenation on the global ensemble.a
+   DO i = 1,ne 
+      CALL com_randn( ne , random_rejuv_matrix(i,:) )
+   ENDDO
+   random_rejuv_matrix = rejuv_param * random_rejuv_matrix / ( REAL(ne,r_size) ** 0.5 )
 
-!Perform particle rejuvenation on the global ensemble.
-
-!TODO TODO TODO....
-
+   DO i = 1,ne
+      DO j = 1,ne
+         inf_perts(:,i,:,:) = inf_perts(:,i,:,:) + xf_perts(:,j,:,:)*random_rejuv_matrix(i,j)
+      ENDDO
+   ENDDO       
+   !Recenter the perturbations around the ETPF mean.
+   DO i = 1,nx
+     DO ivar = 1,nvar
+       DO it = 1,nt
+         tmp_mean = SUM( inf_perts(i,:,ivar,it) )/( REAL(ne,r_size) )
+         inf_perts(i,:,ivar,it) = inf_perts(i,:,ivar,it) - tmp_mean
+       ENDDO
+     ENDDO
+   ENDDO
+ENDIF
 
 
 END SUBROUTINE da_letpf

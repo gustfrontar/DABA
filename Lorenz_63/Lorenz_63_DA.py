@@ -517,7 +517,7 @@ def analysis_update_EMD( yo , xf , forward_operator , R , rtps_alpha , rejuv_par
     return xa , xa_mean , Pa , OmB , OmA , w , S  
 
 
-def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rejuv_param , rejuv_perts = np.zeros(1) , rejuv_rand = np.zeros(1) )   :
+def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rejuv_param , rtps_alpha , inf_perts = np.zeros(1) , rejuv_rand = np.zeros(1) )   :
     #from emd import emd
     from scipy.spatial.distance import cdist
     import ot
@@ -551,8 +551,8 @@ def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rejuv_param , 
     
     #Rejuvenetion can be introduced using the same ensemble particles or an independent
     #set of particles (like in additive inflation). If rejuv_perts is None then ensemble perturbations will be used.
-    if rejuv_perts.all() == 0  :
-        rejuv_perts = xf_pert 
+    if inf_perts.all() == 0  :
+        inf_perts = xf_pert 
     if rejuv_rand.all() == 0 :
         rejuv_rand = np.random.randn(nens,nens) / np.sqrt(nens-1)
     
@@ -581,17 +581,29 @@ def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rejuv_param , 
     #Correct the transformation matrix to ensure a second order exact transformation.
     D = D + delta
     
-    #print('Delta',delta)
+    xa = np.matmul( xf , D ) 
     
+    if ( rejuv_param > 0.0 ) :
+       rejuv_perts = rejuv_param * np.dot( inf_perts , rejuv_rand )
+       tmp_mean = np.mean(rejuv_perts,1)
+       for iens in range( nens ) :
+          rejuv_perts[:,iens] = rejuv_perts[:,iens] - tmp_mean
     
-    #xa=np.zeros(np.shape(xf))
-
+       xa = xa + rejuv_perts 
     
-    #Aplico en un solo paso la transformacion lineal y el rejuvenecimiento.
-    
-    xa = np.matmul( xf , D ) + rejuv_param * np.dot( rejuv_perts , rejuv_rand ) 
-        
     [xa_mean , xa_pert] = mean_and_perts( xa )
+    
+      
+    #RTPS inflation.
+    if rtps_alpha > 0.0 :
+       
+       xa_std = np.sum( np.std(xa_pert,axis=1) )
+       inf_std = np.sum( np.std(inf_perts,axis=1) )
+    
+       xa_pert = xa_pert * ( rtps_alpha * (inf_std - xa_std) / xa_std + 1)
+    
+       for i in range(0,nens) :
+          xa[:,i] = xa_pert[:,i] + xa_mean
     
 
     Pa=np.nan
@@ -1067,6 +1079,125 @@ def sinkhorn_ot( Xens , w , lam = 1.0 , stop_criteria = 1.0e-8 , max_iter = 5000
 
     
     return D
+
+
+def sinkhorn_ot_robust( Xens , w , lam = 50.0 , stop_criteria = 1.0e-6 , max_iter = 5000 ):
+    #Solves the Sinkhorn optimal transport problem following Acevedo et al. 2017 SIAM
+    #Inputs
+    #Xens is the ensemble matrix. Each column is an ensemble member, each row is 
+    #a model variable.
+    #w is the weigth vector. w[i] is the weigth corresponding to the ensemble member
+    #stored in the i-th column of Xens
+    #lam is lambda regularization factor (large lambda leads to ETPF like transformations
+    #while small lamda leads to NETF like transformations with optimal rotation)
+    #stop_criteria is the convergence criteria for the iterative algorithm leading to the solution
+    #of the optimal transport problem.
+    #max_iter is the maximum number of iterations to be performed in the iterative algorithm.
+    from scipy.spatial.distance import cdist
+    
+    m = np.shape(Xens)[1]
+    v = np.shape(Xens)[0]
+    
+    #Construct matrix K (m x m)
+    #Note currently no normalization is applied in the computation of matrix K
+    lnv=np.zeros((m))
+    lnu=np.zeros((m))
+    lnd=np.ones((m,m))
+    #K=np.zeros((m,m))
+    ones = np.ones((m,1))
+    sqdist = np.power( cdist(np.transpose(Xens),np.transpose(Xens),'euclidean') ,2)
+    
+    #print(np.max(sqdist))
+    
+    lnk =  -lam * ( sqdist )
+    
+    #tmp = np.max( abs( lnk ) )
+    #if tmp > 200.0 :
+    #    #print('Warning: Lambda was reduced to keep filter stability')
+    #    lnk = lnk * 200.0 / tmp
+    
+    #Nomralizamos la matriz K 
+    #lnk = lnk - np.min(lnk) -lam
+    
+    #K=np.exp(lnk) 
+    
+    #print(K)
+    #K= K * ( np.exp( -lam ) / np.min(K) )
+    
+    #print(K)
+    #print( np.max( -(1/lam) *np.log(K) ) )  
+    
+    #for i in range(m) :
+    #    for j in range(m) :
+    #        diff = np.sum( np.power( Xens[:,i] - Xens[:,j] , 2 ) )
+    #        K[i,j]=np.exp( -lam * diff )
+        
+    it_num = 0
+    while( True )  :
+        it_num = it_num + 1
+        #print( it_num )
+        for i in range(m) :
+            tmp = log_sum_vec( lnk[i,:] + lnv )
+            lnu[i] = np.log( m * w[i] ) - tmp 
+            #u[i] = m * w[i] / np.dot( K[i,:] , v ) 
+        for i in range(m) :
+            tmp = log_sum_vec( lnk[i,:] + lnu )
+            lnv[i] = -tmp 
+            #v[i] = 1.0 / np.dot( K[i,:] , u ) 
+
+
+        if np.mod( it_num , 10 ) == 0 :
+            
+           for i in range(m) :
+              for j in range(m)  :
+                lnd[i,j] = lnu[i] + lnk[i,j] + lnv[j]
+           D = np.exp(lnd)
+           #D = np.matmul( np.matmul( np.diag( u ) , K ) , np.diag( v ) )  
+        
+           w_tmp = np.squeeze( np.matmul(  (1/m) * D , ones ) )
+        
+           w_diff = w_tmp - w 
+        
+           metric = np.sqrt( np.dot( w_diff , w_diff ) )
+     
+           #print( metric )
+        
+           if  metric < stop_criteria  :
+              break
+           if np.isnan( metric ):
+              break
+            
+           it_num = it_num + 1
+           if( it_num == max_iter ) :
+              print('Warning: Iteration limit reached')
+              break
+    w_sum = np.zeros((m,1))
+    #La siguiente linea no esta igual al paper pero me parece que hay un error en el trabajo
+    #en la ecuacion 5.7. Poniendo los terminos como esta a continuacion se verifican las 
+    #restricciones que indica el paper, pero si se usa lo que dice la ecuacion 5.7 esas restricciones
+    #no se cumplen y el filtro diverge.
+    w_sum[:,0] = w_sum[:,0] - w_tmp + w 
+    
+    #D = np.matmul( np.matmul( np.diag( u ) , K ) , np.diag( v ) ) + np.matmul( w_sum , np.transpose(ones) )
+
+    #print( (1.0/m)*np.matmul( D, ones ) )
+    #print( w )
+
+    
+    return D
+
+
+
+def log_sum_vec( logvec ) :
+    #Esta funcion devuelve el logaritmo de la suma de n elementos a partir de los logaritmos de dichos elementos.
+    #La idea es poder implementar un algoritmo robusto para el algoritmo iterativo de Sinkhorn.
+    #logvec=np.flip( np.sort(logvec) )
+    
+    
+    #log_sum = logvec[0] + np.log( 1.0 + np.sum( np.exp( logvec[1:] - logvec[0]  ) ) )
+    log_sum = np.max(logvec) + np.log( np.sum( np.exp( logvec - np.max(logvec)  ) ) )
+    
+    return log_sum
 
 def riccati_solver( D , w_in , dt = 0.1 , stop_criteria = 1.0e-3 , iteration_limit = 5000 ) :
     #Esta funcion resuelve 

@@ -103,8 +103,8 @@ def da_cycle_tempered_hybrid( da_exp ) :
     da_exp['w'][0,:] = np.ones( da_exp['EnsSize'] ) * ( 1.0 / da_exp['EnsSize'] )
     
     
-    for i in tqdm( range(1,da_exp['numstep']) ) :
-    #for i in range(1,da_exp['numstep']) :
+    #for i in tqdm( range(1,da_exp['numstep']) ) :
+    for i in range(1,da_exp['numstep']) :
         #print(i)
         
         #Vamos a hacer el pronostico de x con el modelo no lineal y el
@@ -129,6 +129,7 @@ def da_cycle_tempered_hybrid( da_exp ) :
         for k in range(da_exp['forecast_length']) :
             if ( i + k < da_exp['numstep'] ) : 
                [ mean , pert ] = da.mean_and_perts( da_exp['statefens'][i+k,:,:,k] )
+               #da_exp['P'][i+k,:,:,k] = np.cov( pert )
                da_exp['statef'][i+k,:,k]=mean
     
         #Reemplazamos la llamada a la funcion de asimilacion por un ciclo que se repite tantas veces
@@ -137,23 +138,20 @@ def da_cycle_tempered_hybrid( da_exp ) :
         Rtemp=da_exp['R'] / gamma
         rejuv_param_temp = da_exp['rejuv_param'] * gamma
         stateens = np.copy( da_exp['statefens'][i,:,:,0] )
-        rejuv_rand = np.random.randn( da_exp['EnsSize'] , da_exp['EnsSize'] ) / np.sqrt( da_exp['EnsSize'] - 1 )
         for itemp in range( da_exp['ntemp'])  :  
+    
+            if da_exp['bridge'] > 0 :  #If not then ETPF will not be performed
+                Rtemp_ETPF = Rtemp / ( da_exp['bridge'] )
+                rejuv_param_temp = da_exp['rejuv_param'] * gamma * da_exp['bridge']
+                [ stateens , state , null , null , null , da_exp['w'][i,:] , S ] =da.analysis_update_ETPF_2ndord(da_exp['yobs'][i,:], stateens ,forward_operator, Rtemp_ETPF , rejuv_param_temp , da_exp['rtps_alpha']  )
     
             if da_exp['bridge'] < 1 :  #If not then ETKF will not be performed
                 multinf_temp = np.power ( da_exp['multinf'] , gamma * ( 1 - da_exp['bridge'] ) ) 
                 Rtemp_ETKF = Rtemp / ( 1.0 - da_exp['bridge'] ) 
-                [ stateens , state , _ , _ , _ ] =da.analysis_update_ETKF(da_exp['yobs'][i,:], stateens , forward_operator , Rtemp_ETKF , multinf_temp )
-            if da_exp['bridge'] > 0 :  #If not then ETPF will not be performed
-                Rtemp_ETPF = Rtemp / ( da_exp['bridge'] )
-                rejuv_param_temp = da_exp['rejuv_param'] * np.sqrt( gamma ) * da_exp['bridge'] 
-                [ stateens , state , _ , _ , _ , da_exp['w'][i,:] , S ] =da.analysis_update_ETPF_2ndord(da_exp['yobs'][i,:], stateens ,forward_operator, Rtemp_ETPF , rejuv_param_temp , rejuv_perts = da_exp['statefens'][i,:,:,0] )
+                [ stateens , state , null , null , null ] =da.analysis_update_ETKF(da_exp['yobs'][i,:], stateens , forward_operator , Rtemp_ETKF , multinf_temp )
     
         da_exp['stateaens'][i,:,:] = np.copy( stateens )
         da_exp['statea'][i,:] = np.copy( state )
-    
-    da_exp['stateastd'] = np.std( da_exp['stateaens'] , 2 )
-    da_exp['statefstd'] = np.std( da_exp['statefens'] , 2 )
     
     #%%
     #------------------------------------------------------------
