@@ -2,3 +2,7 @@
 *.png
 *.pkl
 *.npz
+*.txt
+*.pyc
+*.so
+
