@@ -60,7 +60,7 @@ NatureConf['RunSave']=True                         #Save nature run
 NatureConf['RunPlot']=True                         #Plot nature run
 
 NatureConf['SPLength']=40                          #Spin up length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
-NatureConf['Length']=40                            #Nature run length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
+NatureConf['Length']=40                           #Nature run length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
 
 #=================================================================
 # OBSERVATION CONFIGURATION SECTION : 

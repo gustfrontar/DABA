@@ -143,7 +143,7 @@ DO it = 1,nt
     ELSE IF( inf_coefs(4) /= 0.0d0) THEN                                                    !EPES
       CALL weight_EPES(nens,inf_coefs(4),wa,wainf)
     ELSE IF( inf_coefs(5) /= 0.0d0) THEN                                                    !TODO: Code additive inflation
-      write(*,*)"[Warning]: Additive inflation not implemented for LETKF yet"
+      !write(*,*)"[Warning]: Additive inflation not implemented for LETKF yet"
     ELSE
       wainf = wa                                                                            !GYL
     END IF                                                                                  !GYL
@@ -223,7 +223,7 @@ REAL(r_size),INTENT(IN)    :: obs(no)                    !Observations
 
 REAL(r_size),INTENT(IN)    :: Rdiag(no)                  !Diagonal of observation error covariance matrix.
 
-REAL(r_size),INTENT(INOUT) :: inf_coefs(5)               !Mult inf, RTPS , RTPP , EPES, Additive inflation (State variables)
+REAL(r_size),INTENT(INOUT) :: inf_coefs(6)               !Mult inf, RTPS , RTPP , EPES, Additive inflation (State variables)
 
 REAL(r_size)               :: xfpert(nx,nens,nvar,nt)    !State and parameter forecast perturbations
 REAL(r_size)               :: xfmean(nx,nvar,nt)         !State and parameter ensemble mean (forecast)
@@ -339,7 +339,7 @@ END SUBROUTINE da_etkf
 !=======================================================================
 !  L-ETPF DA for the 1D model
 !=======================================================================
-SUBROUTINE da_letpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag,loc_scale,rejv_param,wa)
+SUBROUTINE da_letpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag,loc_scale,rejuv_param,wa)
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
@@ -355,7 +355,8 @@ REAL(r_size),INTENT(OUT)   :: wa(nx,nens)                !Posterior weigths
 
 REAL(r_size)               :: xfpert(nx,nens,nvar,nt)    !State and parameter forecast perturbations
 REAL(r_size)               :: xfmean(nx,nvar,nt)         !State and parameter ensemble mean (forecast)
-REAL(r_size)               :: random_rejuv_matrix(ne,ne) !Random coefficients for particle rejuvenation.
+REAL(r_size)               :: random_rejuv_matrix(nens,nens) !Random coefficients for particle rejuvenation.
+REAL(r_size)               :: m(nens,nens)                   !Distance matrix
 
 REAL(r_size),INTENT(IN)    :: ofens(no,nens)
 REAL(r_size)               :: dens(no,nens)              !Ensemble mean in observation space and innovation
@@ -376,15 +377,12 @@ REAL(r_size)               :: grid_loc(2)
 REAL(r_size)               :: work1d(nx)
 
 REAL(r_size)               :: W(nens,nens) !LETKF transformation matrix
-REAL(r_size)               :: inf_perts(nx,nens,nvar,nt) , tmp_mean
+REAL(r_size)               :: infpert(nx,nens,nvar,nt) , tmp_mean
 
-INTEGER                    :: ix,ie,ke,it,iv,io
+INTEGER                    :: ix,ie,je,ke,it,iv,io
 REAL(r_size)               :: dx , tmp
 
 !Initialization
-xamean=0.0d0
-xavar =0.0d0
-xamode=0.0d0 
 d     =0.0d0
 wa=0.0d0
 
@@ -444,26 +442,27 @@ DO it = 1,nt
 
   
     !Compute analysis weights
-    CALL get_distance_matrix( ne , nvar , nt , xfens(ix,:,:,it) , m )
+    CALL get_distance_matrix( nens , 1 , nvar , 1 , xfens(ix,:,:,it) , m )
  
     CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),m,Rdiag_loc(1:no_loc),   &
                     Rwf_loc(1:no_loc),wa(ix,:),W )
 
 
     !Compute the updated ensemble mean, std and mode.
-    wamax=0.0e0
-   
-    DO ie=1,nens
-       xaens(ix,:,ie,it) = 0.0d0
-       DO je=1,nens
-         xaens(ix,:,ie,it) =  xaens(ix,:,ie,it) + xfens(ix,:,je,it) * W(je,ie)
-       ENDDO
+    DO iv =1,nvar
+       xaens(ix,:,iv,it) = MATMUL( xfens(ix,:,iv,it) , W )
     ENDDO
+    !DO ie=1,nens
+    !   xaens(ix,:,ie,it) = 0.0d0
+    !   DO je=1,nens
+    !     xaens(ix,:,ie,it) =  xaens(ix,:,ie,it) + xfens(ix,:,je,it) * W(je,ie)
+    !   ENDDO
+    !ENDDO
    
    ELSE  
 
     !We don't have observations for this grid point. We can do nothing :(
-    xaens(ix,:,:,it) = xfens(ix,:,ie,it) 
+    xaens(ix,:,:,it) = xfens(ix,:,:,it) 
 
    ENDIF
 
@@ -471,30 +470,33 @@ DO it = 1,nt
 
 END DO  
 
-IF ( rejuv_param ) THEN
-   inf_perts = 0.0d0
+IF ( rejuv_param >= 0.0d0 ) THEN
+   infpert = 0.0d0
    !Perform particle rejuvenation on the global ensemble.a
-   DO i = 1,ne 
-      CALL com_randn( ne , random_rejuv_matrix(i,:) )
+   DO ie = 1,nens
+      CALL com_randn( nens , random_rejuv_matrix(ie,:) , 10 )
    ENDDO
-   random_rejuv_matrix = rejuv_param * random_rejuv_matrix / ( REAL(ne,r_size) ** 0.5 )
+   random_rejuv_matrix = rejuv_param * random_rejuv_matrix / ( REAL(nens,r_size) ** 0.5 )
 
-   DO i = 1,ne
-      DO j = 1,ne
-         inf_perts(:,i,:,:) = inf_perts(:,i,:,:) + xf_perts(:,j,:,:)*random_rejuv_matrix(i,j)
+   DO ie = 1,nens
+      DO je = 1,nens
+         infpert(:,ie,:,:) = infpert(:,ie,:,:) +  &
+                               xfpert(:,je,:,:)*random_rejuv_matrix(ie,je)
       ENDDO
    ENDDO       
    !Recenter the perturbations around the ETPF mean.
-   DO i = 1,nx
-     DO ivar = 1,nvar
+   DO ix = 1,nx
+     DO iv = 1,nvar
        DO it = 1,nt
-         tmp_mean = SUM( inf_perts(i,:,ivar,it) )/( REAL(ne,r_size) )
-         inf_perts(i,:,ivar,it) = inf_perts(i,:,ivar,it) - tmp_mean
+         tmp_mean = SUM( infpert(ix,:,iv,it) )/( REAL(nens,r_size) )
+         infpert(ix,:,iv,it) = infpert(ix,:,iv,it) - tmp_mean
        ENDDO
      ENDDO
    ENDDO
-ENDIF
 
+   !Add the rejuvenation perturbations to the ensemble.
+   xaens = xaens + infpert
+ENDIF
 
 END SUBROUTINE da_letpf
 
