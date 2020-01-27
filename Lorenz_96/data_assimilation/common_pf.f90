@@ -9,10 +9,12 @@ MODULE common_pf
 
   IMPLICIT NONE
 
-  REAL(r_size),PARAMETER  :: stop_threshold = 1.0e-8  !Stoping threshold for Sinkhorn iteration
-  INTEGER     ,PARAMETER  :: max_iter = 10000         !Max number of iterations for Sinkhorn iteration
+  REAL(r_size),PARAMETER  :: stop_threshold_sinkhorn = 1.0e-8  !Stoping threshold for Sinkhorn iteration
+  INTEGER     ,PARAMETER  :: max_iter_sinkhorn = 10000         !Max number of iterations for Sinkhorn iteration
+  REAL(r_size),PARAMETER  :: stop_threshold_riccati  = 1.0e-3  !Stoping threshold for Riccati equation solver
+  INTEGER     ,PARAMETER  :: max_iter_riccati  = 10000         !Max number of iterations for Riccati solver
   REAL(r_size),PARAMETER  :: lambda = 40.0            !Inverse of regularization parameter in Sinkhorn iteration
-
+  REAL(r_size),PARAMETER  :: dt=0.1                            !Integration time step in Riccati solver.
 
   PUBLIC
 
@@ -64,8 +66,9 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,xens,rdiag,rloc,wa,W)
   !Get the distance matrix (the cost matrix for the optimal transport problem)
   CALL get_distance_matrix( ne , ndim , xens , m ) 
   !Solve the regularized optimal transport problem.
-  CALL sinkhorn_ot( ne , wa , wt , m , W , lambda , stop_threshold , max_iter )
-   
+  CALL sinkhorn_ot( ne , wa , wt , m , W , lambda , stop_threshold_sinkhorn , max_iter_sinkhorn )
+  !Obtain the correction so that the method becomes accuarate in the variance.
+  CALL riccati_solver( ne , W , wa , delta , stop_threshold_riccati , max_iter_riccati )  
   
   RETURN
 END SUBROUTINE letpf_core
@@ -167,6 +170,42 @@ DO i=1,ne
 ENDDO    
 
 END SUBROUTINE sinkhorn_ot
+
+SUBROUTINE riccati_solver( ne , D , wa , delta , stop_threshold , max_iter )
+IMPLICIT NONE
+INTEGER, INTENT(IN) :: ne , max_iter
+REAL(r_size), INTENT(IN) :: D(ne,ne) , w_in(ne) , stop_threshold
+REAL(r_size), INTENT(OUT) :: delta(ne,ne)
+
+REAL(r_size) :: w(ne,1) , ones(ne,1) , W(ne,ne) , B(ne,ne) , A(ne,ne) , delta_old(ne,ne)
+INTEGER      :: i , it_num
+
+ones = 1.0d0
+
+delta = 0.0d0
+
+W= 0.0d0
+
+DO i = 1,ne
+  W(i,i)=wa(i)
+ENDDO
+
+B = D - MATMUL( w , TRANSPOSE( ones ) )
+A = REAL(ne,r_size) * ( W - MATMUL( w , TRANSPOSE(w) ) - MATMUL( B , TRANSPOSE(B) )    
+    
+it_num = 0 
+DO  !Continue iteration until stoping criteria is met.
+  delta_old = delta 
+  delta = delta + dt * ( MATMUL( B , delta ) - MATMUL( delta , TRANSPOSE(B) ) + A - MATMUL( delta , delta ) )
+  it_num = it_num + 1
+  IF( MAXVAL( delta - delta_old ) < stop_criteria )THEN
+    EXIT
+  ENDIF  
+  IF( it_num > max_iter ) THEN
+    WRITE(*,*)"Warning: Iteration limit reached in Riccati Solver"
+    EXIT
+  ENDIF
+ENDDO 
 
 
 END MODULE common_pf

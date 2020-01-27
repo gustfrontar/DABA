@@ -1007,6 +1007,7 @@ def sinkhorn_ot( Xens , w , lam = 200.0 , stop_criteria = 1.0e-8 , max_iter = 50
     
     lnk =  -lam * ( sqdist )
     
+    #print(np.min(lnk))
     tmp = np.max( abs( lnk ) )
     if tmp > 200.0 :
         #print('Warning: Lambda was reduced to keep filter stability')
@@ -1016,6 +1017,7 @@ def sinkhorn_ot( Xens , w , lam = 200.0 , stop_criteria = 1.0e-8 , max_iter = 50
     #lnk = lnk - np.min(lnk) -lam
     
     K=np.exp(lnk) 
+    print(K)
     
     #print(K)
     #K= K * ( np.exp( -lam ) / np.min(K) )
