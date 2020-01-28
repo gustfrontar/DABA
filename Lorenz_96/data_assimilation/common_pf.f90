@@ -75,7 +75,6 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,rloc,wa,W)
   CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta )
 
   W = W + delta
-   
   
   RETURN
 END SUBROUTINE letpf_core
@@ -240,8 +239,12 @@ ENDDO
 
 END SUBROUTINE sinkhorn_ot
 
+<<<<<<< HEAD
 
 SUBROUTINE sinkhorn_ot_robust( ne , wi , wt , m , W , lambda_reg , stop_threshold , max_iter )
+=======
+SUBROUTINE sinkhorn_ot_robust( ne , wi , wt , m , W , lambda , stop_threshold , max_iter )
+>>>>>>> 47fb06f7583ead82604f1ea21225864d2f8a74af
 IMPLICIT NONE
 INTEGER     ,INTENT(IN) :: ne
 REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weigths.

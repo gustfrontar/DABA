@@ -989,7 +989,7 @@ def resample(weights):
 
     return indexes
 
-def sinkhorn_ot( Xens , w , lam = 1.0 , stop_criteria = 1.0e-8 , max_iter = 5000 ):
+def sinkhorn_ot( Xens , w , lam = 200.0 , stop_criteria = 1.0e-8 , max_iter = 5000 ):
     #Solves the Sinkhorn optimal transport problem following Acevedo et al. 2017 SIAM
     #Inputs
     #Xens is the ensemble matrix. Each column is an ensemble member, each row is 
@@ -1015,9 +1015,11 @@ def sinkhorn_ot( Xens , w , lam = 1.0 , stop_criteria = 1.0e-8 , max_iter = 5000
     sqdist = np.power( cdist(np.transpose(Xens),np.transpose(Xens),'euclidean') ,2)
     
     #print(np.max(sqdist))
+    #sqdist = sqdist / np.max(sqdist)
     
     lnk =  -lam * ( sqdist )
     
+    #print(np.min(lnk))
     tmp = np.max( abs( lnk ) )
     if tmp > 200.0 :
         #print('Warning: Lambda was reduced to keep filter stability')
@@ -1027,7 +1029,6 @@ def sinkhorn_ot( Xens , w , lam = 1.0 , stop_criteria = 1.0e-8 , max_iter = 5000
     #lnk = lnk - np.min(lnk) -lam
     
     K=np.exp(lnk) 
- 
     #print(K)
     #K= K * ( np.exp( -lam ) / np.min(K) )
     
