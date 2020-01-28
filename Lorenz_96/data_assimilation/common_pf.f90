@@ -68,8 +68,8 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,rloc,wa,W)
   wt = 1.0 / REAL( ne , r_size )  !Compute the target weigths (equal weigths in this case)
 
   !Solve the regularized optimal transport problem.
-  CALL sinkhorn_ot_robust( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
-  !CALL sinkhorn_ot( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
+  !CALL sinkhorn_ot_robust( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
+  CALL sinkhorn_ot( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
 
   !Call Riccati solver
   CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta )
@@ -207,7 +207,7 @@ DO !This loop last until termination conditions mets
    v(i) = 1.0d0 / tmp_val
   ENDDO
   !Check stoping criteria once every 10 time steps
-  IF( mod( it_num , 1 ) .eq. 0 )THEN
+  IF( mod( it_num , 10 ) .eq. 0 )THEN
     W = K
     DO i = 1,ne 
       W(:,i)=W(:,i)*v(i)
@@ -239,12 +239,7 @@ ENDDO
 
 END SUBROUTINE sinkhorn_ot
 
-<<<<<<< HEAD
-
 SUBROUTINE sinkhorn_ot_robust( ne , wi , wt , m , W , lambda_reg , stop_threshold , max_iter )
-=======
-SUBROUTINE sinkhorn_ot_robust( ne , wi , wt , m , W , lambda , stop_threshold , max_iter )
->>>>>>> 47fb06f7583ead82604f1ea21225864d2f8a74af
 IMPLICIT NONE
 INTEGER     ,INTENT(IN) :: ne
 REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weigths.

@@ -129,9 +129,13 @@ C0=np.zeros((NCoef,Nx,NEns))
 
 #Generate a random initial conditions and initialize deterministic parameters
 for ie in range(0,NEns)  :
+   RandInd1=(np.round(np.random.rand(1)*DALength)).astype(int)
+   RandInd2=(np.round(np.random.rand(1)*DALength)).astype(int)
 
-   XA[:,ie,0]=ModelConf['Coef'][0]/2 + DAConf['InitialXSigma'] * np.random.normal( size=Nx )
-   #XA[:,ie,0]=XNature[:,0,0] + DAConf['InitialXSigma'] * np.random.normal( size=Nx )
+   #XA[:,ie,0]=ModelConf['Coef'][0]/2 + DAConf['InitialXSigma'] * np.random.normal( size=Nx )
+   #Reemplazo el perturbado totalmente random por un perturbado mas inteligente.
+   XA[:,ie,0]=ModelConf['Coef'][0]/2 + np.squeeze( DAConf['InitialXSigma'] * ( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) )
+     
     
    for ic in range(0,NCoef) : 
 #       if DAConf['ParameterLocalizationType']==3 :

@@ -81,10 +81,10 @@ DAConf['TSFreq'] = 4                                 #Intra window ensemble outp
 
 DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.04])   #Mult inf, RTPS, RTPP, EPES, Additive inflation , RejuvParameter
 
-DAConf['LocScales']=np.array([0.5,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScales']=np.array([1.0,-1.0])             #Localization scale is space and time (negative means no localization)
 
 #Initial state ensemble.
-DAConf['InitialXSigma']=10.0                            #Initial ensemble spread for state variables.
+DAConf['InitialXSigma']=0.5                            #Initial ensemble spread for state variables.
 
 DAConf['UpdateSmoothCoef']=0.0                       #Data assimilation update smooth (for parameter estimation only)
 
@@ -104,6 +104,6 @@ DAConf['LocScalesP']=np.array([3.0,-1.0])            #To be used with ParameterL
 
 DAConf['NTemp']=1                                    #Number of temper iterations 
 
-DAConf['BridgeParam']=1.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
+DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 
 DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)
