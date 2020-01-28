@@ -11,7 +11,7 @@ MODULE common_pf
 
   REAL(r_size),PARAMETER  :: stop_threshold_sinkhorn = 1.0d-8  !Stoping threshold for Sinkhorn iteration
   INTEGER     ,PARAMETER  :: max_iter_sinkhorn = 10000         !Max number of iterations for Sinkhorn iteration
-  REAL(r_size),PARAMETER  :: lambda = 40.0            !Inverse of regularization parameter in Sinkhorn iteration
+  REAL(r_size),PARAMETER  :: lambda_reg = 40.0                 !Inverse of regularization parameter in Sinkhorn iteration
 
   REAL(r_size),PARAMETER  :: stop_threshold_riccati = 1.0d-3
   REAL(r_size),PARAMETER  :: dt_riccati = 0.1
@@ -68,7 +68,8 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,rloc,wa,W)
   wt = 1.0 / REAL( ne , r_size )  !Compute the target weigths (equal weigths in this case)
 
   !Solve the regularized optimal transport problem.
-  CALL sinkhorn_ot_robust( ne , wa , wt , m , W , lambda , stop_threshold_sinkhorn , max_iter_sinkhorn )
+  CALL sinkhorn_ot_robust( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
+  !CALL sinkhorn_ot( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
 
   !Call Riccati solver
   CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta )
@@ -98,7 +99,7 @@ DO i=1,ne
    W(i,i)=win(i)
 ENDDO
 
-B = D  - MATMUL( W , TRANSPOSE( ones ) )
+B = D  - MATMUL( wa , TRANSPOSE( ones ) )
 A = REAL(ne,r_size) * ( W - MATMUL( wa , TRANSPOSE(wa) ) ) - MATMUL( B , TRANSPOSE(B) )
 
 it_num = 0    
@@ -107,7 +108,7 @@ DO  !Do until exit
   delta_old = delta 
   delta = delta + dt * ( -MATMUL( B , delta) -MATMUL( delta , TRANSPOSE(B) ) + A - MATMUL(delta,delta) )
   it_num = it_num + 1
-  IF( MAXVAL( delta - delta_old ) < stop_threshold )THEN
+  IF( MAXVAL( ABS( delta - delta_old ) ) < stop_threshold )THEN
       exit 
   ENDIF
   IF( it_num > max_iter )THEN
@@ -126,19 +127,30 @@ INTEGER,INTENT(IN) :: ne   !Ensemble size
 INTEGER,INTENT(IN) :: nx , nvar , nt  !Ensemble dimensions
 REAL(r_size),INTENT(IN) :: xens(nx,ne,nvar,nt)
 REAL(r_size),INTENT(OUT):: m(ne,ne)
+REAL(r_size)            :: tmp_ens(nx,ne,nvar,nt) , stdev
 INTEGER :: i , j , k , ix , iv , it
 
-  !For Lorenz 96 all variables are equal 
-  !For other models we would need to normalize the distance
-  !computed from different variables.
+  tmp_ens = xens
+  m = 0.0d0
 
+  !Normalice variables according to the ensemble spread so the 
+  !contribution of different variables to the distance will be similar.
+  DO ix=1,nx
+     DO iv=1,nvar
+       DO it=1,nt
+         CALL com_stdev(ne,tmp_ens(ix,:,iv,it),stdev)
+         tmp_ens(ix,:,iv,it) = tmp_ens(ix,:,iv,it) / stdev
+       ENDDO
+     ENDDO
+  ENDDO
+
+  !Compute distance.
   DO i=1,ne
     DO j=i,ne
-      m(i,j)=0.0d0
       DO ix=1,nx
         DO iv=1,nvar
           DO it=1,nt
-            m(i,j) = m(i,j) + ( xens(ix,i,iv,it) - xens(ix,j,iv,it) ) ** 2
+            m(i,j) = m(i,j) + ( tmp_ens(ix,i,iv,it) - tmp_ens(ix,j,iv,it) ) ** 2
           ENDDO
         ENDDO
       ENDDO
@@ -150,12 +162,12 @@ INTEGER :: i , j , k , ix , iv , it
 
 END SUBROUTINE get_distance_matrix
 
-SUBROUTINE sinkhorn_ot( ne , wi , wt , m , W , lambda , stop_threshold , max_iter )
+SUBROUTINE sinkhorn_ot( ne , wi , wt , m , W , lambda_reg , stop_threshold , max_iter )
 IMPLICIT NONE
 INTEGER     ,INTENT(IN) :: ne
 REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weigths.
 REAL(r_size),INTENT(IN) :: m(ne,ne) !Cost matrix for the optimal transport problem.
-REAL(r_size),INTENT(IN) :: lambda , stop_threshold
+REAL(r_size),INTENT(IN) :: lambda_reg , stop_threshold
 INTEGER     ,INTENT(IN) :: max_iter
 REAL(r_size),INTENT(OUT):: w(ne,ne) !Transformation matrix.
 REAL(r_size)            :: u(ne) , v(ne) , K(ne,ne) , lnK(ne,ne) , lnKmax , wdiff(ne) , west(ne) , metric
@@ -168,13 +180,15 @@ u=1.0d0
 v=1.0d0    
 K=1.0d0
     
-lnK =  -lambda * ( m )
+lnK =  -lambda_reg * ( m )
 !Normalize lnK to avoid the divergence of the iteration.
-lnKmax = maxval( lnK )
+lnKmax = maxval( abs(lnK) )
 IF ( lnKmax > lnKmaxTr ) THEN
    lnK = lnK * lnKmaxTr /  lnKmax
 ENDIF
+
 K = EXP( lnK )
+
 it_num = 0
 DO !This loop last until termination conditions mets
   it_num = it_num + 1 
@@ -185,6 +199,7 @@ DO !This loop last until termination conditions mets
    ENDDO
    u(i) = REAL(ne,r_size) * wi(i) / tmp_val
   ENDDO
+
   DO i=1,ne
    tmp_val = 0.0d0
    DO j=1,ne
@@ -193,7 +208,7 @@ DO !This loop last until termination conditions mets
    v(i) = 1.0d0 / tmp_val
   ENDDO
   !Check stoping criteria once every 10 time steps
-  IF( mod( it_num , 10 ) .eq. 0 )THEN
+  IF( mod( it_num , 1 ) .eq. 0 )THEN
     W = K
     DO i = 1,ne 
       W(:,i)=W(:,i)*v(i)
@@ -226,12 +241,12 @@ ENDDO
 END SUBROUTINE sinkhorn_ot
 
 
-SUBROUTINE sinkhorn_ot_robust( ne , wi , wt , m , W , lambda , stop_threshold , max_iter )
+SUBROUTINE sinkhorn_ot_robust( ne , wi , wt , m , W , lambda_reg , stop_threshold , max_iter )
 IMPLICIT NONE
 INTEGER     ,INTENT(IN) :: ne
 REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weigths.
 REAL(r_size),INTENT(IN) :: m(ne,ne) !Cost matrix for the optimal transport problem.
-REAL(r_size),INTENT(IN) :: lambda , stop_threshold
+REAL(r_size),INTENT(IN) :: lambda_reg , stop_threshold
 INTEGER     ,INTENT(IN) :: max_iter
 REAL(r_size),INTENT(OUT):: w(ne,ne) !Transformation matrix.
 REAL(r_size)            :: lnu(ne) , lnv(ne) , lnK(ne,ne) , wdiff(ne) , west(ne) , metric
@@ -241,7 +256,7 @@ REAL(r_size)            :: tmp_val
 !Solves the Sinkhorn optimal transport problem following Acevedo et al. 2017 SIAM
 lnu=0.0d0
 lnv=0.0d0
-lnK =  -lambda * ( m )
+lnK =  -lambda_reg * ( m )
 
 it_num = 0
 DO !This loop last until termination conditions mets
@@ -259,7 +274,7 @@ DO !This loop last until termination conditions mets
     W = 0.0d0
     DO i = 1,ne
       DO j = 1,ne
-        W(j,i)=lnu(i) + lnk(i,j) + lnv(j)
+        W(i,j)=lnu(i) + lnk(i,j) + lnv(j)
       ENDDO
     ENDDO
     W = EXP(W) 

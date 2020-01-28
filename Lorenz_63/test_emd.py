@@ -12,6 +12,10 @@ import numpy as np
 import Lorenz_63 as model
 import Lorenz_63_DA as da
 
+import sys
+sys.path.append("../Lorenz_96/data_assimilation/")
+from da import common_pf as pf
+
 
 #Seleccionar aqui el operador de las observaciones que se desea usar.
 from Lorenz_63_ObsOperator import forward_operator_onlyx    as forward_operator
@@ -87,20 +91,32 @@ w = w / np.sum(w)
     
 #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
 #con un parametro de regularizacion lambda. 
-D = da.sinkhorn_ot_robust( statefens , w , lam = lam )
+D = da.sinkhorn_ot( statefens , w , lam = lam , max_iter=10000 )
 M = np.power( cdist(np.transpose(statefens),np.transpose(statefens),'euclidean') , 2 ) 
-D2=np.transpose( ot.emd(np.ones(EnsSize)/EnsSize,w,M,numItermax=1.0e9,log=False) ) * EnsSize
-#D=np.transpose( ot.bregman.sinkhorn(np.ones(EnsSize)/EnsSize,w,M,0.1,method='sinkhorn') )
+D4=np.transpose( ot.emd(np.ones(EnsSize)/EnsSize,w,M,numItermax=1.0e9,log=False) ) * EnsSize
+
+
+
+print('Using the fortran routine')
+D2=pf.sinkhorn_ot( ne=EnsSize , wi=w , wt=np.ones(EnsSize)/EnsSize , m=M , lambda_reg=lam , stop_threshold=1.0e-8 , max_iter=10000 )
+D3=pf.sinkhorn_ot_robust( ne=EnsSize , wi=w , wt=np.ones(EnsSize)/EnsSize , m=M , lambda_reg=lam , stop_threshold=1.0e-8 , max_iter=10000 )
     
 stateaens = np.matmul( statefens , D ) 
 
 import matplotlib.pyplot as plt
 
 plt.pcolor(D);plt.colorbar()
+plt.title('D1')
 plt.show()
 
 plt.pcolor(D2);plt.colorbar()
+plt.title('D2')
 plt.show()
 
+plt.pcolor(D3);plt.colorbar()
+plt.title('D3')
+plt.show()
 
-
+plt.pcolor(D4);plt.colorbar()
+plt.title('D4')
+plt.show()

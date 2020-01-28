@@ -1027,7 +1027,7 @@ def sinkhorn_ot( Xens , w , lam = 1.0 , stop_criteria = 1.0e-8 , max_iter = 5000
     #lnk = lnk - np.min(lnk) -lam
     
     K=np.exp(lnk) 
-    
+ 
     #print(K)
     #K= K * ( np.exp( -lam ) / np.min(K) )
     
@@ -1213,18 +1213,17 @@ def riccati_solver( D , w_in , dt = 0.1 , stop_criteria = 1.0e-3 , iteration_lim
     B = D - np.matmul( w , np.transpose(ones) )
     A = m * ( W - np.matmul( w , np.transpose(w) ) ) - np.matmul( B , np.transpose(B) )
     
-    cont=True
+
     it_num = 0 
-    while( cont ) :
+    while( True ) :
         delta_old = delta 
         delta = delta + dt*( -np.matmul( B , delta) -np.matmul( delta , np.transpose(B) ) + A - np.matmul(delta,delta) )
         it_num = it_num + 1
-        if( np.linalg.norm( delta - delta_old , np.inf ) < stop_criteria ) :
-            cont = False
+        if( np.max( np.abs( delta - delta_old ) ) < stop_criteria ) :
+            break
         if( it_num > iteration_limit ) :
-            cont = False
             print('Warning: Iteration limit reached in Riccati solver')
-    
+            break
     return delta
     
     

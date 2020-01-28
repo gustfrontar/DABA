@@ -85,7 +85,7 @@ def da_cycle_tempered_hybrid( da_exp ) :
     #Creamos el array que contiene la diserpsion del analisis y del forecast
     da_exp['stateasprd'] = np.zeros((da_exp['numstep'],da_exp['nvars']))
     #Creamos el array que contiene al ensamble de pronosticos
-    da_exp['statefsprd'] = np.zeros((da_exp['numstep'],da_exp['nvars'],da_exp['forecast_length'])) + np.nan
+    da_exp['statefsprd'] = np.zeros((da_exp['numstep'],da_exp['nvars'],da_exp['forecast_length']))
     
     da_exp['w'] = np.zeros((da_exp['numstep'],da_exp['EnsSize'])) 
 
@@ -131,6 +131,7 @@ def da_cycle_tempered_hybrid( da_exp ) :
                [ mean , pert ] = da.mean_and_perts( da_exp['statefens'][i+k,:,:,k] )
                #da_exp['P'][i+k,:,:,k] = np.cov( pert )
                da_exp['statef'][i+k,:,k]=mean
+               da_exp['statefsprd'][i+k,:,k]=np.std( pert , 1 )
     
         #Reemplazamos la llamada a la funcion de asimilacion por un ciclo que se repite tantas veces
         #como ciclos de temperado hayamos definido. 
@@ -152,6 +153,7 @@ def da_cycle_tempered_hybrid( da_exp ) :
     
         da_exp['stateaens'][i,:,:] = np.copy( stateens )
         da_exp['statea'][i,:] = np.copy( state )
+        da_exp['stateasprd'][i,:]=np.std( stateens , 1 )
     
     #%%
     #------------------------------------------------------------

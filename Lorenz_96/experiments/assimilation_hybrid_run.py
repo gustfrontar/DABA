@@ -23,6 +23,9 @@ import assimilation_conf_HybridPerfectModel as conf         #Load the experiment
 from scipy import stats
 import os
 
+
+np.random.seed(20)
+
 #=================================================================
 # LOAD CONFIGURATION : 
 #=================================================================
@@ -128,7 +131,8 @@ C0=np.zeros((NCoef,Nx,NEns))
 for ie in range(0,NEns)  :
 
    XA[:,ie,0]=ModelConf['Coef'][0]/2 + DAConf['InitialXSigma'] * np.random.normal( size=Nx )
-
+   #XA[:,ie,0]=XNature[:,0,0] + DAConf['InitialXSigma'] * np.random.normal( size=Nx )
+    
    for ic in range(0,NCoef) : 
 #       if DAConf['ParameterLocalizationType']==3 :
 #           PA[:,ie,ic,0]=ModelConf['Coef'][ic] + DAConf['InitialPSigma'][ic] * np.random.normal( size=Nx )
@@ -162,7 +166,7 @@ for it in range( 1 , DALength  )         :
          AddInfPert[:,ie] = AddInfPert[:,ie] - AddInfPertMean
       
       XA[:,:,it-1] = XA[:,:,it-1] + AddInfPert 
-
+      
    #=================================================================
    #  ENSEMBLE FORECAST  : 
    #=================================================================   
@@ -208,46 +212,9 @@ for it in range( 1 , DALength  )         :
    NObsW=YObsW.size                                                  #Number of observations within the DA window
    ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window         
  
-   #print('Observation selection took ', time.time()-start, 'seconds.')
-
    #=================================================================
-   #  OBSERVATION OPERATOR  : 
+   #  HYBRID-TEMPERED DA  : 
    #================================================================= 
-
-   #Apply h operator and transform from model space to observation space. 
-   #This opearation is performed for all the observations within the window.
-   #print('Observation operator')
-   #start = time.time()
-
-   #Set the time coordinate corresponding to the model output.
-   TLoc=np.arange(da_window_start , da_window_end + DAConf['TSFreq'] , DAConf['TSFreq'] )
-
-   #Call the observation operator and transform the ensemble from the state space 
-   #to the observation space. 
-   [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=ntout , nens=NEns ,
-                                 obsloc=ObsLocW , x=XFtmp , obstype=ObsTypeW ,
-                                 xloc=ModelConf['XLoc'] , tloc= TLoc )
-
-   #print('Observation operator took ', time.time()-start, 'seconds.')
-   #Run observation preprosesor for psedo radar observations. 
-   #if ObsConf['Type'] == 3  :
-   #    LowerObsLimit=-20.0
-   #    YF[ YF <= LowerObsLimit ]=LowerObsLimit
-   #    YObsW[YObsW <= LowerObsLimit ]= LowerObsLimit
-   #    YFmask[ np.mean(YF,1) == LowerObsLimit ] = LowerObsLimit
-     
-   #TODO TODO
-   #Ver la mejor manera de combinar el operador de las observaciones con el temperado.
-
-   #=================================================================
-   #  LETKF DA  : 
-   #================================================================= 
-
-   #print('Data assimilation')
-
-   #STATE VARIABLES ESTIMATION:
-  
-   #start = time.time()
 
    gamma = 1.0/DAConf['NTemp']
 
@@ -255,7 +222,28 @@ for it in range( 1 , DALength  )         :
    
    for itemp in range( DAConf['NTemp'] ) :
        
+       
+      #=================================================================
+      #  OBSERVATION OPERATOR  : 
+      #================================================================= 
+
+      #Apply h operator and transform from model space to observation space. 
+      #This opearation is performed only at the end of the window.
+
+      #Set the time coordinate corresponding to the model output.
+      TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+      #Call the observation operator and transform the ensemble from the state space 
+      #to the observation space. 
+      [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
+                             obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
+                             xloc=ModelConf['XLoc'] , tloc= TLoc )
+       
+      #=================================================================
+      #  LETKF STEP  : 
+      #=================================================================
+      
       if DAConf['BridgeParam'] < 1.0 :
+         #local_obs_error = ObsErrorW * 10.0
          #Run the L-ETKF
          local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - DAConf['BridgeParam'] ) 
          stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
@@ -263,14 +251,21 @@ for it in range( 1 , DALength  )         :
                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
                               rdiag=local_obs_error , loc_scale=DAConf['LocScales'] , inf_coefs=DAConf['InfCoefs']   ,
                               update_smooth_coef=0.0 )[:,:,0,0]
+
+      #=================================================================
+      #  ETPF STEP  : 
+      #=================================================================
+         
       if DAConf['BridgeParam'] > 0.0 :
           #Run the L-ETPF
           local_obs_error = ObsErrorW * DAConf['NTemp'] / ( DAConf['BridgeParam'] )
-          stateens = das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                              tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
-                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                              rdiag=local_obs_error , loc_scale=DAConf['LocScales'] , rejuv_param=DAConf['RejuvParam'] )[:,:,0,0]   
-        
+          [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
+                                       tloc=da_window_end    , nvar=1                        , xfens=stateens               , 
+                                       obs=YObsW             , obsloc=ObsLocW                , ofens=YF                     ,
+                                       rdiag=local_obs_error , loc_scale=DAConf['LocScales'] , rejuv_param=DAConf['RejuvParam']  )
+          stateens = tmp_ens[:,:,0,0]                    
+                             
+  
    XA[:,:,it] = np.copy( stateens )
    
    #PARAMETER ESTIMATION
@@ -282,6 +277,7 @@ for it in range( 1 , DALength  )         :
        PA[:,:,:,it] = das.da_etkf( no=NObsW , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it] ,
                                             obs=YObsW, ofens=YF  , rdiag=ObsErrorW   ,
                                             inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
+       
        
     if DAConf['ParameterLocalizationType'] == 2  :
        #GLOBAL AVERAGED PARAMETER ESTIMATION (Parameters are estiamted locally but the agregated globally)
@@ -314,9 +310,6 @@ for it in range( 1 , DALength  )         :
    else :
     #If Parameter estimation is not activated we keep the parameters as in the first analysis cycle.  
     PA[:,:,:,it]=PA[:,:,:,0]
-
-
-   
 
    #print('Data assimilation took ', time.time()-start,'seconds.')
 
@@ -354,6 +347,8 @@ FTRmse=np.sqrt( np.mean( np.power( FMean - FNature[:,0,0:DALength] , 2 ) , axis=
 
 FSBias=np.mean( FMean[:,SpinUp:DALength] - FNature[:,0,SpinUp:DALength]  , axis=1 ) 
 FTBias=np.mean( FMean - FNature[:,0,0:DALength]  , axis=0 ) 
+
+print(' Analysis RMSE ',np.mean(XASRmse),' Analysis SPREAD ',np.mean(XASpread))
 
 #Additional computations for the parameter
 

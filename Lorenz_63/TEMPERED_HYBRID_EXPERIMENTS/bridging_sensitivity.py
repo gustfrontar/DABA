@@ -27,8 +27,6 @@ import multiprocessing as mp
 
 max_proc=10
 
-
-
 # Configuracion del sistema del modelo y del sistema de asimilacion.
 da_exp=dict()  #Este diccionario va a contener las variables importantes para nuestro experimento.
 
@@ -61,15 +59,15 @@ da_exp['numtrans']=600                           # Tiempo de spin-up para genera
 
 da_exp['dx0'] = np.array([ 5.0 , 5.0 , 5.0 ])       # Error inicial de la estimacion. 
 da_exp['R0']=2.0                                    # Varianza del error de las observaciones.
-da_exp['bst']=8                                    # Cantidad de pasos de tiempo entre 2 asimilaciones.
+da_exp['bst']=16                                    # Cantidad de pasos de tiempo entre 2 asimilaciones.
 da_exp['forecast_length'] = 2                      # Plazo de pronostico (debe ser al menos 1)
 da_exp['nvars']=3                                  # Numero de variables en el modelo de Lorenz (no tocar)
 
 da_exp['EnsSize']=30                                 #Numero de miembros en el ensamble.
 
-da_exp['rtps_alpha'] = 1.0   #Relaxation to prior spread (Whitaker y Hamill 2012) # 0.6 es un buen parametro.
-da_exp['rejuv_param'] = 0.4  #Parametro de rejuvenecimiento (Acevedo y Reich 2017) #0.4 es un buen parametro
-da_exp['multinf']=1.015      #Inflacion multiplicativa (se aplica directamente a las perturbaciones)  #1.4 es un buen parametro.
+da_exp['rtps_alpha'] =  0.0   #Relaxation to prior spread (Whitaker y Hamill 2012) # 0.6 es un buen parametro (no se usa por el momento)
+da_exp['rejuv_param'] = 0.0   #Parametro de rejuvenecimiento (Acevedo y Reich 2017) #0.4 es un buen parametro
+da_exp['multinf']=1.0       #Inflacion multiplicativa (solo se aplica al ETKF, no al ETPF)
 
 #Obtengo el numero de observaciones (lo obtengo directamente del forward operator)
 da_exp['nobs']=np.size(forward_operator(np.array([0,0,0])))
@@ -87,13 +85,14 @@ da_exp['P0']=10.0*np.array([[0.6 , 0.5 , 0.0 ],[0.5 , 0.6 , 0.0 ],[0.0 , 0.0 , 1
 #P=None
 
 #Definimos una matriz Q para compensar los efectos no lineales y posibles errores de modelo.
-da_exp['Q']=0.0 * np.identity(3)
+da_exp['Q']=0.4 * np.identity(3)
 
 da_exp['forward_operator'] = forward_operator
 da_exp['forward_operator_tl'] = forward_operator_tl
 
 
 da_exp['ntemp']=1                                # Numero de temperados (1 recupera un ciclo de DA tradicional)
+da_exp['bridge']=0.0                             # Coeficiente de combiancion entre ETPF y ETKF. 0-ETKF puro, 1-ETPF puro.
 
 
 filename = './Sensitivity_to_bridging_R'+str(da_exp['R0'])+'_bst'+str(da_exp['bst'])+'_ntemp'+str(da_exp['ntemp'])+'_'+da_exp['obs_operator_name']+'.pkl'
@@ -119,7 +118,6 @@ pool = mp.Pool( min( max_proc , len( da_exp_list ) ) )
 results = pool.map( thm.da_cycle_tempered_hybrid , da_exp_list )
 
 pool.close()
-
 
 with open( filename , 'wb') as handle:
     pickle.dump( results , handle, protocol=pickle.HIGHEST_PROTOCOL)

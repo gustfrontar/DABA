@@ -75,13 +75,13 @@ DO io=1,no
   ELSE
     !If we have only one time we round the observation time to the closest time.
     itloc= 1.0d0
+    rt=1.0d0
   ENDIF
-
 
  !Observation operator for observations in between time and space grid points.
  !2D linear interpolation is applied in this case.
 
- IF( ixloc /= obsloc(io,1) .or. itloc /= obsloc(io,2) )THEN
+ !IF( ixloc /= obsloc(io,1) .or. itloc /= obsloc(io,2) )THEN
   IF( ixloc >= 1 .and. ixloc <= nx+1 .or. itloc >= 1 .and. itloc <= nt )THEN
    
    !The location of the observation is in between grid points, perform linear interpolation.
@@ -118,6 +118,7 @@ DO io=1,no
    rx= rx - ixloc + 1.0d0
    rt= rt - itloc + 1.0d0
 
+   !WRITE(*,*)rx,rt
 
    DO ie=1,nens
  
@@ -154,7 +155,7 @@ DO io=1,no
 
   ENDIF
 
- ENDIF
+ !ENDIF
 
 END DO
 
@@ -309,6 +310,7 @@ SUBROUTINE itpl_2d(var,ri,rj,var5,nx,no)
   ai = ri - REAL(i,r_size)
   j = FLOOR(rj)
   aj = rj - REAL(j,r_size)
+
 
   IF(i <= nx) THEN
     var5 = var(i,j) * (1-ai) * (1-aj) &

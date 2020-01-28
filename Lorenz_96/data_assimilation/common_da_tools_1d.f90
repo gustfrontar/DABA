@@ -116,6 +116,9 @@ ENDDO
 
 DO it = 1,nt
 
+
+!$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
+!$OMP &          ,mult_inf,Rdiag_loc,Rwf_loc,wa,wamean,pa,wainf,ie,iv,ke)
   DO ix = 1,nx
 
    !Localize observations
@@ -142,7 +145,7 @@ DO it = 1,nt
       CALL weight_RTPP(nens,inf_coefs(2),wa,wainf)                                          !GYL
     ELSE IF( inf_coefs(4) /= 0.0d0) THEN                                                    !EPES
       CALL weight_EPES(nens,inf_coefs(4),wa,wainf)
-    ELSE IF( inf_coefs(5) /= 0.0d0) THEN                                                    !TODO: Code additive inflation
+    !ELSE IF( inf_coefs(5) /= 0.0d0) THEN                                                    !TODO: Code additive inflation
       !write(*,*)"[Warning]: Additive inflation not implemented for LETKF yet"
     ELSE
       wainf = wa                                                                            !GYL
@@ -173,6 +176,7 @@ DO it = 1,nt
    ENDIF
 
   END DO
+!$OMP END PARALLEL DO
 
 END DO  
 
@@ -383,15 +387,16 @@ INTEGER                    :: ix,ie,je,ke,it,iv,io
 REAL(r_size)               :: dx , tmp
 
 !Initialization
-d     =0.0d0
+d=0.0d0
 wa=0.0d0
 
 dx=xloc(2)-xloc(1)    !Assuming regular grid
 
 
 !Initialization
-xfmean=0.0
-xfpert=0.0
+xfmean=0.0d0
+xfpert=0.0d0
+W=0.0d0
 
 !Compute forecast ensemble mean and perturbations.
 
@@ -427,6 +432,10 @@ ENDDO
 
 DO it = 1,nt
 
+
+!$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,dens_loc,d_loc   &
+!$OMP &          ,Rdiag_loc,Rwf_loc,W,ie,je,m)
+
   DO ix = 1,nx
 
    !Localize observations
@@ -447,17 +456,16 @@ DO it = 1,nt
     CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),m,Rdiag_loc(1:no_loc),   &
                     Rwf_loc(1:no_loc),wa(ix,:),W )
 
-
     !Compute the updated ensemble mean, std and mode.
-    DO iv =1,nvar
-       xaens(ix,:,iv,it) = MATMUL( xfens(ix,:,iv,it) , W )
-    ENDDO
-    !DO ie=1,nens
-    !   xaens(ix,:,ie,it) = 0.0d0
-    !   DO je=1,nens
-    !     xaens(ix,:,ie,it) =  xaens(ix,:,ie,it) + xfens(ix,:,je,it) * W(je,ie)
-    !   ENDDO
+    !DO iv =1,nvar
+    !   xaens(ix,:,iv,it) = MATMUL( xfens(ix,:,iv,it) , W )
     !ENDDO
+    DO ie=1,nens
+       xaens(ix,ie,:,it) = 0.0d0
+       DO je=1,nens
+         xaens(ix,ie,:,it) =  xaens(ix,ie,:,it) + xfens(ix,je,:,it) * W(je,ie)
+       ENDDO
+    ENDDO
    
    ELSE  
 
@@ -467,10 +475,11 @@ DO it = 1,nt
    ENDIF
 
   END DO
+  !$OMP END PARALLEL DO
 
 END DO  
 
-IF ( rejuv_param >= 0.0d0 ) THEN
+IF ( rejuv_param > 0.0d0 ) THEN
    infpert = 0.0d0
    !Perform particle rejuvenation on the global ensemble.a
    DO ie = 1,nens

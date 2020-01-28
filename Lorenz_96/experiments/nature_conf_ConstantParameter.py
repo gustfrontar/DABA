@@ -79,7 +79,7 @@ ObsConf['TimeDensity']=1                             #Observation density in tim
                                                      #ObsFreq instead.
 
 #Set the diagonal of R
-ObsConf['Error']=0.2                                 #Constant observation error.
+ObsConf['Error']=0.2                                  #Constant observation error.
 
 #Set the systematic observation error
 ObsConf['Bias']=0.0                                  #Constant Systematic observation error.

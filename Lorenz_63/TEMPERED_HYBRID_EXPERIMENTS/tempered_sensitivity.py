@@ -14,7 +14,6 @@ import sys
 sys.path.append("../")
 
 
-
 #Seleccionar aqui el operador de las observaciones que se desea usar.
 from Lorenz_63_ObsOperator import forward_operator_nonlinear    as forward_operator
 from Lorenz_63_ObsOperator import forward_operator_nonlinear_tl as forward_operator_tl
