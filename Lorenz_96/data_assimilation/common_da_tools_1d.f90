@@ -453,8 +453,8 @@ DO it = 1,nt
     !Compute analysis weights
     CALL get_distance_matrix( nens , 1 , nvar , 1 , xfens(ix,:,:,it) , m )
  
-    CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),m,Rdiag_loc(1:no_loc),   &
-                    Rwf_loc(1:no_loc),wa(ix,:),W )
+    CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),m,Rdiag_loc(1:no_loc)   &
+                    ,wa(ix,:),W )
 
     !Compute the updated ensemble mean, std and mode.
     !DO iv =1,nvar

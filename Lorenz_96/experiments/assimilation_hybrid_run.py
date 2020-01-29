@@ -19,10 +19,9 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_HybridPerfectModel as conf         #Load the experiment configuration
+import assimilation_conf_HybridPerfectModel_R02_Den1_Freq4_Hlinear as conf         #Load the experiment configuration
 from scipy import stats
 import os
-
 
 np.random.seed(20)
 
@@ -72,8 +71,16 @@ FNature = InputData['FNature']   #Large scale forcing.
 
 #We set the length of the experiment according to the length of the 
 #observation array.
-DALength = int( max( ObsLoc[:,1] ) / DAConf['Freq'] ) 
 
+if DAConf['ExpLength'] == None :
+   DALength = int( max( ObsLoc[:,1] ) / DAConf['Freq'] )
+else:
+   DALength = DAConf['ExpLength']
+   XNature = XNature[:,:,0:DALength+1]
+   CNature = CNature[:,:,:,0:DALength+1] 
+   FNature = FNature[:,:,0:DALength+1]
+   
+   
 #DALength = 3
 
 #Get the number of parameters
@@ -149,8 +156,8 @@ for ie in range(0,NEns)  :
 start_cycle = time.time()
 
 for it in range( 1 , DALength  )         :
-
-   print('Data assimilation cycle # ',str(it) )
+   if np.mod(it,100) == 0  :
+      print('Data assimilation cycle # ',str(it) )
 
    #=================================================================
    #  ADD ADDITIVE ENSEMBLE PERTURBATIONS  : 
@@ -224,6 +231,14 @@ for it in range( 1 , DALength  )         :
 
    stateens = np.copy(XF[:,:,it])
    
+   #Perform initial iterations using ETKF this helps to speed up convergence.
+   if it < DAConf['NKalmanSpinUp']  :
+       BridgeParam = 0.0  #Force pure Kalman step.
+   else                             :
+       BridgeParam = DAConf['BridgeParam']
+       
+   
+   
    for itemp in range( DAConf['NTemp'] ) :
        
        
@@ -246,10 +261,10 @@ for it in range( 1 , DALength  )         :
       #  LETKF STEP  : 
       #=================================================================
       
-      if DAConf['BridgeParam'] < 1.0 :
+      if BridgeParam < 1.0 :
          #local_obs_error = ObsErrorW * 10.0
          #Run the L-ETKF
-         local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - DAConf['BridgeParam'] ) 
+         local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
          stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                               tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
@@ -260,14 +275,18 @@ for it in range( 1 , DALength  )         :
       #  ETPF STEP  : 
       #=================================================================
          
-      if DAConf['BridgeParam'] > 0.0 :
-          #Run the L-ETPF
-          local_obs_error = ObsErrorW * DAConf['NTemp'] / ( DAConf['BridgeParam'] )
+      if BridgeParam > 0.0 :
+      #    #Run the L-ETPF
+          local_obs_error = ObsErrorW * DAConf['NTemp'] / ( BridgeParam )
           [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                                        tloc=da_window_end    , nvar=1                        , xfens=stateens               , 
                                        obs=YObsW             , obsloc=ObsLocW                , ofens=YF                     ,
                                        rdiag=local_obs_error , loc_scale=DAConf['LocScales'] , rejuv_param=DAConf['RejuvParam']  )
-          stateens = tmp_ens[:,:,0,0]                    
+          stateens = tmp_ens[:,:,0,0]
+       
+
+
+   #print( np.mean( np.std(stateens,1) ) / np.mean( np.std(XF[:,:,it] ,1 ) ) )                     
                              
   
    XA[:,:,it] = np.copy( stateens )

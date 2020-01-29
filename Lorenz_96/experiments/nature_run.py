@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
-import nature_conf_ConstantParameter as conf
+import nature_conf_R8_Den05_Freq8_Hlinear as conf
 import os
 
 

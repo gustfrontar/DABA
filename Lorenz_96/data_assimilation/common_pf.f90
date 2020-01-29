@@ -28,18 +28,16 @@ CONTAINS
 !     nobsl            : total number of observation assimilated at the point
 !     dens(nobsl,ne)   : distance between each ensemble member and the observation
 !     rdiag(nobsl)     : observation error variance
-!     rloc(nobsl)      : localization weigthning function
 !   OUTPUT
 !     wa(ne)           : PF weigths
 !=======================================================================
-SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,rloc,wa,W)
+SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne , ndim                      
   INTEGER,INTENT(IN) :: nobsl
   REAL(r_size),INTENT(IN) :: dens(1:nobsl,1:ne)
   REAL(r_size),INTENT(IN) :: m(1:ne,1:ne)   !Distance matrix
   REAL(r_size),INTENT(IN) :: rdiag(1:nobsl)
-  REAL(r_size),INTENT(IN) :: rloc(1:nobsl)
   REAL(r_size),INTENT(OUT) :: wa(ne)    !
   REAL(r_size),INTENT(OUT) :: W(ne,ne)  !Transformation matrix
   REAL(r_size)  :: wt(ne)               !Target weigths 
@@ -52,7 +50,7 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,rloc,wa,W)
   wa=0.0d0
   DO i=1,ne
     DO j=1,nobsl
-       wa(i)=wa(i) - ( dens(j,i)**2 ) / ( rdiag(j) * rloc(j) )
+       wa(i)=wa(i) - ( 0.5 * dens(j,i)**2 ) / ( rdiag(j) )
     ENDDO
   ENDDO
   !Normalize log of the weigths (to avoid underflow issues)
