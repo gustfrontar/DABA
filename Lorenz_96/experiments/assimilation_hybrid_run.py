@@ -19,7 +19,7 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_HybridPerfectModel_R8_Den05_Freq8_Hlinear as conf         #Load the experiment configuration
+import assimilation_conf_HybridPerfectModel_R4_Den05_Freq8_Hcuadratic as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
@@ -262,8 +262,7 @@ for it in range( 1 , DALength  )         :
       #=================================================================
       
       if BridgeParam < 1.0 :
-         #local_obs_error = ObsErrorW * 10.0
-         #Run the L-ETKF
+
          local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
          stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                               tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
@@ -276,7 +275,7 @@ for it in range( 1 , DALength  )         :
       #=================================================================
          
       if BridgeParam > 0.0 :
-      #    #Run the L-ETPF
+
           local_obs_error = ObsErrorW * DAConf['NTemp'] / ( BridgeParam )
           [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                                        tloc=da_window_end    , nvar=1                        , xfens=stateens               , 

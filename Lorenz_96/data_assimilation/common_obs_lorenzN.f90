@@ -126,6 +126,7 @@ DO io=1,no
       CALL itpl_2d(tmp_obs(:,:,ie),rx,rt,obs(io,ie),2,2)
     ELSEIF( obstype(io) == 2 )THEN
       CALL itpl_2d(tmp_obs(:,:,ie)**2,rx,rt,obs(io,ie),2,2)
+      obs(io,ie) = obs(io,ie) / 10.0d0
     ELSEIF( obstype(io) == 3 )THEN
       CALL itpl_2d(tmp_obs(:,:,ie),rx,rt,obs(io,ie),2,2)
       obs(io,ie) = obs(io,ie) !-1.0e0
@@ -141,6 +142,14 @@ DO io=1,no
     
       ENDIF
       IF ( obs(io,ie) < -30.0e0 )obs(io,ie) = -30.0e0
+    ELSEIF( obstype(io) == 4 )THEN
+      !A simple logaritmic transform.
+      CALL itpl_2d(tmp_obs(:,:,ie),rx,rt,obs(io,ie),2,2)
+      obs(io,ie) = obs(io,ie) + 6.0d0 !Esto hace que la mayoria de los valores sean positivos.
+      IF( obs(io,ie) < 0.001d0 )THEN
+         obs(io,ie) = 0.001d0
+      ENDIF
+      obs(io,ie) = 10.0d0 * LOG( obs(io,ie) )
     ELSE
 
        WRITE(*,*)"ERROR: Not recognized observation type"
