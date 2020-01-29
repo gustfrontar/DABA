@@ -74,7 +74,7 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
+DAConf['ExpLength'] = 5000                           #None use the full nature run experiment. Else use this length.
 
 DAConf['NEns'] = 20                                  #Number of ensemble members
 
@@ -83,9 +83,10 @@ DAConf['Twin'] = True                                #When True, model configura
 DAConf['Freq'] = 8                                   #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 8                                 #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.015,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
-DAConf['LocScales']=np.array([1.0,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETKF']=np.array([1.1,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETPF']=np.array([1.1,-1.0])             #Localization scale is space and time (negative means no localization)
 
 #Initial state ensemble.
 DAConf['InitialXSigma']=0.5                          #Initial ensemble spread for state variables.
@@ -96,7 +97,7 @@ DAConf['UpdateSmoothCoef']=0.0                       #Data assimilation update s
 
 DAConf['InitialPSigma']=np.array([0,0,0])            #Initial ensemble spread for the parameters. (0 means no parameter estimation)
 
-DAConf['InfCoefsP']=np.array([1.01,1.0,0.0,0.0,0.0])  #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefsP']=np.array([1.015,1.0,0.0,0.0,0.0])  #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['UpdateSmoothCoefP']=0.0                      #Data assimilation update smooth (for parameter estimation only)
 
@@ -108,7 +109,7 @@ DAConf['LocScalesP']=np.array([3.0,-1.0])            #To be used with ParameterL
 
 DAConf['NTemp']=1                                    #Number of temper iterations 
 
-DAConf['BridgeParam']=1.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
+DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 DAConf['NKalmanSpinUp']=10                           #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 
 DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)

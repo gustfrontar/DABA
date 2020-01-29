@@ -10,8 +10,8 @@ MODULE common_pf
   IMPLICIT NONE
 
   REAL(r_size),PARAMETER  :: stop_threshold_sinkhorn = 1.0d-8  !Stoping threshold for Sinkhorn iteration
-  INTEGER     ,PARAMETER  :: max_iter_sinkhorn = 10000         !Max number of iterations for Sinkhorn iteration
-  REAL(r_size),PARAMETER  :: lambda_reg = 40.0                 !Inverse of regularization parameter in Sinkhorn iteration
+  INTEGER     ,PARAMETER  :: max_iter_sinkhorn = 20000         !Max number of iterations for Sinkhorn iteration
+  REAL(r_size),PARAMETER  :: lambda_reg = 100.0                 !Inverse of regularization parameter in Sinkhorn iteration
 
   REAL(r_size),PARAMETER  :: stop_threshold_riccati = 1.0d-3
   REAL(r_size),PARAMETER  :: dt_riccati = 0.1
@@ -50,12 +50,15 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
   wa=0.0d0
   DO i=1,ne
     DO j=1,nobsl
-       wa(i)=wa(i) - ( 0.5 * dens(j,i)**2 ) / ( rdiag(j) )
+       wa(i)=wa(i) - ( 0.5 * ( dens(j,i)**2 ) ) / ( rdiag(j) )
     ENDDO
   ENDDO
+
+  
   !Normalize log of the weigths (to avoid underflow issues)
   CALL log_sum_vec( ne , wa , log_w_sum )
   DO i=1,ne
+     !wa(i) = EXP( wa(i) )
      wa(i) = EXP( wa(i) - log_w_sum )
   ENDDO
 
@@ -70,6 +73,7 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
   CALL sinkhorn_ot( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
 
   !Call Riccati solver
+  delta = 0.0d0
   CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta )
 
   W = W + delta
@@ -132,14 +136,17 @@ INTEGER :: i , j , k , ix , iv , it
 
   !Normalice variables according to the ensemble spread so the 
   !contribution of different variables to the distance will be similar.
-  DO ix=1,nx
-     DO iv=1,nvar
-       DO it=1,nt
-         CALL com_stdev(ne,tmp_ens(ix,:,iv,it),stdev)
-         tmp_ens(ix,:,iv,it) = tmp_ens(ix,:,iv,it) / stdev
-       ENDDO
-     ENDDO
-  ENDDO
+  !WARNING!!! Esta forma de normalizar afecta los resultados. Hay que buscar otra manera.
+  !quiza un factor que sea constante para cada tipo de variable pero que no dependa del spread del ensamble.
+
+  !DO ix=1,nx
+  !   DO iv=1,nvar
+  !     DO it=1,nt
+  !       CALL com_stdev(ne,tmp_ens(ix,:,iv,it),stdev)
+  !       tmp_ens(ix,:,iv,it) = tmp_ens(ix,:,iv,it) / stdev
+  !     ENDDO
+  !   ENDDO
+  !ENDDO
 
   !Compute distance.
   DO i=1,ne

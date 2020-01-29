@@ -398,40 +398,17 @@ xfmean=0.0d0
 xfpert=0.0d0
 W=0.0d0
 
-!Compute forecast ensemble mean and perturbations.
-
-DO it = 1,nt
-
- DO ix = 1,nx
-
-  DO iv = 1,nvar
-
-   CALL com_mean( nens,xfens(ix,:,iv,it),xfmean(ix,iv,it) )
-
-   xfpert(ix,:,iv,it) = xfens(ix,:,iv,it) - xfmean(ix,iv,it)
-
-  END DO
-
- END DO
-
-END DO
-
-
 
 !Compute mean departure and HXf
 
 DO io = 1,no
-
     dens(io,:) = obs(io) - ofens(io,:) 
-
     CALL com_mean( nens , dens(io,:) , d(io) )
-
 ENDDO
 
 !Main assimilation loop.
 
 DO it = 1,nt
-
 
 !$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,dens_loc,d_loc   &
 !$OMP &          ,Rdiag_loc,Rwf_loc,W,ie,je,m)
@@ -445,11 +422,8 @@ DO it = 1,nt
    CALL r_localization(no,no_loc,nens,dens,d,Rdiag,dens_loc,     &
                      d_loc,Rdiag_loc,Rwf_loc,grid_loc,xloc(1),xloc(nx),dx,obsloc,loc_scale)
 
-
    IF( no_loc > 0 )THEN   
     !We have observations for this grid point. Let's compute the analysis.
-
-  
     !Compute analysis weights
     CALL get_distance_matrix( nens , 1 , nvar , 1 , xfens(ix,:,:,it) , m )
  
@@ -457,9 +431,6 @@ DO it = 1,nt
                     ,wa(ix,:),W )
 
     !Compute the updated ensemble mean, std and mode.
-    !DO iv =1,nvar
-    !   xaens(ix,:,iv,it) = MATMUL( xfens(ix,:,iv,it) , W )
-    !ENDDO
     DO ie=1,nens
        xaens(ix,ie,:,it) = 0.0d0
        DO je=1,nens
@@ -480,6 +451,17 @@ DO it = 1,nt
 END DO  
 
 IF ( rejuv_param > 0.0d0 ) THEN
+
+   !Compute forecast ensemble mean and perturbations.
+   DO it = 1,nt
+    DO ix = 1,nx
+     DO iv = 1,nvar
+      CALL com_mean( nens,xfens(ix,:,iv,it),xfmean(ix,iv,it) )
+      xfpert(ix,:,iv,it) = xfens(ix,:,iv,it) - xfmean(ix,iv,it)
+     END DO
+    END DO
+   END DO
+
    infpert = 0.0d0
    !Perform particle rejuvenation on the global ensemble.a
    DO ie = 1,nens
@@ -564,7 +546,6 @@ else
 endif
 !NOTE: To remove both space and time localizations is better to use the da_etkf routine.
 
-
 !Compute distance threshold (space , time)
 distance_tr = loc_scale * SQRT(10.0d0/3.0d0) * 2.0d0
 
@@ -588,7 +569,7 @@ DO io = 1,no
      ofpert_loc(no_loc,:) =ofpert(io,:)
      d_loc(no_loc)        =d(io)
      !Apply localization to the R matrix
-     Rwf_loc(no_loc)      =  exp(-0.5d0 * (( REAL( if_loc(1) , r_size ) * distance(1)/loc_scale(1))**2 + &
+     Rwf_loc(no_loc)      =  exp( -0.5d0 * (( REAL( if_loc(1) , r_size ) * distance(1)/loc_scale(1))**2 + &
                                            ( REAL( if_loc(2) , r_size ) * distance(2)/loc_scale(2))**2))
      Rdiag_loc(no_loc)    =  Rdiag(io) / Rwf_loc( no_loc )
 

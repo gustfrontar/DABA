@@ -19,7 +19,7 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_HybridPerfectModel_R02_Den1_Freq4_Hlinear as conf         #Load the experiment configuration
+import assimilation_conf_HybridPerfectModel_R8_Den05_Freq8_Hlinear as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
@@ -268,7 +268,7 @@ for it in range( 1 , DALength  )         :
          stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                               tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                              rdiag=local_obs_error , loc_scale=DAConf['LocScales'] , inf_coefs=DAConf['InfCoefs']   ,
+                              rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
                               update_smooth_coef=0.0 )[:,:,0,0]
 
       #=================================================================
@@ -281,7 +281,7 @@ for it in range( 1 , DALength  )         :
           [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                                        tloc=da_window_end    , nvar=1                        , xfens=stateens               , 
                                        obs=YObsW             , obsloc=ObsLocW                , ofens=YF                     ,
-                                       rdiag=local_obs_error , loc_scale=DAConf['LocScales'] , rejuv_param=DAConf['RejuvParam']  )
+                                       rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam']  )
           stateens = tmp_ens[:,:,0,0]
        
 
