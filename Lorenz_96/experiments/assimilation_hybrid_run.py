@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Apr 10 17:36:06 2017
-
 @author: RISDA 2018
 """
 
@@ -19,7 +18,7 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_HybridPerfectModel_R4_Den05_Freq8_Hcuadratic as conf         #Load the experiment configuration
+import assimilation_conf_HybridPerfectModel_R8_Den05_Freq8_Hlinear as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
@@ -722,5 +721,4 @@ if GeneralConf['RunPlotForcing']     :
 
 
 plt.show()
-
 

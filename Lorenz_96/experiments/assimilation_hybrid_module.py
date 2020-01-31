@@ -252,6 +252,7 @@ def assimilation_hybrid_run( conf ) :
           TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
           #Call the observation operator and transform the ensemble from the state space 
           #to the observation space. 
+
           [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
                                  obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
                                  xloc=ModelConf['XLoc'] , tloc= TLoc )

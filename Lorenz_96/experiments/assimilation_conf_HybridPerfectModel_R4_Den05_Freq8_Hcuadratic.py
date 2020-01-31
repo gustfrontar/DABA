@@ -72,7 +72,7 @@ DAConf=dict()
 
 DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
 
-DAConf['NEns'] = 100                                  #Number of ensemble members
+DAConf['NEns'] = 20                                  #Number of ensemble members
 
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 
@@ -105,7 +105,7 @@ DAConf['LocScalesP']=np.array([3.0,-1.0])            #To be used with ParameterL
 
 DAConf['NTemp']=1                                    #Number of temper iterations 
 
-DAConf['BridgeParam']=0.2                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
+DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 DAConf['NKalmanSpinUp']=10                           #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 
 DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)

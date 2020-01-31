@@ -129,6 +129,7 @@ DO it = 1,nt
                      d_loc,Rdiag_loc,Rwf_loc,grid_loc,xloc(1),xloc(nx),dx,obsloc,loc_scale)
 
 
+
    IF( no_loc > 0 )THEN   
     !We have observations for this grid point. Let's compute the analysis.
 
@@ -505,8 +506,8 @@ REAL(r_size),INTENT(IN)    :: x_min , x_max              !Space grid limits
 REAL(r_size),INTENT(IN)    :: dx                         !Grid resolution
 REAL(r_size),INTENT(IN)    :: ofpert(no,nens)            !Ensemble in observation space
 REAL(r_size),INTENT(IN)    :: Rdiag(no)                  !Diagonal of observation error covariance matrix.
-REAL(r_size)               :: d(no)                      !Observation departure
-REAL(r_size)               :: loc_scale(2)               !Localization scale (space,time) , note that negative values
+REAL(r_size),INTENT(IN)    :: d(no)                      !Observation departure
+REAL(r_size),INTENT(IN)    :: loc_scale(2)               !Localization scale (space,time) , note that negative values
                                                          !will remove localization for that dimension.
 
 INTEGER,INTENT(OUT)        :: no_loc                     !Number of observations in the local domain
@@ -521,33 +522,37 @@ INTEGER                    :: io
 INTEGER                    :: if_loc(2)                        !1- means localize, 0- means no localization
 REAL(r_size)               :: distance(2)                      !Distance between the current grid point and the observation (space,time)
 REAL(r_size)               :: distance_tr(2)                   !Ignore observations farther than this threshold (space,time)
+REAL(r_size)               :: floc_scale(2)                    !Final loc scale that will be used
 
 ofpert_loc=0.0d0
 d_loc     =0.0d0
 Rdiag_loc =0.0d0
 Rwf_loc   =1.0d0
 no_loc    =0
+floc_scale = 1.0d0
 
 !If space localization will be applied.
 if( loc_scale(1) <= 0 )then
     !No localization in space.
     if_loc(1) = 0
-    loc_scale(1)=1.0d0
+    floc_scale(1)=1.0d0
 else 
     if_loc(1) = 1
+    floc_scale(1)=loc_scale(1)
 endif
 !If temporal localization will be applied.
 if( loc_scale(2) <= 0 )then
     !No localization in time.
     if_loc(2) = 0
-    loc_scale(2)=1.0d0
+    floc_scale(2)=1.0d0
 else 
     if_loc(2) = 1
+    floc_scale(2)=loc_scale(2)
 endif
 !NOTE: To remove both space and time localizations is better to use the da_etkf routine.
 
 !Compute distance threshold (space , time)
-distance_tr = loc_scale * SQRT(10.0d0/3.0d0) * 2.0d0
+distance_tr = floc_scale * SQRT(10.0d0/3.0d0) * 2.0d0
 
 
 DO io = 1,no
@@ -569,8 +574,8 @@ DO io = 1,no
      ofpert_loc(no_loc,:) =ofpert(io,:)
      d_loc(no_loc)        =d(io)
      !Apply localization to the R matrix
-     Rwf_loc(no_loc)      =  exp( -0.5d0 * (( REAL( if_loc(1) , r_size ) * distance(1)/loc_scale(1))**2 + &
-                                           ( REAL( if_loc(2) , r_size ) * distance(2)/loc_scale(2))**2))
+     Rwf_loc(no_loc)      =  exp( -0.5d0 * (( REAL( if_loc(1) , r_size ) * distance(1)/floc_scale(1))**2 + &
+                                           ( REAL( if_loc(2) , r_size ) * distance(2)/floc_scale(2))**2))
      Rdiag_loc(no_loc)    =  Rdiag(io) / Rwf_loc( no_loc )
 
 

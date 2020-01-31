@@ -10,7 +10,7 @@ GeneralConf['DataPath']='./data/Assimilation/'                          #Data ou
 GeneralConf['FigPath']='./figs/Assimilation/'                           #Figures output path
 GeneralConf['RunSave']=True                                             #Save the output
 GeneralConf['OutFile']='Assimilation' + GeneralConf['ExpName'] + '.npz' #Output file
-GeneralConf['RunPlotState']=True                                        #Plot State Estimation Diagnostics
+GeneralConf['RunPlotState']=False                                        #Plot State Estimation Diagnostics
 GeneralConf['RunPlotForcing']=False                                     #Plot Forcing Estimation Diagnostics
 GeneralConf['RunPlotParameters']=False                                  #Plot Parameter Estimation Diagnostics
 #Obs data, obs configuration and nature run configuration are stored

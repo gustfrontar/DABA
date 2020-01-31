@@ -14,12 +14,18 @@ import numpy as np
 import sensitivity_conf_default as conf
 import assimilation_hybrid_module as ahm
 
-RunTheExperiment = False
-PlotTheExperiment = True
+if len(sys.argv) > 1 and sys.argv[1] == 'compute' :
+   RunTheExperiment = True
+   PlotTheExperiment = False
+else                        :
+   RunTheExperiment = False
+   PlotTheExperiment = True
 
 
 conf.GeneralConf['NatureName']='NatureR4_Den05_Freq8_Hlogaritmic'
 out_filename='Sesitivity_experiment_addinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+#Define the source of the observations
+conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
 conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
@@ -86,6 +92,6 @@ if PlotTheExperiment  :
     plt.ylabel('Additive Inflation')
     plt.show()
 
-
+    plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
 
 

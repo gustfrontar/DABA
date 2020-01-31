@@ -83,7 +83,7 @@ DAConf['Twin'] = True                                #When True, model configura
 DAConf['Freq'] = 8                                   #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 8                                 #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.02,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.02])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['LocScalesLETKF']=np.array([2.1,-1.0])             #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([2.1,-1.0])             #Localization scale is space and time (negative means no localization)
@@ -107,9 +107,9 @@ DAConf['ParameterLocalizationType']=1                #1-Global parameter (no loc
  
 DAConf['LocScalesP']=np.array([3.0,-1.0])            #To be used with ParameterLocalizationTypes 2 or 3.
 
-DAConf['NTemp']=1                                    #Number of temper iterations 
+DAConf['NTemp']=3                                    #Number of temper iterations 
 
-DAConf['BridgeParam']=0.3                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
+DAConf['BridgeParam']=0.5                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 DAConf['NKalmanSpinUp']=10                           #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 
 DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)

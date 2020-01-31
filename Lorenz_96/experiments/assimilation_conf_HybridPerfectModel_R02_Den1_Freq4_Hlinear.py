@@ -74,7 +74,7 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
+DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
 
 DAConf['NEns'] = 20                                  #Number of ensemble members
 
@@ -85,7 +85,9 @@ DAConf['TSFreq'] = 4                                 #Intra window ensemble outp
 
 DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008])   #Mult inf, RTPS, RTPP, EPES, Additive inflation , RejuvParameter
 
-DAConf['LocScales']=np.array([1.0,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETKF']=np.array([1.0,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETPF']=np.array([1.0,-1.0])             #Localization scale is space and time (negative means no localization)
+
 
 #Initial state ensemble.
 DAConf['InitialXSigma']=0.5                            #Initial ensemble spread for state variables.
