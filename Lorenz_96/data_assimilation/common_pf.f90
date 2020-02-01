@@ -22,7 +22,7 @@ MODULE common_pf
 CONTAINS
 
 !=======================================================================
-!  Main Subroutine of LETPF Core
+!  Main Subroutine for weigth computation for the Gaussian mixture model
 !   INPUT
 !     ne               : ensemble size                                         
 !     nobsl            : total number of observation assimilated at the point
@@ -31,7 +31,8 @@ CONTAINS
 !   OUTPUT
 !     wa(ne)           : PF weigths
 !=======================================================================
-SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
+
+SUBROUTINE pf_weigth_core(ne,nobsl,dens,rdiag,beta_coef,gamma_coef,wa)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne , ndim                      
   INTEGER,INTENT(IN) :: nobsl
@@ -68,15 +69,6 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
 
   wt = 1.0 / REAL( ne , r_size )  !Compute the target weigths (equal weigths in this case)
 
-  !Solve the regularized optimal transport problem.
-  !CALL sinkhorn_ot_robust( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
-  CALL sinkhorn_ot( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
-
-  !Call Riccati solver
-  delta = 0.0d0
-  CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta )
-
-  W = W + delta
   
   RETURN
 END SUBROUTINE letpf_core

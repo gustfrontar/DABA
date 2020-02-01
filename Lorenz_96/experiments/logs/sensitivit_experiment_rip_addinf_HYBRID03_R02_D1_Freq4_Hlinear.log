@@ -1,4 +1,4 @@
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -101,13 +101,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.01
-Tempering iteraations 1
-Analisis RMSE:  4.404220035170577
-Forecast RMSE:  4.482801168705228
-Analisis SPRD:  0.3121260456128835
-Forecast SPRD:  0.3723587703594514
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.001
+Rip iteraations 1
+Analisis RMSE:  0.10938098667131746
+Forecast RMSE:  0.12057827139044375
+Analisis SPRD:  0.09048791438188383
+Forecast SPRD:  0.09820860032158593
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -210,13 +210,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.01
-Tempering iteraations 2
-Analisis RMSE:  3.7652204458640917
-Forecast RMSE:  3.887860005867574
-Analisis SPRD:  0.43804330796028956
-Forecast SPRD:  0.5181254022295081
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.001
+Rip iteraations 2
+Analisis RMSE:  0.10680189339062096
+Forecast RMSE:  0.11765501745274179
+Analisis SPRD:  0.09147779396886338
+Forecast SPRD:  0.0992903075808416
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -319,192 +319,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.01
-Tempering iteraations 3
-Analisis RMSE:  3.225273791287269
-Forecast RMSE:  3.3722507598582014
-Analisis SPRD:  0.5173409936156409
-Forecast SPRD:  0.6108059109404195
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.01
-Tempering iteraations 4
-Analisis RMSE:  2.949259248053527
-Forecast RMSE:  3.1017346947392532
-Analisis SPRD:  0.5570789331251425
-Forecast SPRD:  0.6568515835779298
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.001
+Rip iteraations 3
+Analisis RMSE:  0.10659952751600557
+Forecast RMSE:  0.117547468914143
+Analisis SPRD:  0.09131289867349905
+Forecast SPRD:  0.09909703594975351
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -607,13 +428,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.02
-Tempering iteraations 1
-Analisis RMSE:  4.0005157485737435
-Forecast RMSE:  4.106993683358396
-Analisis SPRD:  0.3964991314834544
-Forecast SPRD:  0.4691853866369825
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.001
+Rip iteraations 4
+Analisis RMSE:  0.10632953372234466
+Forecast RMSE:  0.1172840317518832
+Analisis SPRD:  0.09100653353312933
+Forecast SPRD:  0.09876188911638092
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -716,192 +537,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.02
-Tempering iteraations 2
-Analisis RMSE:  2.8642090784143015
-Forecast RMSE:  3.0104085302089905
-Analisis SPRD:  0.5558469456274568
-Forecast SPRD:  0.6555323466960774
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.02
-Tempering iteraations 3
-Analisis RMSE:  2.386754064652662
-Forecast RMSE:  2.541692307182058
-Analisis SPRD:  0.6224677523613812
-Forecast SPRD:  0.7334801251270303
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.002
+Rip iteraations 1
+Analisis RMSE:  0.10662775438164504
+Forecast RMSE:  0.11744785988295274
+Analisis SPRD:  0.098673623380477
+Forecast SPRD:  0.10717629414046544
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -1004,192 +646,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.02
-Tempering iteraations 4
-Analisis RMSE:  2.0317441333573516
-Forecast RMSE:  2.186298762713475
-Analisis SPRD:  0.6540010050692876
-Forecast SPRD:  0.7706175986065911
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.03
-Tempering iteraations 1
-Analisis RMSE:  3.3544343139501636
-Forecast RMSE:  3.4852577025193425
-Analisis SPRD:  0.49775674294307526
-Forecast SPRD:  0.5855227403435973
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.002
+Rip iteraations 2
+Analisis RMSE:  0.10483000865251361
+Forecast RMSE:  0.11557374094502475
+Analisis SPRD:  0.10033439627924604
+Forecast SPRD:  0.10897886919070818
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -1292,13 +755,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.03
-Tempering iteraations 2
-Analisis RMSE:  1.8864818593268673
-Forecast RMSE:  2.033142283759236
-Analisis SPRD:  0.673501841303482
-Forecast SPRD:  0.7927259620387483
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.002
+Rip iteraations 3
+Analisis RMSE:  0.10416415384903988
+Forecast RMSE:  0.1148385530724139
+Analisis SPRD:  0.10048903768691594
+Forecast SPRD:  0.10913954503308836
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -1401,192 +864,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.03
-Tempering iteraations 3
-Analisis RMSE:  1.5565763834896633
-Forecast RMSE:  1.7083329470132973
-Analisis SPRD:  0.721371335692656
-Forecast SPRD:  0.8485928339512583
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.03
-Tempering iteraations 4
-Analisis RMSE:  1.432182129591133
-Forecast RMSE:  1.59030279715072
-Analisis SPRD:  0.7434256316495043
-Forecast SPRD:  0.8753955785752143
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.002
+Rip iteraations 4
+Analisis RMSE:  0.1040883625706464
+Forecast RMSE:  0.1147710083216412
+Analisis SPRD:  0.10036078337021652
+Forecast SPRD:  0.10900016561068974
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -1689,13 +973,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.04
-Tempering iteraations 1
-Analisis RMSE:  2.486478232461173
-Forecast RMSE:  2.6306867378822956
-Analisis SPRD:  0.6219465310507519
-Forecast SPRD:  0.7308706952626476
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.003
+Rip iteraations 1
+Analisis RMSE:  0.10826787846051071
+Forecast RMSE:  0.11926923258354336
+Analisis SPRD:  0.10711686217940608
+Forecast SPRD:  0.11641080556823029
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -1798,13 +1082,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.04
-Tempering iteraations 2
-Analisis RMSE:  1.3804320939837889
-Forecast RMSE:  1.530838362440294
-Analisis SPRD:  0.7607813843655509
-Forecast SPRD:  0.8934508047272083
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.003
+Rip iteraations 2
+Analisis RMSE:  0.10627430830456705
+Forecast RMSE:  0.11714622202684069
+Analisis SPRD:  0.10894789028411908
+Forecast SPRD:  0.11839646694756736
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -1907,192 +1191,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.04
-Tempering iteraations 3
-Analisis RMSE:  1.2684132231106846
-Forecast RMSE:  1.4254770200605962
-Analisis SPRD:  0.8008512882099819
-Forecast SPRD:  0.9408428314301414
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.04
-Tempering iteraations 4
-Analisis RMSE:  1.1257923720307228
-Forecast RMSE:  1.2867969871756355
-Analisis SPRD:  0.8200369260335432
-Forecast SPRD:  0.9633106765960523
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.003
+Rip iteraations 3
+Analisis RMSE:  0.1057459380266548
+Forecast RMSE:  0.11657586706971759
+Analisis SPRD:  0.10927360498960823
+Forecast SPRD:  0.11874063898958806
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -2195,13 +1300,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.05
-Tempering iteraations 1
-Analisis RMSE:  1.8105815831347514
-Forecast RMSE:  1.9600316816901269
-Analisis SPRD:  0.7310090679313415
-Forecast SPRD:  0.8578538854818589
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.003
+Rip iteraations 4
+Analisis RMSE:  0.10559046140623582
+Forecast RMSE:  0.11643073974060521
+Analisis SPRD:  0.10924848911528158
+Forecast SPRD:  0.118707147779021
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -2304,192 +1409,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.05
-Tempering iteraations 2
-Analisis RMSE:  1.2702324472533055
-Forecast RMSE:  1.426647368881607
-Analisis SPRD:  0.8362170949970948
-Forecast SPRD:  0.9805078183405979
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.05
-Tempering iteraations 3
-Analisis RMSE:  1.0745313082912582
-Forecast RMSE:  1.2364490196450475
-Analisis SPRD:  0.8741422851491437
-Forecast SPRD:  1.02491359005355
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.004
+Rip iteraations 1
+Analisis RMSE:  0.11090411875697878
+Forecast RMSE:  0.12220935425987867
+Analisis SPRD:  0.11506885019708361
+Forecast SPRD:  0.12509617423916417
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -2592,13 +1518,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.05
-Tempering iteraations 4
-Analisis RMSE:  1.0715886496887623
-Forecast RMSE:  1.2356222737441425
-Analisis SPRD:  0.8945764209504731
-Forecast SPRD:  1.0496476267940857
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.004
+Rip iteraations 2
+Analisis RMSE:  0.10921629481080312
+Forecast RMSE:  0.12044884075930624
+Analisis SPRD:  0.11716429500187733
+Forecast SPRD:  0.1273581452697655
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -2701,13 +1627,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.060000000000000005
-Tempering iteraations 1
-Analisis RMSE:  1.492908667960744
-Forecast RMSE:  1.6495625868473234
-Analisis SPRD:  0.8111864536156161
-Forecast SPRD:  0.9492307266103616
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.004
+Rip iteraations 3
+Analisis RMSE:  0.10888235556434736
+Forecast RMSE:  0.12010270382367824
+Analisis SPRD:  0.1176175399551127
+Forecast SPRD:  0.12784541748218126
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -2810,192 +1736,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.060000000000000005
-Tempering iteraations 2
-Analisis RMSE:  1.1054070210006088
-Forecast RMSE:  1.2680663676731616
-Analisis SPRD:  0.9065631142094717
-Forecast SPRD:  1.060740886070059
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.060000000000000005
-Tempering iteraations 3
-Analisis RMSE:  1.0536164716114333
-Forecast RMSE:  1.2210220594695418
-Analisis SPRD:  0.9438145459065815
-Forecast SPRD:  1.105747061974118
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.004
+Rip iteraations 4
+Analisis RMSE:  0.108706499312169
+Forecast RMSE:  0.11991978877448725
+Analisis SPRD:  0.11767256502982448
+Forecast SPRD:  0.1279018588144188
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -3098,192 +1845,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.060000000000000005
-Tempering iteraations 4
-Analisis RMSE:  1.012527496510978
-Forecast RMSE:  1.18265833808026
-Analisis SPRD:  0.9606384827467475
-Forecast SPRD:  1.1250288751416395
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.06999999999999999
-Tempering iteraations 1
-Analisis RMSE:  1.3750116344495105
-Forecast RMSE:  1.54080334849477
-Analisis SPRD:  0.8821868066330666
-Forecast SPRD:  1.0308042078228234
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.005
+Rip iteraations 1
+Analisis RMSE:  0.11441499266645697
+Forecast RMSE:  0.12612264827185118
+Analisis SPRD:  0.12264630505435684
+Forecast SPRD:  0.13333758842729437
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -3386,13 +1954,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.06999999999999999
-Tempering iteraations 2
-Analisis RMSE:  1.0918968949935328
-Forecast RMSE:  1.2610180235165178
-Analisis SPRD:  0.9755971451689671
-Forecast SPRD:  1.140613017278015
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.005
+Rip iteraations 2
+Analisis RMSE:  0.11280092308605623
+Forecast RMSE:  0.12447650705282169
+Analisis SPRD:  0.1249663764360213
+Forecast SPRD:  0.13584964360785118
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -3495,192 +2063,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.06999999999999999
-Tempering iteraations 3
-Analisis RMSE:  1.0502898354642507
-Forecast RMSE:  1.2234193494306551
-Analisis SPRD:  1.0089921859450928
-Forecast SPRD:  1.1803614523904922
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.06999999999999999
-Tempering iteraations 4
-Analisis RMSE:  1.0714071269259766
-Forecast RMSE:  1.2456652106078159
-Analisis SPRD:  1.0306668523595968
-Forecast SPRD:  1.2057781168416308
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.005
+Rip iteraations 3
+Analisis RMSE:  0.11245477011339507
+Forecast RMSE:  0.1241159350384484
+Analisis SPRD:  0.12547239359682738
+Forecast SPRD:  0.1363902125934259
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -3783,13 +2172,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.08
-Tempering iteraations 1
-Analisis RMSE:  1.2228813679925337
-Forecast RMSE:  1.3935510001562303
-Analisis SPRD:  0.9470380247160207
-Forecast SPRD:  1.1048407326074479
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.005
+Rip iteraations 4
+Analisis RMSE:  0.11227895595600099
+Forecast RMSE:  0.12393250542707039
+Analisis SPRD:  0.12563598703147236
+Forecast SPRD:  0.136565602587195
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -3892,13 +2281,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.08
-Tempering iteraations 2
-Analisis RMSE:  1.1065888924962366
-Forecast RMSE:  1.283584843958019
-Analisis SPRD:  1.0393451117694337
-Forecast SPRD:  1.2128498639341188
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.006
+Rip iteraations 1
+Analisis RMSE:  0.11809084165531498
+Forecast RMSE:  0.13023848376250985
+Analisis SPRD:  0.12984622926215267
+Forecast SPRD:  0.14113759914621266
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -4001,192 +2390,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.08
-Tempering iteraations 3
-Analisis RMSE:  1.1071793040536346
-Forecast RMSE:  1.285213830923443
-Analisis SPRD:  1.0737043948711433
-Forecast SPRD:  1.2525861216587957
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.08
-Tempering iteraations 4
-Analisis RMSE:  1.0413813041614035
-Forecast RMSE:  1.2181959805425815
-Analisis SPRD:  1.0990968683579818
-Forecast SPRD:  1.2830302066933488
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.006
+Rip iteraations 2
+Analisis RMSE:  0.11643196162789801
+Forecast RMSE:  0.12855211761647953
+Analisis SPRD:  0.13234593525802266
+Forecast SPRD:  0.14384477794823033
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -4289,192 +2499,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.09
-Tempering iteraations 1
-Analisis RMSE:  1.288561287026337
-Forecast RMSE:  1.4669085464008984
-Analisis SPRD:  1.003688289349304
-Forecast SPRD:  1.1686458797829444
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Additive Inflation 0.09
-Tempering iteraations 2
-Analisis RMSE:  1.1016321204952533
-Forecast RMSE:  1.281606923217685
-Analisis SPRD:  1.1035809495886033
-Forecast SPRD:  1.2858977689190523
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.006
+Rip iteraations 3
+Analisis RMSE:  0.11607270894825165
+Forecast RMSE:  0.1281859031475126
+Analisis SPRD:  0.13293553691415116
+Forecast SPRD:  0.14448140254602918
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -4577,13 +2608,13 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.09
-Tempering iteraations 3
-Analisis RMSE:  1.0954039186171634
-Forecast RMSE:  1.2771316014020002
-Analisis SPRD:  1.1391420963882966
-Forecast SPRD:  1.3276095130179648
-Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
+Additive Inflation 0.006
+Rip iteraations 4
+Analisis RMSE:  0.11590766983823234
+Forecast RMSE:  0.12801326513586178
+Analisis SPRD:  0.13314230288889314
+Forecast SPRD:  0.14470282305133186
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
 
 This is a TWIN experiment
 
@@ -4686,72 +2717,1208 @@ Data assimilation cycle #  9600
 Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
-Additive Inflation 0.09
-Tempering iteraations 4
-Analisis RMSE:  1.0690160175053456
-Forecast RMSE:  1.249373438355978
-Analisis SPRD:  1.1629071604409196
-Forecast SPRD:  1.3556332523230723
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
- Warning: Iteration limit reached in Sinkhorn minimization
+Additive Inflation 0.007
+Rip iteraations 1
+Analisis RMSE:  0.12185864011342082
+Forecast RMSE:  0.13444481701012675
+Analisis SPRD:  0.13675379956905834
+Forecast SPRD:  0.14859617176380055
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.007
+Rip iteraations 2
+Analisis RMSE:  0.1201434510932718
+Forecast RMSE:  0.13270961206392196
+Analisis SPRD:  0.13941924994787075
+Forecast SPRD:  0.15147803722600098
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.007
+Rip iteraations 3
+Analisis RMSE:  0.11978845610532551
+Forecast RMSE:  0.13235171439849855
+Analisis SPRD:  0.14008204402490615
+Forecast SPRD:  0.15219576957525877
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.007
+Rip iteraations 4
+Analisis RMSE:  0.11960042411612481
+Forecast RMSE:  0.13215763224396096
+Analisis SPRD:  0.14033338197029857
+Forecast SPRD:  0.1524657827179865
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.008
+Rip iteraations 1
+Analisis RMSE:  0.12561198293868747
+Forecast RMSE:  0.13863328408932288
+Analisis SPRD:  0.14338033921236115
+Forecast SPRD:  0.15571520243931908
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.008
+Rip iteraations 2
+Analisis RMSE:  0.1238323332009986
+Forecast RMSE:  0.13683069033368184
+Analisis SPRD:  0.1462405377504218
+Forecast SPRD:  0.15880938706768236
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.008
+Rip iteraations 3
+Analisis RMSE:  0.12342783008242084
+Forecast RMSE:  0.13641828602297426
+Analisis SPRD:  0.14695492366703383
+Forecast SPRD:  0.15958199271300313
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.008
+Rip iteraations 4
+Analisis RMSE:  0.12323656022313756
+Forecast RMSE:  0.13622212832753994
+Analisis SPRD:  0.1472455466073096
+Forecast SPRD:  0.15989589790078498
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.009000000000000001
+Rip iteraations 1
+Analisis RMSE:  0.12931246570471078
+Forecast RMSE:  0.14274715533554203
+Analisis SPRD:  0.1497624225198539
+Forecast SPRD:  0.16254113169779066
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.009000000000000001
+Rip iteraations 2
+Analisis RMSE:  0.1274421293837229
+Forecast RMSE:  0.14085529701918748
+Analisis SPRD:  0.1528226875714458
+Forecast SPRD:  0.16585698614105532
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.009000000000000001
+Rip iteraations 3
+Analisis RMSE:  0.12701125110507902
+Forecast RMSE:  0.14041345416071133
+Analisis SPRD:  0.15359389845256693
+Forecast SPRD:  0.16668954535598685
+Reading observations from file  ./data/Nature/NatureR02_Den1_Freq4_Hlinear.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Additive Inflation 0.009000000000000001
+Rip iteraations 4
+Analisis RMSE:  0.12680459770496108
+Forecast RMSE:  0.14020003814386958
+Analisis SPRD:  0.15391117332796234
+Forecast SPRD:  0.16703128350307012

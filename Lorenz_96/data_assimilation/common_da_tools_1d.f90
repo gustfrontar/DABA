@@ -341,6 +341,182 @@ ENDIF
 
 END SUBROUTINE da_etkf
 
+
+!=======================================================================
+!  GaussianMixture with deterministic resampling DA for the 1D model
+!  Liu et al. 2016 MWR
+!=======================================================================
+SUBROUTINE da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
+
+IMPLICIT NONE
+INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
+INTEGER,INTENT(IN)         :: no                         !Number of observations 
+INTEGER,INTENT(IN)         :: nens                       !Number of ensemble members
+REAL(r_size),INTENT(IN)    :: xloc(nx)                   !Location of state grid points (space)
+REAL(r_size),INTENT(IN)    :: tloc(nt)                   !Location of state grid points (time)
+REAL(r_size),INTENT(IN)    :: obsloc(no,2)               !Location of obs (space , time)
+REAL(r_size),INTENT(IN)    :: xfens(nx,nens,nvar,nt)     !Forecast state ensemble  
+REAL(r_size),INTENT(OUT)   :: xaens(nx,nens,nvar,nt)     !Analysis state ensemble 
+REAL(r_size),INTENT(IN)    :: ofens(no,nens)             !Ensemble in observation space
+REAL(r_size),INTENT(IN)    :: obs(no)                    !Observations 
+REAL(r_size),INTENT(IN)    :: Rdiag(no)                  !Diagonal of observation error covariance matrix.
+REAL(r_size),INTENT(INOUT) :: inf_coefs(5)               !Mult inf, RTPS , RTPP , EPES, Additive inflation (State variables)
+REAL(r_size),INTENT(IN)    :: update_smooth_coef         !Update smooth parameter.
+REAL(r_size),INTENT(IN)    :: beta_coef                  !Gaussian Kernel scalling parameter
+REAL(r_size),INTENT(IN)    :: gamma_coef                 !Weigths nudging parameter
+REAL(r_size)               :: xfpert(nx,nens,nvar,nt)       !State and parameter forecast perturbations
+REAL(r_size)               :: xapert(nx,nens,nvar,nt)       !State and parameter analysis perturbations
+REAL(r_size)               :: xfmean(nx,nvar,nt)            !State and parameter ensemble mean (forecast)
+REAL(r_size)               :: d(no)                                                !Observation departure
+REAL(r_size),INTENT(OUT)   :: w_pf(nx,nens,it)              !Posterior weigths
+REAL(r_size)               :: ofpert_loc(no,nens) , Rdiag_loc(no)                  !Localized ensemble in obs space and diag of R
+REAL(r_size)               :: Rwf_loc(no)                                          !Localization weigths.
+REAL(r_size)               :: d_loc(no)                                            !Localized mean departure
+INTEGER                    :: no_loc                                               !Number of observations in the local domain.
+REAL(r_size),INTENT(IN)    :: loc_scale(2)                                         !Localization scales (space,time)
+
+REAL(r_size)               :: wa(nens,nens)                                        !Analysis weights
+REAL(r_size)               :: wainf(nens,nens)                                     !Analysis weights after inflation.
+REAL(r_size)               :: wamean(nens)                                         !Mean analysis weights
+REAL(r_size)               :: pa(nens,nens)                                        !Analysis cov matrix in ensemble space)
+
+REAL(r_size),PARAMETER     :: min_infl=1.0d0                                       !Minumn allowed multiplicative inflation.
+REAL(r_size)               :: mult_inf
+REAL(r_size)               :: grid_loc(2)
+REAL(r_size)               :: work1d(nx)
+
+INTEGER                    :: ix,ie,ke,it,iv,io
+REAL(r_size)               :: dx
+
+!Initialization
+xfmean=0.0d0
+xfpert=0.0d0
+xaens =0.0d0
+ofmean=0.0d0
+ofpert=0.0d0
+d     =0.0d0
+
+wa=0.0d0
+wamean=0.0d0
+wainf =0.0d0
+pa=0.0d0
+
+null_var = 0.0d0
+
+dx=xloc(2)-xloc(1)    !Assuming regular grid
+
+!Compute forecast ensemble mean and perturbations.
+DO it = 1,nt
+ DO ix = 1,nx
+  DO iv = 1,nvar
+   CALL com_mean( nens,xfens(ix,:,iv,it),xfmean(ix,iv,it) )
+   xfpert(ix,:,iv,it) = xfens(ix,:,iv,it) - xfmean(ix,iv,it) 
+  END DO
+ END DO
+END DO
+
+!Compute mean departure and HXf
+DO io = 1,no
+    CALL com_mean( nens , ofens(io,:) , ofmean(io) )
+    ofpert(io,:)=ofens(io,:) - ofmean(io) 
+    d(io) = obs(io) - ofmean(io)   
+ENDDO
+
+
+!Main assimilation loop.
+
+DO it = 1,nt
+
+
+!$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
+!$OMP &          ,mult_inf,Rdiag_loc,Rwf_loc,wa,wamean,pa,wainf,ie,iv,ke)
+  DO ix = 1,nx
+
+   !Localize observations
+   grid_loc(1)=xloc(ix)  !Set the grid point location in space
+   grid_loc(2)=tloc(it)  !Set the grid point location in time
+
+   CALL r_localization(no,no_loc,nens,ofpert,d,Rdiag,ofpert_loc,     &
+                     d_loc,Rdiag_loc,Rwf_loc,grid_loc,xloc(1),xloc(nx),dx,obsloc,loc_scale)
+
+
+
+   IF( no_loc > 0 )THEN   
+    !We have observations for this grid point. Let's compute the analysis.
+
+    !Compute weigths taking into account Gaussian Kernels.
+    CALL pf_weigth_core( nens , no_loc , ofpert_loc(1:no_loc,:),d_loc(1:no_loc), Rdiag_loc(1:no_loc) , &
+                         beta_coef , gamma_coef , w_pf(ix,:) )  
+                      
+
+    !Set multiplicative inflation
+    mult_inf=inf_coefs(1)  
+  
+    !Compute analysis weights
+ 
+    CALL letkf_gm_core(nens,no_loc,ofpert_loc(1:no_loc,:),Rdiag_loc(1:no_loc),d_loc(1:no_loc),mult_inf,wa,min_infl,beta_coef)
+
+   
+    !Shift the particle according to the LETKF update. 
+   
+    DO iv=1,nvar
+      DO ie=1,nens
+       xaens(ix,ie,iv,it) = xfmean(ix,iv,it)
+       DO ke = 1,nens
+          xaens(ix,ie,iv,it) = xaens(ix,ie,iv,it) &  
+              & + xfpert(ix,ke,iv,it) * wa(ke,ie)       
+       END DO
+      END DO
+    END DO
+
+   ELSE  
+
+    !We don't have observations for this grid point. We can do nothing :( 
+    xaens(ix,:,:,it)=xfens(ix,:,:,it)
+ 
+   ENDIF
+
+  END DO
+!$OMP END PARALLEL DO
+
+
+   !TODO TODO TODO... APLICAR EL RESAMPLING DETERMINISTICO 
+
+END DO  
+
+
+
+
+IF( update_smooth_coef > 0.0d0 )THEN
+
+
+! allocate( work1d( nx ) )
+
+ DO it = 1,nt
+
+  DO iv = 1,nvar
+
+   DO ie = 1,nens
+
+    !Smooth the update of each ensemble member.
+    work1d = xaens(:,ie,iv,it) - xfens(:,ie,iv,it) !DA update
+    CALL com_filter_lanczos( nx , update_smooth_coef , work1d )
+    xaens(:,ie,iv,it) = xfens(:,ie,iv,it) + work1d 
+
+   END DO
+
+  END DO
+
+ END DO
+
+! deallocate( work1d )
+
+ENDIF
+
+END SUBROUTINE da_gmdr
+
+
+
 !=======================================================================
 !  L-ETPF DA for the 1D model
 !=======================================================================
