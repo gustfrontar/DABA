@@ -185,11 +185,9 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   IF( beta_coef > 0.0d0 )THEN 
     !Compute ( HPHt + R )^-1
     
-    !CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb,nobsl,hdxb,&
-    !          & nobsl,0.0d0,work1,ne)
-    work1 = MATMUL( hdxb , TRANSPOSE( hdxb ) )
+    work1 = MATMUL( hdxb , TRANSPOSE( hdxb )  )
 
-    DO i = 1,ne
+    DO i = 1,nobsl
       work1(i,i) = work1(i,i) + rdiag(i)
     ENDDO
   
@@ -217,7 +215,7 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
     !-----------------------------------------------------------------------
 
     work1=0.0d0
-    DO i=1,ne
+    DO i=1,nobsl
        work1(i,i)=1.0d0/rdiag(i)
     ENDDO
   ENDIF

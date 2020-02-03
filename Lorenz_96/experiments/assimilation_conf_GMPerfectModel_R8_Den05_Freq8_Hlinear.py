@@ -6,7 +6,7 @@ import numpy as np
 
 GeneralConf=dict()
 
-GeneralConf['NatureName']='NatureR1_Den1_Freq16_Hlinear'
+GeneralConf['NatureName']='NatureR8_Den05_Freq8_Hlinear'
 
 
 GeneralConf['ExpName']='GM_PerfectModel_'+GeneralConf['NatureName'] #Experiment name.
@@ -74,16 +74,16 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['ExpLength'] = 1000                               #None use the full nature run experiment. Else use this length.
+DAConf['ExpLength'] = 5000                               #None use the full nature run experiment. Else use this length.
 
-DAConf['NEns'] = 10                                  #Number of ensemble members
+DAConf['NEns'] = 30                                  #Number of ensemble members
 
 DAConf['Twin'] = True                                  #When True, model configuration will be replaced by the model configuration in the nature run.
 
-DAConf['Freq'] = 16                                     #Assimilation frequency (in number of time steps)
-DAConf['TSFreq'] = 16                                   #Intra window ensemble output frequency (for 4D Data assimilation)
+DAConf['Freq'] = 8                                     #Assimilation frequency (in number of time steps)
+DAConf['TSFreq'] = 8                                   #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.02])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['LocScalesLETKF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
@@ -112,7 +112,7 @@ DAConf['NTemp']=1                                      #Number of temper iterati
 DAConf['BridgeParam']=0.0                              #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 DAConf['NKalmanSpinUp']=10                             #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 
-DAConf['BetaCoef']=0.6                                 #Scaling parameter for the Gaussian Kernel in the Gaussian mixture prior.
+DAConf['BetaCoef']=1.0                                 #Scaling parameter for the Gaussian Kernel in the Gaussian mixture prior.
 DAConf['GammaCoef']=0.2                                #Nudging parameter to uniform weigths in order to avoid weigth degeneracy. 
 
 DAConf['RejuvParam']=0.0                               #Global particle rejuvenestion (For the ETPF only)

@@ -74,9 +74,9 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
+DAConf['ExpLength'] = 5000                           #None use the full nature run experiment. Else use this length.
 
-DAConf['NEns'] = 20                                  #Number of ensemble members
+DAConf['NEns'] = 30                                  #Number of ensemble members
 
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 

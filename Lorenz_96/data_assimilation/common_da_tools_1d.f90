@@ -476,7 +476,7 @@ DO it = 1,nt
      ENDDO
      xamean  = xamean  / REAL( nens , r_size )
     !Expand perturbations by the factor sqrt(1+beta) and recenter around the PF mean.
-     xaens(ix,:,iv,it) = SQRT(1.0d0+beta_coef) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
+     xaens(ix,:,iv,it) = SQRT(1.0d0+0.2*beta_coef) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
     
    END DO
 

@@ -18,7 +18,7 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_HybridPerfectModel_R1_Den1_Freq16_Hlinear as conf         #Load the experiment configuration
+import assimilation_conf_HybridPerfectModel_R8_Den05_Freq8_Hlinear as conf         #Load the experiment configuration
 from scipy import stats
 import os
 

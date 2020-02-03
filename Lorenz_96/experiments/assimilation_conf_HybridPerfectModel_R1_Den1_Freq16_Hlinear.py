@@ -76,7 +76,7 @@ DAConf=dict()
 
 DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
 
-DAConf['NEns'] = 100                                  #Number of ensemble members
+DAConf['NEns'] = 10                                  #Number of ensemble members
 
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 
