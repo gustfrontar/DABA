@@ -32,7 +32,7 @@ CONTAINS
 !     wa(ne)           : PF weigths
 !=======================================================================
 
-SUBROUTINE pf_weigth_core(ne,nobsl,dens,rdiag,beta_coef,gamma_coef,wa)
+SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne , ndim                      
   INTEGER,INTENT(IN) :: nobsl
@@ -43,10 +43,10 @@ SUBROUTINE pf_weigth_core(ne,nobsl,dens,rdiag,beta_coef,gamma_coef,wa)
   REAL(r_size),INTENT(OUT) :: W(ne,ne)  !Transformation matrix
   REAL(r_size)  :: wt(ne)               !Target weigths 
   REAL(r_size)  :: delta(ne,ne)         !Correction to get a second order exact filter.
-  REAL(r_size)  :: log_w_sum        
+  REAL(r_size)  :: log_w_sum     
 
   INTEGER :: i,j,k
-  
+ 
   !Compute the weights.
   wa=0.0d0
   DO i=1,ne
@@ -69,6 +69,15 @@ SUBROUTINE pf_weigth_core(ne,nobsl,dens,rdiag,beta_coef,gamma_coef,wa)
 
   wt = 1.0 / REAL( ne , r_size )  !Compute the target weigths (equal weigths in this case)
 
+  !Solve the regularized optimal transport problem.
+  !CALL sinkhorn_ot_robust( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
+  CALL sinkhorn_ot( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
+
+  !Call Riccati solver
+  delta = 0.0d0
+  CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta )
+
+  W = W + delta
   
   RETURN
 END SUBROUTINE letpf_core
@@ -298,20 +307,5 @@ DO i=1,ne
 ENDDO
 
 END SUBROUTINE sinkhorn_ot_robust
-
-SUBROUTINE log_sum_vec( ne , logvec , log_sum )
-IMPLICIT NONE
-INTEGER, INTENT(IN)       :: ne
-REAL(r_size) , INTENT(IN) :: logvec(ne)
-REAL(r_size) , INTENT(OUT):: log_sum
-REAL(r_size)              :: max_log_vec
-
-max_log_vec = MAXVAL( logvec )
-
-log_sum = max_log_vec + LOG( SUM( EXP( logvec - max_log_vec ) ) )
-
-END SUBROUTINE log_sum_vec
-
-
 
 END MODULE common_pf

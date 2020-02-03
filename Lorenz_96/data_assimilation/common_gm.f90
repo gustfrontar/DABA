@@ -44,13 +44,12 @@ CONTAINS
 !                        by a factor beta_coef.
 
 !=======================================================================
-SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,minfl)
+SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne                      !GYL
   INTEGER,INTENT(IN) :: nobsl
   REAL(r_size),INTENT(IN) :: hdxb(1:nobsl,1:ne)
   REAL(r_size),INTENT(IN) :: rdiag(1:nobsl)
-  REAL(r_size),INTENT(IN) :: rloc(1:nobsl)
   REAL(r_size),INTENT(IN) :: dep(1:nobsl)
   REAL(r_size),INTENT(INOUT) :: parm_infl
   REAL(r_size),INTENT(OUT) :: trans(ne,ne)
@@ -58,42 +57,41 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,minfl)
   REAL(r_size),INTENT(IN)  :: beta_coef
 
   REAL(r_size) :: hdxb_rinv(nobsl,ne)
+  REAL(r_size) :: hdxb_tmp(nobsl,ne)
   REAL(r_size) :: eivec(ne,ne)
   REAL(r_size) :: eival(ne)
   REAL(r_size) :: pa(ne,ne)
   REAL(r_size) :: work1(ne,ne)
   REAL(r_size) :: work2(ne,nobsl)
   REAL(r_size) :: work3(ne)
+  REAL(r_size) :: work4(nobsl,1)
+  REAL(r_size) :: mem_departure(nobsl,ne)
   REAL(r_size) :: rho
   INTEGER :: i,j,k
 
-
-  IF(nobsl == 0) THEN
-    transm = 1.0d0            !GYL
-    RETURN
-  ELSE
+  trans = 1.0d0
+  hdxb_tmp(:,:) = SQRT(beta_coef) * hdxb(:,:)
 !-----------------------------------------------------------------------
 !  hdxb Rinv
 !-----------------------------------------------------------------------
     DO j=1,ne                                     !GYL
       DO i=1,nobsl                                !GYL
-        hdxb_rinv(i,j) = hdxb(i,j) / rdiag(i)     !GYL
+        hdxb_rinv(i,j) = hdxb_tmp(i,j) / rdiag(i)     !GYL
       END DO                                      !GYL
     END DO                                        !GYL
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb
 !-----------------------------------------------------------------------
-  CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb_rinv,nobsl,hdxb(1:nobsl,:),&
+  CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb_rinv,nobsl,hdxb_tmp,&
     & nobsl,0.0d0,work1,ne)
+
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb + (m-1) I / rho (covariance inflation)
 !-----------------------------------------------------------------------
-!  IF (PRESENT(minfl)) THEN                           !GYL
     IF (minfl > 0.0d0 .AND. parm_infl < minfl) THEN   !GYL
       parm_infl = minfl                               !GYL
     END IF                                            !GYL
-!  END IF                                             !GYL
-  rho = 1.0d0 / ( parm_infl * beta_coef )
+  rho = 1.0d0 / ( parm_infl ) 
   DO i=1,ne
     work1(i,i) = work1(i,i) + REAL(ne-1,r_size) * rho
   END DO
@@ -119,19 +117,32 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,minfl)
   CALL dgemm('n','t',ne,nobsl,ne,1.0d0,pa,ne,hdxb_rinv,&
     & nobsl,0.0d0,work2,ne)
 !-----------------------------------------------------------------------
-!  Pa hdxb_rinv^T dep - hdxb(:,iens)
+!  Pa hdxb_rinv^T (dep - hdxb(:,iens))
 !  This step is performed for each ensemble member
 !-----------------------------------------------------------------------
-  DO iens = 1,ne
-    trans(:,iens) = MATMUL( work2 , dep - hdxb(:,iens) )
-  END DO    
+  DO i=1,nobsl
+   DO j=1,ne
+     mem_departure(i,j) = dep(i) - hdxb(i,j) 
+   END DO
+  END DO 
+ 
+  trans = MATMUL( work2 , mem_departure )
+
+  !DO k=1,ne
+  !  DO i=1,ne
+  !    trans(i,k) = 0.0d0
+  !    DO j=1,nobsl
+  !      trans(i,k) = trans(i,k) + work2(i,j) * ( dep(j) - hdxb(j,k) )
+  !    END DO
+  !  END DO
+  !ENDDO
+
 
 !The transformation matrix contains the weigths to shift each particle according
 !to the LETKF update. 
 
 
   RETURN
-  END IF
 END SUBROUTINE letkf_gm_core
 
 !=======================================================================
@@ -149,25 +160,34 @@ END SUBROUTINE letkf_gm_core
 !     wa(ne)           : PF weigths
 !=======================================================================
 
-SUBROUTINE pf_weigth_core(ne,nobsl,y,d,rdiag,beta_coef,gamma_coef,wa)
+SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   IMPLICIT NONE
-  INTEGER,INTENT(IN) :: ne , ndim                      
+  INTEGER,INTENT(IN) :: ne                     
   INTEGER,INTENT(IN) :: nobsl
-  REAL(r_size),INTENT(IN) :: dens(1:nobsl,1:ne)
-  REAL(r_size),INTENT(IN) :: m(1:ne,1:ne)   !Distance matrix
-  REAL(r_size),INTENT(IN) :: rdiag(1:nobsl)
+  REAL(r_size),INTENT(IN) :: hdxb(nobsl,ne)
+  REAL(r_size),INTENT(IN) :: dep(nobsl)
+  REAL(r_size),INTENT(IN) :: rdiag(nobsl)
   REAL(r_size),INTENT(IN) :: beta_coef , gamma_coef
   REAL(r_size),INTENT(OUT) :: wa(ne)    ! 
   REAL(r_size)  :: wu                   !Uniform weigth (1/ne)
-  REAL(r_size)  :: delta(ne,ne)         !Correction to get a second order exact filter.
   REAL(r_size)  :: log_w_sum
-  REAL(r_size)  :: work1(1:nobsl,1:nobsl)
-  REAL(r_size)  :: mem_departure(1:nobsl,1)
+  REAL(r_size)  :: work1(nobsl,nobsl)
+  REAL(r_size)  :: mem_departure(nobsl,1)
+  REAL(r_size) :: eivec(nobsl,nobsl)
+  REAL(r_size) :: eival(nobsl)
+  REAL(r_size) :: work2(1,nobsl),work3(1,1)
   INTEGER :: i,j,k
+
+
+  wa=1.0d0
   
   IF( beta_coef > 0.0d0 )THEN 
     !Compute ( HPHt + R )^-1
-    work1 = beta_coef * MATMUL( y , TRANSPOSE( y ) )
+    
+    !CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb,nobsl,hdxb,&
+    !          & nobsl,0.0d0,work1,ne)
+    work1 = MATMUL( hdxb , TRANSPOSE( hdxb ) )
+
     DO i = 1,ne
       work1(i,i) = work1(i,i) + rdiag(i)
     ENDDO
@@ -176,34 +196,46 @@ SUBROUTINE pf_weigth_core(ne,nobsl,y,d,rdiag,beta_coef,gamma_coef,wa)
     !  eigenvalues and eigenvectors of [ HPHt + R ]  
     !-----------------------------------------------------------------------
     i=ne
-    CALL mtx_eigen(1,ne,hPht,eival,eivec,i)
+    CALL mtx_eigen(1,nobsl,work1,eival,eivec,i)
 
     !-----------------------------------------------------------------------
     !  [ HPHt ]^-1
     !-----------------------------------------------------------------------
-    DO j=1,ne
-      DO i=1,ne
+    DO j=1,nobsl
+      DO i=1,nobsl
         work1(i,j) = eivec(i,j) / eival(j)
       END DO
     END DO
-    CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
-              & ne,0.0d0,work1,ne)
+    work1 = MATMUL( work1 , TRANSPOSE( eivec ) )
+!    CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
+!              & ne,0.0d0,work1,ne)
 
-    !-----------------------------------------------------------------------
-    !Compute the weights.
-    !-----------------------------------------------------------------------
   ELSE 
+    !-----------------------------------------------------------------------
     !Compute weigths without Gaussian Kernel
+    !-----------------------------------------------------------------------
+
     work1=0.0d0
     DO i=1,ne
        work1(i,i)=1.0d0/rdiag(i)
     ENDDO
   ENDIF
 
-  wa=0.0d0
+  
+
+  !Compute the logaritm of the weigths
   DO i=1,ne
-     mem_departure(:,1) = d - y(:,i)
-     wa(i)=wa(i) - 0.5* MATMUL( TRANSPOSE( mem_departure , MATMUL( work1 , mem_departure )  ) 
+
+   wa(i) = 0.0d0
+   mem_departure(:,1) = dep - hdxb(:,i)
+
+   work3 = MATMUL( MATMUL( TRANSPOSE( mem_departure ) , work1 ) , mem_departure )
+
+!   CALL dgemm('n','n',nobsl,1,nobsl,1.0d0,work1,nobsl,mem_departure,&
+!           & nobsl,0.0d0,work3,nobsl)
+
+     wa(i) = -0.5d0 * work3(1,1)
+
   ENDDO
 
   !-----------------------------------------------------------------------
@@ -220,12 +252,12 @@ SUBROUTINE pf_weigth_core(ne,nobsl,y,d,rdiag,beta_coef,gamma_coef,wa)
   !-----------------------------------------------------------------------
   wu=1.0d0/REAL(ne,r_size)
   DO i = 1,ne
-    w(i) = gamma_parameter * w(i) + (1.0d0 - gamma_parameter )*wu
+    wa(i) = gamma_coef * wa(i) + (1.0d0 - gamma_coef )*wu
   ENDDO
   
 
   RETURN
-END SUBROUTINE letpf_core
+END SUBROUTINE pf_weigth_core
 
 
 END MODULE common_gm

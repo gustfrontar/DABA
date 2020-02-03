@@ -6,10 +6,10 @@ import numpy as np
 
 GeneralConf=dict()
 
-GeneralConf['NatureName']='NatureR8_Den05_Freq8_Hlinear'
+GeneralConf['NatureName']='NatureR1_Den1_Freq4_Hlinear'
 
 
-GeneralConf['ExpName']='Hybrid_PerfectModel_'+GeneralConf['NatureName'] #Experiment name.
+GeneralConf['ExpName']='GM_PerfectModel_'+GeneralConf['NatureName'] #Experiment name.
 GeneralConf['DataPath']='./data/Assimilation/'                          #Data output path
 GeneralConf['FigPath']='./figs/Assimilation/'                           #Figures output path
 GeneralConf['RunSave']=True                                             #Save the output
@@ -74,42 +74,45 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
+DAConf['ExpLength'] = 100                              #None use the full nature run experiment. Else use this length.
 
-DAConf['NEns'] = 20                                  #Number of ensemble members
+DAConf['NEns'] = 30                                   #Number of ensemble members
 
-DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
+DAConf['Twin'] = True                                  #When True, model configuration will be replaced by the model configuration in the nature run.
 
-DAConf['Freq'] = 8                                   #Assimilation frequency (in number of time steps)
-DAConf['TSFreq'] = 8                                 #Intra window ensemble output frequency (for 4D Data assimilation)
+DAConf['Freq'] = 4                                     #Assimilation frequency (in number of time steps)
+DAConf['TSFreq'] = 4                                   #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.02])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
-DAConf['LocScalesLETKF']=np.array([2.1,-1.0])             #Localization scale is space and time (negative means no localization)
-DAConf['LocScalesLETPF']=np.array([2.1,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETKF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETPF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
 
 #Initial state ensemble.
-DAConf['InitialXSigma']=0.5                          #Initial ensemble spread for state variables.
+DAConf['InitialXSigma']=0.5                            #Initial ensemble spread for state variables.
 
-DAConf['UpdateSmoothCoef']=0.0                       #Data assimilation update smooth (for parameter estimation only)
+DAConf['UpdateSmoothCoef']=0.0                         #Data assimilation update smooth (for parameter estimation only)
 
 #Parameter estimation/perturbation 
 
-DAConf['InitialPSigma']=np.array([0,0,0])            #Initial ensemble spread for the parameters. (0 means no parameter estimation)
+DAConf['InitialPSigma']=np.array([0,0,0])              #Initial ensemble spread for the parameters. (0 means no parameter estimation)
 
 DAConf['InfCoefsP']=np.array([1.015,1.0,0.0,0.0,0.0])  #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
-DAConf['UpdateSmoothCoefP']=0.0                      #Data assimilation update smooth (for parameter estimation only)
+DAConf['UpdateSmoothCoefP']=0.0                        #Data assimilation update smooth (for parameter estimation only)
 
-DAConf['EstimateParameters']=False                   #Wether parameters will be estimated or not.
+DAConf['EstimateParameters']=False                     #Wether parameters will be estimated or not.
 
-DAConf['ParameterLocalizationType']=1                #1-Global parameter (no loc), 2-Averaged local estimation , 3-Full local estimation
+DAConf['ParameterLocalizationType']=1                  #1-Global parameter (no loc), 2-Averaged local estimation , 3-Full local estimation
  
-DAConf['LocScalesP']=np.array([3.0,-1.0])            #To be used with ParameterLocalizationTypes 2 or 3.
+DAConf['LocScalesP']=np.array([3.0,-1.0])              #To be used with ParameterLocalizationTypes 2 or 3.
 
-DAConf['NTemp']=1                                    #Number of temper iterations 
+DAConf['NTemp']=1                                      #Number of temper iterations 
 
-DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
-DAConf['NKalmanSpinUp']=10                           #Number of pure Kalman cycles before switching to ETPF or Hybrid.
+DAConf['BridgeParam']=0.0                              #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
+DAConf['NKalmanSpinUp']=10                             #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 
-DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)
+DAConf['BetaCoef']=0.6                                 #Scaling parameter for the Gaussian Kernel in the Gaussian mixture prior.
+DAConf['GammaCoef']=0.2                                #Nudging parameter to uniform weigths in order to avoid weigth degeneracy. 
+
+DAConf['RejuvParam']=0.0                               #Global particle rejuvenestion (For the ETPF only)

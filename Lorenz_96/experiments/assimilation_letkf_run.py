@@ -4,8 +4,8 @@ Created on Mon Apr 10 17:36:06 2017
 @author: RISDA 2018
 """
 
-#Run a Gaussian Mixture particle filter as in Liu 2016
-#deterministic resample is used and weigths are computed with localization.
+#Run a Hybrid ETPF-LETKF experiment using the observations created by the script run_nature.py
+#Also a tempered ETPF or LETKF can be run using this script.
 
 import sys
 sys.path.append('../model/')
@@ -13,12 +13,12 @@ sys.path.append('../data_assimilation/')
 
 from model  import lorenzn          as model          #Import the model (fortran routines)
 from obsope import common_obs       as hoperator      #Import the observation operator (fortran routines)
-from da     import common_da_tools  as das            #Import the data assimilation routines (fortran routines)
+from letkf_da  import letkf_da_tools  as das            #Import the data assimilation routines (fortran routines)
 
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_GMPerfectModel_R1_Den1_Freq4_Hlinear as conf         #Load the experiment configuration
+import assimilation_conf_HybridPerfectModel_R8_Den05_Freq8_Hlinear as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
@@ -230,8 +230,8 @@ for it in range( 1 , DALength  )         :
 
    stateens = np.copy(XF[:,:,it])
    
-
-      
+ 
+   
    for itemp in range( DAConf['NTemp'] ) :
        
        
@@ -250,67 +250,67 @@ for it in range( 1 , DALength  )         :
                              obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
                              xloc=ModelConf['XLoc'] , tloc= TLoc )
        
-
+      #=================================================================
+      #  LETKF STEP  : 
+      #=================================================================
+      
+      tmp=np.zeros((Nx,NEns,1,1))
 
       local_obs_error = ObsErrorW * DAConf['NTemp'] 
-      #da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
-      [tmp_stateens , weigths] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                              tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
-                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                              rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
-                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] )
-      stateens = tmp_stateens[:,:,0,0]
+      das.da_letkf()
+      #das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
+      #               tloc=da_window_end    , nvar=1                        , xfens=tmp               ,
+      #               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
+      #               rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
+      #                )
 
-   #print( np.mean( np.std(stateens,1) ) / np.mean( np.std(XF[:,:,it] ,1 ) ) )
-
-                        
-     
+                 
+                             
+  
    XA[:,:,it] = np.copy( stateens )
-   #XA[:,:,it] = np.copy( XF[:,:,it])
-   
    
    #PARAMETER ESTIMATION
    if DAConf['EstimateParameters']   : 
       
-     if DAConf['ParameterLocalizationType'] == 1  :
-        #GLOBAL PARAMETER ESTIMATION (Note that ETKF is used in this case)
+    if DAConf['ParameterLocalizationType'] == 1  :
+       #GLOBAL PARAMETER ESTIMATION (Note that ETKF is used in this case)
    
-        PA[:,:,:,it] = das.da_etkf( no=NObsW , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it] ,
-                                             obs=YObsW, ofens=YF  , rdiag=ObsErrorW   ,
-                                             inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
+       PA[:,:,:,it] = das.da_etkf( no=NObsW , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it] ,
+                                            obs=YObsW, ofens=YF  , rdiag=ObsErrorW   ,
+                                            inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
        
        
-     if DAConf['ParameterLocalizationType'] == 2  :
-        #GLOBAL AVERAGED PARAMETER ESTIMATION (Parameters are estiamted locally but the agregated globally)
-        #LETKF is used but a global parameter is estimated.
+    if DAConf['ParameterLocalizationType'] == 2  :
+       #GLOBAL AVERAGED PARAMETER ESTIMATION (Parameters are estiamted locally but the agregated globally)
+       #LETKF is used but a global parameter is estimated.
        
-        #First estimate a local value for the parameters at each grid point.
-        PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
-                               tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                               rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
-                               update_smooth_coef=0.0 )[:,:,:,0]
+       #First estimate a local value for the parameters at each grid point.
+       PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
+                              tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
+                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
+                              rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
+                              update_smooth_coef=0.0 )[:,:,:,0]
        
-        #Spatially average the estimated parameters so we get the same parameter values
-        #at each model grid point.
-        for ic in range(0,NCoef)  :
-            for ie in range(0,NEns)  :
-               PA[:,ie,ic,it]=np.mean( PA[:,ie,ic,it] , axis = 0 )
+       #Spatially average the estimated parameters so we get the same parameter values
+       #at each model grid point.
+       for ic in range(0,NCoef)  :
+           for ie in range(0,NEns)  :
+              PA[:,ie,ic,it]=np.mean( PA[:,ie,ic,it] , axis = 0 )
               
-     if DAConf['ParameterLocalizationType'] == 3 :
-        #LOCAL PARAMETER ESTIMATION (Parameters are estimated at each model grid point and the forecast uses 
-        #the locally estimated parameters)
-        #LETKF is used to get the local value of the parameter.
-        PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
-                               tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                               rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
-                               update_smooth_coef=0.0 )[:,:,:,0]
+    if DAConf['ParameterLocalizationType'] == 3 :
+       #LOCAL PARAMETER ESTIMATION (Parameters are estimated at each model grid point and the forecast uses 
+       #the locally estimated parameters)
+       #LETKF is used to get the local value of the parameter.
+       PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
+                              tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
+                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
+                              rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
+                              update_smooth_coef=0.0 )[:,:,:,0]
        
        
    else :
-     #If Parameter estimation is not activated we keep the parameters as in the first analysis cycle.  
-     PA[:,:,:,it]=PA[:,:,:,0]
+    #If Parameter estimation is not activated we keep the parameters as in the first analysis cycle.  
+    PA[:,:,:,it]=PA[:,:,:,0]
 
    #print('Data assimilation took ', time.time()-start,'seconds.')
 

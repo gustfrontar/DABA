@@ -413,5 +413,20 @@ SUBROUTINE com_interp_spline(ndim,x,y,n,x5,y5)
   RETURN
 END SUBROUTINE com_interp_spline
 
+SUBROUTINE log_sum_vec( ne , logvec , log_sum )
+!Compute log( sum( vec ) ) based on knowing the logs of each element of vec.
+IMPLICIT NONE
+INTEGER, INTENT(IN)       :: ne
+REAL(r_size) , INTENT(IN) :: logvec(ne)
+REAL(r_size) , INTENT(OUT):: log_sum
+REAL(r_size)              :: max_log_vec
+
+max_log_vec = MAXVAL( logvec )
+
+log_sum = max_log_vec + LOG( SUM( EXP( logvec - max_log_vec ) ) )
+
+END SUBROUTINE log_sum_vec
+
+
 
 END MODULE common_tools
