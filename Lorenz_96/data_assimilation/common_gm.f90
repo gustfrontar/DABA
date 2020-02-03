@@ -70,28 +70,27 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef
   INTEGER :: i,j,k
 
   trans = 1.0d0
-  hdxb_tmp(:,:) = SQRT(beta_coef) * hdxb(:,:)
 !-----------------------------------------------------------------------
 !  hdxb Rinv
 !-----------------------------------------------------------------------
     DO j=1,ne                                     !GYL
       DO i=1,nobsl                                !GYL
-        hdxb_rinv(i,j) = hdxb_tmp(i,j) / rdiag(i)     !GYL
+        hdxb_rinv(i,j) = hdxb(i,j) / rdiag(i)     !GYL
       END DO                                      !GYL
     END DO                                        !GYL
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb
 !-----------------------------------------------------------------------
-  CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb_rinv,nobsl,hdxb_tmp,&
-    & nobsl,0.0d0,work1,ne)
-
+  !CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb_rinv,nobsl,hdxb_tmp,&
+  !  & nobsl,0.0d0,work1,ne)
+  work1 = MATMUL( TRANSPOSE( hdxb_rinv ) , hdxb )
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb + (m-1) I / rho (covariance inflation)
 !-----------------------------------------------------------------------
     IF (minfl > 0.0d0 .AND. parm_infl < minfl) THEN   !GYL
       parm_infl = minfl                               !GYL
     END IF                                            !GYL
-  rho = 1.0d0 / ( parm_infl ) 
+  rho = 1.0d0 / ( parm_infl * beta_coef ) 
   DO i=1,ne
     work1(i,i) = work1(i,i) + REAL(ne-1,r_size) * rho
   END DO
@@ -109,13 +108,15 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef
       work1(i,j) = eivec(i,j) / eival(j)
     END DO
   END DO
-  CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
-    & ne,0.0d0,pa,ne)
+  pa = MATMUL( work1 , TRANSPOSE( eivec ) )
+  !CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
+  !  & ne,0.0d0,pa,ne)
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T
 !-----------------------------------------------------------------------
-  CALL dgemm('n','t',ne,nobsl,ne,1.0d0,pa,ne,hdxb_rinv,&
-    & nobsl,0.0d0,work2,ne)
+  work2 = MATMUL( pa , TRANSPOSE( hdxb_rinv ) )
+  !CALL dgemm('n','t',ne,nobsl,ne,1.0d0,pa,ne,hdxb_rinv,&
+  !  & nobsl,0.0d0,work2,ne)
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T (dep - hdxb(:,iens))
 !  This step is performed for each ensemble member

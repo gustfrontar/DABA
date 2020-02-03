@@ -4,7 +4,7 @@ MODULE common_da_tools
 ! [PURPOSE:] Data assimilation tools for 1D models
 !
 !=======================================================================
-!!$USE OMP_LIB
+!$USE OMP_LIB
   USE common_tools
   USE common_letkf
   USE common_pf
@@ -420,8 +420,8 @@ ENDDO
 DO it = 1,nt
 
 
-!!$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
-!!$OMP &          ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke)
+!$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
+!$OMP &          ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke)
   DO ix = 1,nx
 
 !   !Localize observations
@@ -452,7 +452,7 @@ DO it = 1,nt
        xaens(ix,ie,iv,it) = xfens(ix,ie,iv,it)   
        DO ke = 1,nens
           xaens(ix,ie,iv,it) = xaens(ix,ie,iv,it) &  
-              & + beta_coef * xfpert(ix,ke,iv,it) * w(ke,ie)       
+              & + xfpert(ix,ke,iv,it) * w(ke,ie)       
        END DO
       END DO
     END DO
@@ -476,12 +476,12 @@ DO it = 1,nt
      ENDDO
      xamean  = xamean  / REAL( nens , r_size )
     !Expand perturbations by the factor sqrt(1+beta) and recenter around the PF mean.
-     xaens(ix,:,iv,it) = SQRT(1.0d0 + beta_coef ) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
+     xaens(ix,:,iv,it) = SQRT(1.0d0+beta_coef) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
     
    END DO
 
   END DO
-!!$OMP END PARALLEL DO
+!$OMP END PARALLEL DO
 
 !WRITE(*,*)xfmean
 !WRITE(*,*)xfpert

@@ -74,7 +74,7 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['ExpLength'] = 100                           #None use the full nature run experiment. Else use this length.
+DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
 
 DAConf['NEns'] = 100                                  #Number of ensemble members
 

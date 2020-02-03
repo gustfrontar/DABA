@@ -74,7 +74,7 @@ ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for
 
 DAConf=dict()
 
-DAConf['ExpLength'] = 100                              #None use the full nature run experiment. Else use this length.
+DAConf['ExpLength'] = 1000                              #None use the full nature run experiment. Else use this length.
 
 DAConf['NEns'] = 30                                   #Number of ensemble members
 
@@ -83,7 +83,7 @@ DAConf['Twin'] = True                                  #When True, model configu
 DAConf['Freq'] = 4                                     #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 4                                   #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.00])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['LocScalesLETKF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
