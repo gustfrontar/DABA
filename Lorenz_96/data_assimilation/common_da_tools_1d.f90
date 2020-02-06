@@ -9,6 +9,7 @@ MODULE common_da_tools
   USE common_letkf
   USE common_pf
   USE common_gm
+  USE rand_matrix
 
   IMPLICIT NONE
 
@@ -347,7 +348,8 @@ END SUBROUTINE da_etkf
 !  GaussianMixture with deterministic resampling DA for the 1D model
 !  Liu et al. 2016 MWR
 !=======================================================================
-SUBROUTINE da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
+SUBROUTINE da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag, &
+                   loc_scale,inf_coefs,beta_coef,gamma_coef,resampling_type)
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
@@ -366,7 +368,7 @@ REAL(r_size),INTENT(IN)    :: beta_coef                  !Gaussian Kernel scalli
 REAL(r_size),INTENT(IN)    :: gamma_coef                 !Weigths nudging parameter
 REAL(r_size)               :: xfpert(nx,nens,nvar,nt)       !State and parameter forecast perturbations
 REAL(r_size)               :: xfmean(nx,nvar,nt)            !State and parameter ensemble mean (forecast)
-REAL(r_size)               :: xamean , xawmean              !For deterministic resampling.
+REAL(r_size)               :: xamean , xawmean , xapert(nens)             !For deterministic resampling.
 REAL(r_size)               :: ofmean(no) , ofpert(no,nens)                         !Ensemble mean in obs space, ensemble perturbations in obs space (forecast)
 REAL(r_size)               :: d(no)                                                !Observation departure
 REAL(r_size),INTENT(OUT)   :: w_pf(nx,nens,nt)              !Posterior weigths
@@ -380,6 +382,9 @@ REAL(r_size),PARAMETER     :: min_infl=1.0d0                                    
 REAL(r_size)               :: mult_inf
 REAL(r_size)               :: grid_loc(2)
 REAL(r_size)               :: work1d(nx)
+REAL(r_size)               :: m(nens,nens) , wt(nens) , delta(nens,nens) , wf(nens,nens) , rr_matrix(nens,nens)
+REAL(r_size)               :: tmp_ens(nens,nvar)
+INTEGER,INTENT(IN)         :: resampling_type         !1-Liu, 2-Reich , NETPF without rotation ,NETPF with random rotation
 
 !
 INTEGER                    :: ix,ie,ke,it,iv,io
@@ -415,13 +420,22 @@ DO io = 1,no
     d(io) = obs(io) - ofmean(io)
 ENDDO
 
+wt = 1.0 / REAL( nens , r_size )  !Compute the target weigths (equal weigths in this case)
+
 !!Main assimilation loop.
+
+IF ( resampling_type == 4 )THEN
+  !Compute random rotation matrix
+  !Random rotation matrix generator from PDAF
+  CALL PDAF_generate_rndmat( nens, rr_matrix , 2)
+ENDIF
+
 
 DO it = 1,nt
 
 
 !$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
-!$OMP &          ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke)
+!$OMP &          ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke,wf,delta,tmp_ens,m)
   DO ix = 1,nx
 
 !   !Localize observations
@@ -439,7 +453,7 @@ DO it = 1,nt
     CALL pf_weigth_core( nens , no_loc , ofpert_loc(1:no_loc,:),d_loc(1:no_loc), Rdiag_loc(1:no_loc) , &
                          beta_coef , gamma_coef , w_pf(ix,:,it) )  
     !Set multiplicative inflation
-    mult_inf=inf_coefs(1)  
+    mult_inf=1.0d0 
     !Compute analysis weights
 
     !w = 1.0d0/REAL(nens,r_size) 
@@ -465,27 +479,84 @@ DO it = 1,nt
    ENDIF
 
 
-   !Local deterministic resampling
-   !(deterministic resampling based on local weigths)
-   DO iv=1,nvar
-     xamean  = 0.0d0
-     xawmean = 0.0d0 
-     DO ie = 1 ,nens
-       xamean  = xamean  + xaens(ix,ie,iv,it) 
-       xawmean = xawmean + w_pf(ix,ie,it) * xaens(ix,ie,iv,it) 
-     ENDDO
-     xamean  = xamean  / REAL( nens , r_size )
-    !Expand perturbations by the factor sqrt(1+beta) and recenter around the PF mean.
-     xaens(ix,:,iv,it) = SQRT(1.0d0+0.2*beta_coef) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
-    
-   END DO
+   !--------------------------------------------------------------------
+   ! Deterministic Resampling Step
+   !--------------------------------------------------------------------
+
+   IF ( resampling_type == 1 ) THEN
+      !-----------------------------------------------------------------
+      ! Liu et al 2016 Deterministic resampling
+      !-----------------------------------------------------------------
+      DO iv=1,nvar
+        xamean  = 0.0d0
+        xawmean = 0.0d0 
+        DO ie = 1 ,nens
+           xamean  = xamean  + xaens(ix,ie,iv,it) 
+           xawmean = xawmean + w_pf(ix,ie,it) * xaens(ix,ie,iv,it) 
+        ENDDO
+        xamean  = xamean  / REAL( nens , r_size )
+        !Expand perturbations by the factor sqrt(1+beta) and recenter around the PF mean.
+        xaens(ix,:,iv,it) = SQRT(1.0d0+0.6*beta_coef) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
+      END DO
+   ELSEIF( resampling_type == 2 )THEN
+      !-----------------------------------------------------------------
+      ! Acevedo et al 2016 Deterministic resampling
+      !-----------------------------------------------------------------
+      !Compute analysis weights
+      CALL get_distance_matrix( nens , 1 , nvar , 1 , xfens(ix,:,:,it) , m )
+      !Solve the regularized optimal transport problem.
+      CALL sinkhorn_ot( nens , w_pf(ix,:,it) , wt , m , wf , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
+      !Call Riccati solver
+      delta = 0.0d0
+      CALL riccati_solver( nens ,wf,w_pf(ix,:,it),dt_riccati,stop_threshold_riccati,max_iter_riccati,delta,inf_coefs(1))
+      wf = wf + delta
+      !Compute the updated ensemble mean, std and mode.
+      tmp_ens = 0.0d0
+      DO ie=1,nens
+         DO ke=1,nens
+           tmp_ens(ie,:) =  tmp_ens(ie,:) + xaens(ix,ke,:,it) * wf(ke,ie)
+         ENDDO
+      ENDDO
+      xaens(ix,:,:,it) = tmp_ens
+   ELSEIF ( resampling_type == 3 .or. resampling_type == 4 )THEN
+      !-----------------------------------------------------------------
+      ! Todter and Ahrens 2015 MWR
+      !-----------------------------------------------------------------
+      CALL netpf_w( nens , w_pf(ix,:,it) , wf )
+      wf = SQRT( inf_coefs(1) )
+
+      IF( resampling_type == 4 )THEN
+         wf = MATMUL( wf , rr_matrix ) 
+      ENDIF
+
+      !Recompute the ensemble mean and perturbations
+      DO iv = 1,nvar
+          CALL com_mean( nens,xaens(ix,:,iv,it),xfmean(ix,iv,it) )
+          xfpert(ix,:,iv,it) = xaens(ix,:,iv,it) - xfmean(ix,iv,it)
+      END DO
+
+      !Compute the new analysis mean.
+      DO iv=1,nvar
+        xamean  = xfmean(ix,iv,it)
+        DO ie = 1 ,nens
+           xamean = xamean + w_pf(ix,ie,it) * xfpert(ix,ie,iv,it)
+        ENDDO
+        xapert = 0.0d0
+        DO ie=1,nens
+          DO ke=1,nens
+           xapert(ie) =  xapert(ie) + xfpert(ix,ke,iv,it) * wf(ke,ie)
+          ENDDO
+        ENDDO
+        xaens(ix,:,iv,it) = xamean + xapert
+      END DO
+
+
+   ENDIF
 
   END DO
 !$OMP END PARALLEL DO
 
-!WRITE(*,*)xfmean
-!WRITE(*,*)xfpert
-!WRITE(*,*)xaens
+
 
 END DO  
 

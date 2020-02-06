@@ -83,7 +83,7 @@ DAConf['Twin'] = True                                  #When True, model configu
 DAConf['Freq'] = 4                                     #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 4                                   #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.00])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.1,0.0,0.0,0.0,0.00])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['LocScalesLETKF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
@@ -116,3 +116,5 @@ DAConf['BetaCoef']=0.6                                 #Scaling parameter for th
 DAConf['GammaCoef']=0.2                                #Nudging parameter to uniform weigths in order to avoid weigth degeneracy. 
 
 DAConf['RejuvParam']=0.0                               #Global particle rejuvenestion (For the ETPF only)
+DAConf['ResamplingType']=2                             #Resampling: 1-Liu 2016, 2-Acevedo et al. 2016, 3-NETPF without rotation, 4-NETPF with rotation.
+

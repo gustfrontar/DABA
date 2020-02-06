@@ -18,7 +18,7 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_GMPerfectModel_R8_Den05_Freq8_Hlinear as conf         #Load the experiment configuration
+import assimilation_conf_GMPerfectModel_R4_Den05_Freq8_Hlogaritmic as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
@@ -230,6 +230,9 @@ for it in range( 1 , DALength  )         :
 
    stateens = np.copy(XF[:,:,it])
    
+   
+   inf_coefs = np.copy( DAConf['InfCoefs'] )
+   inf_coefs[0]=np.power( inf_coefs[0] , 1.0/DAConf['NTemp'] )
 
       
    for itemp in range( DAConf['NTemp'] ) :
@@ -251,14 +254,15 @@ for it in range( 1 , DALength  )         :
                              xloc=ModelConf['XLoc'] , tloc= TLoc )
        
 
+      
 
       local_obs_error = ObsErrorW * DAConf['NTemp'] 
       #da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
       [tmp_stateens , weigths] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                              tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
-                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                              rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
-                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] )
+                              tloc=da_window_end    , nvar=1                        , xfens=stateens                      ,
+                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                            ,
+                              rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=inf_coefs            ,
+                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] )
       stateens = tmp_stateens[:,:,0,0]
 
    #print( np.mean( np.std(stateens,1) ) / np.mean( np.std(XF[:,:,it] ,1 ) ) )

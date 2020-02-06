@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #COMPILER=f2py3
-COMPILER=f2py  #--fcompiler=intelem
+COMPILER='f2py -c ' #--fcompiler=intelem'
 FFLAGS='-O3 '
 F90FLAGS='-fopenmp -lgomp'
 #FFLAGS='-O1 -fcheck=all'  #For debug
@@ -38,7 +38,7 @@ ln -sf ../common/SFMT.f90          .
 ln -sf ../common/common_tools.f90  .
 ln -sf ../common/common_mtx.f90    .
 
-$COMPILER -c --f90flags=$F90FLAGS --opt=$FFLAGS netlib.f90 SFMT.f90 common_tools.f90 common_obs_lorenzN.f90 -m obsope #> compile.out 2>&1
+$COMPILER --f90flags=$F90FLAGS --opt=$FFLAGS netlib.f90 SFMT.f90 common_tools.f90 common_obs_lorenzN.f90 -m obsope #> compile.out 2>&1
 
 rm netlib.f90 SFMT.f90 common_tools.f90 common_mtx.f90
 
@@ -55,7 +55,7 @@ ln -sf ../common/SFMT.f90          .
 ln -sf ../common/common_tools.f90  .
 ln -sf ../common/common_mtx.f90    .
 
-$COMPILER -c --f90flags=$F90FLAGS --opt=$FFLAGS netlib.f90 SFMT.f90 common_tools.f90 common_mtx.f90 common_letkf.f90 common_pf.f90 common_gm.f90 common_da_tools_1d.f90 -m da #> compile.out 2>&1
+$COMPILER --f90flags=$F90FLAGS --opt=$FFLAGS netlib.f90 SFMT.f90 common_tools.f90  PDAF_generate_rndmat.F90 common_mtx.f90 common_letkf.f90 common_pf.f90 common_gm.f90 common_da_tools_1d.f90 -m da #> compile.out 2>&1
 rm netlib.f90 SFMT.f90 common_tools.f90 common_mtx.f90
 
 
@@ -70,7 +70,7 @@ cd model
 ln -sf ../common/SFMT.f90          .
 ln -sf ../common/common_tools.f90  .
 #Two scale model - stochastic parametrization model.
-$COMPILER -c --f90flags=$F90FLAGS --opt=$FFLAGS SFMT.f90 common_tools.f90 lorenzN.f90 -m model #> compile.out 2>&1 
+$COMPILER --f90flags=$F90FLAGS --opt=$FFLAGS SFMT.f90 common_tools.f90 lorenzN.f90 -m model #> compile.out 2>&1 
 
 
 rm SFMT.f90 common_tools.f90 

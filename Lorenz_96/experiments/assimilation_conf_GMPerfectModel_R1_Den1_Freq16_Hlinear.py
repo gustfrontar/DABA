@@ -76,14 +76,14 @@ DAConf=dict()
 
 DAConf['ExpLength'] = 1000                               #None use the full nature run experiment. Else use this length.
 
-DAConf['NEns'] = 10                                  #Number of ensemble members
+DAConf['NEns'] = 30                                  #Number of ensemble members
 
 DAConf['Twin'] = True                                  #When True, model configuration will be replaced by the model configuration in the nature run.
 
 DAConf['Freq'] = 16                                     #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 16                                   #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.4,0.0,0.0,0.0,0.00])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['LocScalesLETKF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
@@ -113,6 +113,7 @@ DAConf['BridgeParam']=0.0                              #Bridging parameter for t
 DAConf['NKalmanSpinUp']=10                             #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 
 DAConf['BetaCoef']=0.6                                 #Scaling parameter for the Gaussian Kernel in the Gaussian mixture prior.
-DAConf['GammaCoef']=0.2                                #Nudging parameter to uniform weigths in order to avoid weigth degeneracy. 
+DAConf['GammaCoef']=0.1                                #Nudging parameter to uniform weigths in order to avoid weigth degeneracy. 
 
 DAConf['RejuvParam']=0.0                               #Global particle rejuvenestion (For the ETPF only)
+DAConf['ResamplingType']=2                             #Resampling: 1-Liu 2016, 2-Acevedo et al. 2016, 3-NETPF without rotation, 4-NETPF with rotation.

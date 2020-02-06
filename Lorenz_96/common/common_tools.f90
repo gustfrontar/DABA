@@ -260,25 +260,30 @@ END SUBROUTINE com_filter_lanczos
 
 !=======================================================================
 
-SUBROUTINE com_rand(ndim,var)
+SUBROUTINE com_rand(ndim,var,iseed_in)
 !
 ! RAND (random number with uniform distribution)
 !
   IMPLICIT NONE
 
   INTEGER,INTENT(IN) :: ndim
+  INTEGER,INTENT(IN),OPTIONAL :: iseed_in
   REAL(r_size),INTENT(OUT) :: var(1:ndim)
   REAL(r_dble) :: genrand_res53
   INTEGER :: idate(8)
-  INTEGER :: i,iseed
+  INTEGER :: i , iseed
   LOGICAL,SAVE :: first=.true.
 
-  IF (first) THEN
-    CALL DATE_AND_TIME(VALUES=idate)
-    iseed = idate(8) + idate(7)*1000
-    CALL init_gen_rand(iseed)
-    first=.false.
-  END IF
+  IF ( PRESENT( iseed_in ) ) THEN
+     CALL init_gen_rand(iseed_in)
+  ELSE
+    IF (first) THEN
+      CALL DATE_AND_TIME(VALUES=idate)
+      iseed = idate(8) + idate(7)*1000
+      CALL init_gen_rand(iseed)
+      first=.false.
+    END IF
+  ENDIF
 
   DO i=1,ndim
     var(i) = genrand_res53()

@@ -612,9 +612,75 @@ def analysis_update_ETPF_2ndord( yo , xf , forward_operator , R , rejuv_param , 
 
     return xa , xa_mean , Pa , OmB , OmA , w , D  
 
+def analysis_update_ETPF_2ndord_rip( yo , xf_in , forward_operator , R , rejuv_param , rtps_alpha )   :
+    #from emd import emd
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Dada matrices R, un ensamble de campos preliminares y un conjunto de observaciones
+   #  calcula  los pesos optimos y hace el resampling.
+   #  Esta funcion se aplica al Earth Mover Distance Particle Filter
+   #  Este filtro aplica una transformacion deterministica que es aquella que permite
+   #  transformar el prior en el posterior con la minima redistribucion de masa (de probabilidad)
+   #
+   #  Esto es una transformacion que mueve las particulas una distancia minima tal que las particulas
+   #  finales describan el posterior mientras que las particulas iniciales describen el prior.
+   #
+   #  Este filtro presenta una alternativa deterministica al resampling estocastico.
+   #  Reich, S. (2013). A non-parametric ensemble transform method for bayesian inference.
+   #  SIAM J Sci Comput, 35:A2013–A2014.
+   #  El metodo es una actualizacion del trabajo de Reich en donde pasa a ser un metodo
+   #  exacto en la varianza. Ademas se introduce un algoritmo iterativo mas eficiente para 
+   #  la solucion del problema del transporte optimo.
+   #  Acevedo et al. (2017) A Second Order Accurate Ensemble Transform Particle Filter. SIAM
+   #   #
+   #---------------------------------------------
+    xf = np.copy( xf_in[:,:,-1] ) #Asumimos que la observacion esta al final de la ventana.
+    #Y procedemos con los pesos como en el caso sin rip.
+    #Obtengo la cantidad de miembros en el ensamble
+    [nvar , nens ]= xf.shape
+    
+    #Calculo la inversa de la matriz de covarianza    
+    Rinv = np.linalg.inv(R)
+    
+    [xf_mean , xf_pert] = mean_and_perts( xf )
+        
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    for iens in range( nens ) :
+        yf = forward_operator( xf[:,iens] )
+        w[iens] = np.exp( -0.5 * np.matmul( (yo-yf).transpose() , np.matmul( Rinv , yo - yf ) ) )
+
+    #Normalizamos los pesos para que sumen 1.
+
+    w = w / np.sum(w)
+    
+    #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
+    #con un parametro de regularizacion lambda. 
+    #D = sinkhorn_ot( xf , w  )
+    M = np.power( cdist(np.transpose(xf),np.transpose(xf),'euclidean') , 2 ) 
+    D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens
+    #D=np.transpose( ot.bregman.sinkhorn(np.ones(nens)/nens,w,M,0.1,method='sinkhorn') )
+    #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
+    #que el metodo sea exacto en la varianza.
+    
+    delta = riccati_solver( D , w )
+    
+    #Correct the transformation matrix to ensure a second order exact transformation.
+    D = D + delta
+    
+    xa = np.matmul( xf , D ) 
+              
+    xaa = np.matmul( xf_in[:,:,0] , D )      
+    
+
+    return xa , w , D , xaa
 
 
-def analysis_update_ETKF( yo , xf , forward_operator , R , Inflation )   :
+
+
+def analysis_update_ETKF( yo , xf , forward_operator , R , Inflation  )   :
 
    #---------------------------------------------#   
    #  Dada matrices R, un ensamble de campos preliminares y un conjunto de observaciones
@@ -692,6 +758,298 @@ def analysis_update_ETKF( yo , xf , forward_operator , R , Inflation )   :
     OmA = yo - hxamean
 
     return xa , xa_mean , Pa , OmB , OmA   
+
+def analysis_update_GMDR( yo , xf , forward_operator , R , Inflation , beta_param = 0.6 , gamma_param = 0.2)   :
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Gaussian Mixture con resampling deterministico
+   #  similar al trabajo de Liu et al 2016 pero usando ETPF para definir el 
+   #  resampling deterministico.
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       forward_operator - operador de las observaciones (funcion)
+   #       forward_operator_tl - tangente lineal del operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens) - analysis ensemble
+   #
+   #---------------------------------------------
+
+   #En esta formulacion se utiliza el Ensemble Transform Kalman Filter esto es
+   #el update del analisis se calcula en el espacio del ensamble (esto es particularmente
+   #ventajoso cuando la dimension del estado es mucho mayor que la cantidad de miembros en el ensamble)
+   #Esta formulacion no requiere el calculo explicito del modelo tangente lineal
+    #Obtengo la cantidad de miembros en el ensamble
+    [nvar , nens ]= xf.shape
+    
+        
+    Rinv= np.linalg.inv(R) 
+
+    #Obtengo el numero de observaciones
+    nobs = yo.shape[0]
+      
+    #Calculamos el ensamble en el espacio de las perturbaciones
+    y=np.zeros((nobs,nens))
+    
+    #Defino la matriz que guardara las perturbaciones respecto de la media del ensamble.
+    [ xf_mean , xf_pert ] = mean_and_perts( xf )
+    
+    #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
+    xf_pert = xf_pert * Inflation
+    
+    for iens in range( nens ) :
+        y[:,iens] = forward_operator( xf_mean + xf_pert[:,iens] )
+        
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    for iens in range( nens ) :
+        w[iens] = np.exp( -0.5 * np.matmul( (yo-y[:,iens]).transpose() , np.matmul( Rinv , yo - y[:,iens] ) ) )
+    #Normalizamos los pesos para que sumen 1.
+    w = w / np.sum(w)
+    #Aplly weigth nudging.
+    w = ( 1.0 - gamma_param ) * w + gamma_param * ( np.ones(nens) / nens )
+    
+    #Defino la media del ensamble y las perturbaciones en el espacio de las observaciones.
+    [ymean , ypert ] = mean_and_perts( y )
+
+    dy = yo - forward_operator( xf_mean )  #Innovacion de la media del ensamble.
+
+    # analysis error covariance in ensemble space
+
+    Pahat=np.linalg.inv( np.dot( ypert.transpose() , np.dot( Rinv , ypert ) ) + (nens-1.0)*np.identity(nens) / beta_param )
+    
+    tmp_mat = np.dot( Pahat ,  np.dot(ypert.transpose() , Rinv ) )
+
+    #Compute mean weigths for each ensemble member and compute the intermediate analysis.
+    #This is the Kalman filter update applied to each ensemble member.
+    xa_tmp = np.zeros( xf.shape )
+    for iens in range( nens )  :
+        local_wabar = np.dot( tmp_mat , yo - y[:,iens] )
+        xa_tmp[:,iens] = xf[:,iens] + np.dot( xf_pert , local_wabar )
+    
+    [xa_tmp_mean , xa_tmp_pert] = mean_and_perts( xa_tmp )
+    
+    xa = xa_tmp
+    xa_mean = xa_tmp_mean
+    
+    #Now proceed to deterministic resampling. 
+    
+    #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
+    #con un parametro de regularizacion lambda. 
+    #D = sinkhorn_ot( xf , w  )
+    M = np.power( cdist(np.transpose(xa_tmp),np.transpose(xa_tmp),'euclidean') , 2 ) 
+    D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens
+    #D=np.transpose( ot.bregman.sinkhorn(np.ones(nens)/nens,w,M,0.1,method='sinkhorn') )
+    #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
+    #que el metodo sea exacto en la varianza.
+    
+    delta = riccati_solver( D , w )
+    
+    #Correct the transformation matrix to ensure a second order exact transformation.
+    D = D + delta
+    
+    xa = np.matmul( xa_tmp , D ) 
+    
+    xa_mean = np.mean(xa,1)
+
+    Pa=np.nan
+    OmB=np.nan
+    OmA=np.nan
+    
+    return xa , xa_mean , Pa , OmB , OmA   
+
+
+def analysis_update_GMDR_rip( yo , xf_in , forward_operator , R , Inflation , beta_param = 0.6 , gamma_param = 0.2)   :
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Gaussian Mixture con resampling deterministico
+   #  similar al trabajo de Liu et al 2016 pero usando ETPF para definir el 
+   #  resampling deterministico.
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       forward_operator - operador de las observaciones (funcion)
+   #       forward_operator_tl - tangente lineal del operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens) - analysis ensemble
+   #
+   #---------------------------------------------
+
+   #En esta formulacion se utiliza el Ensemble Transform Kalman Filter esto es
+   #el update del analisis se calcula en el espacio del ensamble (esto es particularmente
+   #ventajoso cuando la dimension del estado es mucho mayor que la cantidad de miembros en el ensamble)
+   #Esta formulacion no requiere el calculo explicito del modelo tangente lineal
+    #Obtengo la cantidad de miembros en el ensamble
+    xf = np.copy( xf_in[:,:,1] )
+    [nvar , nens ]= xf.shape
+    
+    Rinv= np.linalg.inv(R) 
+
+    #Obtengo el numero de observaciones
+    nobs = yo.shape[0]
+      
+    #Calculamos el ensamble en el espacio de las perturbaciones
+    y=np.zeros((nobs,nens))
+    
+    #Defino la matriz que guardara las perturbaciones respecto de la media del ensamble.
+    [ xf_mean , xf_pert ] = mean_and_perts( xf )
+    
+    #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
+    xf_pert = xf_pert * Inflation
+    
+    for iens in range( nens ) :
+        y[:,iens] = forward_operator( xf_mean + xf_pert[:,iens] )
+        
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    for iens in range( nens ) :
+        w[iens] = np.exp( -0.5 * np.matmul( (yo-y[:,iens]).transpose() , np.matmul( Rinv , yo - y[:,iens] ) ) )
+    #Normalizamos los pesos para que sumen 1.
+    w = w / np.sum(w)
+    #Aplly weigth nudging.
+    w = ( 1.0 - gamma_param ) * w + gamma_param * ( np.ones(nens) / nens )
+    
+    #Defino la media del ensamble y las perturbaciones en el espacio de las observaciones.
+    [ymean , ypert ] = mean_and_perts( y )
+
+    # analysis error covariance in ensemble space
+
+    Pahat=np.linalg.inv( np.dot( ypert.transpose() , np.dot( Rinv , ypert ) ) + (nens-1.0)*np.identity(nens) / beta_param )
+    
+    tmp_mat = np.dot( Pahat ,  np.dot(ypert.transpose() , Rinv ) )
+
+    #Compute mean weigths for each ensemble member and compute the intermediate analysis.
+    #This is the Kalman filter update applied to each ensemble member.
+    [ xa_mean , xa_pert ] = mean_and_perts( xf_in[:,:,0] )
+    xa_tmp = np.zeros( xf.shape )
+    xaa_tmp = np.zeros( xf.shape )
+    #Use Kalman to update both the forecast and its initial conditions.
+    for iens in range( nens )  :
+        local_wabar = np.dot( tmp_mat , yo - y[:,iens] )
+        xa_tmp[:,iens] = xf[:,iens] + np.dot( xf_pert , local_wabar )
+        xaa_tmp[:,iens] = xf_in[:,iens,0] + np.dot( xa_pert , local_wabar )
+
+    [xa_tmp_mean , xa_tmp_pert] = mean_and_perts( xa_tmp )
+    
+    #Now proceed to deterministic resampling. 
+    
+    #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
+    #con un parametro de regularizacion lambda. 
+    M = np.power( cdist(np.transpose(xa_tmp),np.transpose(xa_tmp),'euclidean') , 2 ) 
+    D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens 
+    delta = riccati_solver( D , w )
+
+    #Correct the transformation matrix to ensure a second order exact transformation.
+    D = D + delta
+    
+    xa = np.matmul( xa_tmp , D ) 
+    xaa = np.matmul( xaa_tmp , D )
+    
+    xa_mean = np.mean(xa,1)
+
+    Pa=np.nan
+    OmB=np.nan
+    OmA=np.nan
+    
+    return xa , xa_mean , Pa , OmB , OmA , xaa
+
+
+def analysis_update_ETKF_rip( yo , xf_in , forward_operator , R , Inflation )   :
+
+   #---------------------------------------------#   
+   #  Dada matrices R, un ensamble de campos preliminares y un conjunto de observaciones
+   #  calcula el analisis, la matriz de covarianza de los errores del analisis
+   #  y las perturbaciones para integrar el ensamble durante el tiempo siguiente.
+   #
+   #  Los metodos que usan esta funcion son el Ensemble Square Root Filter
+   #  Whitaker and Hamill 2002
+   #
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       forward_operator - operador de las observaciones (funcion)
+   #       forward_operator_tl - tangente lineal del operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens) - analysis ensemble
+   #
+   #---------------------------------------------
+
+   #En esta formulacion se utiliza el Ensemble Transform Kalman Filter esto es
+   #el update del analisis se calcula en el espacio del ensamble (esto es particularmente
+   #ventajoso cuando la dimension del estado es mucho mayor que la cantidad de miembros en el ensamble)
+   #Esta formulacion no requiere el calculo explicito del modelo tangente lineal
+    #Obtengo la cantidad de miembros en el ensamble
+    xf = np.copy(xf_in[:,:,-1])  #Asumo que las observaciones estan en el ultimo tiempo.
+    #El calculo de los pesos es entonces como en el ETKF solo que al final actualizo tambien la condicion inicial.
+    [nvar , nens  ]= xf.shape
+
+    #Obtengo el numero de observaciones
+    nobs = yo.shape[0]
+      
+    #Calculamos el ensamble en el espacio de las perturbaciones
+    y=np.zeros((nobs,nens))
+    
+    #Defino la matriz que guardara las perturbaciones respecto de la media del ensamble.
+    [ xf_mean , xf_pert ] = mean_and_perts( xf )
+    
+    #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
+    xf_pert = xf_pert * Inflation
+    
+    for iens in range( nens ) :
+        y[:,iens] = forward_operator( xf_mean + xf_pert[:,iens] )
+    
+    #Defino la media del ensamble y las perturbaciones en el espacio de las observaciones.
+    [ymean , ypert ] = mean_and_perts( y )
+
+    dy = yo - forward_operator( xf_mean )  #Innovacion de la media del ensamble.
+    
+    Rinv= np.linalg.inv(R) 
+
+    # analysis error covariance in ensemble space
+
+    Pahat=np.linalg.inv( np.dot( ypert.transpose() , np.dot( Rinv , ypert ) ) + (nens-1.0)*np.identity(nens) )
+
+    # weight to update ensemble mean
+    wabar = np.dot( Pahat , np.dot( ypert.transpose() , np.dot( Rinv , dy ) ) )
+
+    # weight to update ensemble perturbations
+    Wa = linalg.sqrtm( (nens-1)*Pahat )
+   
+    xa_mean = xf_mean + np.dot( xf_pert , wabar )
+        
+    xa_pert = np.dot( xf_pert , Wa )
+    
+    xa=np.zeros( xf.shape )
+        
+    for iens in range( nens ) :
+
+       xa[:,iens]=xa_mean+xa_pert[:,iens]
+
+    Pa = np.cov( xa_pert ) 
+   
+    hxamean = forward_operator( xa_mean )
+    hxfmean = forward_operator( xf_mean )
+    OmB = yo - hxfmean
+    OmA = yo - hxamean
+    
+    #Actualizo la condicion inicial
+    [ xf_mean , xf_pert ] = mean_and_perts( xf_in[:,:,0] )
+    
+    xaa_mean = xf_mean + np.dot( xf_pert , wabar )    
+    xaa_pert = np.dot( xf_pert , Wa )
+    
+    xaa=np.zeros(xa.shape)
+    for iens in range( nens ) :
+       xaa[:,iens]=xaa_mean+xaa_pert[:,iens]
+
+    return xa , xa_mean , Pa , OmB , OmA  , xaa 
 
 
 def analysis_update_3DVAR( yo , xf , P , forward_operator , forward_operator_tl , R )   :

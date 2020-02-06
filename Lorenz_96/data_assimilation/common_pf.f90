@@ -17,6 +17,7 @@ MODULE common_pf
   REAL(r_size),PARAMETER  :: dt_riccati = 0.1
   INTEGER     ,PARAMETER  :: max_iter_riccati=1000
 
+
   PUBLIC
 
 CONTAINS
@@ -75,19 +76,20 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
 
   !Call Riccati solver
   delta = 0.0d0
-  CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta )
+  CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta , 1.0d0 )
 
   W = W + delta
   
   RETURN
 END SUBROUTINE letpf_core
 
-SUBROUTINE riccati_solver( ne , D , win , dt , stop_threshold , max_iter , delta )
+SUBROUTINE riccati_solver( ne , D , win , dt , stop_threshold , max_iter , delta , multinf )
 IMPLICIT NONE
 REAL(r_size) , INTENT(IN)    :: D(ne,ne) 
 REAL(r_size) , INTENT(IN)    :: win(ne)
 REAL(r_size) , INTENT(IN)    :: dt , stop_threshold
-INTEGER      , INTENT(IN)    :: max_iter , ne 
+INTEGER      , INTENT(IN)    :: max_iter , ne
+REAL(r_size) , INTENT(IN)    :: multinf 
 REAL(r_size) , INTENT(OUT)   :: delta(ne,ne)
 REAL(r_size)                 :: ones(ne,1) , wa(ne,1) , B(ne,ne) , A(ne,ne) , W(ne,ne) , delta_old(ne,ne)
 INTEGER                      :: i , it_num
@@ -102,7 +104,7 @@ DO i=1,ne
 ENDDO
 
 B = D  - MATMUL( wa , TRANSPOSE( ones ) )
-A = REAL(ne,r_size) * ( W - MATMUL( wa , TRANSPOSE(wa) ) ) - MATMUL( B , TRANSPOSE(B) )
+A = multinf * REAL(ne,r_size) * ( W - MATMUL( wa , TRANSPOSE(wa) ) ) - MATMUL( B , TRANSPOSE(B) )
 
 it_num = 0    
 DO  !Do until exit

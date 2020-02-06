@@ -258,5 +258,33 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   RETURN
 END SUBROUTINE pf_weigth_core
 
+SUBROUTINE netpf_w(ne,wa_in,w)
+  IMPLICIT NONE
+  INTEGER,INTENT(IN) :: ne               
+  REAL(r_size),INTENT(IN)  :: wa_in(ne) 
+  REAL(r_size),INTENT(OUT) :: w(ne,ne)
+  REAL(r_size) :: wa(ne,1)
+  REAL(r_size) :: work1(ne,ne)
+  INTEGER :: i,j,k
+
+  wa(:,1)=wa_in
+
+!-----------------------------------------------------------------------
+!   W - w * w^T 
+!-----------------------------------------------------------------------
+
+  work1 = -1.0d0 * MATMUL( wa , TRANSPOSE(wa) )
+  DO i=1,ne
+    work1(i,i) = wa_in(i) + work1(i,i) 
+  END DO
+
+!-----------------------------------------------------------------------
+!  w = sqrt(m) * [ W - w * w^T ]^1/2
+!-----------------------------------------------------------------------
+  CALL mtx_sqrt(ne,work1,w)
+  w = sqrt(REAL(ne,r_size)) * w
+
+
+END SUBROUTINE netpf_w
 
 END MODULE common_gm

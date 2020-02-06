@@ -34,6 +34,35 @@ def forward_model( xi , p , dt )  :
    return xend
 
 
+def forward_model_ens( xi , p , dt )  :
+
+#xnl es la condicion inicial total (para la trayectoria no lineal)
+#xi es la perturbacion 
+  
+#Calculo la trayectoria no lineal dentro del paso de tiempo alrededor de la
+#cual voy a obtener el tangente lineal y el adjunto.
+
+   f = l63eq_ens( xi , p )
+   
+   c1 = np.dot( dt , f )  
+   xa = xi + np.dot( c1 , 1.0/2.0 )
+   f = l63eq_ens( xa , p )
+   
+   c2 = np.dot( dt , f )  
+   xb = xi + np.dot( c2 , 1.0/2.0 ) 
+   f = l63eq_ens( xb , p )
+   
+   c3 = np.dot( dt , f ) 
+   xc = xi + c3  
+   f = l63eq_ens( xc , p )
+   
+   c4 = np.dot( dt , f) 
+   xend = xi + (c1 + np.dot( 2.0 , c2 ) + np.dot( 2.0 , c3 ) + c4) 
+   xend = np.dot( xend , 1.0/ 6.0 )
+   
+   return xend
+
+
 def tl_model( xi , p , dt ) :
 
 #xi es la condicion inicial total (para la trayectoria no lineal)
@@ -94,6 +123,26 @@ def  l63eq( x , par ) :
    x_dot[2] = x[0]*x[1] - b*x[2]
 
    return x_dot
+
+def  l63eq_ens( x , par ) :
+   #Ecuaciones del modelo de Lorenz.
+   #Dado un x esta funcion devuelve la derivada de x respecto del tiempo.
+   #x es un vector de 3 elementos donde cada elemento representa una de las variables
+   #del modelo de Lorenz
+   
+   x_dot = np.zeros(x.shape)
+    
+   a      = par[0]
+   r      = par[1]
+   b      = par[2]
+ 
+   x_dot[0,:] = np.dot( a , x[1,:] - x[0,:] )
+   x_dot[1,:] = -np.multiply( x[0,:] , x[2,:] ) + np.dot( r, x[0,:] ) - x[1,:]
+   x_dot[2,:] = np.multiply( x[0,:]  , x[1,:] ) - np.dot( b , x[2,:] )
+
+   return x_dot
+
+
 
 def l63eq_tl( x , par )  :
 

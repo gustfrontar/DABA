@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jan 29 15:50:17 2020
-
 @author: jruiz
 """
 import pickle
@@ -93,5 +92,3 @@ if PlotTheExperiment  :
     plt.show()
 
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
-
-
