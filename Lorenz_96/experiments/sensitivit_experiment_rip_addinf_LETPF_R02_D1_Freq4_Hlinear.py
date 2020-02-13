@@ -36,6 +36,9 @@ conf.DAConf['LocScalesLETKF']=np.array([2.0,-1.0])        #Localization scale is
 conf.DAConf['LocScalesLETPF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=1.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 
+conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
+conf.DAConf['EnableTempering']=True                      #Enable tempered iterations. If False, then traditional RIP method is applied without using tempering.
+
 if RunTheExperiment  :
       
     results=list()

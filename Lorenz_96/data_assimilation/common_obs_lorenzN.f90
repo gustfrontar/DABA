@@ -150,6 +150,7 @@ DO io=1,no
          obs(io,ie) = 0.001d0
       ENDIF
       obs(io,ie) = 10.0d0 * LOG( obs(io,ie) )
+      !WRITE(*,*)obs(io,ie)
     ELSE
 
        WRITE(*,*)"ERROR: Not recognized observation type"
@@ -168,9 +169,12 @@ DO io=1,no
 
 END DO
 
+
 IF( SUM(valid_obs) < no )THEN
   WRITE(*,*)"[Warning]: The number of valid observations is lower than the number of input observations"
 ENDIF
+
+
 
 END SUBROUTINE model_to_obs 
 

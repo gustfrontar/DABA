@@ -116,3 +116,4 @@ DAConf['BetaCoef']=0.7                                 #Scaling parameter for th
 DAConf['GammaCoef']=0.2                                #Nudging parameter to uniform weigths in order to avoid weigth degeneracy. 
 
 DAConf['RejuvParam']=0.0                               #Global particle rejuvenestion (For the ETPF only)
+DAConf['ResamplingType']=2                             #Resampling: 1-Liu 2016, 2-Acevedo et al. 2016, 3-NETPF without rotation, 4-NETPF with rotation.

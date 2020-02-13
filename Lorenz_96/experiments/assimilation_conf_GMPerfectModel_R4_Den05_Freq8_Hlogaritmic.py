@@ -82,7 +82,7 @@ DAConf['Twin'] = True                                  #When True, model configu
 DAConf['Freq'] = 8                                     #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 8                                   #Intra window ensemble output frequency (for 4D Data assimilation)
 
-DAConf['InfCoefs']=np.array([1.3,0.0,0.0,0.0,0.00])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.2,0.0,0.0,0.0,0.00])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['LocScalesLETKF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([3.0,-1.0])          #Localization scale is space and time (negative means no localization)

@@ -797,23 +797,29 @@ def analysis_update_GMDR( yo , xf , forward_operator , R , Inflation , beta_para
     [ xf_mean , xf_pert ] = mean_and_perts( xf )
     
     #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
-    xf_pert = xf_pert * Inflation
+    #xf_pert = xf_pert * Inflation
     
     for iens in range( nens ) :
         y[:,iens] = forward_operator( xf_mean + xf_pert[:,iens] )
+    #Defino la media del ensamble y las perturbaciones en el espacio de las observaciones.
+    [ymean , ypert ] = mean_and_perts( y )
+    
+    if nobs > 1 :
+       BHPHtRInv=np.linalg.inv( beta_param * np.cov(ypert) + R )
+    else        :
+       BHPHtRInv=1.0/(beta_param * np.cov(ypert) + R )
+        
         
     #Calculamos los pesos en base al likelihood de las observaciones 
     #dada cada una de las particulas.
     w=np.zeros( nens )
     for iens in range( nens ) :
-        w[iens] = np.exp( -0.5 * np.matmul( (yo-y[:,iens]).transpose() , np.matmul( Rinv , yo - y[:,iens] ) ) )
+        w[iens] = np.exp( -0.5 * np.dot(  (yo-y[:,iens]).transpose() , np.dot( BHPHtRInv , yo - y[:,iens] ) ) )
     #Normalizamos los pesos para que sumen 1.
     w = w / np.sum(w)
     #Aplly weigth nudging.
     w = ( 1.0 - gamma_param ) * w + gamma_param * ( np.ones(nens) / nens )
-    
-    #Defino la media del ensamble y las perturbaciones en el espacio de las observaciones.
-    [ymean , ypert ] = mean_and_perts( y )
+
 
     dy = yo - forward_operator( xf_mean )  #Innovacion de la media del ensamble.
 
@@ -846,7 +852,7 @@ def analysis_update_GMDR( yo , xf , forward_operator , R , Inflation , beta_para
     #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
     #que el metodo sea exacto en la varianza.
     
-    delta = riccati_solver( D , w )
+    delta = riccati_solver( D , w , Inflation = Inflation )
     
     #Correct the transformation matrix to ensure a second order exact transformation.
     D = D + delta
@@ -861,6 +867,108 @@ def analysis_update_GMDR( yo , xf , forward_operator , R , Inflation , beta_para
     
     return xa , xa_mean , Pa , OmB , OmA   
 
+def analysis_update_GMDR_localH( yo , xf , forward_operator , R , Inflation , beta_param = 0.6 , gamma_param = 0.2)   :
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Gaussian Mixture con resampling deterministico
+   #  similar al trabajo de Liu et al 2016 pero usando ETPF para definir el 
+   #  resampling deterministico.
+   #  Esta funcion es una prueba de implementacion del algoritmo utilizando kernels Gaussianos locales.
+   #  para conseguir una linealizacion local de H.
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       forward_operator - operador de las observaciones (funcion)
+   #       forward_operator_tl - tangente lineal del operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens) - analysis ensemble
+   #
+   #---------------------------------------------
+
+   #En esta formulacion se utiliza el Ensemble Transform Kalman Filter esto es
+   #el update del analisis se calcula en el espacio del ensamble (esto es particularmente
+   #ventajoso cuando la dimension del estado es mucho mayor que la cantidad de miembros en el ensamble)
+   #Esta formulacion no requiere el calculo explicito del modelo tangente lineal
+    #Obtengo la cantidad de miembros en el ensamble
+    [nvar , nens ]= xf.shape
+
+    Rinv= np.linalg.inv(R) 
+
+    #Obtengo el numero de observaciones
+    nobs = yo.shape[0]
+      
+    #Calculamos el ensamble en el espacio de las perturbaciones
+    y=np.zeros((nobs,nens))
+    
+    #Defino la matriz que guardara las perturbaciones respecto de la media del ensamble.
+    [ xf_mean , xf_pert ] = mean_and_perts( xf )
+    
+    #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
+    #xf_pert = xf_pert * Inflation
+    
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    xa_tmp = np.zeros( xf.shape )
+    
+    for iens in range( nens ) :        
+        #Centro el ensamble alrededor de cada particula, aplico el operador H y obtego HBHt
+        for jens in range( nens ) :
+            #y[:,jens] = forward_operator( xf_mean + xf_pert[:,jens] ) #Just for debug.
+            y[:,jens] = forward_operator( xf[:,iens] + xf_pert[:,jens] )
+        if nobs > 1 :
+           BHPHtRInv=np.linalg.inv( beta_param * np.cov(y) + R )
+        else        :
+           BHPHtRInv=1.0/(beta_param * np.cov(y) + R )
+        #Compute the weigth   
+           
+        # analysis error covariance in ensemble space
+        [ymean , ypert ] = mean_and_perts( y )
+
+        w[iens] = np.exp( -0.5 * np.dot(  (yo-ymean).transpose() , np.dot( BHPHtRInv , yo - ymean ) ) )
+        
+    
+        Pahat=np.linalg.inv( np.dot( ypert.transpose() , np.dot( Rinv , ypert ) ) + (nens-1.0)*np.identity(nens) / beta_param )
+        tmp_mat = np.dot( Pahat ,  np.dot(ypert.transpose() , Rinv ) )
+        local_wabar = np.dot( tmp_mat , yo - ymean )
+        xa_tmp[:,iens] = xf[:,iens] + np.dot( xf_pert , local_wabar )
+    
+    [xa_tmp_mean , xa_tmp_pert] = mean_and_perts( xa_tmp )
+    
+    
+    xa = xa_tmp
+    xa_mean = xa_tmp_mean
+    
+    #Now proceed to deterministic resampling. 
+    #Normalizamos los pesos para que sumen 1.
+    w = w / np.sum(w)
+    #Aplly weigth nudging.
+    w = ( 1.0 - gamma_param ) * w + gamma_param * ( np.ones(nens) / nens )
+    #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
+    #con un parametro de regularizacion lambda. 
+    #D = sinkhorn_ot( xf , w  )
+    M = np.power( cdist(np.transpose(xa_tmp),np.transpose(xa_tmp),'euclidean') , 2 ) 
+    D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens
+    #D=np.transpose( ot.bregman.sinkhorn(np.ones(nens)/nens,w,M,0.1,method='sinkhorn') )
+    #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
+    #que el metodo sea exacto en la varianza.
+    
+    delta = riccati_solver( D , w , Inflation = Inflation )
+    
+    #Correct the transformation matrix to ensure a second order exact transformation.
+    D = D + delta
+    
+    xa = np.matmul( xa_tmp , D ) 
+    
+    xa_mean = np.mean(xa,1)
+
+    Pa=np.nan
+    OmB=np.nan
+    OmA=np.nan
+    
+    return xa , xa_mean , Pa , OmB , OmA   
 
 def analysis_update_GMDR_rip( yo , xf_in , forward_operator , R , Inflation , beta_param = 0.6 , gamma_param = 0.2)   :
     from scipy.spatial.distance import cdist
@@ -900,16 +1008,21 @@ def analysis_update_GMDR_rip( yo , xf_in , forward_operator , R , Inflation , be
     [ xf_mean , xf_pert ] = mean_and_perts( xf )
     
     #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
-    xf_pert = xf_pert * Inflation
+    #xf_pert = xf_pert * Inflation
     
     for iens in range( nens ) :
         y[:,iens] = forward_operator( xf_mean + xf_pert[:,iens] )
+        
+    if nobs > 1 :
+        BHPHtRInv=np.linalg.inv( beta_param * np.cov(y) + R )
+    else        :
+        BHPHtRInv=1.0/(beta_param * np.cov(y) + R )
         
     #Calculamos los pesos en base al likelihood de las observaciones 
     #dada cada una de las particulas.
     w=np.zeros( nens )
     for iens in range( nens ) :
-        w[iens] = np.exp( -0.5 * np.matmul( (yo-y[:,iens]).transpose() , np.matmul( Rinv , yo - y[:,iens] ) ) )
+        w[iens] = np.exp( -0.5 * np.matmul( (yo-y[:,iens]).transpose() , np.matmul( BHPHtRInv , yo - y[:,iens] ) ) )
     #Normalizamos los pesos para que sumen 1.
     w = w / np.sum(w)
     #Aplly weigth nudging.
@@ -935,15 +1048,14 @@ def analysis_update_GMDR_rip( yo , xf_in , forward_operator , R , Inflation , be
         xa_tmp[:,iens] = xf[:,iens] + np.dot( xf_pert , local_wabar )
         xaa_tmp[:,iens] = xf_in[:,iens,0] + np.dot( xa_pert , local_wabar )
 
-    [xa_tmp_mean , xa_tmp_pert] = mean_and_perts( xa_tmp )
-    
     #Now proceed to deterministic resampling. 
     
     #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
     #con un parametro de regularizacion lambda. 
     M = np.power( cdist(np.transpose(xa_tmp),np.transpose(xa_tmp),'euclidean') , 2 ) 
     D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens 
-    delta = riccati_solver( D , w )
+    
+    delta = riccati_solver( D , w , Inflation = Inflation )
 
     #Correct the transformation matrix to ensure a second order exact transformation.
     D = D + delta
@@ -958,6 +1070,118 @@ def analysis_update_GMDR_rip( yo , xf_in , forward_operator , R , Inflation , be
     OmA=np.nan
     
     return xa , xa_mean , Pa , OmB , OmA , xaa
+
+
+def analysis_update_GMDR__rip( yo , xf_in , forward_operator , R , Inflation , beta_param = 0.6 , gamma_param = 0.2)   :
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Gaussian Mixture con resampling deterministico
+   #  similar al trabajo de Liu et al 2016 pero usando ETPF para definir el 
+   #  resampling deterministico.
+   #  Esta funcion es una prueba de implementacion del algoritmo utilizando kernels Gaussianos locales.
+   #  para conseguir una linealizacion local de H.
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       forward_operator - operador de las observaciones (funcion)
+   #       forward_operator_tl - tangente lineal del operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens) - analysis ensemble
+   #
+   #---------------------------------------------
+
+   #En esta formulacion se utiliza el Ensemble Transform Kalman Filter esto es
+   #el update del analisis se calcula en el espacio del ensamble (esto es particularmente
+   #ventajoso cuando la dimension del estado es mucho mayor que la cantidad de miembros en el ensamble)
+   #Esta formulacion no requiere el calculo explicito del modelo tangente lineal
+    #Obtengo la cantidad de miembros en el ensamble
+    xf = np.copy( xf_in[:,:,1] )
+    [nvar , nens ]= xf.shape
+    
+    [nvar , nens ]= xf.shape
+
+    Rinv= np.linalg.inv(R) 
+
+    #Obtengo el numero de observaciones
+    nobs = yo.shape[0]
+      
+    #Calculamos el ensamble en el espacio de las perturbaciones
+    y=np.zeros((nobs,nens))
+    
+    #Defino la matriz que guardara las perturbaciones respecto de la media del ensamble.
+    [ xf_mean , xf_pert ] = mean_and_perts( xf )
+    
+    #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
+    #xf_pert = xf_pert * Inflation
+    
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    xa_tmp = np.zeros( xf.shape )
+    
+    #Compute mean and perturbations at the beginning of the assimilation window.
+    xf0 = np.copy( xf_in[:,:,0] )
+    [ xf0_mean , xf0_pert ] = mean_and_perts( xf0 )
+    xa0_tmp = np.zeros( xf.shape )
+    
+    for iens in range( nens ) :        
+        #Centro el ensamble alrededor de cada particula, aplico el operador H y obtego HBHt
+        for jens in range( nens ) :
+            #y[:,jens] = forward_operator( xf_mean + xf_pert[:,jens] ) #Just for debug.
+            y[:,jens] = forward_operator( xf[:,iens] + xf_pert[:,jens] )
+        if nobs > 1 :
+           BHPHtRInv=np.linalg.inv( beta_param * np.cov(y) + R )
+        else        :
+           BHPHtRInv=1.0/(beta_param * np.cov(y) + R )
+        #Compute the weigth   
+        y_meanlocal=forward_operator( xf[:,iens] )   
+           
+        w[iens] = np.exp( -0.5 * np.dot(  (yo-y_meanlocal).transpose() , np.dot( BHPHtRInv , yo - y_meanlocal ) ) )
+        # analysis error covariance in ensemble space
+        [ymean , ypert ] = mean_and_perts( y )
+        
+        Pahat=np.linalg.inv( np.dot( ypert.transpose() , np.dot( Rinv , ypert ) ) + (nens-1.0)*np.identity(nens) / beta_param )
+        tmp_mat = np.dot( Pahat ,  np.dot(ypert.transpose() , Rinv ) )
+        local_wabar = np.dot( tmp_mat , yo - y_meanlocal )
+
+        xa_tmp[:,iens] = xf[:,iens] + np.dot( xf_pert , local_wabar )
+        #Apply the same weigths to update the state at the beginning of the window.
+        xa0_tmp[:,iens] = xf0[:,iens] + np.dot( xf0_pert , local_wabar )
+
+    #Now proceed to deterministic resampling. 
+    #Normalizamos los pesos para que sumen 1.
+
+    w = w / np.sum(w)
+
+    #Aplly weigth nudging.
+    w = ( 1.0 - gamma_param ) * w + gamma_param * ( np.ones(nens) / nens )
+    
+    #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
+    #con un parametro de regularizacion lambda. 
+    #D = sinkhorn_ot( xf , w  )
+    M = np.power( cdist(np.transpose(xa_tmp),np.transpose(xa_tmp),'euclidean') , 2 ) 
+    D=np.transpose( ot.emd(np.ones(nens)/nens,w,M,numItermax=1.0e9,log=False) ) * nens
+    #D=np.transpose( ot.bregman.sinkhorn(np.ones(nens)/nens,w,M,0.1,method='sinkhorn') )
+    #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
+    #que el metodo sea exacto en la varianza.
+    
+    delta = riccati_solver( D , w , Inflation = Inflation )
+    
+    #Correct the transformation matrix to ensure a second order exact transformation.
+    D = D + delta
+    
+    xa = np.matmul( xa_tmp , D ) 
+    xaa = np.matmul( xa0_tmp , D )
+    
+    xa_mean = np.mean(xa,1)
+    
+    Pa=np.nan
+    OmB=np.nan
+    OmA=np.nan
+    
+    return xa , xa_mean , Pa , OmB , OmA  , xaa   
 
 
 def analysis_update_ETKF_rip( yo , xf_in , forward_operator , R , Inflation )   :
@@ -1050,6 +1274,109 @@ def analysis_update_ETKF_rip( yo , xf_in , forward_operator , R , Inflation )   
        xaa[:,iens]=xaa_mean+xaa_pert[:,iens]
 
     return xa , xa_mean , Pa , OmB , OmA  , xaa 
+
+def analysis_update_GPF( yo , xf , forward_operator , forward_operator_tl , R , NLambdaMax = 10000 )   :
+
+   #---------------------------------------------#   
+   #  This is an implementation of the Gaussian particle flow of
+   #  Bunch and Godsill 2016
+   #
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       forward_operator - operador de las observaciones (funcion)
+   #       forward_operator_tl - tangente lineal del operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens) - analysis ensemble
+   #
+   #---------------------------------------------
+   [nvars,nens]=np.shape(xf)
+   DLambda = 0.1
+   
+   dx = np.zeros(nvars) #Increment to becomputed at each iteration.
+   PLambda = np.zeros((nvars,nvars))
+   mLambda = np.zeros(nvars)
+ 
+   #Esta formulacion sigue las ecuaciones 17,18,19 y 20 de Bunch y Godsill
+   #Estas ecuaciones son impracticables en alta dimension.
+   x = np.zeros((nvars,nens,NLambdaMax+1))
+   x[:,:,0] = xf  #This is the initial condition for the particle flos (the sample from the prior.)
+    
+   [ xf_mean , xf_pert ] = mean_and_perts( xf ) 
+
+   P0 = np.cov( xf_pert )
+   P0inv = np.linalg.inv( P0 )
+   m0 = xf_mean
+   Rinv = np.linalg.inv(R)
+   
+   #alfa =1.0 / np.flip( np.exp( np.arange( 0 , NLambda ) ** 1.2 ) )
+   #alfa = alfa / np.sum(alfa)
+   #alfa = np.ones(NLambda)/NLambda
+   
+   #Iteration to evolve the particles
+   print(m0)
+   for iens in range(nens)         :
+       clambda = 0.0
+       
+       for ilambda in range( NLambdaMax )  :
+           #if ilambda == 0 : #First iteration step.
+           #    PLambda = np.copy(P0)
+           #    mLambda = np.copy(m0)
+           DL = np.copy(DLambda)
+           cont_iter=True
+           while cont_iter  :
+             if clambda + DL > 1.0 :
+                DL = 1.0 - clambda
+
+             clambda = clambda + DL
+             H = forward_operator_tl(x[:,iens,ilambda])
+             #Compute PLambda and mLambda  
+             PLambda = np.linalg.inv( P0inv + clambda * np.dot( np.dot( H.transpose() , Rinv ) , H) )
+             PLambdaHt = np.dot( PLambda , H.transpose() )
+             PLambdaHtRinv = np.dot( PLambdaHt , Rinv )
+             PLambdaP0inv = np.dot( PLambda , P0inv )
+
+             yhat = np.copy( yo - forward_operator( x[:,iens,ilambda] ) + np.dot( H , x[:,iens,ilambda] ) )
+             mLambda = np.dot( PLambdaP0inv , m0 ) + clambda* np.dot(  PLambdaHtRinv , yhat )
+             #mLambda = np.dot( PLambdaP0inv , m0 ) + clambda* np.dot(  PLambdaHtRinv , yo )
+
+             tmp1 = yhat - np.dot( H , mLambda ) - 0.5*np.dot( H , x[:,iens,ilambda] - mLambda ) 
+             #tmp1 =  yo - forward_operator(mLambda) - 0.5*np.dot( H , x[:,iens,ilambda] - mLambda ) 
+             dx = np.dot( PLambdaHtRinv , tmp1 )
+           
+             increment = DL * dx
+             max_increment = np.max( abs(increment ) ) 
+             max_increment_tr = 0.1
+             if max_increment < max_increment_tr :
+                 #Update x and go to the next cycle
+                 x[:,iens,ilambda+1] = x[:,iens,ilambda] + DL * dx
+                 cont_iter = False
+             else :
+                 #Reject this time step and reduce DL
+                 clambda = clambda - DL 
+                 DL = DL * 0.5 * max_increment_tr / max_increment
+
+           if iens == 20 :
+               print(x[:,iens,ilambda],clambda)
+               #print(DLambda,clambda)
+               #print(x[:,iens,ilambda])
+               #print(np.diag(PLambda))
+               #print(x[:,iens,ilambda])
+               #print(x[:,iens,ilambda+1],clambda)
+               
+           if clambda >= 1.0 :
+               #We reached the final iteration
+               for ivar in range(nvars)  :
+                  x[ivar,iens,ilambda+2:]=x[ivar,iens,ilambda+1]
+               break 
+    
+   xa = x[:,:,-1]  #Este seria nuestra sample del posterior. El estado de 
+                    #las particulas al final del flujo.
+   xa_mean = np.mean( xa , 1 )
+
+   return xa , xa_mean , x 
+
 
 
 def analysis_update_3DVAR( yo , xf , P , forward_operator , forward_operator_tl , R )   :
@@ -1558,8 +1885,9 @@ def log_sum_vec( logvec ) :
     
     return log_sum
 
-def riccati_solver( D , w_in , dt = 0.1 , stop_criteria = 1.0e-3 , iteration_limit = 5000 ) :
+def riccati_solver( D , w_in , dt = 0.1 , stop_criteria = 1.0e-3 , iteration_limit = 5000 , Inflation = 1.0 ) :
     #Esta funcion resuelve 
+
     
     m = np.shape(D)[0]
     ones = np.ones((m,1))
@@ -1569,8 +1897,9 @@ def riccati_solver( D , w_in , dt = 0.1 , stop_criteria = 1.0e-3 , iteration_lim
     
     W=np.diag(np.squeeze(w))
     
+    
     B = D - np.matmul( w , np.transpose(ones) )
-    A = m * ( W - np.matmul( w , np.transpose(w) ) ) - np.matmul( B , np.transpose(B) )
+    A = Inflation * m * ( W - np.matmul( w , np.transpose(w) ) ) - np.matmul( B , np.transpose(B) )
     
 
     it_num = 0 

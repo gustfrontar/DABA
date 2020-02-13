@@ -220,8 +220,9 @@ def assimilation_hybrid_run( conf ) :
        ObsTypeW=ObsType[window_mask]                                     #Observation type within the DA window
        YObsW=YObs[window_mask]                                           #Observations within the DA window
        NObsW=YObsW.size                                                  #Number of observations within the DA window
-       ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window         
-     
+       ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window  
+
+            
        #=================================================================
        #  HYBRID-TEMPERED DA  : 
        #================================================================= 
@@ -256,32 +257,50 @@ def assimilation_hybrid_run( conf ) :
           [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
                                  obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
                                  xloc=ModelConf['XLoc'] , tloc= TLoc )
+          
+          
+          #=================================================================
+          #  Compute time step in pseudo time  : 
+          #=================================================================
+      
+          if DAConf['AddaptiveTemp']  : 
+             #Addaptive time step computation
+             if itemp == 0 : 
+                #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
+                [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']   ,
+                            tloc=da_window_end    , nvar=1 , obsloc=ObsLocW  , ofens=YF                             ,
+                            rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
+             dt_pseudo_time =  a + b * (itemp + 1)
+          else :
+             #Equal time steps in pseudo time.  
+             dt_pseudo_time = np.ones(Nx) / DAConf['NTemp']   
            
           #=================================================================
           #  LETKF STEP  : 
           #=================================================================
           
           if BridgeParam < 1.0 :
-    
-             local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
-             stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                                  tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
+             #Compute the tempering parameter.
+             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )             
+             stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                      ,
+                                  tloc=da_window_end    , nvar=1                        , xfens=stateens                 ,
                                   obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                                  rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
-                                  update_smooth_coef=0.0 )[:,:,0,0]
+                                  rdiag=ObsErrorW  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
+                                  update_smooth_coef=0.0 , temp_factor = temp_factor )[:,:,0,0]
     
           #=================================================================
           #  ETPF STEP  : 
           #=================================================================
              
           if BridgeParam > 0.0 :
-    
-              local_obs_error = ObsErrorW * DAConf['NTemp'] / ( BridgeParam )
-              [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                                           tloc=da_window_end    , nvar=1                        , xfens=stateens               , 
-                                           obs=YObsW             , obsloc=ObsLocW                , ofens=YF                     ,
-                                           rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam']  )
-              stateens = tmp_ens[:,:,0,0]
+             #Compute the tempering parameter.
+             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )    
+             [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                           ,
+                                           tloc=da_window_end    , nvar=1                        , xfens=stateens                  , 
+                                           obs=YObsW             , obsloc=ObsLocW                , ofens=YF                        ,
+                                           rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam'] ,
+                                           temp_factor = temp_factor  , multinf=DAConf['InfCoefs'][0] )
+             stateens = tmp_ens[:,:,0,0]
                                         
       
        XA[:,:,it] = np.copy( stateens )

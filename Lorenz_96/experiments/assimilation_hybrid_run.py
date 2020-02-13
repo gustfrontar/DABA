@@ -255,38 +255,58 @@ for it in range( 1 , DALength  )         :
       [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
                              obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
                              xloc=ModelConf['XLoc'] , tloc= TLoc )
+      
+      #=================================================================
+      #  Compute time step in pseudo time  : 
+      #=================================================================
+      
+      if DAConf['AddaptiveTemp']  : 
+         #Addaptive time step computation
+         if itemp == 0 : 
+                #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
+                [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']   ,
+                            tloc=da_window_end    , nvar=1 , obsloc=ObsLocW  , ofens=YF                             ,
+                            rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
+         
+         dt_pseudo_time =  a + b * (itemp + 1)
+         
+      else :
+         #Equal time steps in pseudo time.  
+         dt_pseudo_time = np.ones(Nx) / DAConf['NTemp']   
+      
        
       #=================================================================
       #  LETKF STEP  : 
       #=================================================================
+    
       
       if BridgeParam < 1.0 :
+         #Compute the tempering parameter.
+         temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )
 
-         local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
-         stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                              tloc=da_window_end    , nvar=1                        , xfens=stateens               ,
+         #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
+         stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                      ,
+                              tloc=da_window_end    , nvar=1                        , xfens=stateens                 ,
                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                              rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
-                              update_smooth_coef=0.0 )[:,:,0,0]
+                              rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']    ,
+                              update_smooth_coef=0.0 , temp_factor=temp_factor )[:,:,0,0]
 
       #=================================================================
       #  ETPF STEP  : 
       #=================================================================
          
       if BridgeParam > 0.0 :
-
-          local_obs_error = ObsErrorW * DAConf['NTemp'] / ( BridgeParam )
+          #Compute the tempering parameter.
+          temp_factor = (1.0 / dt_pseudo_time ) / (BridgeParam )
+          #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( BridgeParam )
           [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                                        tloc=da_window_end    , nvar=1                        , xfens=stateens               , 
                                        obs=YObsW             , obsloc=ObsLocW                , ofens=YF                     ,
-                                       rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam']  )
+                                       rdiag=ObsError_W , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam'] ,
+                                       temp_factor = temp_factor )
           stateens = tmp_ens[:,:,0,0]
        
 
-
-   #print( np.mean( np.std(stateens,1) ) / np.mean( np.std(XF[:,:,it] ,1 ) ) )                     
-                             
-  
    XA[:,:,it] = np.copy( stateens )
    
    #PARAMETER ESTIMATION

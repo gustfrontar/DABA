@@ -22,7 +22,7 @@ else                        :
 
 
 conf.GeneralConf['NatureName']='NatureR4_Den05_Freq8_Hlogaritmic'
-out_filename='Sesitivity_experiment_tempering_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sesitivity_experiment_tempering_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
@@ -34,6 +34,8 @@ conf.DAConf['TSFreq'] = 8                                 #Intra window ensemble
 conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
+
+conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 
 
 if RunTheExperiment  :

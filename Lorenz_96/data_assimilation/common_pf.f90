@@ -33,13 +33,14 @@ CONTAINS
 !     wa(ne)           : PF weigths
 !=======================================================================
 
-SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
+SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W,multinf)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne , ndim                      
   INTEGER,INTENT(IN) :: nobsl
   REAL(r_size),INTENT(IN) :: dens(1:nobsl,1:ne)
   REAL(r_size),INTENT(IN) :: m(1:ne,1:ne)   !Distance matrix
   REAL(r_size),INTENT(IN) :: rdiag(1:nobsl)
+  REAL(r_size),INTENT(IN) :: multinf    !Multiplicative inflation 
   REAL(r_size),INTENT(OUT) :: wa(ne)    !
   REAL(r_size),INTENT(OUT) :: W(ne,ne)  !Transformation matrix
   REAL(r_size)  :: wt(ne)               !Target weigths 
@@ -76,7 +77,7 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W)
 
   !Call Riccati solver
   delta = 0.0d0
-  CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta , 1.0d0 )
+  CALL riccati_solver( ne , W , wa , dt_riccati , stop_threshold_riccati , max_iter_riccati , delta , multinf )
 
   W = W + delta
   

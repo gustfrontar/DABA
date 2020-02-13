@@ -22,7 +22,7 @@ else                        :
 
 
 conf.GeneralConf['NatureName']='NatureR4_Den05_Freq8_Hlogaritmic'
-out_filename='Sesitivity_experiment_rip_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '_ModelError.npz'
+out_filename='./npz/Sesitivity_experiment_rip_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '_ModelError.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
@@ -38,6 +38,10 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 #Introduce a model error in the model used for the assimilation experiment.
 conf.DAConf['Twin'] = False                               #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.ModelConf['Coef']=np.array([7.0])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... )
+
+conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
+conf.DAConf['EnableTempering']=True                      #Enable tempered iterations. If False, then traditional RIP method is applied without using tempering.
+
 
 if RunTheExperiment  :
 

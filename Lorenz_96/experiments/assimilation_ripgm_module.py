@@ -201,16 +201,10 @@ def assimilation_gm_run( conf ) :
        #  TEMPERED RUNNING IN PLACE  : 
        #================================================================= 
     
-       gamma = 1.0/DAConf['NRip']
-       
        statepfens = np.copy(PA[:,:,:,it-1])
        
        statefens = np.zeros((Nx,NEns,1,2))
        statefens[:,:,0,0] = np.copy(XA[:,:,it-1])
-       
-       
-       inf_coefs = np.copy( DAConf['InfCoefs'] )
-       inf_coefs[0]=np.power( inf_coefs[0] , 1.0/DAConf['NRip'] )
        
        for irip in range(DAConf['NRip'])    :
     
@@ -263,13 +257,37 @@ def assimilation_gm_run( conf ) :
                                  obsloc=ObsLocW , x=statefens[:,:,:,-1] , obstype=ObsTypeW ,
                                  xloc=ModelConf['XLoc'] , tloc= TLoc )
            
-           local_obs_error = ObsErrorW * DAConf['NRip'] 
-           #da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
+           #=================================================================
+           #  Compute time step in pseudo time  : 
+           #=================================================================
+      
+           if DAConf['EnableTempering']    :
+              if DAConf['AddaptiveTemp']  : 
+                 #Addaptive time step computation
+                 if irip == 0 : 
+                     #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
+                     [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']   ,
+                            tloc=np.array([ da_window_start , da_window_end ]) , nvar=1 , obsloc=ObsLocW  , ofens=YF  ,
+                            rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NRip']  )
+                 dt_pseudo_time =  a + b * (irip + 1)
+                 else         :
+                    #Equal time steps in pseudo time.  
+                    dt_pseudo_time = np.ones((Nx,2)) / DAConf['NRip']  
+            else                           :
+                 #Original RIP formulation no tempering is enable.  
+                 dt_pseudo_time = np.ones((Nx,2)) 
+
+           #=================================================================
+           #  GM-DA STEP  : 
+           #=================================================================                
+     
+           temp_factor = (1.0 / dt_pseudo_time )     
            [tmp_stateens , weigths] = das.da_gmdr( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                               tloc=np.array([ da_window_start , da_window_end ])  , nvar=1                        , xfens=statefens                      ,
-                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                            ,
-                              rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=inf_coefs            ,
-                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] )
+                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                               ,
+                              rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']            ,
+                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] ,
+                              temp_factor = temp_factor )
 
            statefens[:,:,0,:] = tmp_stateens[:,:,0,:] 
                                                            

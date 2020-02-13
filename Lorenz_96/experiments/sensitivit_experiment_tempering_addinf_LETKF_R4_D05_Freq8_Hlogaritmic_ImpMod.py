@@ -39,6 +39,7 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 #Introduce a model error in the model used for the assimilation experiment.
 conf.DAConf['Twin'] = False                               #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.ModelConf['Coef']=np.array([7.0])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... )
+conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 
 
 

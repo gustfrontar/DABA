@@ -95,6 +95,32 @@ END SUBROUTINE com_stdev
 
 !=======================================================================
 
+
+SUBROUTINE com_var(ndim,var,aout)
+!
+! Sample variance
+!
+  IMPLICIT NONE
+
+  INTEGER,INTENT(IN) :: ndim
+  REAL(r_size),INTENT(IN) :: var(ndim)
+  REAL(r_size),INTENT(OUT) :: aout
+
+  REAL(r_size) :: amean
+  REAL(r_size) :: dev(ndim)
+
+  CALL com_mean(ndim,var,amean)
+
+  dev(:) = var(:) - amean
+
+  aout = SUM(dev*dev) / REAL(ndim-1,r_size) 
+
+  RETURN
+END SUBROUTINE com_var
+
+!=======================================================================
+
+
 SUBROUTINE com_covar(ndim,var1,var2,cov)
 !
 ! Covariance

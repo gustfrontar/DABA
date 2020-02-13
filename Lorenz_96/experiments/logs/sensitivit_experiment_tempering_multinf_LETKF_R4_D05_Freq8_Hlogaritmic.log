@@ -212,10 +212,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.01
 Tempering iteraations 2
-Analisis RMSE:  1.5759453998920523
-Forecast RMSE:  1.7148513327528032
-Analisis SPRD:  0.5292577968980784
-Forecast SPRD:  0.6234418839300525
+Analisis RMSE:  2.2643420450494007
+Forecast RMSE:  2.419316612560267
+Analisis SPRD:  0.5161098769137136
+Forecast SPRD:  0.6104228562297955
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -321,10 +321,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.01
 Tempering iteraations 3
-Analisis RMSE:  1.0158135503494023
-Forecast RMSE:  1.1469190668574822
-Analisis SPRD:  0.5433157053243255
-Forecast SPRD:  0.6374197984067925
+Analisis RMSE:  1.854368552456711
+Forecast RMSE:  2.0050125835050374
+Analisis SPRD:  0.5132887975912742
+Forecast SPRD:  0.6055030540564454
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -430,10 +430,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.01
 Tempering iteraations 4
-Analisis RMSE:  0.9481346362770502
-Forecast RMSE:  1.0836975563005224
-Analisis SPRD:  0.5622815197635341
-Forecast SPRD:  0.6590264938923491
+Analisis RMSE:  1.5462646719289794
+Forecast RMSE:  1.694384879010516
+Analisis SPRD:  0.5123497750283441
+Forecast SPRD:  0.6034165757025074
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -648,10 +648,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.02
 Tempering iteraations 2
-Analisis RMSE:  1.1892430066664474
-Forecast RMSE:  1.3197150828966655
-Analisis SPRD:  0.5615777693204371
-Forecast SPRD:  0.6590977683660295
+Analisis RMSE:  1.4569552747708996
+Forecast RMSE:  1.5998815520779808
+Analisis SPRD:  0.5305372110392148
+Forecast SPRD:  0.6247090506981404
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -757,10 +757,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.02
 Tempering iteraations 3
-Analisis RMSE:  0.8324536413073323
-Forecast RMSE:  0.9622397568207933
-Analisis SPRD:  0.5951409208324538
-Forecast SPRD:  0.6967482473283686
+Analisis RMSE:  1.253965037979159
+Forecast RMSE:  1.3905575316201808
+Analisis SPRD:  0.5276437744850232
+Forecast SPRD:  0.6204482077942411
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -866,10 +866,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.02
 Tempering iteraations 4
-Analisis RMSE:  0.7552940878901643
-Forecast RMSE:  0.8845405839414602
-Analisis SPRD:  0.632194299599468
-Forecast SPRD:  0.7388954891089735
+Analisis RMSE:  1.2119732652350423
+Forecast RMSE:  1.3469357843282714
+Analisis SPRD:  0.5300617318680922
+Forecast SPRD:  0.6232400864566456
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -1084,10 +1084,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.03
 Tempering iteraations 2
-Analisis RMSE:  0.8844222516450998
-Forecast RMSE:  1.012870996218788
-Analisis SPRD:  0.5956456984955265
-Forecast SPRD:  0.6976949533859365
+Analisis RMSE:  1.2457033889407487
+Forecast RMSE:  1.3805443406167506
+Analisis SPRD:  0.5459406910348686
+Forecast SPRD:  0.6416792203570186
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -1193,10 +1193,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.03
 Tempering iteraations 3
-Analisis RMSE:  0.7780138247993046
-Forecast RMSE:  0.909164571834227
-Analisis SPRD:  0.6479527621565051
-Forecast SPRD:  0.7568688350157251
+Analisis RMSE:  1.0993784622108917
+Forecast RMSE:  1.2281058471847264
+Analisis SPRD:  0.5447604816264437
+Forecast SPRD:  0.6398500159976145
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -1302,10 +1302,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.03
 Tempering iteraations 4
-Analisis RMSE:  0.7486532158555125
-Forecast RMSE:  0.8836952025535686
-Analisis SPRD:  0.7038702133503565
-Forecast SPRD:  0.8208533879182573
+Analisis RMSE:  1.1729903411275684
+Forecast RMSE:  1.3114523077578089
+Analisis SPRD:  0.5458993418153543
+Forecast SPRD:  0.6408832487044783
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -1520,10 +1520,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.04
 Tempering iteraations 2
-Analisis RMSE:  0.798639905936439
-Forecast RMSE:  0.9294917085652582
-Analisis SPRD:  0.6285210263858214
-Forecast SPRD:  0.7350213203746314
+Analisis RMSE:  1.1403577703901384
+Forecast RMSE:  1.269707507332576
+Analisis SPRD:  0.55936217805419
+Forecast SPRD:  0.6565292414930843
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -1629,10 +1629,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.04
 Tempering iteraations 3
-Analisis RMSE:  0.7545858657556513
-Forecast RMSE:  0.8864994683409713
-Analisis SPRD:  0.7006044236735853
-Forecast SPRD:  0.8170809639484433
+Analisis RMSE:  1.1187094829656468
+Forecast RMSE:  1.253144501584973
+Analisis SPRD:  0.5610639336339448
+Forecast SPRD:  0.6582134832329304
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -1738,10 +1738,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.04
 Tempering iteraations 4
-Analisis RMSE:  0.7641327440052657
-Forecast RMSE:  0.905411630504258
-Analisis SPRD:  0.7783661648021545
-Forecast SPRD:  0.9056480897988557
+Analisis RMSE:  1.0021501303567706
+Forecast RMSE:  1.1405858274048488
+Analisis SPRD:  0.5595479528295232
+Forecast SPRD:  0.6557831837328905
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -1956,10 +1956,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.05
 Tempering iteraations 2
-Analisis RMSE:  0.8078811387173417
-Forecast RMSE:  0.9418465615814189
-Analisis SPRD:  0.660455890269815
-Forecast SPRD:  0.771208008269479
+Analisis RMSE:  0.9700904295227643
+Forecast RMSE:  1.103994800796881
+Analisis SPRD:  0.5767574097280287
+Forecast SPRD:  0.6760184025930902
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -2065,10 +2065,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.05
 Tempering iteraations 3
-Analisis RMSE:  0.7645590253993688
-Forecast RMSE:  0.9021661275980808
-Analisis SPRD:  0.753898279266202
-Forecast SPRD:  0.8779165235806797
+Analisis RMSE:  0.9623056123583386
+Forecast RMSE:  1.0957452885876353
+Analisis SPRD:  0.5760189413761848
+Forecast SPRD:  0.6748857188893859
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -2174,10 +2174,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.05
 Tempering iteraations 4
-Analisis RMSE:  0.7900984275281908
-Forecast RMSE:  0.9359608903214027
-Analisis SPRD:  0.8539374550210003
-Forecast SPRD:  0.9919035259939672
+Analisis RMSE:  0.9182028506451626
+Forecast RMSE:  1.0475335278957802
+Analisis SPRD:  0.5790197181801153
+Forecast SPRD:  0.6784733678013172
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -2392,10 +2392,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.06
 Tempering iteraations 2
-Analisis RMSE:  0.7347046145443891
-Forecast RMSE:  0.8689321700663782
-Analisis SPRD:  0.6951858108120735
-Forecast SPRD:  0.8108759141237865
+Analisis RMSE:  0.9231666775472485
+Forecast RMSE:  1.0538110226234163
+Analisis SPRD:  0.5933724726624054
+Forecast SPRD:  0.6952024081793512
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -2501,10 +2501,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.06
 Tempering iteraations 3
-Analisis RMSE:  0.7773879151364022
-Forecast RMSE:  0.9213250302707173
-Analisis SPRD:  0.8099296287620124
-Forecast SPRD:  0.9417664112978865
+Analisis RMSE:  0.8228250502563718
+Forecast RMSE:  0.9515453317958468
+Analisis SPRD:  0.5937951640402801
+Forecast SPRD:  0.6950041268611683
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -2610,10 +2610,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.06
 Tempering iteraations 4
-Analisis RMSE:  0.8346765087483605
-Forecast RMSE:  0.9866808182512123
-Analisis SPRD:  0.9315363434374797
-Forecast SPRD:  1.0803025422445216
+Analisis RMSE:  0.8009074242298905
+Forecast RMSE:  0.9312165715125353
+Analisis SPRD:  0.5949128080888509
+Forecast SPRD:  0.6962206223610659
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -2828,10 +2828,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.07
 Tempering iteraations 2
-Analisis RMSE:  0.768617607202878
-Forecast RMSE:  0.9044415521506618
-Analisis SPRD:  0.7302197583437613
-Forecast SPRD:  0.8509750400271276
+Analisis RMSE:  0.8346472989811659
+Forecast RMSE:  0.9665102449029076
+Analisis SPRD:  0.6081819048875763
+Forecast SPRD:  0.7115914837182951
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -2937,10 +2937,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.07
 Tempering iteraations 3
-Analisis RMSE:  0.8039253534012907
-Forecast RMSE:  0.9506397773167687
-Analisis SPRD:  0.8645044471327834
-Forecast SPRD:  1.0040498145329007
+Analisis RMSE:  0.8660558075937402
+Forecast RMSE:  0.994021864754599
+Analisis SPRD:  0.6098959856868085
+Forecast SPRD:  0.7136360561589367
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -3046,10 +3046,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.07
 Tempering iteraations 4
-Analisis RMSE:  0.8811028873719591
-Forecast RMSE:  1.0375179932748073
-Analisis SPRD:  1.0123197615586301
-Forecast SPRD:  1.1722827944701961
+Analisis RMSE:  0.8841453659637294
+Forecast RMSE:  1.0136451734222036
+Analisis SPRD:  0.6099012304176077
+Forecast SPRD:  0.7134298908805198
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -3264,10 +3264,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.08
 Tempering iteraations 2
-Analisis RMSE:  0.7739340508848491
-Forecast RMSE:  0.9119048443695771
-Analisis SPRD:  0.7637409513306089
-Forecast SPRD:  0.8891672694254129
+Analisis RMSE:  0.8235468059892318
+Forecast RMSE:  0.9541510190509761
+Analisis SPRD:  0.6266509664632804
+Forecast SPRD:  0.7331311207620737
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -3373,10 +3373,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.08
 Tempering iteraations 3
-Analisis RMSE:  0.8233874702856884
-Forecast RMSE:  0.9751397781728677
-Analisis SPRD:  0.9189987580837429
-Forecast SPRD:  1.066001629670452
+Analisis RMSE:  0.787204714483957
+Forecast RMSE:  0.9183612977566247
+Analisis SPRD:  0.6264781109243632
+Forecast SPRD:  0.7324534007450252
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -3482,10 +3482,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.08
 Tempering iteraations 4
-Analisis RMSE:  0.9164685361722942
-Forecast RMSE:  1.081127407403808
-Analisis SPRD:  1.093095789387334
-Forecast SPRD:  1.2647594280177787
+Analisis RMSE:  0.7559147132736382
+Forecast RMSE:  0.8888133814612272
+Analisis SPRD:  0.6264495982438677
+Forecast SPRD:  0.7321852684666383
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -3700,10 +3700,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.09
 Tempering iteraations 2
-Analisis RMSE:  0.8139738407307926
-Forecast RMSE:  0.9556781920897978
-Analisis SPRD:  0.7986956511335862
-Forecast SPRD:  0.929090134942415
+Analisis RMSE:  0.8120403415457407
+Forecast RMSE:  0.9407562726145129
+Analisis SPRD:  0.6414525798737633
+Forecast SPRD:  0.7495215368335593
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -3809,10 +3809,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.09
 Tempering iteraations 3
-Analisis RMSE:  0.8719150521665613
-Forecast RMSE:  1.0263912232419607
-Analisis SPRD:  0.979965956463559
-Forecast SPRD:  1.1354831941436343
+Analisis RMSE:  0.7797186165939618
+Forecast RMSE:  0.9115455581881085
+Analisis SPRD:  0.6441932968389766
+Forecast SPRD:  0.7527195642655118
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -3918,10 +3918,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.09
 Tempering iteraations 4
-Analisis RMSE:  0.9595608139233353
-Forecast RMSE:  1.1303640712931113
-Analisis SPRD:  1.1784087036785293
-Forecast SPRD:  1.36200313110384
+Analisis RMSE:  0.7824626908306425
+Forecast RMSE:  0.9134471600811004
+Analisis SPRD:  0.6450457664928504
+Forecast SPRD:  0.7536969989519549
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -4136,10 +4136,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.1
 Tempering iteraations 2
-Analisis RMSE:  0.8312922853030387
-Forecast RMSE:  0.9743430370396362
-Analisis SPRD:  0.8340306116053003
-Forecast SPRD:  0.969469587788429
+Analisis RMSE:  0.791390303597856
+Forecast RMSE:  0.921765906476573
+Analisis SPRD:  0.6585971197106172
+Forecast SPRD:  0.7693584652973138
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -4245,10 +4245,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.1
 Tempering iteraations 3
-Analisis RMSE:  0.9151620200135225
-Forecast RMSE:  1.0707519717120175
-Analisis SPRD:  1.0370971750984206
-Forecast SPRD:  1.2004393057528044
+Analisis RMSE:  0.7524150437799029
+Forecast RMSE:  0.8846285780996034
+Analisis SPRD:  0.6587408985546664
+Forecast SPRD:  0.7690788828882038
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -4354,10 +4354,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.1
 Tempering iteraations 4
-Analisis RMSE:  1.0348752323568504
-Forecast RMSE:  1.2091797551287566
-Analisis SPRD:  1.2670884823270154
-Forecast SPRD:  1.4641211441879425
+Analisis RMSE:  0.7233629302964232
+Forecast RMSE:  0.8579893920591715
+Analisis SPRD:  0.6609234537420977
+Forecast SPRD:  0.7717875594792657
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -4572,10 +4572,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.11
 Tempering iteraations 2
-Analisis RMSE:  0.8140625609994929
-Forecast RMSE:  0.961887483969312
-Analisis SPRD:  0.8694270684508811
-Forecast SPRD:  1.009793982653115
+Analisis RMSE:  0.8194829557160542
+Forecast RMSE:  0.9520281163346791
+Analisis SPRD:  0.673504724058999
+Forecast SPRD:  0.7862161782856104
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -4681,10 +4681,10 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.11
 Tempering iteraations 3
-Analisis RMSE:  0.925456963399013
-Forecast RMSE:  1.089405752580483
-Analisis SPRD:  1.0940954659347222
-Forecast SPRD:  1.2656338260868183
+Analisis RMSE:  0.7457872218928291
+Forecast RMSE:  0.879215856206471
+Analisis SPRD:  0.6760320146128747
+Forecast SPRD:  0.7890668237671553
 Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hlogaritmic.npz
 
 This is a TWIN experiment
@@ -4790,7 +4790,7 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.11
 Tempering iteraations 4
-Analisis RMSE:  1.066383894214439
-Forecast RMSE:  1.2485295046312888
-Analisis SPRD:  1.3542828275817926
-Forecast SPRD:  1.5634213783928885
+Analisis RMSE:  0.7563716831655617
+Forecast RMSE:  0.8902921485713865
+Analisis SPRD:  0.6783732994551593
+Forecast SPRD:  0.7916822981435205

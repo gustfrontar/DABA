@@ -1152,7 +1152,7 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.15
 Tempering iteraations 3
-Analisis RMSE:  1.625449423456449
+Analisis RMSE:  1.6254494234564487
 Forecast RMSE:  1.8154634670413952
 Analisis SPRD:  0.6281560723216174
 Forecast SPRD:  0.7197884959464802
@@ -20718,7 +20718,7 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Multiplicative Inflation 1.33
 Tempering iteraations 3
-Analisis RMSE:  1.0420733462597587
+Analisis RMSE:  1.0420733462597584
 Forecast RMSE:  1.2408901061048854
 Analisis SPRD:  0.8946270974478342
 Forecast SPRD:  1.0198022272835072

@@ -1,5 +1,5 @@
 GFORTRAN module version '10' created from PDAF_generate_rndmat.F90
-MD5:f7eb48bb3d1bd71ed6bff9ccdb6f42ae -- If you edit this, you'll get what you deserve.
+MD5:25598360d0ef7782359cb1d4c4e062c2 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -50,52 +50,55 @@ DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE) (UNKNOWN 0 0 0 0 UNKNOWN ())
 60 'com_stdev' 'common_tools' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 61
 0 (62 63 64) () 0 () () () 0 0)
-65 'common_tools' 'common_tools' '' 1 ((MODULE UNKNOWN-INTENT
+65 'com_var' 'common_tools' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 66 0 (67 68 69)
+() 0 () () () 0 0)
+70 'common_tools' 'common_tools' '' 1 ((MODULE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
 0 () () () 0 0)
-66 'cp' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+71 'cp' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.3edb3340000000@3') () 0 () () () 0 0)
-67 'gg' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+72 'gg' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.9cf5c300000000@1') () 0 () () () 0 0)
-68 'kind' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 68
+73 'kind' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 73
 () () () 0 0)
-69 'log_sum_vec' 'common_tools' '' 1 ((PROCEDURE UNKNOWN-INTENT
+74 'log_sum_vec' 'common_tools' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 70 0 (71 72 73) () 0 () () () 0 0)
-74 'pdaf_generate_rndmat' 'rand_matrix' '' 1 ((PROCEDURE UNKNOWN-INTENT
-MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 75
-0 (76 77 78) () 0 () () () 0 0)
-79 'pi' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN ()) 75 0 (76 77 78) () 0 () () () 0 0)
+79 'pdaf_generate_rndmat' 'rand_matrix' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 80
+0 (81 82 83) () 0 () () () 0 0)
+84 'pi' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.3243f6c0000000@1') () 0 () () () 0 0)
-80 'r_dble' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+85 'r_dble' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-81 'r_omega' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+86 'r_omega' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.4c765000000000@-3') () 0 () () () 0 0)
-82 'r_size' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+87 'r_size' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-83 'r_sngl' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+88 'r_sngl' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 0 0)
-84 'rand_matrix' 'rand_matrix' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+89 'rand_matrix' 'rand_matrix' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0
 0)
-85 'rd' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+90 'rd' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.11f00000000000@3') () 0 () () () 0 0)
-86 're' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+91 're' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.6137e400000000@6') () 0 () () () 0 0)
-87 't0c' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+92 't0c' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.11126660000000@3') () 0 () () () 0 0)
-88 'undef' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+93 'undef' 'common_tools' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '-0.174876e0000000@10') () 0 () () () 0 0)
 5 'ndim' '' '' 4 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
@@ -214,29 +217,37 @@ INTEGER 4 0 0 0 INTEGER ()) 0 '1') (VARIABLE (INTEGER 4 0 0 0 INTEGER ())
 0 62 ())) 0 () () () 0 0)
 64 'aout' '' '' 61 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-71 'ne' '' '' 70 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
-72 'logvec' '' '' 70 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+67 'ndim' '' '' 66 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+68 'var' '' '' 66 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DIMENSION DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 EXPLICIT (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') (VARIABLE (INTEGER 4 0 0 0 INTEGER ())
-0 71 ())) 0 () () () 0 0)
-73 'log_sum' '' '' 70 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+0 67 ())) 0 () () () 0 0)
+69 'aout' '' '' 66 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+76 'ne' '' '' 75 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+77 'logvec' '' '' 75 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DIMENSION DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 EXPLICIT (CONSTANT (
+INTEGER 4 0 0 0 INTEGER ()) 0 '1') (VARIABLE (INTEGER 4 0 0 0 INTEGER ())
+0 76 ())) 0 () () () 0 0)
+78 'log_sum' '' '' 75 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-76 'dim' '' '' 75 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+81 'dim' '' '' 80 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
-77 'rndmat' '' '' 75 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+82 'rndmat' '' '' 80 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DIMENSION DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (2 0 EXPLICIT (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') (VARIABLE (INTEGER 4 0 0 0 INTEGER ())
-0 76 ()) (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (VARIABLE (
-INTEGER 4 0 0 0 INTEGER ()) 0 76 ())) 0 () () () 0 0)
-78 'mattype' '' '' 75 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+0 81 ()) (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (VARIABLE (
+INTEGER 4 0 0 0 INTEGER ()) 0 81 ())) 0 () () () 0 0)
+83 'mattype' '' '' 80 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 )
 
 ('__convert_r4_r8' 0 2 'com_anomcorrel' 0 3 'com_correl' 0 10 'com_covar'
 0 16 'com_filter_lanczos' 0 22 'com_interp_spline' 0 27 'com_l2norm' 0
 35 'com_mean' 0 40 'com_rand' 0 45 'com_randn' 0 50 'com_rms' 0 55
-'com_stdev' 0 60 'common_tools' 0 65 'cp' 0 66 'gg' 0 67 'kind' 0 68
-'log_sum_vec' 0 69 'pdaf_generate_rndmat' 0 74 'pi' 0 79 'r_dble' 0 80
-'r_omega' 0 81 'r_size' 0 82 'r_sngl' 0 83 'rand_matrix' 0 84 'rd' 0 85
-'re' 0 86 't0c' 0 87 'undef' 0 88)
+'com_stdev' 0 60 'com_var' 0 65 'common_tools' 0 70 'cp' 0 71 'gg' 0 72
+'kind' 0 73 'log_sum_vec' 0 74 'pdaf_generate_rndmat' 0 79 'pi' 0 84
+'r_dble' 0 85 'r_omega' 0 86 'r_size' 0 87 'r_sngl' 0 88 'rand_matrix' 0
+89 'rd' 0 90 're' 0 91 't0c' 0 92 'undef' 0 93)

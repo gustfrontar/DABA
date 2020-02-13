@@ -200,9 +200,7 @@ def assimilation_hybrid_run( conf ) :
        #=================================================================
        #  TEMPERED RUNNING IN PLACE  : 
        #================================================================= 
-    
-       gamma = 1.0/DAConf['NRip']
-       
+           
        stateaens = np.copy(XA[:,:,it-1])
        statepfens = np.copy(PA[:,:,:,it-1])
        
@@ -262,28 +260,54 @@ def assimilation_hybrid_run( conf ) :
                                  xloc=ModelConf['XLoc'] , tloc= TLoc )
                
            #=================================================================
+           #  Compute time step in pseudo time  : 
+           #=================================================================
+      
+           if DAConf['EnableTempering']  :
+              #Enable tempering 
+              if DAConf['AddaptiveTemp']  : 
+                 #Addaptive time step computation
+                 if irip == 0 : 
+                    #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
+                    [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']   ,
+                            tloc=np.array([da_window_start,da_window_end]) , nvar=1 , obsloc=ObsLocW  , ofens=YF    ,
+                            rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NRip']  )
+                 dt_pseudo_time =  a + b * (irip + 1)
+              else :
+                  #Equal time steps in pseudo time.  
+                  dt_pseudo_time = np.ones((Nx,2)) / DAConf['NRip']   
+
+           else                   :
+             #Original RIP formulation no tempering is enable.  
+             dt_pseudo_time = np.ones((Nx,2)) 
+
+
+           #=================================================================
            #  LETKF STEP  : 
            #=================================================================
               
            if BridgeParam < 1.0 :
+              #Compute the tempering parameter.
+              temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )  
               local_obs_error = ObsErrorW * DAConf['NRip'] / ( 1.0 - BridgeParam ) 
               statefens = das.da_letkf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                           tloc=np.array([da_window_start,da_window_end])    , nvar=1 , xfens=statefens              ,
                           obs=YObsW             , obsloc=ObsLocW                , ofens=YF                          ,
-                          rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs'] ,
-                          update_smooth_coef=0.0 )
+                          rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']       ,
+                          update_smooth_coef=0.0 , temp_factor = temp_factor )
         
            #=================================================================
            #  ETPF STEP  : 
            #=================================================================
                  
            if BridgeParam > 0.0 :
-        
-               local_obs_error = ObsErrorW * DAConf['NRip'] / ( BridgeParam )
-               [statefens , wa]= das.da_letpf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']    , 
-                          tloc=np.array([da_window_start,da_window_end]) , nvar=1  , xfens=statefens            , 
-                          obs=YObsW             , obsloc=ObsLocW                , ofens=YF                      ,
-                          rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam']  )
+              #Compute the tempering parameter.
+              temp_factor = (1.0 / dt_pseudo_time ) / ( BridgeParam )         
+              [statefens , wa]= das.da_letpf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']        , 
+                          tloc=np.array([da_window_start,da_window_end]) , nvar=1  , xfens=statefens               , 
+                          obs=YObsW             , obsloc=ObsLocW                , ofens=YF                         ,
+                          rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam']  ,
+                          temp_factor = temp_factor , multinf=DAConf['InfCoefs'][0] )
                                           
            stateaens = np.copy( statefens[:,:,0,0] )  #This will be the analysis for the next rip iteration.  
            

@@ -22,7 +22,7 @@ else                        :
 
 
 conf.GeneralConf['NatureName']='NatureR8_Den05_Freq8_Hlinear'
-out_filename='Sesitivity_experiment_rip_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sesitivity_experiment_rip_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
@@ -35,6 +35,8 @@ conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is
 conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 
+conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
+conf.DAConf['EnableTempering']=True                      #Enable tempered iterations. If False, then traditional RIP method is applied without using tempering.
 
 if RunTheExperiment  :
 

@@ -16,8 +16,7 @@ import numpy as np
 def forward_operator_full( state )  :
        #Operador de las observaciones full que observa las 3 variables directamente
     
-       H=np.identity(3)
-       obs = np.matmul(H,state)
+       obs = np.copy(state)
     
        return obs
 
@@ -56,7 +55,7 @@ def forward_operator_integral_tl( state ) :
        H=np.ones( (1 , np.size(state)) )
        return H
     
-def forward_operator_nonlinear( state )  :
+def forward_operator_logaritmic( state )  :
        local_state = np.copy(state)
        #Operador de las observaciones full que observa las 3 variables directamente
 
@@ -65,7 +64,7 @@ def forward_operator_nonlinear( state )  :
        #state[0] = state[0] + 25.0
        #state[1] = state[1] + 25.0
        #state[2] = state[2] + 25.0
-       local_state = local_state + np.array([18,23,-3])
+       local_state = local_state + np.array([18.0,23.0,-3.0])
        
        #print(np.shape(state
        local_state[ local_state < 0.0001 ] = 0.0001
@@ -73,7 +72,20 @@ def forward_operator_nonlinear( state )  :
     
        return obs
    
-def forward_operator_nonlinear_ens( state )  :
+def forward_operator_logaritmic_tl( state )  :
+       nvars = state.shape[0]
+       
+       local_state = np.copy(state)
+       local_state = local_state + np.array([18.0,23.0,-3.0])
+       mask = local_state < 0.0001
+       local_state[ mask ] = 0.0001
+       local_state = 1.0/local_state
+       local_state[ mask ] = 0.0
+       H = np.diag(local_state)
+ 
+       return H       
+       
+def forward_operator_logaritmic_ens( state )  :
        local_state = np.copy(state)
        #Operador de las observaciones full que observa las 3 variables directamente
 
@@ -107,17 +119,20 @@ def forward_operator_nonlinearsum( state )  :
        obs = np.sqrt( np.sum( np.power( tmp_state[0:2] , 2 ) , 0 ) )
     
        return obs
-    
-
-def forward_operator_nonlinear_tl( state )  :
-    
-       #Tangente lineal del operador de las observaciones full que observa las 3 variables directamente
-    
-       #H=np.diag( 3.0*np.power(state,2)/3000.0 )
-       #H = np.diag( 2.0 * (state+20) / 100.0 )
-       H = 10.0*np.diag(  1.0 / (state+30.0) )
-    
+   
+def forward_operator_nonlinearsum_tl( state )  :
+       #Operador de las observaciones full que observa las 3 variables directamente
+       #Operador similar al usado por Bunch y Godsill 2016
+       tmp_state = np.copy(state)
+       tmp_state[0]=tmp_state[0] + 11.0
+       tmp_state[1]=tmp_state[1] + 1.0      
+       tmp = np.sqrt( np.sum( np.power( tmp_state[0:2] , 2 ) , 0 ) )
+       H=np.zeros((1,state.size))
+       H[0,0] = (1.0/tmp) * 2 * tmp_state[0]
+       H[0,1] = (1.0/tmp) * 2 * tmp_state[1]
+       
        return H
+
     
 
     

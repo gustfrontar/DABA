@@ -35,6 +35,7 @@ conf.DAConf['TSFreq'] = 8                                 #Intra window ensemble
 conf.DAConf['LocScalesLETKF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['LocScalesLETPF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
+conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 
 
 if RunTheExperiment  :

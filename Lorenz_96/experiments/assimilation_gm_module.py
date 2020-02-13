@@ -225,14 +225,7 @@ def assimilation_gm_run( conf ) :
        #  HYBRID-TEMPERED DA  : 
        #================================================================= 
 
-       gamma = 1.0/DAConf['NTemp']
-
        stateens = np.copy(XF[:,:,it])
-    
-   
-       inf_coefs = np.copy( DAConf['InfCoefs'] )
-       inf_coefs[0]=np.power( inf_coefs[0] , 1.0/DAConf['NTemp'] )
-
       
        for itemp in range( DAConf['NTemp'] ) :
               
@@ -253,18 +246,35 @@ def assimilation_gm_run( conf ) :
                              obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
                              xloc=ModelConf['XLoc'] , tloc= TLoc )
        
-
+         #=================================================================
+         #  Compute time step in pseudo time  : 
+         #=================================================================
       
+         if DAConf['AddaptiveTemp']  : 
+             #Addaptive time step computation
+             if itemp == 0 : 
+                #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
+                [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']   ,
+                            tloc=da_window_end    , nvar=1 , obsloc=ObsLocW  , ofens=YF                             ,
+                            rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
+             dt_pseudo_time =  a + b * (itemp + 1)
+         else :
+             #Equal time steps in pseudo time.  
+             dt_pseudo_time = np.ones(Nx) / DAConf['NTemp']        
 
-         local_obs_error = ObsErrorW * DAConf['NTemp'] 
+         #=================================================================
+         #  GM-DA STEP  : 
+         #=================================================================      
+
+         temp_factor = (1.0 / dt_pseudo_time )   
          #da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
-         [tmp_stateens , weigths] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                              tloc=da_window_end    , nvar=1                        , xfens=stateens                      ,
-                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                            ,
-                              rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=inf_coefs            ,
-                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] )
+         [tmp_stateens , weigths] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                         ,
+                              tloc=da_window_end    , nvar=1                        , xfens=stateens                                   ,
+                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                                         ,
+                              rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']                      ,
+                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] ,
+                              temp_factor = temp_factor )
          stateens = tmp_stateens[:,:,0,0]
-
 
          XA[:,:,it] = np.copy( stateens )
        
