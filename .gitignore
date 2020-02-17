@@ -6,4 +6,7 @@
 *.pyc
 *.so
 *.csv
+*.cvs
+*.mod
+*.o
 
