@@ -42,6 +42,8 @@ conf.DAConf['ResamplingType']=2                             #Resampling: 1-Liu 2
 conf.DAConf['AddaptiveTemp']=True                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['EnableTempering']=True                      #Enable tempered iterations. If False, then traditional RIP method is applied without using tempering.
 
+print(RunTheExperiment,PlotTheExperiment)
+
 if RunTheExperiment  :
 
     
@@ -96,5 +98,6 @@ if PlotTheExperiment  :
     plt.show()
 
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
+    plt.show()
 
 

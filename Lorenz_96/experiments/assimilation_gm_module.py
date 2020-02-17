@@ -42,6 +42,8 @@ def assimilation_gm_run( conf ) :
     InputData=np.load(GeneralConf['ObsFile'],allow_pickle=True)
     
     ObsConf=InputData['ObsConf'][()]
+    DAConf['Freq']=ObsConf['Freq']
+    DAConf['TSFreq']=ObsConf['Freq']
     
     YObs    =  InputData['YObs']         #Obs value
     ObsLoc  =  InputData['ObsLoc']       #Obs location (space , time)
@@ -184,6 +186,11 @@ def assimilation_gm_run( conf ) :
        #Run the ensemble forecast
   
        ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
+
+       if np.any( np.isnan( XA[:,:,it-1] ) ) :
+          #Stop the cycle before the fortran code hangs because of NaNs
+          print('Error: The analysis contains NaN, Iteration number :',it)
+          break
    
        [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
                                            x0=XA[:,:,it-1]     , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma,
@@ -229,7 +236,10 @@ def assimilation_gm_run( conf ) :
       
        for itemp in range( DAConf['NTemp'] ) :
               
-       
+         if np.any( np.isnan( stateens ) ) :
+            #Stop the cycle before the fortran code hangs because of NaNs
+            print('Error: The analysis contains NaN, Iteration number :',it)
+            break
        
          #=================================================================
          #  OBSERVATION OPERATOR  : 
@@ -274,6 +284,10 @@ def assimilation_gm_run( conf ) :
                               rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']                      ,
                               beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] ,
                               temp_factor = temp_factor )
+         #Particle rejuvenation.
+         [tmp_stateens , xpert_rejuv]=das.da_particle_rejuvenation(nx=Nx,nt=1,nvar=1,nens=NEns,xaens=tmp_stateens,xfens=XF[:,:,it]     ,
+                                                                 rejuv_param=DAConf['RejuvParam'],temp_factor=temp_factor   )
+         
          stateens = tmp_stateens[:,:,0,0]
 
          XA[:,:,it] = np.copy( stateens )

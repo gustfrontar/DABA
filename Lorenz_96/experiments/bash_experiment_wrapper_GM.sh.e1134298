@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "./sensitivit_experiment_rip_multinf_gm_R4_D05_Freq8_Hlogaritmic.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "./sensitivit_experiment_rip_multinf_gm_R4_D05_Freq8_Hlogaritmic_ModelError.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "./sensitivit_experiment_rip_multinf_gm_R4_D05_Freq8_Hcuadratic.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "./sensitivit_experiment_rip_multinf_gm_R8_D05_Freq8_Hlinear.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "./sensitivit_experiment_adrip_multinf_gm_R4_D05_Freq8_Hcuadratic.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "./sensitivit_experiment_adrip_multinf_gm_R4_D05_Freq8_Hlogaritmic.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "./sensitivit_experiment_adrip_multinf_gm_R4_D05_Freq8_Hlogaritmic_ModelError.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "./sensitivit_experiment_adrip_multinf_gm_R8_D05_Freq8_Hlinear.py", line 15, in <module>
+    import assimilation_ripgm_module as ahm
+  File "/home/jruiz/DABA/Lorenz_96/experiments/assimilation_ripgm_module.py", line 273
+    else         :
+    ^
+SyntaxError: invalid syntax

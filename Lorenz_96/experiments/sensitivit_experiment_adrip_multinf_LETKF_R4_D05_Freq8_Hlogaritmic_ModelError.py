@@ -37,7 +37,7 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 #Introduce a model error in the model used for the assimilation experiment.
 conf.DAConf['Twin'] = False                               #When True, model configuration will be replaced by the model configuration in the nature run.
-conf.ModelConf['Coef']=np.array([7.0])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... )
+conf.ModelConf['Coef']=np.array([7.5])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... )
 
 conf.DAConf['AddaptiveTemp']=True                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['EnableTempering']=True                      #Enable tempered iterations. If False, then traditional RIP method is applied without using tempering.
@@ -47,7 +47,7 @@ if RunTheExperiment  :
 
     results=list()
     
-    mult_inf_range = np.arange(1.06,1.160,0.01)
+    mult_inf_range = np.arange(1.11,1.210,0.01)
     
     nrip_range = np.arange(1,5,1)
     
@@ -96,3 +96,6 @@ if PlotTheExperiment  :
     plt.show()
 
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
+
+    plt.show()
+

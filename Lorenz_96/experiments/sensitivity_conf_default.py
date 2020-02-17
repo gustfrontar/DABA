@@ -44,6 +44,7 @@ ModelConf['XLoc'  ]=np.arange(1,ModelConf['nx']+1)      #Location of model grid 
 ModelConf['TwoScaleParameters']=np.array([10,10,0])     #Small scale and coupling parameters C , B and Hint                                                     #Set Hint /= 0 to enable two scale mode                                           
 ModelConf['nxss']= ModelConf['nx'] * 8                  #Number of small scale variables
 ModelConf['dtss']= ModelConf['dt'] / 5                  #Time step increment for the small scale variables
+
 #=================================================================
 #  DATA ASSIMILATION SECTION :
 #=================================================================
@@ -53,9 +54,9 @@ DAConf['NEns'] = 20                                  #Number of ensemble members
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
-DAConf['LocScalesLETKF']=np.array([2.0,-1.0])             #Localization scale is space and time (negative means no localization)
-DAConf['LocScalesLETPF']=np.array([2.0,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008]) #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['LocScalesLETKF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETPF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 #Initial state ensemble.
 DAConf['InitialXSigma']=0.5                          #Initial ensemble spread for state variables.
 DAConf['UpdateSmoothCoef']=0.0                       #Data assimilation update smooth (for parameter estimation only)

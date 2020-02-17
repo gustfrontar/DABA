@@ -42,6 +42,9 @@ def assimilation_hybrid_run( conf ) :
     InputData=np.load(GeneralConf['ObsFile'],allow_pickle=True)
     
     ObsConf=InputData['ObsConf'][()]
+    DAConf['Freq']=ObsConf['Freq']
+    DAConf['TSFreq']=ObsConf['Freq']
+
     
     YObs    =  InputData['YObs']         #Obs value
     ObsLoc  =  InputData['ObsLoc']       #Obs location (space , time)
@@ -183,6 +186,11 @@ def assimilation_hybrid_run( conf ) :
     
        #Run the ensemble forecast
        #print('Runing the ensemble')
+       if np.any( np.isnan( XA[:,:,it-1] ) ) :
+            #Stop the cycle before the fortran code hangs because of NaNs
+            print('Error: The analysis contains NaN, Iteration number :',it)
+            break
+
     
        ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
        
@@ -227,20 +235,21 @@ def assimilation_hybrid_run( conf ) :
        #  HYBRID-TEMPERED DA  : 
        #================================================================= 
     
-       gamma = 1.0/DAConf['NTemp']
-    
        stateens = np.copy(XF[:,:,it])
+
+       #print('Runing the ensemble')
+       if np.any( np.isnan( stateens ) ) :
+            #Stop the cycle before the fortran code hangs because of NaNs
+            print('Error: The analysis contains NaN, Iteration number :',it)
+            break
        
        #Perform initial iterations using ETKF this helps to speed up convergence.
        if it < DAConf['NKalmanSpinUp']  :
            BridgeParam = 0.0  #Force pure Kalman step.
        else                             :
            BridgeParam = DAConf['BridgeParam']
-           
-       
        
        for itemp in range( DAConf['NTemp'] ) :
-           
            
           #=================================================================
           #  OBSERVATION OPERATOR  : 
@@ -294,7 +303,7 @@ def assimilation_hybrid_run( conf ) :
              
           if BridgeParam > 0.0 :
              #Compute the tempering parameter.
-             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )    
+             temp_factor = (1.0 / dt_pseudo_time ) / ( BridgeParam )    
              [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                           ,
                                            tloc=da_window_end    , nvar=1                        , xfens=stateens                  , 
                                            obs=YObsW             , obsloc=ObsLocW                , ofens=YF                        ,

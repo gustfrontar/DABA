@@ -91,3 +91,7 @@ if PlotTheExperiment  :
     plt.show()
 
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
+
+
+    plt.show()
+

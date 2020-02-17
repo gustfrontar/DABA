@@ -40,7 +40,7 @@ conf.DAConf['ResamplingType']=2                             #Resampling: 1-Liu 2
 
 #Introduce a model error in the model used for the assimilation experiment.
 conf.DAConf['Twin'] = False                               #When True, model configuration will be replaced by the model configuration in the nature run.
-conf.ModelConf['Coef']=np.array([7.0])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... )
+conf.ModelConf['Coef']=np.array([7.5])                    #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... )
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 
 
@@ -99,4 +99,5 @@ if PlotTheExperiment  :
 
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
 
+    plt.show()
 

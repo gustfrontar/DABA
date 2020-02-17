@@ -434,7 +434,7 @@ DO it = 1,nt
 
 
 !$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
-!$OMP & ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke,wf,delta,tmp_ens,m,xamean,xapert)
+!$OMP & ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke,wf,delta,tmp_ens,m,xamean,xapert,xawmean)
   DO ix = 1,nx
 
 !   !Localize observations
@@ -492,15 +492,9 @@ DO it = 1,nt
       ! Liu et al 2016 Deterministic resampling
       !-----------------------------------------------------------------
       DO iv=1,nvar
-        xamean  = 0.0d0
-        xawmean = 0.0d0 
-        DO ie = 1 ,nens
-           xamean  = xamean  + xaens(ix,ie,iv,it) 
-           xawmean = xawmean + w_pf(ix,ie,it) * xaens(ix,ie,iv,it) 
-        ENDDO
-        xamean  = xamean  / REAL( nens , r_size )
-        !Expand perturbations by the factor sqrt(1+beta) and recenter around the PF mean.
-        xaens(ix,:,iv,it) = SQRT(1.0d0+0.6*beta_coef) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
+        xamean = SUM( xaens(ix,:,iv,it) ) / REAL(nens,r_size)
+        xawmean= SUM( xaens(ix,:,iv,it) * w_pf(ix,:,it) )/SUM( w_pf(ix,:,it) )
+        xaens(ix,:,iv,it) = SQRT(inf_coefs(1)+beta_coef) * ( xaens(ix,:,iv,it) - xamean ) + xawmean
       END DO
    ELSEIF( resampling_type == 2 )THEN
       !-----------------------------------------------------------------
@@ -899,7 +893,7 @@ DO it = 1,nt
     CALL get_distance_matrix( nens , 1 , nvar , 1 , xfens(ix,:,:,it) , m )
  
     CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),m,Rdiag_loc(1:no_loc)   &
-                    ,wa(ix,:),W,multinf_loc )
+                    ,wa(ix,:),W, multinf_loc )
 
     !Compute the updated ensemble mean, std and mode.
     DO ie=1,nens
@@ -1292,6 +1286,65 @@ DO it = 1,nt
 END DO
 
 END SUBROUTINE da_mean_and_pert
+
+
+!=======================================================================
+!  Get ensemble mean and perturbations
+!=======================================================================
+
+SUBROUTINE da_particle_rejuvenation(nx,nt,nvar,nens,xaens,xfens,xaens_rejuv,  &
+      &                             xpert_rejuv,rejuv_param,temp_factor)
+
+IMPLICIT NONE
+INTEGER,INTENT(IN)         :: nt , nx , nvar             !Number of observations , number of times , number of state variables ,number of variables
+INTEGER,INTENT(IN)         :: nens                       !Number of ensemble members
+REAL(r_size),INTENT(IN)    :: xaens(nx,nens,nvar,nt)     !Analysis state ensemble
+REAL(r_size),INTENT(IN)    :: xfens(nx,nens,nvar,nt)     !Forecast state ensemble
+REAL(r_size),INTENT(IN)    :: temp_factor(nx,nt)         !Tempering factor
+REAL(r_size),INTENT(IN)    :: rejuv_param 
+REAL(r_size),INTENT(OUT)   :: xpert_rejuv(nx,nens,nvar,nt)    !Ensemble after particle rejuvenation.
+REAL(r_size),INTENT(OUT)   :: xaens_rejuv(nx,nens,nvar,nt)    !Analysis ensemble with rejuvenation
+REAL(r_size)               :: xfpert(nx,nens,nvar,nt),xfmean(nx,nvar,nt)
+INTEGER                    :: iv,ix,it,ie,je
+REAL(r_size)               :: random_rejuv_matrix(nens,nens) , tmp_mean
+
+xpert_rejuv = 0.0d0
+IF ( rejuv_param > 0.0d0 ) THEN
+
+   CALL da_mean_and_pert(nx,nt,nvar,nens,xfens,xfmean,xfpert)
+
+   !Perform particle rejuvenation on the global ensemble.a
+   DO ie = 1,nens
+      CALL com_randn( nens , random_rejuv_matrix(ie,:) , 10 )
+   ENDDO
+   random_rejuv_matrix = rejuv_param * random_rejuv_matrix / ( REAL(nens,r_size) ** 0.5 )
+
+   DO ix = 1,nx
+    DO it = 1,nt
+     DO ie = 1,nens
+      DO je = 1,nens
+         xpert_rejuv(ix,ie,:,it) = xpert_rejuv(ix,ie,:,it) +  &
+                      xfpert(ix,je,:,it)*random_rejuv_matrix(je,ie) * temp_factor(ix,it)
+      ENDDO
+     ENDDO
+    ENDDO
+   ENDDO
+   !Recenter the perturbations around the original ensemble mean.
+   DO ix = 1,nx
+     DO iv = 1,nvar
+       DO it = 1,nt
+         tmp_mean = SUM( xpert_rejuv(ix,:,iv,it) )/( REAL(nens,r_size) )
+         xpert_rejuv(ix,:,iv,it) = xpert_rejuv(ix,:,iv,it) - tmp_mean 
+       ENDDO
+     ENDDO
+   ENDDO
+
+ENDIF
+
+xaens_rejuv = xaens + xpert_rejuv
+
+END SUBROUTINE da_particle_rejuvenation
+
 
 END MODULE common_da_tools
 

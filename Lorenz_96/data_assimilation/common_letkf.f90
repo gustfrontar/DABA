@@ -122,6 +122,7 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !-----------------------------------------------------------------------
   i=ne
   CALL mtx_eigen(1,ne,work1,eival,eivec,i)
+  !WRITE(*,*)MAXVAL(eival),MINVAL(eival)
 
 !-----------------------------------------------------------------------
 !  Pa = [ hdxb^T Rinv hdxb + (m-1) I ]inv

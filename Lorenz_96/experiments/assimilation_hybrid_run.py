@@ -18,7 +18,7 @@ from da     import common_da_tools  as das            #Import the data assimilat
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-import assimilation_conf_HybridPerfectModel_R4_Den05_Freq8_Hlogaritmic as conf         #Load the experiment configuration
+import assimilation_conf_HybridPerfectModel_R05_Den025_Freq8_Hcuadratic as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
@@ -226,8 +226,6 @@ for it in range( 1 , DALength  )         :
    #  HYBRID-TEMPERED DA  : 
    #================================================================= 
 
-   gamma = 1.0/DAConf['NTemp']
-
    stateens = np.copy(XF[:,:,it])
    
    #Perform initial iterations using ETKF this helps to speed up convergence.
@@ -268,13 +266,14 @@ for it in range( 1 , DALength  )         :
                             tloc=da_window_end    , nvar=1 , obsloc=ObsLocW  , ofens=YF                             ,
                             rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
          
-         dt_pseudo_time =  a + b * (itemp + 1)
+         dt_pseudo_time = a + b * (itemp + 1) 
+         #print(dt_pseudo_time[0],itemp)
          
       else :
          #Equal time steps in pseudo time.  
          dt_pseudo_time = np.ones(Nx) / DAConf['NTemp']   
       
-       
+      #print(dt_pseudo_time[0],itemp) 
       #=================================================================
       #  LETKF STEP  : 
       #=================================================================
@@ -302,10 +301,10 @@ for it in range( 1 , DALength  )         :
           [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                                        tloc=da_window_end    , nvar=1                        , xfens=stateens               , 
                                        obs=YObsW             , obsloc=ObsLocW                , ofens=YF                     ,
-                                       rdiag=ObsError_W , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam'] ,
-                                       temp_factor = temp_factor )
+                                       rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam'] ,
+                                       temp_factor = temp_factor , multinf=DAConf['InfCoefs'][0] )
           stateens = tmp_ens[:,:,0,0]
-       
+   #print(np.max(stateens),np.min(stateens))    
 
    XA[:,:,it] = np.copy( stateens )
    

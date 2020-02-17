@@ -42,6 +42,9 @@ def assimilation_gm_run( conf ) :
     InputData=np.load(GeneralConf['ObsFile'],allow_pickle=True)
     
     ObsConf=InputData['ObsConf'][()]
+    DAConf['Freq']=ObsConf['Freq']
+    DAConf['TSFreq']=ObsConf['Freq']
+
     
     YObs    =  InputData['YObs']         #Obs value
     ObsLoc  =  InputData['ObsLoc']       #Obs location (space , time)
@@ -213,6 +216,12 @@ def assimilation_gm_run( conf ) :
            #=================================================================
            #  ENSEMBLE FORECAST  : 
            #=================================================================   
+
+           #print('Runing the ensemble')
+           if np.any( np.isnan( XA[:,:,it-1] ) ) :
+               #Stop the cycle before the fortran code hangs because of NaNs
+               print('Error: The analysis contains NaN, Iteration number :',it)
+               break
         
            ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
            
@@ -245,6 +254,13 @@ def assimilation_gm_run( conf ) :
            #=================================================================
            #  OBSERVATION OPERATOR  : 
            #================================================================= 
+
+           #print('Runing the ensemble')
+           if np.any( np.isnan( statefens ) ) :
+               #Stop the cycle before the fortran code hangs because of NaNs
+               print('Error: The analysis contains NaN, Iteration number :',it)
+               break
+
         
            #Apply h operator and transform from model space to observation space. 
            #This opearation is performed only at the end of the window.
@@ -270,10 +286,10 @@ def assimilation_gm_run( conf ) :
                             tloc=np.array([ da_window_start , da_window_end ]) , nvar=1 , obsloc=ObsLocW  , ofens=YF  ,
                             rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NRip']  )
                  dt_pseudo_time =  a + b * (irip + 1)
-                 else         :
-                    #Equal time steps in pseudo time.  
-                    dt_pseudo_time = np.ones((Nx,2)) / DAConf['NRip']  
-            else                           :
+              else         :
+                 #Equal time steps in pseudo time.  
+                 dt_pseudo_time = np.ones((Nx,2)) / DAConf['NRip']  
+           else              :
                  #Original RIP formulation no tempering is enable.  
                  dt_pseudo_time = np.ones((Nx,2)) 
 
@@ -288,7 +304,12 @@ def assimilation_gm_run( conf ) :
                               rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']            ,
                               beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] ,
                               temp_factor = temp_factor )
+           
+           #Particle rejuvenation.
+           [tmp_stateens , xpert_rejuv]=das.da_particle_rejuvenation(nx=Nx,nt=1,nvar=1,nens=NEns,xaens=tmp_stateens,xfens=XF[:,:,it]     ,
+                                                                 rejuv_param=DAConf['RejuvParam'],temp_factor=temp_factor   )
 
+         
            statefens[:,:,0,:] = tmp_stateens[:,:,0,:] 
                                                            
            #PARAMETER ESTIMATION

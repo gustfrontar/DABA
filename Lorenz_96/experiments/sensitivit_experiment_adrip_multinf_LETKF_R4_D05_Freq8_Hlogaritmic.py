@@ -41,9 +41,9 @@ conf.DAConf['EnableTempering']=True                      #Enable tempered iterat
 if RunTheExperiment  :
 
     results=list()
-    
-    mult_inf_range = np.arange(1.01,1.110,0.01)
-    
+
+    mult_inf_range = np.arange(1.11,1.210,0.01)
+ 
     nrip_range = np.arange(1,5,1)
     
     total_analysis_rmse = np.zeros( (len(mult_inf_range),len(nrip_range)) )
@@ -91,3 +91,7 @@ if PlotTheExperiment  :
     plt.show()
 
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
+
+    plt.show()
+
+
