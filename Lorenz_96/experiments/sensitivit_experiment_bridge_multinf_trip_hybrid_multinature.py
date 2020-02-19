@@ -48,7 +48,11 @@ for Nature in NatureList :
 
     results=list()
 
-    mult_inf_range = np.arange(1.02,1.3,0.04)   
+    if Nature == 'NatureR4_Den05_Freq8_Hlogaritmic' :
+       mult_inf_range = np.arange(1.2,1.45,0.05)
+    else                                            :
+       mult_inf_range = np.arange(1.01,1.16,0.03)
+
     bridge_range = np.arange(0.0,0.8,0.2)
     rip_range = np.arange(1,4,1)
 

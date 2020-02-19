@@ -251,23 +251,11 @@ def assimilation_hybrid_run( conf ) :
        
        for itemp in range( DAConf['NTemp'] ) :
            
-          #=================================================================
-          #  OBSERVATION OPERATOR  : 
-          #================================================================= 
-    
-          #Apply h operator and transform from model space to observation space. 
-          #This opearation is performed only at the end of the window.
-    
-          #Set the time coordinate corresponding to the model output.
           TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
-          #Call the observation operator and transform the ensemble from the state space 
-          #to the observation space. 
-
           [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
-                                 obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
-                                 xloc=ModelConf['XLoc'] , tloc= TLoc )
-          
-          
+                          obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
+                          xloc=ModelConf['XLoc'] , tloc= TLoc )
+           
           #=================================================================
           #  Compute time step in pseudo time  : 
           #=================================================================
@@ -285,10 +273,11 @@ def assimilation_hybrid_run( conf ) :
              dt_pseudo_time = np.ones(Nx) / DAConf['NTemp']   
            
           #=================================================================
-          #  LETKF STEP  : 
+          #  OBS OPERATOR AND LETKF STEP  : 
           #=================================================================
-          
+
           if BridgeParam < 1.0 :
+
              #Compute the tempering parameter.
              temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )             
              stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                      ,
@@ -300,8 +289,13 @@ def assimilation_hybrid_run( conf ) :
           #=================================================================
           #  ETPF STEP  : 
           #=================================================================
-             
+
           if BridgeParam > 0.0 :
+
+             TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+             [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
+                                 obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
+                                 xloc=ModelConf['XLoc'] , tloc= TLoc )           
              #Compute the tempering parameter.
              temp_factor = (1.0 / dt_pseudo_time ) / ( BridgeParam )    
              [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                           ,
@@ -310,8 +304,7 @@ def assimilation_hybrid_run( conf ) :
                                            rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam'] ,
                                            temp_factor = temp_factor  , multinf=DAConf['InfCoefs'][0] )
              stateens = tmp_ens[:,:,0,0]
-                                        
-      
+
        XA[:,:,it] = np.copy( stateens )
        
        #PARAMETER ESTIMATION

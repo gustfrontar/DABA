@@ -7,6 +7,9 @@ asimilacion de datos utilizando el modelo de Lorenz de 3 dimensiones (Lorenz63)
 """
 import numpy as np
 import scipy.linalg as linalg 
+import sys
+sys.path.append("../Lorenz_96/data_assimilation/")
+from mtx_oper import common_mtx as mo
 
 
 def gen_obs( h , da_exp )  :
@@ -865,7 +868,190 @@ def analysis_update_GMDR( yo , xf , forward_operator , R , Inflation , beta_para
     OmB=np.nan
     OmA=np.nan
     
-    return xa , xa_mean , Pa , OmB , OmA   
+    return xa , xa_mean , Pa , OmB , OmA 
+
+def analysis_update_GMETPF( yo , xf , wf , kernel_perts , sample_size , forward_operator , R  )   :
+    #from emd import emd
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  En este caso asumimos que el imput es un ensamble donde cada miembro representa
+   #  una Gaussian mixture (kernel_perts es un conjunto de perturbaciones que describen tomadas de ese Kernel)
+   #  Lo que hacemos es samplear de la Gaussian mixture (tantos miembros como sea posible) y luego aplicar ETPF a esos miembros.
+   #  Sample size es el tamanio de la muestra que vamos a generar. 
+   #---------------------------------------------
+   
+    #Obtengo la cantidad de miembros en el ensamble
+    [nvar , nens ]= xf.shape
+    
+    if sample_size < nens :
+        sample_size = nens   #Sample size should be at least equal to nens.
+    
+    #Calculo la inversa de la matriz de covarianza    
+    Rinv = np.linalg.inv(R)
+    
+    [xf_mean , xf_pert] = mean_and_perts( xf )
+    
+    #Para hacer el sampling lo hago en 2 pasos. 
+    #1) elijo una Gaussiana 
+    #2) elijo una combinacion random de las kernel perts para obtener una perturbacion alrededor de la media de la Gaussiana  
+    #consistente con su matriz de covarianza.
+    
+    sample_g=np.round( np.random.rand(sample_size) * nens-1 ).astype(int) 
+    #sample_perts = np.round( np.random.rand(sample_size) * nens-1 ).astype(int)    #np.random.randn( nens , sample_size ) 
+    sample_perts = np.random.randn( nens , sample_size ) / np.sqrt( nens -  1 )
+
+
+    #Choose on gaussian and then add a unique random perturbation consistent with its covariance matrix.
+    xf_sample  = xf[:,sample_g] + np.matmul( kernel_perts , sample_perts )  
+    
+    #xf_sample  = xf[:,sample_g] + kernel_perts[:,sample_perts]  #+ np.matmul( kernel_perts , sample_perts )  
+    
+    #Now proceed to ETPF using the new ensemble.
+    
+    
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    wf_sample = wf[ sample_g ]  #We need to take into account the weigths associated to each Gaussian.
+    w = np.zeros( sample_size )
+    for iens in range( sample_size ) :
+        yf = forward_operator( xf_sample[:,iens] )
+        w[iens] = wf_sample[iens] * np.exp( -0.5 * np.matmul( (yo-yf).transpose() , np.matmul( Rinv , yo - yf ) ) )
+
+    #Normalizamos los pesos para que sumen 1.
+    w = w / np.sum(w)
+    
+    #Esta funcion resuelve mediante un metodo iterativo el problema del transporte optimo
+    #con un parametro de regularizacion lambda. 
+    M = np.power( cdist(np.transpose(xf_sample),np.transpose(xf_sample),'euclidean') , 2 ) 
+    D=np.transpose( ot.emd(np.ones(sample_size)/sample_size,w,M,numItermax=1.0e9,log=False) ) * sample_size
+    #Resolvemos la ecuacion de Ricatti para obtener una correccion a la matriz D que garantiza
+    #que el metodo sea exacto en la varianza.
+    
+    delta = riccati_solver( D , w )
+    
+    #Correct the transformation matrix to ensure a second order exact transformation.
+    D = D + delta
+    
+    xa_sample = np.matmul( xf_sample , D ) 
+    
+    #Now we need to get a sub_sample with size equal to nens to proceed for the next step.
+    
+    if sample_size == nens :
+        xa = xa_sample 
+    else                   :
+        sub_sample = np.random.choice(sample_size,size=nens,replace=False)  
+        xa = xa_sample[:,sub_sample]  
+  
+    xa_mean = np.mean(xa,1)
+    
+    Pa=np.nan
+    OmB=np.nan
+    OmA=np.nan
+
+    return xa , xa_mean , Pa , OmB , OmA , xf_sample 
+
+  
+
+def analysis_update_GM( yo , xf , forward_operator , R , Inflation , beta_param = 0.6 , gamma_param = 0.2)   :
+    from scipy.spatial.distance import cdist
+    import ot
+   #---------------------------------------------#   
+   #  Gaussian Mixture con resampling deterministico
+   #  similar al trabajo de Liu et al 2016 pero usando ETPF para definir el 
+   #  resampling deterministico.
+   #
+   #  input:
+   #       yo      - observaciones
+   #       xf(dim,nens) - campo preliminar (first gues)  ensemble
+   #       forward_operator - operador de las observaciones (funcion)
+   #       forward_operator_tl - tangente lineal del operador de las observaciones (funcion)
+   #  output:
+   #       xa(dim,nens) - analysis ensemble
+   #
+   #---------------------------------------------
+
+   #En esta formulacion se utiliza el Ensemble Transform Kalman Filter esto es
+   #el update del analisis se calcula en el espacio del ensamble (esto es particularmente
+   #ventajoso cuando la dimension del estado es mucho mayor que la cantidad de miembros en el ensamble)
+   #Esta formulacion no requiere el calculo explicito del modelo tangente lineal
+    #Obtengo la cantidad de miembros en el ensamble
+    [nvar , nens ]= xf.shape
+    
+        
+    Rinv= np.linalg.inv(R) 
+
+    #Obtengo el numero de observaciones
+    nobs = yo.shape[0]
+      
+    #Calculamos el ensamble en el espacio de las perturbaciones
+    y=np.zeros((nobs,nens))
+    
+    #Defino la matriz que guardara las perturbaciones respecto de la media del ensamble.
+    [ xf_mean , xf_pert ] = mean_and_perts( xf )
+    
+    #Aplico la inflacion multiplicativa a la amplitud de las perturbaciones.
+    #xf_pert = xf_pert * Inflation
+    
+    for iens in range( nens ) :
+        y[:,iens] = forward_operator( xf_mean + xf_pert[:,iens] )
+    #Defino la media del ensamble y las perturbaciones en el espacio de las observaciones.
+    [ymean , ypert ] = mean_and_perts( y )
+    
+    if nobs > 1 :
+       BHPHtRInv=np.linalg.inv( beta_param * np.cov(ypert) + R )
+    else        :
+       BHPHtRInv=1.0/(beta_param * np.cov(ypert) + R )
+        
+        
+    #Calculamos los pesos en base al likelihood de las observaciones 
+    #dada cada una de las particulas.
+    w=np.zeros( nens )
+    for iens in range( nens ) :
+        w[iens] = np.exp( -0.5 * np.dot(  (yo-y[:,iens]).transpose() , np.dot( BHPHtRInv , yo - y[:,iens] ) ) )
+    #Normalizamos los pesos para que sumen 1.
+    w = w / np.sum(w)
+    #Aplly weigth nudging.
+    w = ( 1.0 - gamma_param ) * w + gamma_param * ( np.ones(nens) / nens )
+
+    dy = yo - forward_operator( xf_mean )  #Innovacion de la media del ensamble.
+
+    # analysis error covariance in ensemble space
+
+    Pahat=np.linalg.inv( np.dot( ypert.transpose() , np.dot( Rinv , ypert ) ) + (nens-1.0)*np.identity(nens) / beta_param )
+    
+    tmp_mat = np.dot( Pahat ,  np.dot(ypert.transpose() , Rinv ) )
+
+    #Compute mean weigths for each ensemble member and compute the intermediate analysis.
+    #This is the Kalman filter update applied to each ensemble member.
+    xa = np.zeros( xf.shape )
+    for iens in range( nens )  :
+        local_wabar = np.dot( tmp_mat , yo - y[:,iens] )
+        xa[:,iens] = xf[:,iens] + np.dot( xf_pert , local_wabar )
+    
+    [xa_mean , xa_pert] = mean_and_perts( xa )
+    
+    #Update the Kernel perturbations. Since we will want to sample from the posterior Gaussian mixture.
+    #We would need information about the Gaussian Kernel after the update of each Kernel.
+    #Since the same observations were assimilated on each Kernel and all Kernels are initially the same,
+    #we need to compute this transformation only once. We apply the LETKF equations to obtain the kernel perturbations 
+    #after the update.
+    
+    # weight to update ensemble perturbations
+    Wa=mo.mtx_sqrt(n=nens,a=(nens-1)*Pahat)
+    kernel_perts = np.dot( xf_pert , Wa )
+
+    Pa=np.nan
+    OmB=np.nan
+    OmA=np.nan
+    
+    return xa , xa_mean , Pa , OmB , OmA , w , kernel_perts   
+
+
+
+
+
+
 
 def analysis_update_GMDR_localH( yo , xf , forward_operator , R , Inflation , beta_param = 0.6 , gamma_param = 0.2)   :
     from scipy.spatial.distance import cdist
@@ -1967,6 +2153,10 @@ def analysis_verification( forward_operator , da_exp ) :
       tmpobs[it,:] = forward_operator( statea[it,:] )    
    da_exp['rmse_ao'] = np.sqrt( np.nanmean( np.power( yobs - tmpobs , 2 ) , 0 ) )
    da_exp['bias_ao'] = np.nanmean( yobs - tmpobs , 0 )
+   
+   da_exp['sprd_a']= np.sqrt( np.nanmean( np.var( da_exp['stateaens'] , 2 ) , 0 ) )
+   da_exp['sprd_f']= np.sqrt( np.nanmean( np.var( da_exp['statefens'] , 2 ) , 0 ) )
+   
 
    print()
    print()
@@ -1974,6 +2164,12 @@ def analysis_verification( forward_operator , da_exp ) :
    print('Analysis RMSE: ',da_exp['rmse_a'])
    print('First guess RMSE: ',da_exp['rmse_f'][:,0])
    print('Obaservations RMSE: ',da_exp['rmse_o'])
+
+   print()
+   print()
+
+   print('Analysis SPRD: ',da_exp['sprd_a'])
+   print('First guess SPRD: ',da_exp['sprd_f'][:,0])
 
    print()
    print()

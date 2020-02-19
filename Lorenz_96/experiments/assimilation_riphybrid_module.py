@@ -298,7 +298,6 @@ def assimilation_hybrid_run( conf ) :
              #Original RIP formulation no tempering is enable.  
              dt_pseudo_time = np.ones((Nx,2)) 
 
-
            #=================================================================
            #  LETKF STEP  : 
            #=================================================================
@@ -314,11 +313,16 @@ def assimilation_hybrid_run( conf ) :
                           update_smooth_coef=0.0 , temp_factor = temp_factor )
         
            #=================================================================
-           #  ETPF STEP  : 
+           #  OBS OPERATOR AND ETPF STEP  : 
            #=================================================================
                  
            if BridgeParam > 0.0 :
               #Compute the tempering parameter.
+              TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+              [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
+                                 obsloc=ObsLocW , x=stateens[:,:,:,-1] , obstype=ObsTypeW ,
+                                 xloc=ModelConf['XLoc'] , tloc= TLoc )
+
               temp_factor = (1.0 / dt_pseudo_time ) / ( BridgeParam )         
               [stateens , wa]= das.da_letpf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']        , 
                           tloc=np.array([da_window_start,da_window_end]) , nvar=1  , xfens=stateens               , 
@@ -326,8 +330,6 @@ def assimilation_hybrid_run( conf ) :
                           rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam']  ,
                           temp_factor = temp_factor , multinf=DAConf['InfCoefs'][0] )
                                           
-           #stateaens = np.copy( statefens[:,:,0,0] )  #This will be the analysis for the next rip iteration.  
-           
            #PARAMETER ESTIMATION
            #FOR THE MOMENT PURE LETKF IS BEING USED TO UPDATE PARAMETERS
            if DAConf['EstimateParameters']   : 
@@ -338,8 +340,7 @@ def assimilation_hybrid_run( conf ) :
                statepfens = das.da_etkf( no=NObsW , nens=NEns , nvar=NCoef , xfens=statepfens ,
                                                     obs=YObsW, ofens=YF  , rdiag=ObsErrorW   ,
                                                     inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
-               
-               
+ 
             if DAConf['ParameterLocalizationType'] == 2  :
                #GLOBAL AVERAGED PARAMETER ESTIMATION (Parameters are estiamted locally but the agregated globally)
                #LETKF is used but a global parameter is estimated.
