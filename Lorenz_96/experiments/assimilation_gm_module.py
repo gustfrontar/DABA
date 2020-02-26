@@ -278,7 +278,7 @@ def assimilation_gm_run( conf ) :
 
          temp_factor = (1.0 / dt_pseudo_time )   
          #da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
-         [tmp_stateens , weigths] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                         ,
+         [tmp_stateens , weigths , kperts ] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                         ,
                               tloc=da_window_end    , nvar=1                        , xfens=stateens                                   ,
                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                                         ,
                               rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']                      ,

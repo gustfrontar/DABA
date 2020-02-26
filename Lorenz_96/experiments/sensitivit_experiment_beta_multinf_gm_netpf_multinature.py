@@ -14,11 +14,16 @@ import numpy as np
 import sensitivity_conf_default as conf
 import assimilation_gm_module as ahm
 
+
 NatureList = [ 'NatureR4_Den05_Freq8_Hlogaritmic'   ,
                'NatureR8_Den05_Freq8_Hlinear'       ,
                'NatureR4_Den05_Freq8_Hcuadratic'    ,
-               'NatureR1_Den1_Freq4_Hlinear'   ]
-   
+               'NatureR1_Den1_Freq4_Hlinear'        ,
+               'NatureR1_Den1_Freq16_Hlinear'       ,
+               'NatureR01_Den05_Freq16_Hlinear'
+               ]
+
+
 #Define the source of the observations
 outfile_prefix = './npz/Sesitivity_experiment_beta_multinf_gm_netpf_'
 
@@ -51,7 +56,7 @@ for Nature in NatureList :
     results=list()
 
     if Nature == 'NatureR4_Den05_Freq8_Hlogaritmic' :
-       mult_inf_range = np.arange(1.2,1.45,0.05)
+       mult_inf_range = np.arange(1.05,1.35,0.05)
     else                                            :
        mult_inf_range = np.arange(1.01,1.16,0.03)
     beta_range = np.arange(0.1,1.2,0.1)

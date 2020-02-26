@@ -95,8 +95,9 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb
 !-----------------------------------------------------------------------
-  CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb_rinv,nobsl,hdxb(1:nobsl,:),&
-    & nobsl,0.0d0,work1,ne)
+  work1 = MATMUL( TRANSPOSE( hdxb_rinv ) , hdxb )
+!  CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb_rinv,nobsl,hdxb(1:nobsl,:),&
+!    & nobsl,0.0d0,work1,ne)
 !  DO j=1,ne
 !    DO i=1,ne
 !      work1(i,j) = hdxb_rinv(1,i) * hdxb(1,j)
@@ -117,23 +118,25 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
   DO i=1,ne
     work1(i,i) = work1(i,i) + REAL(ne-1,r_size) * rho
   END DO
+
+  CALL mtx_inv_eivec( ne , work1 , pa )
 !-----------------------------------------------------------------------
 !  eigenvalues and eigenvectors of [ hdxb^T Rinv hdxb + (m-1) I ]
 !-----------------------------------------------------------------------
-  i=ne
-  CALL mtx_eigen(1,ne,work1,eival,eivec,i)
+  !i=ne
+  !CALL mtx_eigen(1,ne,work1,eival,eivec,i)
   !WRITE(*,*)MAXVAL(eival),MINVAL(eival)
 
 !-----------------------------------------------------------------------
 !  Pa = [ hdxb^T Rinv hdxb + (m-1) I ]inv
 !-----------------------------------------------------------------------
-  DO j=1,ne
-    DO i=1,ne
-      work1(i,j) = eivec(i,j) / eival(j)
-    END DO
-  END DO
-  CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
-    & ne,0.0d0,pa,ne)
+  !DO j=1,ne
+  !  DO i=1,ne
+  !    work1(i,j) = eivec(i,j) / eival(j)
+  !  END DO
+  !END DO
+  !CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
+  !  & ne,0.0d0,pa,ne)
 !  DO j=1,ne
 !    DO i=1,ne
 !      pa(i,j) = work1(i,1) * eivec(j,1)
@@ -145,8 +148,9 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T
 !-----------------------------------------------------------------------
-  CALL dgemm('n','t',ne,nobsl,ne,1.0d0,pa,ne,hdxb_rinv,&
-    & nobsl,0.0d0,work2,ne)
+  work2 = MATMUL( pa , TRANSPOSE( hdxb_rinv ) )
+!  CALL dgemm('n','t',ne,nobsl,ne,1.0d0,pa,ne,hdxb_rinv,&
+!    & nobsl,0.0d0,work2,ne)
 !  DO j=1,nobsl
 !    DO i=1,ne
 !      work2(i,j) = pa(i,1) * hdxb_rinv(j,1)
@@ -167,14 +171,15 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !-----------------------------------------------------------------------
 !  T = sqrt[(m-1)Pa]
 !-----------------------------------------------------------------------
-  DO j=1,ne
-    rho = SQRT( REAL(ne-1,r_size) / eival(j) )
-    DO i=1,ne
-      work1(i,j) = eivec(i,j) * rho
-    END DO
-  END DO
-  CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
-    & ne,0.0d0,trans,ne)
+!  DO j=1,ne
+!    rho = SQRT( REAL(ne-1,r_size) / eival(j) )
+!    DO i=1,ne
+!      work1(i,j) = eivec(i,j) * rho
+!    END DO
+!  END DO
+  CALL mtx_sqrt( ne , REAL(ne-1,r_size)*pa , trans )
+!  CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
+!    & ne,0.0d0,trans,ne)
 !  DO j=1,ne
 !    DO i=1,ne
 !      trans(i,j) = work1(i,1) * eivec(j,1)

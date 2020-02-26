@@ -23,7 +23,7 @@ MODULE common_mtx
   IMPLICIT NONE
 
   PRIVATE
-  PUBLIC :: mtx_eigen, mtx_inv, mtx_sqrt, mtx_inv_rg
+  PUBLIC :: mtx_eigen, mtx_inv, mtx_sqrt, mtx_inv_rg , mtx_inv_eivec
 
 CONTAINS
 !=======================================================================
@@ -202,6 +202,49 @@ SUBROUTINE mtx_sqrt(n,a,a_sqrt)
 
   RETURN
 END SUBROUTINE mtx_sqrt
+
+
+!=======================================================================
+!  Compute the inverse of a possitive definite real matrix using 
+!  eigenvalue decomposition
+!    INPUT
+!      INTEGER :: n                : dimension of matrix
+!      REAL(r_size) :: a(n,n)      : input matrix (real symmetric)
+!    OUTPUT
+!      REAL(r_size) :: a_inv(n,n) : square root of a
+!=======================================================================
+SUBROUTINE mtx_inv_eivec(n,a,a_inv)
+  IMPLICIT NONE
+
+  INTEGER,INTENT(IN) :: n
+  REAL(r_size),INTENT(IN) :: a(1:n,1:n)
+  REAL(r_size),INTENT(OUT) :: a_inv(1:n,1:n)
+
+  REAL(r_size) :: eival(n)   ! holds eigenvalue of a
+  REAL(r_size) :: eivec(n,n) ! holds eigenvector of a
+  REAL(r_size) :: wk(n,n)
+  INTEGER :: i,j,k
+
+  CALL mtx_eigen(1,n,a,eival,eivec,i)
+
+  DO i=1,n
+    wk(:,i) = eivec(:,i) / ( eival(i) )
+  END DO
+
+!  a_sqrt = matmul(wk,transpose(eivec))
+  DO j=1,n
+    DO i=1,n
+      a_inv(i,j) = wk(i,1)*eivec(j,1)
+      DO k=2,n
+        a_inv(i,j) = a_inv(i,j) + wk(i,k)*eivec(j,k)
+      END DO
+    END DO
+  END DO
+
+  RETURN
+END SUBROUTINE mtx_inv_eivec
+
+
 !=======================================================================
 !  Compute inverse of a real matrix (not necessarily symmetric)
 !    INPUT

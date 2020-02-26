@@ -28,6 +28,28 @@ python -u ./${MY_EXP}.py  > ./logs/${MY_EXP}.log
 
 
 
+#HYBRID LETKF-LETPF adaptive tempering
+MY_EXP=sensitivit_experiment_bridge_multinf_adtemp_hybrid_modelerror_multinature
+python -u ./${MY_EXP}.py  > ./logs/${MY_EXP}.log
+
+#HYBRID LETKF-LETPF adaptive tempered rip
+MY_EXP=sensitivit_experiment_bridge_multinf_adrip_hybrid_modelerror_multinature
+python -u ./${MY_EXP}.py  > ./logs/${MY_EXP}.log
+
+#HYBRID LETKF-LETPF tempered rip
+MY_EXP=sensitivit_experiment_bridge_multinf_trip_hybrid_modelerror_multinature
+python -u ./${MY_EXP}.py  > ./logs/${MY_EXP}.log
+
+#HYBRID LETKF-LETPF original rip
+MY_EXP=sensitivit_experiment_bridge_multinf_orip_hybrid_modelerror_multinature
+python -u ./${MY_EXP}.py  > ./logs/${MY_EXP}.log
+
+#HYBRID LETKF-LETPF adaptive tempering
+MY_EXP=sensitivit_experiment_bridge_multinf_temp_hybrid_modelerror_multinature
+python -u ./${MY_EXP}.py  > ./logs/${MY_EXP}.log
+
+
+
 
 
 

@@ -34,7 +34,7 @@ from scipy import stats
 import os
 
 
-def assimilation_gm_run( conf ) :
+def assimilation_hybrid_run( conf ) :
 
     np.random.seed(20)
     
@@ -253,6 +253,13 @@ def assimilation_gm_run( conf ) :
             #Stop the cycle before the fortran code hangs because of NaNs
             print('Error: The analysis contains NaN, Iteration number :',it)
             break
+        
+        
+         #Perform initial iterations using ETKF this helps to speed up convergence.
+         #if it < DAConf['NKalmanSpinUp']  :
+         #BridgeParam = 0.0  #Force pure Kalman step.
+         #else                             :
+         BridgeParam = DAConf['BridgeParam']
        
          #=================================================================
          #  OBSERVATION OPERATOR  : 
@@ -286,22 +293,80 @@ def assimilation_gm_run( conf ) :
              dt_pseudo_time = np.ones(Nx) / DAConf['NTemp']        
 
          #=================================================================
-         #  GM-DA STEP  : 
-         #=================================================================      
+         #  GM STEP without resampling 
+         #=================================================================   
+         if BridgeParam < 1.0  :
 
-         temp_factor = (1.0 / dt_pseudo_time )   
-         #da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
-         [tmp_stateens , weigths] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                         ,
+             temp_factor = 1.0 / ( dt_pseudo_time * ( 1.0 - BridgeParam ) )  
+             #da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag,loc_scale,inf_coefs,beta_coef,gamma_coef)
+             [stateens , weights , kernel_perts] = das.da_gmdr( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                 ,
                               tloc=da_window_end    , nvar=1                        , xfens=stateens                                   ,
                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                                         ,
                               rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']                      ,
-                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=DAConf['ResamplingType'] ,
+                              beta_coef=DAConf['BetaCoef'] , gamma_coef=DAConf['GammaCoef'] , resampling_type=0                        ,
                               temp_factor = temp_factor )
-         #Particle rejuvenation.
-         [tmp_stateens , xpert_rejuv]=das.da_particle_rejuvenation(nx=Nx,nt=1,nvar=1,nens=NEns,xaens=tmp_stateens,xfens=XF[:,:,it]     ,
-                                                                 rejuv_param=DAConf['RejuvParam'],temp_factor=temp_factor   )
          
-         stateens = tmp_stateens[:,:,0,0]
+         #Weights are the weights assigned to each Gaussian (each ensemble member basically)
+         #kernel perts are the perturbations that describes the covariance of each Gaussian kernel. Since all the kernels are the same
+         #we have only one set of perturbations to describe the kernel. At the beginning the perturbations are assumed to be beta_coef * ensemble_perturbations
+         #then these perturbations are updated using LETKF equations and transformed into the kernel_perts output by the function.
+         #These kernel pert are then used to sample from the Gaussian mixture. 
+         else                 :
+             weights = np.ones(NEns) / NEns  #If GM step is not performed then this is a pure LETPF and the initial weights are assumed to be equal.
+             #TODO en este caso las perturbaciones del ensamble.
+             #WARNING ESTA OPCION NO FUNCIONA AUN PORQUE KERNEL_PERTS NO ESTA DEFINIDO.
+
+         if BridgeParam > 0.0 :
+         
+             temp_factor = 1.0 / ( dt_pseudo_time *  BridgeParam )
+             #=================================================================
+             #  ETPF STEP OVER LARGER ENSEMBLE SAMPLED FROM GAUSSIAN MIXTURE POSTERIOR 
+             #================================================================= 
+             #The new ensemble should have a size (DAConf['gm_sample_size']) = N * NEns to guarantee proper sampling.
+             #print(stateens.shape)
+             sample_size = NEns * DAConf['GMSampleAmpFactor']
+             #Expand the ensmble sampling from the Gaussian mixture distribution.
+             [sample_ens , sample_weights ]=das.gaussian_mixture_sampling( nens=NEns , nvar=1 , nx=Nx , nt=1 , mean_ens=stateens       , 
+                                                                       input_weights = weights , kernel_perts = kernel_perts           ,
+                                                                       amp_factor = DAConf['GMSampleAmpFactor'] )
+             #print(np.any( np.isnan( sample_ens ) ))
+             #print( sample_weights[0,:,0])
+             #print('sample_ens', sample_ens.shape)
+             #print('stateens', stateens[0,0:10,0,0])
+             #print('kernel perts', tmp_perts[0,0:10,0,0])
+
+             # plt.figure()
+             # plt.plot(sample_ens[:,0,0,0]-np.mean(sample_ens[:,:,0,0],1),'r');plt.plot(stateens[:,0,0,0]-np.mean(stateens[:,:,0,0],1),'b');plt.plot(stateens[:,10,0,0]-np.mean(stateens[:,:,0,0],1),'g')
+             # plt.show()
+            
+             TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+             [sample_YF , sample_YFmask] = hoperator.model_to_obs( nx=Nx , no=NObsW , nt=1 , nens= sample_size ,
+                                 obsloc=ObsLocW , x=sample_ens , obstype=ObsTypeW                               ,
+                                 xloc=ModelConf['XLoc'] , tloc= TLoc )           
+
+             [sample_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens= sample_size ,  xloc=ModelConf['XLoc']      ,
+                                           tloc=da_window_end    , nvar=1                        , xfens=sample_ens                , 
+                                           obs=YObsW             , obsloc=ObsLocW                , ofens=sample_YF                 ,
+                                           rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF']  , temp_factor = temp_factor       ,
+                                           multinf=DAConf['InfCoefs'][0] , w_in = sample_weights )
+
+             #Colapse the expanded ensemble to reobtain a NEns size ensemble.
+             [stateens , weights ]=das.gaussian_mixture_colapse( nens=NEns , nvar=1 , nx=Nx , nt=1 , sample_ens = sample_ens    , 
+                                                                       input_weights = wa , amp_factor = DAConf['GMSampleAmpFactor'] )
+             #print(np.any( np.isnan( stateens ) ))
+             # import matplotlib.pyplot as plt
+             # plt.figure()
+             # plt.plot(sample_ens[0,:,0,0],sample_ens[1,:,0,0],'r.')
+             # plt.plot(stateens[0,:,0,0],stateens[1,:,0,0],'b.')
+             # plt.plot(anal_sample_ens[0,0:NEns,0,0],anal_sample_ens[1,0:NEns,0,0],'g.')
+             # plt.show
+             
+             #Contract the ensemble by randomly selecting NEns members of the expanded ensemble.
+             #Note that the expanded ensemble has been locally and deterministically resampled, so all particles should be equally probable.
+             
+
+         stateens = stateens[:,:,0,0]
+
 
          XA[:,:,it] = np.copy( stateens )
        
@@ -314,6 +379,7 @@ def assimilation_gm_run( conf ) :
                  PA[:,:,:,it] = das.da_etkf( no=NObsW , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it] ,
                                                 obs=YObsW, ofens=YF  , rdiag=ObsErrorW   ,
                                                 inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
+                 
            
            
              if DAConf['ParameterLocalizationType'] == 2  :

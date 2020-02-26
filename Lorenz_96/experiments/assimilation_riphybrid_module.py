@@ -304,10 +304,10 @@ def assimilation_hybrid_run( conf ) :
               
            if BridgeParam < 1.0 :
               #Compute the tempering parameter.
-              temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )  
+              temp_factor = ( 1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )  
               
-              stateens = das.da_letkf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-                          tloc=np.array([da_window_start,da_window_end])    , nvar=1 , xfens=stateens              ,
+              stateens = das.da_letkf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                ,
+                          tloc=np.array([da_window_start,da_window_end])    , nvar=1 , xfens=stateens               ,
                           obs=YObsW             , obsloc=ObsLocW                , ofens=YF                          ,
                           rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']       ,
                           update_smooth_coef=0.0 , temp_factor = temp_factor )
@@ -317,6 +317,8 @@ def assimilation_hybrid_run( conf ) :
            #=================================================================
                  
            if BridgeParam > 0.0 :
+              prior_weights = np.ones((Nx,NEns,2))/NEns  #Resampling is performed at each time step. So assume equal weigths 
+                                                      #for the prior.
               #Compute the tempering parameter.
               TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
               [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
@@ -324,11 +326,13 @@ def assimilation_hybrid_run( conf ) :
                                  xloc=ModelConf['XLoc'] , tloc= TLoc )
 
               temp_factor = (1.0 / dt_pseudo_time ) / ( BridgeParam )         
-              [stateens , wa]= das.da_letpf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']        , 
-                          tloc=np.array([da_window_start,da_window_end]) , nvar=1  , xfens=stateens               , 
+              [stateens , wa]= das.da_letpf( nx=Nx , nt=2 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']         , 
+                          tloc=np.array([da_window_start,da_window_end]) , nvar=1  , xfens=stateens                , 
                           obs=YObsW             , obsloc=ObsLocW                , ofens=YF                         ,
-                          rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam']  ,
-                          temp_factor = temp_factor , multinf=DAConf['InfCoefs'][0] )
+                          rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] ,  temp_factor = temp_factor        ,
+                          multinf=DAConf['InfCoefs'][0] , w_in = prior_weights )
+              
+              
                                           
            #PARAMETER ESTIMATION
            #FOR THE MOMENT PURE LETKF IS BEING USED TO UPDATE PARAMETERS

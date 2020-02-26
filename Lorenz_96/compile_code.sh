@@ -40,7 +40,7 @@ ln -sf ../common/common_mtx.f90    .
 
 $COMPILER --f90flags=$F90FLAGS --opt=$FFLAGS netlib.f90 SFMT.f90 common_tools.f90 common_obs_lorenzN.f90 -m obsope #> compile.out 2>&1
 
-rm netlib.f90 SFMT.f90 common_tools.f90 common_mtx.f90
+rm netlib.f90 SFMT.f90 common_tools.f90 common_mtx.f90 *.o *.mod
 
 cd ../
 
@@ -59,7 +59,7 @@ ln -sf ../common/common_mtx.f90    .
 $COMPILER --f90flags=$F90FLAGS --opt=$FFLAGS SFMT.f90 netlib.f90 common_tools.f90 common_mtx.f90 -m mtx_oper #> compile.out 2>&1
 
 $COMPILER --f90flags=$F90FLAGS --opt=$FFLAGS netlib.f90 SFMT.f90 common_tools.f90  PDAF_generate_rndmat.F90 common_mtx.f90 common_letkf.f90 common_pf.f90 common_gm.f90 common_da_tools_1d.f90 -m da #> compile.out 2>&1
-rm netlib.f90 SFMT.f90 common_tools.f90 common_mtx.f90
+rm netlib.f90 SFMT.f90 common_tools.f90 common_mtx.f90 *.o *.mod
 
 cd ../
 
@@ -75,7 +75,7 @@ ln -sf ../common/common_tools.f90  .
 $COMPILER --f90flags=$F90FLAGS --opt=$FFLAGS SFMT.f90 common_tools.f90 lorenzN.f90 -m model #> compile.out 2>&1 
 
 
-rm SFMT.f90 common_tools.f90 
+rm SFMT.f90 common_tools.f90 *.o *.mod
 
 
 cd ../

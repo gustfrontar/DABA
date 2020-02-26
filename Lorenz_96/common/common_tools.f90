@@ -320,7 +320,7 @@ END SUBROUTINE com_rand
 
 !=======================================================================
 
-SUBROUTINE com_randn(ndim,var,seed)
+SUBROUTINE com_randn(ndim,var)
 !
 ! RANDN (random number with normal distribution)
 !
@@ -329,7 +329,7 @@ SUBROUTINE com_randn(ndim,var,seed)
   INTEGER,INTENT(IN) :: ndim
   REAL(r_size),INTENT(OUT) :: var(1:ndim)
   REAL(r_size) :: rnd(2)
-  INTEGER, INTENT(IN) :: seed
+  !INTEGER, INTENT(IN),OPTIONAL :: seed
   REAL(r_dble) :: genrand_res53
   INTEGER :: idate(8)
   INTEGER :: i,iseed
@@ -338,7 +338,7 @@ SUBROUTINE com_randn(ndim,var,seed)
   IF (first) THEN
     CALL DATE_AND_TIME(VALUES=idate)
     iseed = idate(8) + idate(7)*1000
-    CALL init_gen_rand(iseed+seed)
+    CALL init_gen_rand(iseed)
     first=.false.
   END IF
 

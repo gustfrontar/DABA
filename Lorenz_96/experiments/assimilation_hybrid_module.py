@@ -292,6 +292,7 @@ def assimilation_hybrid_run( conf ) :
 
           if BridgeParam > 0.0 :
 
+             prior_weights = np.ones((Nx,NEns))/NEns  #Resampling is applied every time step so we assume equal weigths for the prior.
              TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
              [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
                                  obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
@@ -301,8 +302,8 @@ def assimilation_hybrid_run( conf ) :
              [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                           ,
                                            tloc=da_window_end    , nvar=1                        , xfens=stateens                  , 
                                            obs=YObsW             , obsloc=ObsLocW                , ofens=YF                        ,
-                                           rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF'] , rejuv_param=DAConf['RejuvParam'] ,
-                                           temp_factor = temp_factor  , multinf=DAConf['InfCoefs'][0] )
+                                           rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF']  , temp_factor = temp_factor       ,
+                                           multinf=DAConf['InfCoefs'][0] , w_in = prior_weights )
              stateens = tmp_ens[:,:,0,0]
 
        XA[:,:,it] = np.copy( stateens )

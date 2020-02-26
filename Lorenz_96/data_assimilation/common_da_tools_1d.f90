@@ -44,7 +44,7 @@ REAL(r_size)               :: d(no)                                             
 
 
 REAL(r_size)               :: ofpert_loc(no,nens) , Rdiag_loc(no)                  !Localized ensemble in obs space and diag of R
-REAL(r_size)               :: Rwf_loc(no)                                          !Localization weigths.
+REAL(r_size)               :: Rwf_loc(no)                                          !Localization weights.
 REAL(r_size)               :: d_loc(no)                                            !Localized observation departure.
 INTEGER                    :: no_loc                                               !Number of observations in the local domain.
 REAL(r_size),INTENT(IN)    :: loc_scale(2)                                         !Localization scales (space,time)
@@ -344,10 +344,11 @@ END SUBROUTINE da_etkf
 
 !=======================================================================
 !  GaussianMixture with deterministic resampling DA for the 1D model
-!  Liu et al. 2016 MWR
+!  Liu et al. 2016 MWR with different resampling options.
 !=======================================================================
 SUBROUTINE da_gmdr(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,w_pf,obs,obsloc,ofens,Rdiag, &
-                   loc_scale,inf_coefs,beta_coef,gamma_coef,resampling_type,temp_factor)
+                   loc_scale,inf_coefs,beta_coef,gamma_coef,resampling_type,temp_factor, &
+                   kpert )
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
@@ -358,6 +359,7 @@ REAL(r_size),INTENT(IN)    :: tloc(nt)                   !Location of state grid
 REAL(r_size),INTENT(IN)    :: obsloc(no,2)               !Location of obs (space , time)
 REAL(r_size),INTENT(IN)    :: xfens(nx,nens,nvar,nt)     !Forecast state ensemble  
 REAL(r_size),INTENT(OUT)   :: xaens(nx,nens,nvar,nt)     !Analysis state ensemble 
+REAL(r_size),INTENT(OUT)   :: kpert(nx,nens,nvar,nt)     !Updated kernel perturbations (useful for sampling from the Gaussian mixture representation of the posterior)
 REAL(r_size),INTENT(IN)    :: ofens(no,nens)             !Ensemble in observation space
 REAL(r_size),INTENT(IN)    :: obs(no)                    !Observations 
 REAL(r_size),INTENT(IN)    :: Rdiag(no)                  !Diagonal of observation error covariance matrix.
@@ -370,13 +372,14 @@ REAL(r_size)               :: xfmean(nx,nvar,nt)            !State and parameter
 REAL(r_size)               :: xamean , xawmean , xapert(nens)             !For deterministic resampling.
 REAL(r_size)               :: ofmean(no) , ofpert(no,nens)                         !Ensemble mean in obs space, ensemble perturbations in obs space (forecast)
 REAL(r_size)               :: d(no)                                                !Observation departure
-REAL(r_size),INTENT(OUT)   :: w_pf(nx,nens,nt)              !Posterior weigths
+REAL(r_size),INTENT(OUT)   :: w_pf(nx,nens,nt)                                     !Posterior weight
 REAL(r_size)               :: ofpert_loc(no,nens) , Rdiag_loc(no)                  !Localized ensemble in obs space and diag of R
-REAL(r_size)               :: Rwf_loc(no)                                          !Localization weigths.
+REAL(r_size)               :: Rwf_loc(no)                                          !Localization weights.
 REAL(r_size)               :: d_loc(no)                                            !Localized mean departure
 INTEGER                    :: no_loc                                               !Number of observations in the local domain.
 REAL(r_size),INTENT(IN)    :: loc_scale(2)                                         !Localization scales (space,time)
-REAL(r_size)               :: w(nens,nens)                                        !Analysis weights
+REAL(r_size)               :: w(nens,nens)                                         !Analysis weights
+REAL(r_size)               :: w_pert(nens,nens)                                    !Weigths to obtain the updated kernel perturbations.
 REAL(r_size),PARAMETER     :: min_infl=1.0d0                                       !Minumn allowed multiplicative inflation.
 REAL(r_size)               :: mult_inf
 REAL(r_size)               :: grid_loc(2)
@@ -395,6 +398,7 @@ xfpert=0.0d0
 xaens =0.0d0
 ofmean=0.0d0
 ofpert=0.0d0
+kpert =0.0d0
 d     =0.0d0
 
 w=1.0d0/REAL(nens,r_size)
@@ -415,11 +419,11 @@ END DO
 !!Compute mean departure and HXf
 DO io = 1,no
     CALL com_mean( nens , ofens(io,:) , ofmean(io) )
-    ofpert(io,:)=ofens(io,:) - ofmean(io)
+    ofpert(io,:)= ofens(io,:) - ofmean(io)
     d(io) = obs(io) - ofmean(io)
 ENDDO
 
-wt = 1.0d0 / REAL( nens , r_size )  !Compute the target weigths (equal weigths in this case)
+wt = 1.0d0 / REAL( nens , r_size )  !Compute the target htweights (equal weights in this case)
 
 !!Main assimilation loop.
 
@@ -433,8 +437,9 @@ ENDIF
 DO it = 1,nt
 
 
-!$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
-!$OMP & ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke,wf,delta,tmp_ens,m,xamean,xapert,xawmean)
+!$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc            &
+!$OMP & ,mult_inf,Rdiag_loc,w,Rwf_loc,ie,iv,ke,wf,delta,tmp_ens,m,xamean,xapert,xawmean &
+!$OMP & ,w_pert )
   DO ix = 1,nx
 
 !   !Localize observations
@@ -451,26 +456,31 @@ DO it = 1,nt
     !We have observations for this grid point. Let's compute the analysis.
 
     !w_pf=1.0d0/REAL(nens,r_size)
-    !Compute weigths taking into account Gaussian Kernels.
-    CALL pf_weigth_core( nens , no_loc , ofpert_loc(1:no_loc,:),d_loc(1:no_loc), Rdiag_loc(1:no_loc) , &
+    !Compute weights taking into account Gaussian Kernels.
+    CALL pf_weight_core( nens , no_loc , ofpert_loc(1:no_loc,:),d_loc(1:no_loc), Rdiag_loc(1:no_loc) , &
                          beta_coef , gamma_coef , w_pf(ix,:,it) )  
     !Set multiplicative inflation
+    !WRITE(*,*)w_pf(ix,:,it)
     !Currently this is set to 1. The reason is because EnKF update is alredy controled by beta, so there is no reason
     !to add another parameter controling the update. Beta plays the role of a deflation of the ensemble actually. 
     mult_inf=1.0d0 
     !Compute analysis weights
 
     !w = 1.0d0/REAL(nens,r_size) 
-    CALL letkf_gm_core(nens,no_loc,ofpert_loc(1:no_loc,:),Rdiag_loc(1:no_loc),d_loc(1:no_loc),mult_inf,w,min_infl,beta_coef)
+    CALL letkf_gm_core(nens,no_loc,ofpert_loc(1:no_loc,:),Rdiag_loc(1:no_loc),d_loc(1:no_loc),mult_inf,w, &
+                   &    w_pert,min_infl,beta_coef)
    
     !Shift the particle according to the LETKF update. 
 
     DO iv=1,nvar
       DO ie=1,nens
        xaens(ix,ie,iv,it) = xfens(ix,ie,iv,it)   
+       kpert(ix,ie,iv,it) = 0.0d0
        DO ke = 1,nens
           xaens(ix,ie,iv,it) = xaens(ix,ie,iv,it) &  
               & + xfpert(ix,ke,iv,it) * w(ke,ie)       
+          kpert(ix,ie,iv,it) = kpert(ix,ie,iv,it) &
+              & + xfpert(ix,ke,iv,it) * w_pert(ke,ie)
        END DO
       END DO
     END DO
@@ -479,6 +489,7 @@ DO it = 1,nt
 
     !We don't have observations for this grid point. We can do nothing :( 
     xaens(ix,:,:,it)=xfens(ix,:,:,it)
+    kpert(ix,:,:,it)=xfpert(ix,:,:,it)
  
    ENDIF
 
@@ -486,8 +497,10 @@ DO it = 1,nt
    !--------------------------------------------------------------------
    ! Deterministic Resampling Step
    !--------------------------------------------------------------------
+   IF ( resampling_type == 0 ) THEN
+      !Essentialy do nothing, this is a dummy IF 
 
-   IF ( resampling_type == 1 ) THEN
+   ELSEIF ( resampling_type == 1 ) THEN
       !-----------------------------------------------------------------
       ! Liu et al 2016 Deterministic resampling
       !-----------------------------------------------------------------
@@ -583,32 +596,33 @@ REAL(r_size),INTENT(IN)    :: tloc(nt)                   !Location of state grid
 REAL(r_size),INTENT(IN)    :: obsloc(no,2)               !Location of obs (space , time)
 REAL(r_size),INTENT(IN)    :: xfens(nx,nens,nvar,nt)     !Forecast state ensemble  
 REAL(r_size),INTENT(OUT)   :: xaens(nx,nens,nvar,nt)     !Analysis state ensemble 
-REAL(r_size),INTENT(IN)    :: ofens(no,nens,nens)        !Ensemble in observation space ofens(:,:,iens) are the ensemble in observation space centered around ensemble member iens.
-REAL(r_size),INTENT(IN)    :: obs(no)                    !Observations 
-REAL(r_size),INTENT(IN)    :: Rdiag(no)                  !Diagonal of observation error covariance matrix.
-REAL(r_size),INTENT(INOUT) :: inf_coefs(5)               !Mult inf, RTPS , RTPP , EPES, Additive inflation (State variables)
+REAL(r_size),INTENT(IN)    :: ofens(no,nens,nens)                                 !Ensemble in observation space ofens(:,:,iens) are the ensemble in observation space centered around ensemble member iens.
+REAL(r_size),INTENT(IN)    :: obs(no)                                             !Observations 
+REAL(r_size),INTENT(IN)    :: Rdiag(no)                                           !Diagonal of observation error covariance matrix.
+REAL(r_size),INTENT(INOUT) :: inf_coefs(5)                                        !Mult inf, RTPS , RTPP , EPES, Additive inflation (State variables)
 REAL(r_size),INTENT(IN)    :: beta_coef                  !Gaussian Kernel scalling parameter
 REAL(r_size),INTENT(IN)    :: gamma_coef                 !Weigths nudging parameter
 REAL(r_size),INTENT(IN)    :: temp_factor(nx,nt)         !Tempering factor ( R -> R*temp_factor)
-REAL(r_size)               :: xfpert(nx,nens,nvar,nt)       !State and parameter forecast perturbations
-REAL(r_size)               :: xfmean(nx,nvar,nt)            !State and parameter ensemble mean (forecast)
-REAL(r_size)               :: xamean , xawmean , xapert(nens)             !For deterministic resampling.
-REAL(r_size)               :: ofmean(no,nens) , ofpert(no,nens,nens)                         !Ensemble mean in obs space, ensemble perturbations in obs space (forecast)
-REAL(r_size)               :: d(no,nens)                                  !Observation departure
-REAL(r_size),INTENT(OUT)   :: w_pf(nx,nens,nt)              !Posterior weigths
-REAL(r_size)               :: ofpert_loc(no,nens,nens) , Rdiag_loc(no)                  !Localized ensemble in obs space and diag of R
-REAL(r_size)               :: Rwf_loc(no)                                          !Localization weigths.
-REAL(r_size)               :: d_loc(no,nens)                                            !Localized mean departure
-INTEGER                    :: no_loc                                               !Number of observations in the local domain.
-REAL(r_size),INTENT(IN)    :: loc_scale(2)                                         !Localization scales (space,time)
-REAL(r_size)               :: w(nens,nens)                                        !Analysis weights
-REAL(r_size),PARAMETER     :: min_infl=1.0d0                                       !Minumn allowed multiplicative inflation.
+REAL(r_size)               :: xfpert(nx,nens,nvar,nt)                             !State and parameter forecast perturbations
+REAL(r_size)               :: xfmean(nx,nvar,nt)                                  !State and parameter ensemble mean (forecast)
+REAL(r_size)               :: xamean , xawmean , xapert(nens)                     !For deterministic resampling.
+REAL(r_size)               :: ofmean(no,nens) , ofpert(no,nens,nens)              !Ensemble mean in obs space, ensemble perturbations in obs space (forecast)
+REAL(r_size)               :: d(no,nens)                                          !Observation departure
+REAL(r_size),INTENT(OUT)   :: w_pf(nx,nens,nt)                                    !Posterior weights
+REAL(r_size)               :: ofpert_loc(no,nens,nens) , Rdiag_loc(no)            !Localized ensemble in obs space and diag of R
+REAL(r_size)               :: Rwf_loc(no)                                         !Localization weights.
+REAL(r_size)               :: d_loc(no,nens)                                      !Localized mean departure
+INTEGER                    :: no_loc                                              !Number of observations in the local domain.
+REAL(r_size),INTENT(IN)    :: loc_scale(2)                                        !Localization scales (space,time)
+REAL(r_size)               :: w(nens,nens)                                        !Analysis weights to update the mean of each Gaussian Kernel.
+REAL(r_size)               :: w_pert(nens,nens)                                   !To update the perturbations that represent the covariance of the Gaussian Kernel.
+REAL(r_size),PARAMETER     :: min_infl=1.0d0                                      !Minumn allowed multiplicative inflation.
 REAL(r_size)               :: mult_inf
 REAL(r_size)               :: grid_loc(2)
 REAL(r_size)               :: work1d(nx)
 REAL(r_size)               :: m(nens,nens) , wt(nens) , delta(nens,nens) , wf(nens,nens) , rr_matrix(nens,nens)
 REAL(r_size)               :: tmp_ens(nens,nvar)
-INTEGER,INTENT(IN)         :: resampling_type         !1-Liu, 2-Reich , NETPF without rotation ,NETPF with random rotation
+INTEGER,INTENT(IN)         :: resampling_type         !0-No resampling, 1-Liu, 2-Reich , 3-NETPF without rotation , 4-NETPF with random rotation
 
 !
 INTEGER                    :: ix,ie,ke,it,iv,io
@@ -625,7 +639,7 @@ no_loc=0
 
 w=1.0d0/REAL(nens,r_size)
 w_pf=1.0d0/REAL(nens,r_size)
-wt = 1.0d0/REAL( nens , r_size )  !Compute the target weigths (equal weigths in this case)
+wt = 1.0d0/REAL( nens , r_size )  !Compute the target weights (equal weights in this case)
 
 
 dx=xloc(2)-xloc(1)    !Assuming regular grid
@@ -679,8 +693,8 @@ DO it = 1,nt
     !We have observations for this grid point. Let's compute the analysis.
 
     !w_pf=1.0d0/REAL(nens,r_size)
-    !Compute weigths taking into account Gaussian Kernels.
-    CALL pf_weigth_localh_core( nens , no_loc , ofpert_loc(1:no_loc,:,:),d_loc(1:no_loc,:), Rdiag_loc(1:no_loc) , &
+    !Compute weights taking into account Gaussian Kernels.
+    CALL pf_weight_localh_core( nens , no_loc , ofpert_loc(1:no_loc,:,:),d_loc(1:no_loc,:), Rdiag_loc(1:no_loc) , &
                          beta_coef , gamma_coef , w_pf(ix,:,it) )  
    
     !Set multiplicative inflation
@@ -717,7 +731,12 @@ DO it = 1,nt
    !--------------------------------------------------------------------
 
    IF( no_loc > 0 )THEN
-     IF ( resampling_type == 1 ) THEN
+     IF ( resampling_type == 0 ) THEN !No resampling. This option is used in the HYBRID GM-ETPF with stochastic resampling.
+        !Essentialy do nothing but is good to keep this to show that this is an expected valid option for this parameter
+
+
+
+     ELSEIF ( resampling_type == 1 ) THEN
         !-----------------------------------------------------------------
         ! Liu et al 2016 Deterministic resampling
         !-----------------------------------------------------------------
@@ -760,7 +779,7 @@ DO it = 1,nt
         CALL netpf_w( nens , w_pf(ix,:,it) , wf )
         wf = SQRT( inf_coefs(1) ) * wf
 
-        IF( resampling_type == 4 )THEN
+        IF( resampling_type == 4 )THEN !Apply random perturbation rotation
            wf = MATMUL( wf , rr_matrix ) 
         ENDIF
 
@@ -795,13 +814,11 @@ END DO
 
 END SUBROUTINE da_gmdr_localh
 
-
-
-
 !=======================================================================
 !  L-ETPF DA for the 1D model
 !=======================================================================
-SUBROUTINE da_letpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag,loc_scale,multinf,rejuv_param,wa,temp_factor)
+SUBROUTINE da_letpf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag, &
+          &         loc_scale,multinf,wa,temp_factor,w_in)
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
@@ -812,8 +829,9 @@ REAL(r_size),INTENT(IN)    :: tloc(nt)                   !Location of state grid
 REAL(r_size),INTENT(IN)    :: obsloc(no,2)               !Location of obs (space , time)
 REAL(r_size),INTENT(IN)    :: xfens(nx,nens,nvar,nt)     !Forecast state ensemble 
 REAL(r_size),INTENT(IN)    :: multinf                    !Multiplicative inflation 
+REAL(r_size),INTENT(IN)    :: w_in(nx,nens,nt)           !Input weights for each ensemble member and each location and time.
 REAL(r_size),INTENT(OUT)   :: xaens(nx,nens,nvar,nt)     !Analysis state ensemble
-REAL(r_size),INTENT(OUT)   :: wa(nx,nens)                !Posterior weigths
+REAL(r_size),INTENT(OUT)   :: wa(nx,nens)                !Posterior weights
 
 REAL(r_size)               :: multinf_loc                !Local multinf
 
@@ -830,11 +848,10 @@ REAL(r_size)               :: d(no)                                             
 
 
 REAL(r_size)               :: dens_loc(no,nens) , Rdiag_loc(no)                   !Localized ensemble in obs space and diag of R
-REAL(r_size)               :: Rwf_loc(no)                                          !Localization weigths.
+REAL(r_size)               :: Rwf_loc(no)                                          !Localization weights.
 REAL(r_size)               :: d_loc(no)                                            !Localized observation departure.
 INTEGER                    :: no_loc                                               !Number of observations in the local domain.
 REAL(r_size),INTENT(IN)    :: loc_scale(2)                                         !Localization scales (space,time)
-REAL(r_size),INTENT(IN)    :: rejuv_param
 REAL(r_size),INTENT(IN)    :: temp_factor(nx,nt)         !Tempering factor ( R -> R*temp_factor)
 
 REAL(r_size)               :: wamean(nens)                                         !Mean analysis weights
@@ -893,7 +910,7 @@ DO it = 1,nt
     CALL get_distance_matrix( nens , 1 , nvar , 1 , xfens(ix,:,:,it) , m )
  
     CALL letpf_core( nens,1,no_loc,dens_loc(1:no_loc,:),m,Rdiag_loc(1:no_loc)   &
-                    ,wa(ix,:),W, multinf_loc )
+                    ,wa(ix,:),W, multinf_loc , w_in(ix,:,it) )
 
     !Compute the updated ensemble mean, std and mode.
     DO ie=1,nens
@@ -915,44 +932,6 @@ DO it = 1,nt
 
 END DO  
 
-IF ( rejuv_param > 0.0d0 ) THEN
-
-   !Compute forecast ensemble mean and perturbations.
-   DO it = 1,nt
-    DO ix = 1,nx
-     DO iv = 1,nvar
-      CALL com_mean( nens,xfens(ix,:,iv,it),xfmean(ix,iv,it) )
-      xfpert(ix,:,iv,it) = xfens(ix,:,iv,it) - xfmean(ix,iv,it)
-     END DO
-    END DO
-   END DO
-
-   infpert = 0.0d0
-   !Perform particle rejuvenation on the global ensemble.a
-   DO ie = 1,nens
-      CALL com_randn( nens , random_rejuv_matrix(ie,:) , 10 )
-   ENDDO
-   random_rejuv_matrix = rejuv_param * random_rejuv_matrix / ( REAL(nens,r_size) ** 0.5 )
-
-   DO ie = 1,nens
-      DO je = 1,nens
-         infpert(:,ie,:,:) = infpert(:,ie,:,:) +  &
-                               xfpert(:,je,:,:)*random_rejuv_matrix(ie,je)
-      ENDDO
-   ENDDO       
-   !Recenter the perturbations around the ETPF mean.
-   DO ix = 1,nx
-     DO iv = 1,nvar
-       DO it = 1,nt
-         tmp_mean = SUM( infpert(ix,:,iv,it) )/( REAL(nens,r_size) )
-         infpert(ix,:,iv,it) = infpert(ix,:,iv,it) - tmp_mean
-       ENDDO
-     ENDDO
-   ENDDO
-
-   !Add the rejuvenation perturbations to the ensemble.
-   xaens = xaens + infpert
-ENDIF
 
 END SUBROUTINE da_letpf
 
@@ -984,7 +963,7 @@ REAL(r_size),INTENT(OUT)   :: a_coef(nx,nt) , b_coef(nx,nt)    !Coeficients to c
 REAL(r_size)               :: ofmean(no) , ofpert(no,nens)                         !Ensemble mean in obs space, ensemble perturbations in obs space (forecast)
 REAL(r_size)               :: HPHtdiag(no) , HPHtdiag_loc(no)                      !Ensemble spread in observation space.
 REAL(r_size)               :: ofpert_loc(no,nens) , Rdiag_loc(no)                  !Localized ensemble in obs space and diag of R
-REAL(r_size)               :: Rwf_loc(no)                                          !Localization weigths.
+REAL(r_size)               :: Rwf_loc(no)                                          !Localization weights.
 REAL(r_size)               :: d_loc(no)                                            !Localized observation departure.
 INTEGER                    :: no_loc                                               !Number of observations in the local domain.
 REAL(r_size)               :: grid_loc(2)
@@ -1076,7 +1055,7 @@ INTEGER,INTENT(OUT)        :: no_loc                     !Number of observations
 
 
 REAL(r_size),INTENT(OUT)   :: ofpert_loc(no,nens) , Rdiag_loc(no)   !Localized ensemble in obs space and diag of R
-REAL(r_size),INTENT(OUT)   :: Rwf_loc(no)                           !Localization weigthing function.
+REAL(r_size),INTENT(OUT)   :: Rwf_loc(no)                           !Localization weighting function.
 REAL(r_size),INTENT(OUT)   :: d_loc(no)                             !Localized observation departure.
 
 
@@ -1171,7 +1150,7 @@ REAL(r_size),INTENT(IN)    :: loc_scale(2)               !Localization scale (sp
                                                          !will remove localization for that dimension.
 INTEGER,INTENT(OUT)        :: no_loc                     !Number of observations in the local domain
 REAL(r_size),INTENT(OUT)   :: ofpert_loc(no,nens,nens) , Rdiag_loc(no)   !Localized ensemble in obs space and diag of R
-REAL(r_size),INTENT(OUT)   :: Rwf_loc(no)                           !Localization weigthing function.
+REAL(r_size),INTENT(OUT)   :: Rwf_loc(no)                           !Localization weighting function.
 REAL(r_size),INTENT(OUT)   :: d_loc(no,nens)                             !Localized observation departure.
 INTEGER                    :: io
 INTEGER                    :: if_loc(2)                        !1- means localize, 0- means no localization
@@ -1315,7 +1294,7 @@ IF ( rejuv_param > 0.0d0 ) THEN
 
    !Perform particle rejuvenation on the global ensemble.a
    DO ie = 1,nens
-      CALL com_randn( nens , random_rejuv_matrix(ie,:) , 10 )
+      CALL com_randn( nens , random_rejuv_matrix(ie,:) )
    ENDDO
    random_rejuv_matrix = rejuv_param * random_rejuv_matrix / ( REAL(nens,r_size) ** 0.5 )
 
@@ -1345,6 +1324,112 @@ xaens_rejuv = xaens + xpert_rejuv
 
 END SUBROUTINE da_particle_rejuvenation
 
+SUBROUTINE gaussian_mixture_sampling( nens , nvar , nx , nt , mean_ens , input_weights     &
+              &            , kernel_perts  , amp_factor , sample_ens , output_weights )
+IMPLICIT NONE
+INTEGER     , INTENT(IN)  :: nens , nvar , nx , nt                  !Array dimensions.
+INTEGER     , INTENT(IN)  :: amp_factor                             !Ensemble amplification factor.
+REAL(r_size), INTENT(IN)  :: mean_ens(nx,nens,nvar,nt)              !Ensemble of Gaussian means.
+REAL(r_size), INTENT(IN)  :: input_weights(nx,nens,nt)              !Weigth corresponding to each Gaussian.
+REAL(r_size), INTENT(IN)  :: kernel_perts(nx,nens,nvar,nt)          !Perturbations that define the covariance matrix of the Gaussian kernel.
+REAL(r_size), INTENT(OUT) :: sample_ens(nx,amp_factor*nens,nvar,nt) !Ensemble members sampled from the Gaussian mixture.
+REAL(r_size), INTENT(OUT) :: output_weights(nx,amp_factor*nens,nt)  !Weights corresponding to the sample members.
+                                                                    !If a sample member is generated from the i-th Gaussian it inherits the weights 
+                                                                    !corresponding to the i-th Gaussian.
+INTEGER                   :: is , ie  , ia 
+REAL(r_size)              :: random_vector(nens)                    !Random vector to be used in the random sampling algorithm.
+INTEGER                   :: kernel_index                           !Integer to be used in the random sampling algorithm.
+REAL(r_size)              :: tmp_pert(nx,amp_factor,nvar,nt) , tmp_pert_mean(nx,nvar,nt)
+
+!
+!Sampling from a Gaussian mixture.
+!This is a global sampling and we do not attemp to obtain a sampling with equal weights.
+!The sample inherits the weights of the original particles. 
+!The action is performed in two steps.
+!First select the Gaussian mean (this is deterministic to ensure equal sampling if sample_size = N * nens )
+!Then randomly generate a perturbation from the mean using the kernel_perts.
+!
+
+sample_ens = 0.0d0
+output_weights = 0.0d0
+
+IF (amp_factor > 1 ) THEN
+
+  DO is = 1,nens
+   tmp_pert = 0.0d0 !Initailize random perturbations for kernel is.
+   DO ia = 1,amp_factor 
+      CALL com_randn( nens , random_vector )
+      random_vector = random_vector / SQRT( REAL( nens-1 , r_size ) )
+      DO ie = 1,nens
+         tmp_pert(:,ia,:,:)=tmp_pert(:,ia,:,:) + &
+                 &  kernel_perts(:,ie,:,:) * random_vector(ie) 
+      ENDDO
+   ENDDO
+   tmp_pert_mean = SUM( tmp_pert , 2 ) / REAL( amp_factor , r_size )
+   !Center the perturbations around the mean. And add perturbations to their corresponding kernel mean.
+   !Copy the corresponding weights to the new generated particle.
+   DO ia = 1,amp_factor
+     sample_ens(:,nens*(ia-1)+is,:,:) = mean_ens(:,is,:,:) + tmp_pert(:,ia,:,:) - tmp_pert_mean
+     output_weights(:,nens*(ia-1)+is,:) = input_weights(:,is,:)
+   END DO
+
+  ENDDO
+
+ELSE
+
+   sample_ens(:,:,:,:) = mean_ens(:,:,:,:)
+   output_weights(:,:,:) = input_weights(:,:,:) 
+
+ENDIF
+
+
+END SUBROUTINE gaussian_mixture_sampling 
+
+SUBROUTINE gaussian_mixture_colapse( nens , nvar , nx , nt , mean_ens , input_weights     &
+              &            , amp_factor , sample_ens , output_weights )
+IMPLICIT NONE
+INTEGER     , INTENT(IN)  :: nens , nvar , nx , nt                  !Array dimensions.
+INTEGER     , INTENT(IN)  :: amp_factor                             !Ensemble amplification factor.
+REAL(r_size), INTENT(OUT) :: mean_ens(nx,nens,nvar,nt)              !Ensemble of Gaussian means.
+REAL(r_size), INTENT(IN)  :: input_weights(nx,nens*amp_factor,nt)   !Weigth corresponding to each Gaussian.
+REAL(r_size), INTENT(IN)  :: sample_ens(nx,amp_factor*nens,nvar,nt) !Ensemble members sampled from the Gaussian mixture.
+REAL(r_size), INTENT(OUT) :: output_weights(nx,nens,nt)             !Weights corresponding to the sample members.
+                                                                    !If a sample member is generated from the i-th Gaussian it inherits the weights
+                                                                    !corresponding to the i-th Gaussian.
+INTEGER                   :: is , ie , ia
+REAL(r_size)              :: random_vector(nens)                    !Random vector to be used in the random sampling algorithm.
+INTEGER                   :: kernel_index                           !Integer to be used in the random sampling algorithm.
+REAL(r_size)              :: tmp_ens(nx,nvar,nt) , tmp_weights(nx,nt)
+
+!
+!Colapse a Gaussian mixture sample (sampled according to gaussian_mixture_sampling routine) into an esemble with 
+!size nens.  So we end up with the means of each Gaussian kernel.
+!This routine takes the members that where sample from the same Gaussian Kernel and take average them into one single particle.
+!
+mean_ens = 0.0d0
+output_weights = 0.0d0
+
+IF (amp_factor > 1 ) THEN
+
+  DO is = 1,nens
+   tmp_ens = 0.0d0
+   tmp_weights = 0.0d0
+   DO ia = 1,amp_factor
+      tmp_ens = tmp_ens + sample_ens(:,nens*(ia-1)+is,:,:) 
+      tmp_weights = tmp_weights + input_weights(:,nens*(ia-1)+is,:)
+   ENDDO
+
+   mean_ens(:,is,:,:) =  tmp_ens / REAL( amp_factor , r_size )
+   output_weights(:,is,:) = tmp_weights / REAL( amp_factor , r_size )
+
+  ENDDO
+
+ELSE
+   mean_ens = sample_ens
+   output_weights = input_weights
+ENDIF
+
+END SUBROUTINE gaussian_mixture_colapse
 
 END MODULE common_da_tools
 

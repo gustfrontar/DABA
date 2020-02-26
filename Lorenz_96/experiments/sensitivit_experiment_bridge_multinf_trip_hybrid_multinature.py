@@ -15,13 +15,16 @@ import sensitivity_conf_default as conf
 import assimilation_riphybrid_module as ahm
 import time
 
+
 NatureList = [ 'NatureR4_Den05_Freq8_Hlogaritmic'   ,
                'NatureR8_Den05_Freq8_Hlinear'       ,
                'NatureR4_Den05_Freq8_Hcuadratic'    ,
                'NatureR1_Den1_Freq4_Hlinear'        ,
-               'NatureR1_Den05_Freq25_Hlinear'
+               'NatureR1_Den1_Freq16_Hlinear'       ,
+               'NatureR01_Den05_Freq16_Hlinear'
                ]
-   
+  
+ 
 #Define the source of the observations
 outfile_prefix = './npz/Sesitivity_experiment_bridge_multinf_trip_hybrid_'
 
@@ -49,11 +52,11 @@ for Nature in NatureList :
     results=list()
 
     if Nature == 'NatureR4_Den05_Freq8_Hlogaritmic' :
-       mult_inf_range = np.arange(1.2,1.45,0.05)
+       mult_inf_range = np.arange(1.05,1.35,0.05)
     else                                            :
        mult_inf_range = np.arange(1.01,1.16,0.03)
 
-    bridge_range = np.arange(0.0,0.8,0.2)
+    bridge_range = np.arange(0.0,1.2,0.2)
     rip_range = np.arange(1,4,1)
 
     total_analysis_rmse = np.zeros( (len(mult_inf_range),len(bridge_range),len(rip_range)) )

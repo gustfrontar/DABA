@@ -23,17 +23,17 @@ MODULE common_pf
 CONTAINS
 
 !=======================================================================
-!  Main Subroutine for weigth computation for the Gaussian mixture model
+!  Main Subroutine for weight computation for the Gaussian mixture model
 !   INPUT
 !     ne               : ensemble size                                         
 !     nobsl            : total number of observation assimilated at the point
 !     dens(nobsl,ne)   : distance between each ensemble member and the observation
 !     rdiag(nobsl)     : observation error variance
 !   OUTPUT
-!     wa(ne)           : PF weigths
+!     wa(ne)           : PF weights
 !=======================================================================
 
-SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W,multinf)
+SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W,multinf,w_in)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne , ndim                      
   INTEGER,INTENT(IN) :: nobsl
@@ -41,9 +41,11 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W,multinf)
   REAL(r_size),INTENT(IN) :: m(1:ne,1:ne)   !Distance matrix
   REAL(r_size),INTENT(IN) :: rdiag(1:nobsl)
   REAL(r_size),INTENT(IN) :: multinf    !Multiplicative inflation 
+  REAL(r_size),INTENT(IN) :: w_in(ne)   !Input weights
   REAL(r_size),INTENT(OUT) :: wa(ne)    !
   REAL(r_size),INTENT(OUT) :: W(ne,ne)  !Transformation matrix
-  REAL(r_size)  :: wt(ne)               !Target weigths 
+  REAL(r_size)  :: wt(ne)               !Target weights 
+
   REAL(r_size)  :: delta(ne,ne)         !Correction to get a second order exact filter.
   REAL(r_size)  :: log_w_sum     
 
@@ -56,20 +58,17 @@ SUBROUTINE letpf_core(ne,ndim,nobsl,dens,m,rdiag,wa,W,multinf)
        wa(i)=wa(i) - ( 0.5 * ( dens(j,i)**2 ) ) / ( rdiag(j) )
     ENDDO
   ENDDO
-
   
-  !Normalize log of the weigths (to avoid underflow issues)
+  !Normalize log of the weights (to avoid underflow issues)
   CALL log_sum_vec( ne , wa , log_w_sum )
   DO i=1,ne
-     !wa(i) = EXP( wa(i) )
-     wa(i) = EXP( wa(i) - log_w_sum )
+     wa(i) = w_in(i) * EXP( wa(i) - log_w_sum )
   ENDDO
 
-
-  !Normalize the weigths (just to remove any precission issue)
+  !Normalize the weights (just to remove any precission issue and also in case input weights are not normalized )
   wa = wa / sum(wa)
 
-  wt = 1.0 / REAL( ne , r_size )  !Compute the target weigths (equal weigths in this case)
+  wt = 1.0 / REAL( ne , r_size )  !Compute the target weights (equal weights in this case)
 
   !Solve the regularized optimal transport problem.
   !CALL sinkhorn_ot_robust( ne , wa , wt , m , W , lambda_reg , stop_threshold_sinkhorn , max_iter_sinkhorn )
@@ -173,7 +172,7 @@ END SUBROUTINE get_distance_matrix
 SUBROUTINE sinkhorn_ot( ne , wi , wt , m , W , lambda_reg , stop_threshold , max_iter )
 IMPLICIT NONE
 INTEGER     ,INTENT(IN) :: ne
-REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weigths.
+REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weights.
 REAL(r_size),INTENT(IN) :: m(ne,ne) !Cost matrix for the optimal transport problem.
 REAL(r_size),INTENT(IN) :: lambda_reg , stop_threshold
 INTEGER     ,INTENT(IN) :: max_iter
@@ -251,7 +250,7 @@ END SUBROUTINE sinkhorn_ot
 SUBROUTINE sinkhorn_ot_robust( ne , wi , wt , m , W , lambda_reg , stop_threshold , max_iter )
 IMPLICIT NONE
 INTEGER     ,INTENT(IN) :: ne
-REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weigths.
+REAL(r_size),INTENT(IN) :: wi(ne) , wt(ne) !Initial and target weights.
 REAL(r_size),INTENT(IN) :: m(ne,ne) !Cost matrix for the optimal transport problem.
 REAL(r_size),INTENT(IN) :: lambda_reg , stop_threshold
 INTEGER     ,INTENT(IN) :: max_iter

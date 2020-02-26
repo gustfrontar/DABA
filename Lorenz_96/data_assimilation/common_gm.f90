@@ -18,11 +18,8 @@ MODULE common_gm
 !$USE OMP_LIB
   USE common_tools
   USE common_mtx
-
   IMPLICIT NONE
-
   PUBLIC
-
 CONTAINS
 !=======================================================================
 !  Main Subroutine of GM-LETKF Core
@@ -31,7 +28,7 @@ CONTAINS
 !     nobsl            : total number of observation assimilated at the point
 !     hdxb(nobsl,ne)   : obs operator times fcst ens perturbations
 !     rdiag(nobsl)     : observation error variance
-!     rloc(nobsl)      : localization weigthning function
+!     rloc(nobsl)      : localization weightning function
 !     dep(nobsl)       : observation departure (yo-Hxb)
 !     parm_infl        : covariance inflation parameter
 !     minfl            : (optional) minimum covariance inflation parameter       !GYL
@@ -39,12 +36,15 @@ CONTAINS
 !   OUTPUT
 !     parm_infl        : updated covariance inflation parameter
 !     trans(ne,ne)     : transformation matrix (each column of this matrix
-!                        contains the weigths to shift the particles towards the observations
+!                        contains the weights to shift the particles towards the observations
 !                        following a traditional LETKF update with ensemble covariance matrix scaled
 !                        by a factor beta_coef.
+!     trans_pert(ne,ne): This is the transformation matrix for the perturbations. 
+!                        Depending on the implementation of the GM method this can be useful or not.
+! 
 
 !=======================================================================
-SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef)
+SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,trans_pert,minfl,beta_coef)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne                      !GYL
   INTEGER,INTENT(IN) :: nobsl
@@ -53,9 +53,9 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef
   REAL(r_size),INTENT(IN) :: dep(1:nobsl)
   REAL(r_size),INTENT(INOUT) :: parm_infl
   REAL(r_size),INTENT(OUT) :: trans(ne,ne)
+  REAL(r_size),INTENT(OUT) :: trans_pert(ne,ne) 
   REAL(r_size),INTENT(IN)  :: minfl     !GYL
   REAL(r_size),INTENT(IN)  :: beta_coef
-
   REAL(r_size) :: hdxb_rinv(nobsl,ne)
   REAL(r_size) :: hdxb_tmp(nobsl,ne)
   REAL(r_size) :: eivec(ne,ne)
@@ -68,7 +68,6 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef
   REAL(r_size) :: mem_departure(nobsl,ne)
   REAL(r_size) :: rho
   INTEGER :: i,j,k
-
   trans = 1.0d0
 !-----------------------------------------------------------------------
 !  hdxb Rinv
@@ -95,28 +94,13 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef
     work1(i,i) = work1(i,i) + REAL(ne-1,r_size) * rho
   END DO
 !-----------------------------------------------------------------------
-!  eigenvalues and eigenvectors of [ hdxb^T Rinv hdxb + (m-1) I ]
-!-----------------------------------------------------------------------
-  i=ne
-  CALL mtx_eigen(1,ne,work1,eival,eivec,i)
-
-!-----------------------------------------------------------------------
 !  Pa = [ hdxb^T Rinv hdxb + (m-1) I ]inv
 !-----------------------------------------------------------------------
-  DO j=1,ne
-    DO i=1,ne
-      work1(i,j) = eivec(i,j) / eival(j)
-    END DO
-  END DO
-  pa = MATMUL( work1 , TRANSPOSE( eivec ) )
-  !CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
-  !  & ne,0.0d0,pa,ne)
+  CALL mtx_inv_eivec( ne , work1 , pa )
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T
 !-----------------------------------------------------------------------
   work2 = MATMUL( pa , TRANSPOSE( hdxb_rinv ) )
-  !CALL dgemm('n','t',ne,nobsl,ne,1.0d0,pa,ne,hdxb_rinv,&
-  !  & nobsl,0.0d0,work2,ne)
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T (dep - hdxb(:,iens))
 !  This step is performed for each ensemble member
@@ -126,22 +110,12 @@ SUBROUTINE letkf_gm_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,beta_coef
      mem_departure(i,j) = dep(i) - hdxb(i,j) 
    END DO
   END DO 
- 
   trans = MATMUL( work2 , mem_departure )
-
-  !DO k=1,ne
-  !  DO i=1,ne
-  !    trans(i,k) = 0.0d0
-  !    DO j=1,nobsl
-  !      trans(i,k) = trans(i,k) + work2(i,j) * ( dep(j) - hdxb(j,k) )
-  !    END DO
-  !  END DO
-  !ENDDO
-
-
-!The transformation matrix contains the weigths to shift each particle according
-!to the LETKF update. 
-
+!-----------------------------------------------------------------------
+!  Wa = sqrt( (ne-1)pa)  !dep contains departures centered at each ensemble member
+!  This step is performed for each ensemble member
+!-----------------------------------------------------------------------
+  CALL mtx_sqrt( ne , REAL(ne-1,r_size) * pa , trans_pert )
 
   RETURN
 END SUBROUTINE letkf_gm_core
@@ -153,7 +127,7 @@ END SUBROUTINE letkf_gm_core
 !     nobsl            : total number of observation assimilated at the point
 !     hdxb(nobsl,ne)   : obs operator times fcst ens perturbations
 !     rdiag(nobsl)     : observation error variance
-!     rloc(nobsl)      : localization weigthning function
+!     rloc(nobsl)      : localization weightning function
 !     dep(nobsl)       : observation departure (yo-Hxb)
 !     parm_infl        : covariance inflation parameter
 !     minfl            : (optional) minimum covariance inflation parameter       !GYL
@@ -161,7 +135,7 @@ END SUBROUTINE letkf_gm_core
 !   OUTPUT
 !     parm_infl        : updated covariance inflation parameter
 !     trans(ne,ne)     : transformation matrix (each column of this matrix
-!                        contains the weigths to shift the particles towards the observations
+!                        contains the weights to shift the particles towards the observations
 !                        following a traditional LETKF update with ensemble covariance matrix scaled
 !                        by a factor beta_coef.
 
@@ -174,7 +148,7 @@ SUBROUTINE letkf_gm_localh_core(ne,nobsl,hdxb,rdiag,dep,parm_infl,trans,minfl,be
   REAL(r_size),INTENT(IN) :: rdiag(1:nobsl)
   REAL(r_size),INTENT(IN) :: dep(1:nobsl,1:ne)       !We have one dep for each ensemble member
   REAL(r_size),INTENT(INOUT) :: parm_infl
-  REAL(r_size),INTENT(OUT) :: trans(ne,ne)           !We obtain one weigth vector for each ensemble member
+  REAL(r_size),INTENT(OUT) :: trans(ne,ne)           !We obtain one weight vector for each ensemble member
   REAL(r_size),INTENT(IN)  :: minfl     !GYL
   REAL(r_size),INTENT(IN)  :: beta_coef
 
@@ -199,72 +173,70 @@ DO ie = 1 , ne  !Loop over sub ensembles.
 !-----------------------------------------------------------------------
 !  hdxb Rinv
 !-----------------------------------------------------------------------
-    hdxb_rinv=0.0d0
-    DO j=1,ne                                        !GYL
-      DO i=1,nobsl                                   !GYL
-        hdxb_rinv(i,j) = hdxb_local(i,j) / rdiag(i)  !GYL
-      END DO                                         !GYL
-    END DO                                           !GYL
+   hdxb_rinv=0.0d0
+   DO j=1,ne                                        !GYL
+     DO i=1,nobsl                                   !GYL
+       hdxb_rinv(i,j) = hdxb_local(i,j) / rdiag(i)  !GYL
+     END DO                                         !GYL
+   END DO                                           !GYL
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb
 !-----------------------------------------------------------------------
-  work1 = MATMUL( TRANSPOSE( hdxb_rinv ) , hdxb_local )
+   work1 = MATMUL( TRANSPOSE( hdxb_rinv ) , hdxb_local )
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb + (m-1) I / rho (covariance inflation)
 !-----------------------------------------------------------------------
-    IF (minfl > 0.0d0 .AND. parm_infl < minfl) THEN   !GYL
+   IF (minfl > 0.0d0 .AND. parm_infl < minfl) THEN   !GYL
       parm_infl = minfl                               !GYL
-    END IF                                            !GYL
-  rho = 1.0d0 / ( parm_infl * beta_coef ) 
-  DO i=1,ne
+   END IF                                            !GYL
+   rho = 1.0d0 / ( parm_infl * beta_coef ) 
+   DO i=1,ne
     work1(i,i) = work1(i,i) + REAL(ne-1,r_size) * rho
-  END DO
-!-----------------------------------------------------------------------
-!  eigenvalues and eigenvectors of [ hdxb^T Rinv hdxb + (m-1) I ]
-!-----------------------------------------------------------------------
-  i=ne
-  CALL mtx_eigen(1,ne,work1,eival,eivec,i)
-
+   END DO
 !-----------------------------------------------------------------------
 !  Pa = [ hdxb^T Rinv hdxb + (m-1) I ]inv
 !-----------------------------------------------------------------------
-  DO j=1,ne
-    DO i=1,ne
-      work1(i,j) = eivec(i,j) / eival(j)
-    END DO
-  END DO
-  pa = MATMUL( work1 , TRANSPOSE( eivec ) )
+   CALL mtx_inv_eivec( ne , work1 , pa )
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T
 !-----------------------------------------------------------------------
-  work2 = MATMUL( pa , TRANSPOSE( hdxb_rinv ) )
+   work2 = MATMUL( pa , TRANSPOSE( hdxb_rinv ) )
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T (dep)  !dep contains departures centered at each ensemble member
 !  This step is performed for each ensemble member
 !-----------------------------------------------------------------------
-  trans(:,ie) = MATMUL( work2 , dep(:,ie) )
+   trans(:,ie) = MATMUL( work2 , dep(:,ie) )
+!-----------------------------------------------------------------------
+!  Wa = sqrt( (ne-1)pa)  !dep contains departures centered at each ensemble member
+!  This step is performed for each ensemble member
+!-----------------------------------------------------------------------
+
+!CALL mtx_sqrt( ne , REAL(ne-1,r_size) * pa , Wa )
 
 END DO
+
+
+
 
   RETURN
 END SUBROUTINE letkf_gm_localh_core
 
 !=======================================================================
-!  Main Subroutine for weigth computation in the Gaussian Mixture PF
+!  Main Subroutine for weight computation in the Gaussian Mixture PF
 !   INPUT
 !     ne               : ensemble size                                         
 !     nobsl            : total number of observation assimilated at the point
 !     dens(nobsl,ne)   : distance between each ensemble member and the observation
 !     rdiag(nobsl)     : observation error variance
 !     beta_coef        : Gaussian Kernel width parameter
-!     gamma_coef       : weigth nudging parameter
+!     gamma_coef       : weight nudging parameter
 !     y                : ensemble in local observation space
 !     d                : mean departure
 !   OUTPUT
-!     wa(ne)           : PF weigths
+!     wa(ne)           : PF weights
 !=======================================================================
 
-SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
+SUBROUTINE pf_weight_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne                     
   INTEGER,INTENT(IN) :: nobsl
@@ -273,7 +245,7 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   REAL(r_size),INTENT(IN) :: rdiag(nobsl)
   REAL(r_size),INTENT(IN) :: beta_coef , gamma_coef
   REAL(r_size),INTENT(OUT) :: wa(ne)    ! 
-  REAL(r_size)  :: wu                   !Uniform weigth (1/ne)
+  REAL(r_size)  :: wu                   !Uniform weight (1/ne)
   REAL(r_size)  :: log_w_sum
   REAL(r_size)  :: work1(nobsl,nobsl)
   REAL(r_size)  :: mem_departure(nobsl,1)
@@ -283,7 +255,7 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   INTEGER :: i,j,k
 
 
-  wa=1.0d0
+  wa=0.0d0
   
   IF( beta_coef > 0.0d0 )THEN 
     !Compute ( HPHt + R )^-1
@@ -293,28 +265,12 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
     DO i = 1,nobsl
       work1(i,i) = work1(i,i) + rdiag(i)
     ENDDO
-  
-    !-----------------------------------------------------------------------
-    !  eigenvalues and eigenvectors of [ HPHt + R ]  
-    !-----------------------------------------------------------------------
-    i=ne
-    CALL mtx_eigen(1,nobsl,work1,eival,eivec,i)
 
-    !-----------------------------------------------------------------------
-    !  [ HPHt ]^-1
-    !-----------------------------------------------------------------------
-    DO j=1,nobsl
-      DO i=1,nobsl
-        work1(i,j) = eivec(i,j) / eival(j)
-      END DO
-    END DO
-    work1 = MATMUL( work1 , TRANSPOSE( eivec ) )
-!    CALL dgemm('n','t',ne,ne,ne,1.0d0,work1,ne,eivec,&
-!              & ne,0.0d0,work1,ne)
+    CALL mtx_inv_eivec( nobsl , work1 , work1 )
 
   ELSE 
     !-----------------------------------------------------------------------
-    !Compute weigths without Gaussian Kernel
+    !Compute weights without Gaussian Kernel
     !-----------------------------------------------------------------------
 
     work1=0.0d0
@@ -323,25 +279,16 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
     ENDDO
   ENDIF
 
-  
 
-  !Compute the logaritm of the weigths
+  !Compute the logaritm of the weights
   DO i=1,ne
-
-   wa(i) = 0.0d0
    mem_departure(:,1) = dep - hdxb(:,i)
-
    work3 = MATMUL( MATMUL( TRANSPOSE( mem_departure ) , work1 ) , mem_departure )
-
-!   CALL dgemm('n','n',nobsl,1,nobsl,1.0d0,work1,nobsl,mem_departure,&
-!           & nobsl,0.0d0,work3,nobsl)
-
-     wa(i) = -0.5d0 * work3(1,1)
-
+   wa(i) = -0.5d0 * work3(1,1)
   ENDDO
 
   !-----------------------------------------------------------------------
-  !Normalize log of the weigths (to avoid underflow issues)
+  !Normalize log of the weights (to avoid underflow issues)
   !-----------------------------------------------------------------------
 
   CALL log_sum_vec( ne , wa , log_w_sum )
@@ -359,24 +306,24 @@ SUBROUTINE pf_weigth_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   
 
   RETURN
-END SUBROUTINE pf_weigth_core
+END SUBROUTINE pf_weight_core
 
 !=======================================================================
-!  Main Subroutine for weigth computation in the Gaussian Mixture PF
+!  Main Subroutine for weight computation in the Gaussian Mixture PF
 !   INPUT
 !     ne               : ensemble size                                         
 !     nobsl            : total number of observation assimilated at the point
 !     dens(nobsl,ne)   : distance between each ensemble member and the observation
 !     rdiag(nobsl)     : observation error variance
 !     beta_coef        : Gaussian Kernel width parameter
-!     gamma_coef       : weigth nudging parameter
+!     gamma_coef       : weight nudging parameter
 !     y                : ensemble in local observation space
 !     d                : mean departure
 !   OUTPUT
-!     wa(ne)           : PF weigths
+!     wa(ne)           : PF weights
 !=======================================================================
 
-SUBROUTINE pf_weigth_localh_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
+SUBROUTINE pf_weight_localh_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne                     
   INTEGER,INTENT(IN) :: nobsl
@@ -386,7 +333,7 @@ SUBROUTINE pf_weigth_localh_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa
   REAL(r_size),INTENT(IN) :: beta_coef , gamma_coef
   REAL(r_size),INTENT(OUT) :: wa(ne)    ! 
   REAL(r_size)             :: hdxb_local(nobsl,ne)
-  REAL(r_size)  :: wu                   !Uniform weigth (1/ne)
+  REAL(r_size)  :: wu                   !Uniform weight (1/ne)
   REAL(r_size)  :: log_w_sum
   REAL(r_size)  :: work1(nobsl,nobsl)
   REAL(r_size)  :: mem_departure(nobsl,1)
@@ -421,14 +368,14 @@ SUBROUTINE pf_weigth_localh_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa
       work1 = MATMUL( work1 , TRANSPOSE( eivec ) )
     ELSE 
       !-----------------------------------------------------------------------
-      !Compute weigths without Gaussian Kernel
+      !Compute weights without Gaussian Kernel
       !-----------------------------------------------------------------------
       work1=0.0d0
       DO i=1,nobsl
         work1(i,i)=1.0d0/rdiag(i)
       ENDDO
     ENDIF
-    !Compute the logaritm of the weigths
+    !Compute the logaritm of the weights
     wa(ie) = 0.0d0
     mem_departure(:,1) = dep(:,ie)
     work3 = MATMUL( MATMUL( TRANSPOSE( mem_departure ) , work1 ) , mem_departure )
@@ -436,7 +383,7 @@ SUBROUTINE pf_weigth_localh_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa
   END DO
 
   !-----------------------------------------------------------------------
-  !Normalize log of the weigths (to avoid underflow issues)
+  !Normalize log of the weights (to avoid underflow issues)
   !-----------------------------------------------------------------------
 
   CALL log_sum_vec( ne , wa , log_w_sum )
@@ -454,7 +401,7 @@ SUBROUTINE pf_weigth_localh_core(ne,nobsl,hdxb,dep,rdiag,beta_coef,gamma_coef,wa
   
   RETURN
 
-END SUBROUTINE pf_weigth_localh_core
+END SUBROUTINE pf_weight_localh_core
 
 
 SUBROUTINE netpf_w(ne,wa_in,w)
