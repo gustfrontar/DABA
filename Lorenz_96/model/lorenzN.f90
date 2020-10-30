@@ -186,7 +186,7 @@ DO ie = 1,nens
     !============================================================================
 
     !Compute coefficient for deterministic forcing
-    CALL com_randn( 1 , random_forcing_scalar , ie )
+    CALL com_randn( 1 , random_forcing_scalar )
     crf(ie,:)=cphi*crf(ie,:)+csigma(:)*random_forcing_scalar(1)  !AR1 process for the parameter evolution.
     DO i=1,ncoef 
        coef(:,ie,i)=c0(:,ie,i) + crf(ie,i) 
@@ -199,7 +199,7 @@ DO ie = 1,nens
     ENDDO
 
     !Compute random forcing.
-    CALL com_randn( nx ,random_forcing_vect , ie )
+    CALL com_randn( nx ,random_forcing_vect )
     rf(:,ie)=phi*rf(:,ie)+(1-phi**2.0)**(0.5)*sigma*random_forcing_vect(:) 
 
     !Compute small scale forcing

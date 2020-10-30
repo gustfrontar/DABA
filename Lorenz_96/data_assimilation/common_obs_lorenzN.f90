@@ -202,7 +202,7 @@ obsout=obs
 
 DO ie = 1,nens
   
-  CALL com_randn( no , randomn , ie)
+  CALL com_randn( no , randomn )
   DO io = 1,no
     IF( otype == 3 .and. obsout(io,ie) <= -30.0e0 )THEN
       obsout(io,ie) = obsout(io,ie)
