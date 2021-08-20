@@ -60,7 +60,7 @@ NatureConf['RunSave']=True                         #Save nature run
 NatureConf['RunPlot']=True                         #Plot nature run
 
 NatureConf['SPLength']=40                          #Spin up length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
-NatureConf['Length']=40                            #Nature run length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
+NatureConf['Length']=1000                          #Nature run length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
 
 #=================================================================
 # OBSERVATION CONFIGURATION SECTION : 
@@ -77,7 +77,7 @@ ObsConf['TimeDensity']=1                             #Observation density in tim
                                                      #Do not use ObsTimeDensity to change observation frequency for REGULAR obs, use
                                                      #ObsFreq instead
 #Set the diagonal of R
-ObsConf['Error']=0.2                                  #Constant observation error.
+ObsConf['Error']=0.2                                 #Constant observation error.
 
 #Set the systematic observation error
 ObsConf['Bias']=0.0                                  #Constant Systematic observation error.

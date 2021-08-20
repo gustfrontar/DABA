@@ -8,7 +8,7 @@ asimilacion de datos utilizando el modelo de Lorenz de 3 dimensiones (Lorenz63)
 import numpy as np
 import scipy.linalg as linalg 
 import sys
-sys.path.append("../../Lorenz_96/data_assimilation/")
+sys.path.append("../Lorenz_96/data_assimilation/")
 from mtx_oper import common_mtx as mo
 
 

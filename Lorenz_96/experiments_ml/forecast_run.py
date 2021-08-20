@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 #import forecast_conf_1scale as conf             #Load the experiment configuration
-import forecast_conf_2scale_F20 as conf             #Load the experiment configuration
+import forecast_conf_2scale_F20 as conf          #Load the experiment configuration
 import os
 
 #=================================================================
@@ -217,6 +217,7 @@ if GeneralConf['RunSave']   :
 
     #Save Nature run output
     np.savez( filename
+                     , XNatureF = XNatureF 
                      , XFMean=XFMean
                      , XFSpread=XFSpread
                      , XFSRmse=XFSRmse
@@ -253,7 +254,7 @@ if GeneralConf['RunPlot']   :
    rmse, =plt.plot( leadrmse ,'b-')
    rmsedet , = plt.plot( leadrmsedet ,'b--')
    sprd, =plt.plot(  leadsprd ,'r-' )
-   plt.legend([rmse,sprd],['RMSE ens.','RMSE det.','SPRD fcst'])
+   plt.legend([rmse,rmsedet,sprd],['RMSE ens.','RMSE det.','SPRD fcst'])
    plt.ylabel('RMSE - SPRD')
    plt.xlabel('Lead Time')
    plt.ylim( (0,leadrmsedet.max() + 0.5) )
@@ -277,3 +278,23 @@ if GeneralConf['RunPlot']   :
    #plt.close()
 
 plt.show()
+
+
+##Ensemble size dependence.
+#[NVar,NEns,NTimes,NLead] = XF.shape 
+#
+#RMSEsize = np.zeros((NEns,NLead))
+#
+#for iens in range(NEns)  :
+#
+#  #XFSpread=np.std(XF,axis=1)
+#  XFMean=np.mean(XF[:,0:iens+1,:,:],axis=1)
+#
+#  RMSEsize[iens,:]=np.sqrt( np.mean( np.mean( np.power( XFMean - XNatureF , 2 ) , axis=1 ) , axis=0 ) )
+
+
+
+
+
+
+

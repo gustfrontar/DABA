@@ -61,6 +61,7 @@ REAL(r_size)               :: work1d(nx)
 
 INTEGER                    :: ix,ie,ke,it,iv,io
 REAL(r_size)               :: dx
+REAL(r_size)               :: temp_inf(nx)
 
 !Initialization
 xfmean=0.0d0
@@ -111,9 +112,6 @@ DO io = 1,no
 
 ENDDO
 
-
-
-
 !Main assimilation loop.
 
 DO it = 1,nt
@@ -121,6 +119,7 @@ DO it = 1,nt
 
 !$OMP PARALLEL DO SCHEDULE(DYNAMIC) PRIVATE(grid_loc,no_loc,ofpert_loc,d_loc   &
 !$OMP &          ,mult_inf,Rdiag_loc,Rwf_loc,wa,wamean,pa,wainf,ie,iv,ke)
+
   DO ix = 1,nx
 
    !Localize observations
@@ -133,11 +132,18 @@ DO it = 1,nt
    !Aplly local tempering factor to the error covariance matrix.
    Rdiag_loc(1:no_loc) = Rdiag_loc(1:no_loc) * temp_factor(ix,it)
 
+   !Set multiplicative inflation
+   IF ( inf_coefs(1) < 0.0 )THEN
+      mult_inf = -inf_coefs(1)
+   ELSE
+      mult_inf = inf_coefs(1)
+   ENDIF
+
+
    IF( no_loc > 0 )THEN   
     !We have observations for this grid point. Let's compute the analysis.
 
-    !Set multiplicative inflation
-    mult_inf=inf_coefs(1) ** ( 1.0d0 / temp_factor(ix,it) ) 
+    mult_inf = mult_inf ** ( 1.0d0 / temp_factor(ix,it) ) 
   
     !Compute analysis weights
  
@@ -179,12 +185,19 @@ DO it = 1,nt
  
    ENDIF
 
+    IF ( inf_coefs(1) < 0.0 ) THEN
+       temp_inf(ix) = -mult_inf
+    ENDIF
+
   END DO
+
+  
 !$OMP END PARALLEL DO
+IF ( inf_coefs(1) < 0.0 ) THEN
+    inf_coefs(1) = SUM( temp_inf ) / REAL( nx , r_size )
+ENDIF
 
 END DO  
-
-
 
 
 IF( update_smooth_coef > 0.0d0 )THEN
@@ -284,8 +297,13 @@ DO io = 1,no
 ENDDO
 
 !Set multiplicative inflation
+IF ( inf_coefs(1) < 0.0 )THEN
+   mult_inf = -inf_coefs(1)
+ELSE
+   mult_inf = inf_coefs(1)
+ENDIF
 
-mult_inf=inf_coefs(1)
+!mult_inf=inf_coefs(1)
 
 !Main assimilation loop.
 
@@ -308,6 +326,10 @@ IF( no > 0 )THEN
   ELSE
     wainf = wa                                                                               !GYL
   END IF                                                                                     !GYL
+
+  IF ( inf_coefs(1) < 0.0 ) THEN
+     inf_coefs(1) = -mult_inf 
+  ENDIF
    
   !Apply the weights and update the state variables.
   DO it=1,nt

@@ -1,7 +1,7 @@
 
-conda create --prefix /media/libre/daba
+conda create --prefix daba
 
-source activate /media/libre/daba
+source activate daba
 
 #conda info --envs
 

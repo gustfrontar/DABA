@@ -153,12 +153,14 @@ for it in range( 1 , DALength  )         :
    #Run the ensemble forecast
    #print('Runing the ensemble')
 
+
    ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
    
    [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
                                            x0=XA[:,:,it-1]     , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma,
                                            c0=PA[:,:,:,it-1]   , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
                                            nx=Nx,  nxss=NxSS   , ncoef=NCoef  , dt=ModelConf['dt']   , dtss=ModelConf['dtss'])
+
 
    PF[:,:,:,it] = CFtmp[:,:,:,-1]       #Store the parameter at the end of the window. 
    XF[:,:,it]=XFtmp[:,:,-1]             #Store the state variables ensemble at the end of the window.
@@ -168,6 +170,18 @@ for it in range( 1 , DALength  )         :
    XSS=XSStmp[:,:,-1]
    CRF=CRFtmp[:,:,-1]
    RF=RFtmp[:,:,-1]
+
+   #print( np.mean( XF[:,:,it] , axis=1 ) )
+   #if np.isnan( XF[:,:,it].mean() ) :
+   #print( XA[:,:,it-1] )
+   # plt.figure()
+   # plt.subplot(1,2,1)
+   # plt.plot( XA[:,:,it-1] )
+   # plt.subplot(1,2,2)
+   # plt.plot( XF[:,:,it-1] )
+   # plt.show()
+
+
    
    #print('Ensemble forecast took ', time.time()-start, 'seconds.')
 
@@ -229,12 +243,16 @@ for it in range( 1 , DALength  )         :
    #STATE VARIABLES ESTIMATION:
   
    #start = time.time()
+   #print( np.mean( XF[:,:,it] , axis=1 ) )
 
-   XA[:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
+   XA[:,:,it]  = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
                               tloc=da_window_end    , nvar=1                        , xfens=XF[:,:,it]               ,
                               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
                               rdiag=ObsErrorW       , loc_scale=DAConf['LocScales'] , inf_coefs=DAConf['InfCoefs']   ,
                               update_smooth_coef=0.0 , temp_factor = np.ones(Nx) )[:,:,0,0]
+   #print( np.mean( XA[:,:,it] , axis=1 ) )
+   #XA[:,:,it] = XF[:,:,it]
+   #print(DAConf['InfCoefs'][0])
    
    #PARAMETER ESTIMATION
    if DAConf['EstimateParameters']   : 
