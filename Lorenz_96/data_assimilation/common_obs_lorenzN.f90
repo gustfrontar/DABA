@@ -33,6 +33,9 @@ REAL(r_size)               :: rx, rt, dx,dt                   !Auxiliary variabl
 INTEGER                    :: ixloc , itloc                   !Auxiliary variables
 REAL(r_size)               :: tmp_x(nx+2,nens,nt),tmp_xloc(nx+2) !Temporal array to use cyclic boundary conditions.
 REAL(r_size)               :: tmp_obs(2,2,nens)               !Temporal array for space-time interpolation.
+REAL(r_size), PARAMETER    :: low_x_thresh=5.0d0              !Value of X corresponding to 0 condensate (no clouds). Values of X lower than this threshold
+                                                              !corresponds to no clouds.(obstype=3)
+REAL(r_size), PARAMETER    :: low_dbz_thresh=-20.0d0          !Minimum reflectivity value corresponding to no clouds. (obstype=3)
 
 INTEGER,INTENT(OUT)        :: valid_obs(no)                   !Mask to indicate if the observation was within or outside the model domain (space/time)
                                                               !1 means a valid observation , 0 that the observation is not valid.
@@ -129,19 +132,18 @@ DO io=1,no
       obs(io,ie) = obs(io,ie) / 10.0d0
     ELSEIF( obstype(io) == 3 )THEN
       CALL itpl_2d(tmp_obs(:,:,ie),rx,rt,obs(io,ie),2,2)
-      obs(io,ie) = obs(io,ie) !-1.0e0
-      IF( obs(io,ie) > 0.001 )THEN
-          !Pseudo reflectivity
-          obs(io,ie)= 1.0e18 * 720 * ( (obs(io,ie)*1.0e-3) ** 1.75 )
-          obs(io,ie) = obs(io,ie) / ( ( 3.14159 ** 1.75 ) * ( 1000.0e0 ** 0.75 ) * ( 8.0e6  ** 1.75 ) )
-          obs(io,ie) = 10.0*log10( obs(io,ie) )  
+      IF( obs(io,ie) < low_x_thresh + 1.0d-10 )THEN
+          obs(io,ie) = low_dbz_thresh
       ELSE
-          obs(io,ie)= 1.0e18 * 720 * ( (0.001*1.0e-3) ** 1.75 )
-          obs(io,ie) = obs(io,ie) / ( ( 3.14159 ** 1.75 ) * ( 1000.0e0 ** 0.75 ) * ( 8.0e6  ** 1.75 ) )
+          obs(io,ie) = obs(io,ie)-low_x_thresh + 1.0d-10
+          !Pseudo reflectivity
+          obs(io,ie)= 1.0e18 * 720 * ( (obs(io,ie)*2.0e-4) ** 1.75 )
+          obs(io,ie) = obs(io,ie) / ( ( pi ** 1.75 ) * ( 1000.0e0 ** 1.75 ) * ( 8.0e6  ** 0.75 ) )
           obs(io,ie) = 10.0*log10( obs(io,ie) )
-    
+          IF ( obs(io,ie) < low_dbz_thresh )THEN
+             obs(io,ie) = low_dbz_thresh
+          ENDIF  
       ENDIF
-      IF ( obs(io,ie) < -30.0e0 )obs(io,ie) = -30.0e0
     ELSEIF( obstype(io) == 4 )THEN
       !A simple logaritmic transform.
       CALL itpl_2d(tmp_obs(:,:,ie),rx,rt,obs(io,ie),2,2)
