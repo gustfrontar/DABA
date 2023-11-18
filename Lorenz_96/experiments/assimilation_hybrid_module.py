@@ -50,7 +50,7 @@ def assimilation_hybrid_run( conf ) :
     ObsLoc  =  InputData['ObsLoc']       #Obs location (space , time)
     ObsType =  InputData['ObsType']      #Obs type ( x or x^2)
     ObsError=  InputData['ObsError']     #Obs error 
-    
+   
     #If this is a twin experiment copy the model configuration from the
     #nature run configuration.
     if DAConf['Twin']   :
@@ -71,6 +71,9 @@ def assimilation_hybrid_run( conf ) :
     #=================================================================
     # INITIALIZATION : 
     #=================================================================
+   
+    #Compute normalized pseudo_time tempering steps:
+    dt_pseudo_time_vec = ( 1.0/DAConf['AlphaTemp'] ) /  np.sum( 1.0/DAConf['AlphaTemp'] ) 
     
     #We set the length of the experiment according to the length of the 
     #observation array.
@@ -188,7 +191,8 @@ def assimilation_hybrid_run( conf ) :
        #print('Runing the ensemble')
        if np.any( np.isnan( XA[:,:,it-1] ) ) :
             #Stop the cycle before the fortran code hangs because of NaNs
-            print('Error: The analysis contains NaN, Iteration number :',it)
+            print('Error: The analysis contains NaN, Iteration number :',it,' will dump some variables to a temporal file')
+            np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
             break
 
     
@@ -198,6 +202,16 @@ def assimilation_hybrid_run( conf ) :
                                                x0=XA[:,:,it-1]     , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma,
                                                c0=PA[:,:,:,it-1]   , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
                                                nx=Nx,  nxss=NxSS   , ncoef=NCoef  , dt=ModelConf['dt']   , dtss=ModelConf['dtss'])
+
+
+
+       if np.any( np.isnan( XFtmp[:,:,-1] ) ) :
+            #Stop the cycle before the fortran code hangs because of NaNs
+            print('Error: The analysis contains NaN, Iteration number :',it,' will dump some variables to a temporal file')
+            np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
+            break
+
+
     
        PF[:,:,:,it] = CFtmp[:,:,:,-1]       #Store the parameter at the end of the window. 
        XF[:,:,it]=XFtmp[:,:,-1]             #Store the state variables ensemble at the end of the window.
@@ -230,19 +244,12 @@ def assimilation_hybrid_run( conf ) :
        NObsW=YObsW.size                                                  #Number of observations within the DA window
        ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window  
 
-            
        #=================================================================
        #  HYBRID-TEMPERED DA  : 
        #================================================================= 
     
        stateens = np.copy(XF[:,:,it])
 
-       #print('Runing the ensemble')
-       if np.any( np.isnan( stateens ) ) :
-            #Stop the cycle before the fortran code hangs because of NaNs
-            print('Error: The analysis contains NaN, Iteration number :',it)
-            break
-       
        #Perform initial iterations using ETKF this helps to speed up convergence.
        if it < DAConf['NKalmanSpinUp']  :
            BridgeParam = 0.0  #Force pure Kalman step.
@@ -250,12 +257,22 @@ def assimilation_hybrid_run( conf ) :
            BridgeParam = DAConf['BridgeParam']
        
        for itemp in range( DAConf['NTemp'] ) :
-           
-          TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
-          [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
-                          obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
+          if NObsW > 0 : 
+             TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+             [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
+                          obsloc=ObsLocW , x=stateens , obstype=ObsTypeW , obserr=ObsErrorW , obsval=YObsW ,
                           xloc=ModelConf['XLoc'] , tloc= TLoc )
-           
+             YFmask = np.ones( YFqc.shape ).astype(bool)
+             YFmask[ YFqc != 1 ] = False 
+
+             ObsLocWStep=ObsLocW[ YFmask , : ] 
+             ObsTypeWStep=ObsTypeW[ YFmask ]
+             YObsWStep=YObsW[ YFmask , : ]
+             NObsWStep=YObsWStep.size
+             ObsErrorWStep=ObsErrorW[ YFmask , : ]
+             YFStep=YF[ YFmask , : ]
+             #print( YObsWStep , YFmask , YFqc )
+
           #=================================================================
           #  Compute time step in pseudo time  : 
           #=================================================================
@@ -263,14 +280,13 @@ def assimilation_hybrid_run( conf ) :
           if DAConf['AddaptiveTemp']  : 
              #Addaptive time step computation
              if itemp == 0 : 
-                #local_obs_error = ObsErrorW * DAConf['NTemp'] / ( 1.0 - BridgeParam ) 
-                [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']   ,
-                            tloc=da_window_end    , nvar=1 , obsloc=ObsLocW  , ofens=YF                             ,
-                            rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
+                [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']   ,
+                            tloc=da_window_end    , nvar=1 , obsloc=ObsLocWStep  , ofens=YFStep                         ,
+                            rdiag=ObsErrorWStep , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
              dt_pseudo_time =  a + b * (itemp + 1)
           else :
              #Equal time steps in pseudo time.  
-             dt_pseudo_time = np.ones(Nx) / DAConf['NTemp']   
+             dt_pseudo_time = dt_pseudo_time_vec[ itemp ] * np.ones( Nx )
            
           #=================================================================
           #  OBS OPERATOR AND LETKF STEP  : 
@@ -280,12 +296,13 @@ def assimilation_hybrid_run( conf ) :
 
              #Compute the tempering parameter.
              temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )             
-             stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                      ,
-                                  tloc=da_window_end    , nvar=1                        , xfens=stateens                 ,
-                                  obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                                  rdiag=ObsErrorW  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
+             if NObsWStep > 0 :
+                stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']                   ,
+                                  tloc=da_window_end   , nvar=1                        , xfens=stateens                      ,
+                                  obs=YObsWStep        , obsloc=ObsLocWStep            , ofens=YFStep                        ,
+                                  rdiag=ObsErrorWStep  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
                                   update_smooth_coef=0.0 , temp_factor = temp_factor )[:,:,0,0]
-    
+   
           #=================================================================
           #  ETPF STEP  : 
           #=================================================================
@@ -293,18 +310,30 @@ def assimilation_hybrid_run( conf ) :
           if BridgeParam > 0.0 :
 
              prior_weights = np.ones((Nx,NEns))/NEns  #Resampling is applied every time step so we assume equal weigths for the prior.
-             TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
-             [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
-                                 obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
-                                 xloc=ModelConf['XLoc'] , tloc= TLoc )           
+             if NObsW > 0 : 
+               TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+               [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
+                            obsloc=ObsLocW , x=stateens , obstype=ObsTypeW , obserr=ObsErrorW , obsval=YObsW ,
+                            xloc=ModelConf['XLoc'] , tloc= TLoc )
+               YFmask = np.ones( YFqc.shape ).astype(bool)
+               YFmask[ YFqc != 1 ] = False
+
+               ObsLocWStep=ObsLocW[ YFmask , : ]
+               ObsTypeWStep=ObsTypeW[ YFmask ]
+               YObsWStep=YObsW[ YFmask , : ]
+               NObsWStep=YObsWStep.size
+               ObsErrorWStep=ObsErrorW[ YFmask , : ]
+               YFStep=YF[ YFmask , : ]
+
              #Compute the tempering parameter.
              temp_factor = (1.0 / dt_pseudo_time ) / ( BridgeParam )    
-             [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                           ,
+             if NObsWStep > 0 :
+                [tmp_ens , wa]= das.da_letpf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']                    ,
                                            tloc=da_window_end    , nvar=1                        , xfens=stateens                  , 
-                                           obs=YObsW             , obsloc=ObsLocW                , ofens=YF                        ,
-                                           rdiag=ObsErrorW , loc_scale=DAConf['LocScalesLETPF']  , temp_factor = temp_factor       ,
+                                           obs=YObsWStep         , obsloc=ObsLocWStep            , ofens=YFStep                    ,
+                                           rdiag=ObsErrorWStep , loc_scale=DAConf['LocScalesLETPF']  , temp_factor = temp_factor   ,
                                            multinf=DAConf['InfCoefs'][0] , w_in = prior_weights )
-             stateens = tmp_ens[:,:,0,0]
+                stateens = tmp_ens[:,:,0,0]
 
        XA[:,:,it] = np.copy( stateens )
        
@@ -314,8 +343,8 @@ def assimilation_hybrid_run( conf ) :
         if DAConf['ParameterLocalizationType'] == 1  :
            #GLOBAL PARAMETER ESTIMATION (Note that ETKF is used in this case)
        
-           PA[:,:,:,it] = das.da_etkf( no=NObsW , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it] ,
-                                                obs=YObsW, ofens=YF  , rdiag=ObsErrorW   ,
+           PA[:,:,:,it] = das.da_etkf( no=NObsWStep , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it]     ,
+                                                obs=YObsWStep , ofens=YFStep  , rdiag=ObsErrorWStep   ,
                                                 inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
            
            
@@ -326,8 +355,8 @@ def assimilation_hybrid_run( conf ) :
            #First estimate a local value for the parameters at each grid point.
            PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
                                   tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                                  obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                                  rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
+                                  obs=YObsWStep         , obsloc=ObsLocWStep            , ofens=YFStep                    ,
+                                  rdiag=ObsErrorWStep   , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
                                   update_smooth_coef=0.0 )[:,:,:,0]
            
            #Spatially average the estimated parameters so we get the same parameter values
@@ -340,17 +369,17 @@ def assimilation_hybrid_run( conf ) :
            #LOCAL PARAMETER ESTIMATION (Parameters are estimated at each model grid point and the forecast uses 
            #the locally estimated parameters)
            #LETKF is used to get the local value of the parameter.
-           PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
+           PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']      ,
                                   tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                                  obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                                  rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
+                                  obs=YObsWStep         , obsloc=ObsLocWStep            , ofens=YFStep                    ,
+                                  rdiag=ObsErrorWStep   , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
                                   update_smooth_coef=0.0 )[:,:,:,0]
            
            
        else :
         #If Parameter estimation is not activated we keep the parameters as in the first analysis cycle.  
         PA[:,:,:,it]=PA[:,:,:,0]
-    
+
     #=================================================================
     #  DIAGNOSTICS  : 
     #================================================================= 

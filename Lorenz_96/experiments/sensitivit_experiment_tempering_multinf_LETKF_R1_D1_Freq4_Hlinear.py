@@ -37,6 +37,8 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 
+AlphaTempList=[np.array([1]) , np.array([90,1]) , np.array([90,5,1])  , np.array([90,10,5,1]) ]
+NAlphaTemp = len( AlphaTempList )
 
 if RunTheExperiment  :
 
@@ -44,23 +46,22 @@ if RunTheExperiment  :
     
     mult_inf_range = np.arange(1.01,1.110,0.01)
     
-    ntemp_range = np.arange(1,5,1)
-    
-    total_analysis_rmse = np.zeros( (len(mult_inf_range),len(ntemp_range)) )
-    total_analysis_sprd = np.zeros( (len(mult_inf_range),len(ntemp_range)) )
-    total_forecast_rmse = np.zeros( (len(mult_inf_range),len(ntemp_range)) )
-    total_forecast_sprd = np.zeros( (len(mult_inf_range),len(ntemp_range)) )
-    
+    total_analysis_rmse = np.zeros( (len(mult_inf_range),NAlphaTemp) )
+    total_analysis_sprd = np.zeros( (len(mult_inf_range),NAlphaTemp) )
+    total_forecast_rmse = np.zeros( (len(mult_inf_range),NAlphaTemp) )
+    total_forecast_sprd = np.zeros( (len(mult_inf_range),NAlphaTemp) )
     for iinf , mult_inf in enumerate( mult_inf_range ) :
-        for intemp , ntemp in enumerate( ntemp_range )  :
+        for intemp , AlphaTemp in enumerate( AlphaTempList )  :
             
             conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
-            conf.DAConf['NTemp']=int(ntemp) 
+            conf.DAConf['AlphaTemp'] = AlphaTemp
+            conf.DAConf['NTemp']=len(AlphaTemp)
             
             results.append( ahm.assimilation_hybrid_run( conf ) )
                  
             print('Multiplicative Inflation',mult_inf)
-            print('Tempering iteraations',ntemp)
+            print('Tempering iteraations',conf.DAConf['NTemp'])
+            print('AlphaTemp',AlphaTemp)
             print('Analisis RMSE: ',np.mean(results[-1]['XASRmse']))
             print('Forecast RMSE: ',np.mean(results[-1]['XFSRmse']))
             print('Analisis SPRD: ',np.mean(results[-1]['XASSprd']))
@@ -72,18 +73,18 @@ if RunTheExperiment  :
             total_forecast_sprd[iinf,intemp] = np.mean(results[-1]['XFSSprd'])
             
     f=open(out_filename,'wb')
-    pickle.dump([results,mult_inf_range,ntemp_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
+    pickle.dump([results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
     
 if PlotTheExperiment  :
     
     f=open(out_filename,'rb')
-    [results,mult_inf_range,ntemp_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
+    [results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
     f.close()
     
     import matplotlib.pyplot as plt 
 
-    plt.pcolormesh(ntemp_range,mult_inf_range,total_analysis_rmse)
+    plt.pcolormesh(np.arange(NAlphaTemp),mult_inf_range,total_analysis_rmse)
     plt.colorbar()
     plt.title('Analysis Rmse')
     plt.xlabel('Tempering Iterantions')

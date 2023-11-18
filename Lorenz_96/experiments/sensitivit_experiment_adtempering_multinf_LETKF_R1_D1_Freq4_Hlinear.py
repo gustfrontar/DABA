@@ -42,9 +42,9 @@ if RunTheExperiment  :
 
     results=list()
     
-    mult_inf_range = np.arange(1.01,1.110,0.01)
+    mult_inf_range = np.arange(1.01,2.0,0.1)
     
-    ntemp_range = np.arange(1,5,1)
+    ntemp_range = np.arange(1,3,1)
     
     total_analysis_rmse = np.zeros( (len(mult_inf_range),len(ntemp_range)) )
     total_analysis_sprd = np.zeros( (len(mult_inf_range),len(ntemp_range)) )

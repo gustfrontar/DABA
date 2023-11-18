@@ -1,2 +1,0 @@
-/home/jruiz/.conda/envs/daba/lib/python3.8/site-packages/numpy/core/_methods.py:193: RuntimeWarning: invalid value encountered in subtract
-  x = asanyarray(arr - arrmean)

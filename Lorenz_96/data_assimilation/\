@@ -33,18 +33,17 @@ REAL(r_size),INTENT(IN)    :: obsval(no)                      !Observation value
 REAL(r_size),INTENT(IN)    :: x(nx,nens,nt)                   !State variables (space, ensemble, time)
 REAL(r_size),INTENT(IN)    :: xloc(nx) , tloc(nt)             !Space grid point locations, time grid point locations for the model output.
 REAL(r_size),INTENT(OUT)   :: obs(no,nens)                    !State in observation space.
-INTEGER,INTENT(OUT)        :: valid_obs(no)                   !Mask to indicate if the observation was within or outside the model domain (space/time)
-                                                              !1 means a valid observation , 0 that the observation is not valid.
 
-REAL(r_size)               :: omean                        
 INTEGER                    :: io , iloc, ie , it , ix         !Loop indices
 INTEGER                    :: low_dbz_count                   !Counter
 REAL(r_size)               :: rx, rt, dx,dt                   !Auxiliary variables
 INTEGER                    :: ixloc , itloc                   !Auxiliary variables
 REAL(r_size)               :: tmp_x(nx+2,nens,nt),tmp_xloc(nx+2) !Temporal array to use cyclic boundary conditions.
 REAL(r_size)               :: tmp_obs(2,2,nens)               !Temporal array for space-time interpolation.
+
+INTEGER,INTENT(OUT)        :: valid_obs(no)                   !Mask to indicate if the observation was within or outside the model domain (space/time)
+                                                              !1 means a valid observation , 0 that the observation is not valid.
 REAL(r_size) , PARAMETER   :: gross_check_factor = 5.0        !Parameter for gross check computation (should be an input in future versions)
-REAL(r_size) , PARAMETER   :: low_dbz_per_thresh = 1.01       !Parameter for detecting useless reflectivity observations (those where most ensemble members have no rain)
 
 !Assuming regular grid in space and time.
 dx=xloc(2)-xloc(1)
@@ -204,9 +203,9 @@ ENDDO
 
 
 
-!IF( SUM(valid_obs) < no )THEN
-!  WRITE(*,*)"[Warning]: The number of valid observations is lower than the number of input observations"
-!ENDIF
+IF( SUM(valid_obs) < no )THEN
+  WRITE(*,*)"[Warning]: The number of valid observations is lower than the number of input observations"
+ENDIF
 
 
 

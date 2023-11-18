@@ -1,0 +1,21 @@
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+ValueError: unexpected array size: new_size=1, got array with arr_size=0
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "./sensitivit_experiment_tempering_multinf_LETKF_R4_D05_Freq8_Hradar.py", line 61, in <module>
+    results.append( ahm.assimilation_hybrid_run( conf ) )
+  File "/salidas3/jruiz/DABA/Lorenz_96/experiments/assimilation_hybrid_module.py", line 259, in assimilation_hybrid_run
+    xloc=ModelConf['XLoc'] , tloc= TLoc )
+ValueError: failed in converting 5th argument `obstype' of obsope.common_obs.model_to_obs to C/Fortran array

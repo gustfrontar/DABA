@@ -1,0 +1,18 @@
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+/opt/intel/oneapi/intelpython/latest/lib/python3.7/site-packages/numpy/core/_methods.py:211: RuntimeWarning: invalid value encountered in reduce
+  arrmean = umr_sum(arr, axis, dtype, keepdims=True, where=where)
+/opt/intel/oneapi/intelpython/latest/lib/python3.7/site-packages/numpy/core/_methods.py:178: RuntimeWarning: invalid value encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+/opt/intel/oneapi/intelpython/latest/lib/python3.7/site-packages/numpy/core/_methods.py:229: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+/salidas3/jruiz/DABA/Lorenz_96/experiments/assimilation_hybrid_module.py:265: RuntimeWarning: invalid value encountered in less
+  allmem_low_thresh = np.mean( YF < low_dbz_thresh + 1.0e-3 , axis=1 ) * ( ObsTypeW == 3 )  > DAConf['LowDbzPerThresh'] #Check for wich observations all the ensemble members are close

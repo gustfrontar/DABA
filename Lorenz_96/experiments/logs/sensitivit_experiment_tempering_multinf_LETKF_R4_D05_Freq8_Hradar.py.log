@@ -1,0 +1,3432 @@
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.01
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.865160777823722
+Forecast RMSE:  4.869851974472558
+Analisis SPRD:  0.742416168005807
+Forecast SPRD:  0.8644099532733079
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.01
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  4.753181305330922
+Forecast RMSE:  4.760924648887918
+Analisis SPRD:  0.7908528624836052
+Forecast SPRD:  0.9173645360955133
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.01
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  4.701866671543856
+Forecast RMSE:  4.715114234442668
+Analisis SPRD:  0.8563684097927078
+Forecast SPRD:  0.9873121977444885
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.01
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  4.595843491198144
+Forecast RMSE:  4.613178569891294
+Analisis SPRD:  0.9173799460843425
+Forecast SPRD:  1.0515675267545714
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.11
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.389030083418353
+Forecast RMSE:  4.403919863360645
+Analisis SPRD:  1.0702798332416983
+Forecast SPRD:  1.2197498396007336
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.11
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  4.3478961774555795
+Forecast RMSE:  4.3674476051688105
+Analisis SPRD:  1.1518472677315574
+Forecast SPRD:  1.3055954058470405
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.11
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  4.139451969100627
+Forecast RMSE:  4.173456819926554
+Analisis SPRD:  1.2174339000518757
+Forecast SPRD:  1.3781391793471092
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.11
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  4.003633809618114
+Forecast RMSE:  4.046461222640366
+Analisis SPRD:  1.3092132337180233
+Forecast SPRD:  1.4705176060157328
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.2100000000000002
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.02758463304355
+Forecast RMSE:  4.058741566759571
+Analisis SPRD:  1.4380667801880227
+Forecast SPRD:  1.6101552758150142
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.2100000000000002
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.928575118428892
+Forecast RMSE:  3.9702190081373465
+Analisis SPRD:  1.5476623893611312
+Forecast SPRD:  1.7221092119704025
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.2100000000000002
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.5262970370262345
+Forecast RMSE:  3.5938157492495746
+Analisis SPRD:  1.5854246950945066
+Forecast SPRD:  1.765159566355092
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.2100000000000002
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.2274053265932245
+Forecast RMSE:  3.305506557401011
+Analisis SPRD:  1.7141740216683239
+Forecast SPRD:  1.8999745513095085
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.3100000000000003
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  3.689517478698035
+Forecast RMSE:  3.7356642189092852
+Analisis SPRD:  1.7829858164729984
+Forecast SPRD:  1.9693733995416278
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.3100000000000003
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.5003733781907718
+Forecast RMSE:  3.560176763079352
+Analisis SPRD:  1.9091084733023334
+Forecast SPRD:  2.0965158503006185
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.3100000000000003
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.179051523153842
+Forecast RMSE:  3.2681243038778134
+Analisis SPRD:  2.0727941451572343
+Forecast SPRD:  2.267217772763626
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.3100000000000003
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.061507838491777
+Forecast RMSE:  3.155481251666744
+Analisis SPRD:  2.332224598178039
+Forecast SPRD:  2.5250405338511746
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.4100000000000004
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  3.4659316981454453
+Forecast RMSE:  3.5133452713000333
+Analisis SPRD:  2.1549519437717275
+Forecast SPRD:  2.3372769908771005
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.4100000000000004
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.371596709882938
+Forecast RMSE:  3.436214718385645
+Analisis SPRD:  2.275372303848941
+Forecast SPRD:  2.454776828427513
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.4100000000000004
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.1399392079817554
+Forecast RMSE:  3.22250041351149
+Analisis SPRD:  2.5656547023428606
+Forecast SPRD:  2.741975934635859
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.4100000000000004
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.174249256567336
+Forecast RMSE:  3.259551189528824
+Analisis SPRD:  2.8998173191642804
+Forecast SPRD:  3.0491551638682886
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.5100000000000005
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  3.445208012379939
+Forecast RMSE:  3.4801075402508426
+Analisis SPRD:  2.5002117707112363
+Forecast SPRD:  2.6651521808065026
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.5100000000000005
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.278997932771108
+Forecast RMSE:  3.3456891883597537
+Analisis SPRD:  2.6093810951502587
+Forecast SPRD:  2.7708795067939924
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.5100000000000005
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.195458608394424
+Forecast RMSE:  3.2728481017223645
+Analisis SPRD:  3.0006446286458592
+Forecast SPRD:  3.140490680940206
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.5100000000000005
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.2881641383849995
+Forecast RMSE:  3.3645326103335593
+Analisis SPRD:  3.401998192780623
+Forecast SPRD:  3.492081604207705
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.6100000000000005
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  3.496587158656183
+Forecast RMSE:  3.5173687911323968
+Analisis SPRD:  2.888571130217803
+Forecast SPRD:  3.0181453446783784
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.6100000000000005
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.3535955554033436
+Forecast RMSE:  3.4084884310846917
+Analisis SPRD:  2.9835833699993364
+Forecast SPRD:  3.1086648919224813
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.6100000000000005
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.3021372672695137
+Forecast RMSE:  3.36611096631093
+Analisis SPRD:  3.4151068841337278
+Forecast SPRD:  3.5074854229780486
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.6100000000000005
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.3544566766225876
+Forecast RMSE:  3.4222121527668135
+Analisis SPRD:  3.798099005447567
+Forecast SPRD:  3.8476980604950546
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.7100000000000006
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  3.5778490330515824
+Forecast RMSE:  3.568120228054031
+Analisis SPRD:  3.311804382402522
+Forecast SPRD:  3.396782419741521
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.7100000000000006
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.3884061482911916
+Forecast RMSE:  3.4372137183827007
+Analisis SPRD:  3.3468999365269623
+Forecast SPRD:  3.4373700842023807
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.7100000000000006
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.3835023231433086
+Forecast RMSE:  3.435110113823889
+Analisis SPRD:  3.807431236579224
+Forecast SPRD:  3.8539876126110557
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.7100000000000006
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.415677470800645
+Forecast RMSE:  3.477673698374514
+Analisis SPRD:  4.192733536380738
+Forecast SPRD:  4.203207651999229
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.8100000000000007
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  3.704325966680144
+Forecast RMSE:  3.6506750483988943
+Analisis SPRD:  3.738440694120385
+Forecast SPRD:  3.784114943949517
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.8100000000000007
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.4413666262100655
+Forecast RMSE:  3.4773702577165806
+Analisis SPRD:  3.726858481920645
+Forecast SPRD:  3.7701656974962914
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.8100000000000007
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.468284807077546
+Forecast RMSE:  3.506460563641774
+Analisis SPRD:  4.21597644113956
+Forecast SPRD:  4.217528742199027
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.8100000000000007
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.497438125927519
+Forecast RMSE:  3.545330584462539
+Analisis SPRD:  4.633416275304951
+Forecast SPRD:  4.596259823842071
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.9100000000000008
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  3.8396696531294134
+Forecast RMSE:  3.7379575871713953
+Analisis SPRD:  4.170942639656735
+Forecast SPRD:  4.171617112283729
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.9100000000000008
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.510659086649325
+Forecast RMSE:  3.5297835422154074
+Analisis SPRD:  4.119803887649067
+Forecast SPRD:  4.123667380769485
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.9100000000000008
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.5390819716960507
+Forecast RMSE:  3.5659702057932163
+Analisis SPRD:  4.583638487162058
+Forecast SPRD:  4.551798082809751
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.9100000000000008
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.6106088599539645
+Forecast RMSE:  3.630755831676526
+Analisis SPRD:  5.069413592470698
+Forecast SPRD:  4.989220908397305
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.0100000000000007
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.0537506624079285
+Forecast RMSE:  3.873017393374986
+Analisis SPRD:  4.706084731099033
+Forecast SPRD:  4.673423716831285
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.0100000000000007
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.6471416944379116
+Forecast RMSE:  3.639595295190196
+Analisis SPRD:  4.582011123454036
+Forecast SPRD:  4.531757400576751
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.0100000000000007
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.6240217845335536
+Forecast RMSE:  3.630665059316563
+Analisis SPRD:  4.987196103258129
+Forecast SPRD:  4.923594918382683
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.0100000000000007
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.7143973884159314
+Forecast RMSE:  3.708465086359502
+Analisis SPRD:  5.462506038924504
+Forecast SPRD:  5.362063199888462
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Error: The analysis contains NaN, Iteration number : 2333  will dump some variables to a temporal file
+Multiplicative Inflation 2.110000000000001
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.338225230508941
+Forecast RMSE:  4.185789463984027
+Analisis SPRD:  2.544872987871641
+Forecast SPRD:  2.521976418529605
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.110000000000001
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.7318811019557456
+Forecast RMSE:  3.700293113916564
+Analisis SPRD:  5.0182475397130215
+Forecast SPRD:  4.932095615315015
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.110000000000001
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.7158569729130795
+Forecast RMSE:  3.690112699900092
+Analisis SPRD:  5.385233477586508
+Forecast SPRD:  5.295395629581222
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.110000000000001
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.808723016149714
+Forecast RMSE:  3.771449472746484
+Analisis SPRD:  5.8851135759697115
+Forecast SPRD:  5.7619920990953535
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Error: The analysis contains NaN, Iteration number : 162  will dump some variables to a temporal file
+Multiplicative Inflation 2.210000000000001
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.324368945979844
+Forecast RMSE:  4.324368945979844
+Analisis SPRD:  0.22794282281418923
+Forecast SPRD:  0.22196105104485175
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.210000000000001
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  3.8662291902428096
+Forecast RMSE:  3.790865223388285
+Analisis SPRD:  5.5550160295232995
+Forecast SPRD:  5.423019841968589
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.210000000000001
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  3.8495240050491555
+Forecast RMSE:  3.7823757125032302
+Analisis SPRD:  5.8133057372881485
+Forecast SPRD:  5.6960532436861
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.210000000000001
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  3.9735023661242606
+Forecast RMSE:  3.883309235915759
+Analisis SPRD:  6.388672310715516
+Forecast SPRD:  6.231233718502294
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Error: The analysis contains NaN, Iteration number : 78  will dump some variables to a temporal file
+Multiplicative Inflation 2.3100000000000014
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.324368945979844
+Forecast RMSE:  4.324368945979844
+Analisis SPRD:  0.1468467829012985
+Forecast SPRD:  0.14021456205572477
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.3100000000000014
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  4.035455101339467
+Forecast RMSE:  3.8945042045818026
+Analisis SPRD:  6.113908300507366
+Forecast SPRD:  5.957827161233757
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.3100000000000014
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  4.001127558652326
+Forecast RMSE:  3.8752275115032178
+Analisis SPRD:  6.321925328676689
+Forecast SPRD:  6.18452970240712
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.3100000000000014
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  4.084954040439024
+Forecast RMSE:  3.9475088805784053
+Analisis SPRD:  6.847771508624345
+Forecast SPRD:  6.681445612559815
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Error: The analysis contains NaN, Iteration number : 38  will dump some variables to a temporal file
+Multiplicative Inflation 2.410000000000001
+Tempering iteraations 1
+AlphaTemp [1]
+Analisis RMSE:  4.324368945979844
+Forecast RMSE:  4.324368945979844
+Analisis SPRD:  0.08769949043586182
+Forecast SPRD:  0.08086083246196193
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.410000000000001
+Tempering iteraations 2
+AlphaTemp [90  1]
+Analisis RMSE:  4.271094478135933
+Forecast RMSE:  4.028539513156043
+Analisis SPRD:  6.805376022781718
+Forecast SPRD:  6.61907283600672
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.410000000000001
+Tempering iteraations 3
+AlphaTemp [90  5  1]
+Analisis RMSE:  4.169207877035537
+Forecast RMSE:  3.9716409645886017
+Analisis SPRD:  6.794570867467094
+Forecast SPRD:  6.6472105546987335
+Reading observations from file  ./data/Nature/NatureR4_Den05_Freq8_Hradar.npz
+
+This is a TWIN experiment
+
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 2.410000000000001
+Tempering iteraations 4
+AlphaTemp [90 10  5  1]
+Analisis RMSE:  4.278951000701889
+Forecast RMSE:  4.053714432454394
+Analisis SPRD:  7.377374300347978
+Forecast SPRD:  7.206132457673277

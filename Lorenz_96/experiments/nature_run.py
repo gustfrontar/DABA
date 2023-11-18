@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
-import nature_conf_R1_Den1_Freq4_Hradar as conf
+import nature_conf_R4_Den05_Freq8_Hradar as conf
 import os
 
 
@@ -170,11 +170,9 @@ ObsLoc[:,1]=( ObsLoc[:,1] - 1 )*ObsConf['Freq']
 ObsError=np.ones( np.shape(YObs) )*ObsConf['Error']
 ObsBias =np.ones( np.shape(YObs) )*ObsConf['Bias']
 
+
 YObs = hoperator.add_obs_error(no=NObs ,  nens=1  ,  obs=YObs  ,  obs_error=ObsError  ,
                                obs_bias=ObsBias , otype = ObsConf['Type'] ) 
-
-if ObsConf['Type'] == 3 :
-    YObs[ YObs < -30.0 ] = -30.0
 
 print('Observations took', time.time()-start, 'seconds.')
 
