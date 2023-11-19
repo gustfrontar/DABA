@@ -265,13 +265,14 @@ def assimilation_hybrid_run( conf ) :
              YFmask = np.ones( YFqc.shape ).astype(bool)
              YFmask[ YFqc != 1 ] = False 
 
-             ObsLocWStep=ObsLocW[ YFmask , : ] 
-             ObsTypeWStep=ObsTypeW[ YFmask ]
-             YObsWStep=YObsW[ YFmask , : ]
+             ObsLocWStep= ObsLocW[ YFmask , : ] 
+             ObsTypeWStep= ObsTypeW[ YFmask ] 
+             YObsWStep= YObsW[ YFmask , : ] 
              NObsWStep=YObsWStep.size
-             ObsErrorWStep=ObsErrorW[ YFmask , : ]
-             YFStep=YF[ YFmask , : ]
+             ObsErrorWStep= ObsErrorW[ YFmask , : ] 
+             YFStep= YF[ YFmask , : ] 
              #print( YObsWStep , YFmask , YFqc )
+             #print('YFqc',YFqc )
 
           #=================================================================
           #  Compute time step in pseudo time  : 
@@ -293,16 +294,17 @@ def assimilation_hybrid_run( conf ) :
           #=================================================================
 
           if BridgeParam < 1.0 :
-
+             #print('iteration',itemp,NObsWStep,NObsW)
+             #print('pre',np.std( stateens,axis=1) )
              #Compute the tempering parameter.
-             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )             
+             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )        
              if NObsWStep > 0 :
                 stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']                   ,
                                   tloc=da_window_end   , nvar=1                        , xfens=stateens                      ,
                                   obs=YObsWStep        , obsloc=ObsLocWStep            , ofens=YFStep                        ,
                                   rdiag=ObsErrorWStep  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
                                   update_smooth_coef=0.0 , temp_factor = temp_factor )[:,:,0,0]
-   
+             #print('post',np.std( stateens,axis=1) ) 
           #=================================================================
           #  ETPF STEP  : 
           #=================================================================

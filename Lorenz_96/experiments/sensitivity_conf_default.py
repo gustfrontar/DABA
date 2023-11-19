@@ -73,6 +73,4 @@ DAConf['NTemp']=np.size(DAConf['AlphaTemp'] )        #Number of tempering iterat
 DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 DAConf['NKalmanSpinUp']=10                           #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)
-DAConf['ObsPreProcess']=True                         #Wether obs will be pre-proceessed before assimilation. 
-DAConf['LowDbzPerThresh']=0.6                        #If the percentaje of members with reflectivity equal to the low_threshold is greather than this
                                                      #then the observation is not assimilated (ObsType==3 Only , ObsPreProcess == true Only)

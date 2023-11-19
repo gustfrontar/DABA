@@ -43,7 +43,7 @@ REAL(r_size)               :: rx, rt, dx,dt                   !Auxiliary variabl
 INTEGER                    :: ixloc , itloc                   !Auxiliary variables
 REAL(r_size)               :: tmp_x(nx+2,nens,nt),tmp_xloc(nx+2) !Temporal array to use cyclic boundary conditions.
 REAL(r_size)               :: tmp_obs(2,2,nens)               !Temporal array for space-time interpolation.
-REAL(r_size) , PARAMETER   :: gross_check_factor = 5.0        !Parameter for gross check computation (should be an input in future versions)
+REAL(r_size) , PARAMETER   :: gross_check_factor = 20.0       !Parameter for gross check computation (should be an input in future versions)
 REAL(r_size) , PARAMETER   :: low_dbz_per_thresh = 1.01       !Parameter for detecting useless reflectivity observations (those where most ensemble members have no rain)
 
 !Assuming regular grid in space and time.

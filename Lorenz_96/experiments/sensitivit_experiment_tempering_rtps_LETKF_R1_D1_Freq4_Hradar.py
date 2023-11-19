@@ -44,23 +44,23 @@ if RunTheExperiment  :
 
     results=list()
     
-    mult_inf_range = np.arange(1.01,2.5,0.1)
+    inf_range = np.arange(0.7,1.0,0.05)
     
-    total_analysis_rmse = np.zeros( (len(mult_inf_range),NAlphaTemp) )
-    total_analysis_sprd = np.zeros( (len(mult_inf_range),NAlphaTemp) )
-    total_forecast_rmse = np.zeros( (len(mult_inf_range),NAlphaTemp) )
-    total_forecast_sprd = np.zeros( (len(mult_inf_range),NAlphaTemp) )
+    total_analysis_rmse = np.zeros( (len(inf_range),NAlphaTemp) )
+    total_analysis_sprd = np.zeros( (len(inf_range),NAlphaTemp) )
+    total_forecast_rmse = np.zeros( (len(inf_range),NAlphaTemp) )
+    total_forecast_sprd = np.zeros( (len(inf_range),NAlphaTemp) )
     
-    for iinf , mult_inf in enumerate( mult_inf_range ) :
+    for iinf , inf in enumerate( inf_range ) :
         for intemp , AlphaTemp in enumerate( AlphaTempList )  :
             
-            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
+            conf.DAConf['InfCoefs']=np.array([1.0,inf,0.0,0.0,0.0])
             conf.DAConf['AlphaTemp'] = AlphaTemp
             conf.DAConf['NTemp']=len(AlphaTemp)
             
             results.append( ahm.assimilation_hybrid_run( conf ) )
                  
-            print('Multiplicative Inflation',mult_inf)
+            print('RTPS',inf)
             print('Tempering iterations',conf.DAConf['NTemp'])
             print('AlphaTemp',AlphaTemp)
             print('Analisis RMSE: ',np.mean(results[-1]['XASRmse']))
@@ -74,18 +74,18 @@ if RunTheExperiment  :
             total_forecast_sprd[iinf,intemp] = np.mean(results[-1]['XFSSprd'])
             
     f=open(out_filename,'wb')
-    pickle.dump([results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
+    pickle.dump([results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
     
 if PlotTheExperiment  :
     
     f=open(out_filename,'rb')
-    [results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
+    [results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
     f.close()
     
     import matplotlib.pyplot as plt 
 
-    plt.pcolormesh(np.arange(NAlphaTemp),mult_inf_range,total_analysis_rmse)
+    plt.pcolormesh(np.arange(NAlphaTemp),inf_range,total_analysis_rmse)
     plt.colorbar()
     plt.title('Analysis Rmse')
     plt.xlabel('Tempering Iterantions')
