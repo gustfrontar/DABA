@@ -1,0 +1,12 @@
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+/salidas3/jruiz/DABA/Lorenz_96/experiments/assimilation_hybrid_module.py:421: RuntimeWarning: invalid value encountered in true_divide
+  inf_factor = ( prior_spread / post_spread ) * inf_coefs[5]

@@ -54,7 +54,7 @@ DAConf['NEns'] = 20                                  #Number of ensemble members
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.008]) #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.0,0.0,0.0])  #Mult inf, RTPS, RTPP, EPES, Additive inflation , RTPS_t , RTPP_t (RTPS_t and RTPP_t are as RTPS and RTPP but compatible with tempering iterations)
 DAConf['LocScalesLETKF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 #Initial state ensemble.
@@ -74,3 +74,7 @@ DAConf['BridgeParam']=0.0                            #Bridging parameter for the
 DAConf['NKalmanSpinUp']=10                           #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)
                                                      #then the observation is not assimilated (ObsType==3 Only , ObsPreProcess == true Only)
+DAConf['GrossCheckFactor'] = 20.0                    #Gross check error threshold (observations associated with innovations greather than GrossCheckFactor * R**0.5 will be rejected).
+DAConf['LowDbzPerThresh']  = 1.01                    #If the percentaje of ensemble members with reflectivity values == to the lower limit, then the observation is not assimilated [reflectivity obs only]
+
+

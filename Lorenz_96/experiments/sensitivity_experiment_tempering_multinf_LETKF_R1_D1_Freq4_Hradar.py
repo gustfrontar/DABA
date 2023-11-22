@@ -54,7 +54,7 @@ if RunTheExperiment  :
     for iinf , mult_inf in enumerate( mult_inf_range ) :
         for intemp , AlphaTemp in enumerate( AlphaTempList )  :
             
-            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
+            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0,0.0,0.0])
             conf.DAConf['AlphaTemp'] = AlphaTemp
             conf.DAConf['NTemp']=len(AlphaTemp)
             

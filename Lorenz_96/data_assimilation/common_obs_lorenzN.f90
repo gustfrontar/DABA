@@ -22,7 +22,7 @@ CONTAINS
 ! Observations can be arbitrarily distributed in x and t.
 ! Cyclic boundary conditions are assumed in space.
 !=======================================================================
-SUBROUTINE model_to_obs(nx,no,nt,nens,obsloc,x,xloc,tloc,obs,obstype,obserr,obsval,valid_obs)
+SUBROUTINE model_to_obs(nx,no,nt,nens,obsloc,x,xloc,tloc,obs,obstype,obserr,obsval,valid_obs,gross_check_factor,low_dbz_per_thresh)
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: no , nx , nt , nens             !Number of observations , number of state variables , number of times , number of ensemble members
@@ -32,10 +32,12 @@ REAL(r_size),INTENT(IN)    :: obserr(no)                      !Observation error
 REAL(r_size),INTENT(IN)    :: obsval(no)                      !Observation value (for gross error check)
 REAL(r_size),INTENT(IN)    :: x(nx,nens,nt)                   !State variables (space, ensemble, time)
 REAL(r_size),INTENT(IN)    :: xloc(nx) , tloc(nt)             !Space grid point locations, time grid point locations for the model output.
+REAL(r_size),INTENT(IN)    :: gross_check_factor              !Parameter for gross check computation (should be an input in future versions)
+REAL(r_size),INTENT(IN)    :: low_dbz_per_thresh              !Parameter for detecting useless reflectivity observations (those where most ensemble members have no rain)
+
 REAL(r_size),INTENT(OUT)   :: obs(no,nens)                    !State in observation space.
 INTEGER,INTENT(OUT)        :: valid_obs(no)                   !Mask to indicate if the observation was within or outside the model domain (space/time)
                                                               !1 means a valid observation , 0 that the observation is not valid.
-
 REAL(r_size)               :: omean                        
 INTEGER                    :: io , iloc, ie , it , ix         !Loop indices
 INTEGER                    :: low_dbz_count                   !Counter
@@ -43,8 +45,6 @@ REAL(r_size)               :: rx, rt, dx,dt                   !Auxiliary variabl
 INTEGER                    :: ixloc , itloc                   !Auxiliary variables
 REAL(r_size)               :: tmp_x(nx+2,nens,nt),tmp_xloc(nx+2) !Temporal array to use cyclic boundary conditions.
 REAL(r_size)               :: tmp_obs(2,2,nens)               !Temporal array for space-time interpolation.
-REAL(r_size) , PARAMETER   :: gross_check_factor = 20.0       !Parameter for gross check computation (should be an input in future versions)
-REAL(r_size) , PARAMETER   :: low_dbz_per_thresh = 1.01       !Parameter for detecting useless reflectivity observations (those where most ensemble members have no rain)
 
 !Assuming regular grid in space and time.
 dx=xloc(2)-xloc(1)

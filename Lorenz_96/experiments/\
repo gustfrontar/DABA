@@ -165,6 +165,25 @@ def assimilation_hybrid_run( conf ) :
           print('Data assimilation cycle # ',str(it) )
     
        #=================================================================
+       #  ADD ADDITIVE ENSEMBLE PERTURBATIONS  : 
+       #=================================================================
+       #Additive perturbations will be generated as scaled random
+       #differences of nature run states.
+       if DAConf['InfCoefs'][4] > 0.0 :
+          #Get random index to generate additive perturbations
+          RandInd1=(np.round(np.random.rand(NEns)*DALength)).astype(int)
+          RandInd2=(np.round(np.random.rand(NEns)*DALength)).astype(int)
+       
+          AddInfPert = np.squeeze( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) * DAConf['InfCoefs'][4]
+    
+          #Shift perturbations to obtain zero-mean perturbations.   
+          AddInfPertMean = np.mean( AddInfPert , 1)
+          for ie in range(NEns)  :
+             AddInfPert[:,ie] = AddInfPert[:,ie] - AddInfPertMean
+          
+          XA[:,:,it-1] = XA[:,:,it-1] + AddInfPert 
+          
+       #=================================================================
        #  ENSEMBLE FORECAST  : 
        #=================================================================   
     
@@ -242,8 +261,7 @@ def assimilation_hybrid_run( conf ) :
              TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
              [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
                           obsloc=ObsLocW , x=stateens , obstype=ObsTypeW , obserr=ObsErrorW , obsval=YObsW ,
-                          xloc=ModelConf['XLoc'] , tloc= TLoc , gross_check_factor = DAConf['GrossCheckFactor'] ,
-                          low_dbz_per_thresh = DAConf['LowDbzPerThresh'] )
+                          xloc=ModelConf['XLoc'] , tloc= TLoc )
              YFmask = np.ones( YFqc.shape ).astype(bool)
              YFmask[ YFqc != 1 ] = False 
 
@@ -281,10 +299,10 @@ def assimilation_hybrid_run( conf ) :
              #Compute the tempering parameter.
              temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )        
              if NObsWStep > 0 :
-                stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']                        ,
-                                  tloc=da_window_end   , nvar=1                        , xfens=stateens                           ,
-                                  obs=YObsWStep        , obsloc=ObsLocWStep            , ofens=YFStep                             ,
-                                  rdiag=ObsErrorWStep  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs= DAConf['InfCoefs'][0:5]  ,
+                stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']                   ,
+                                  tloc=da_window_end   , nvar=1                        , xfens=stateens                      ,
+                                  obs=YObsWStep        , obsloc=ObsLocWStep            , ofens=YFStep                        ,
+                                  rdiag=ObsErrorWStep  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
                                   update_smooth_coef=0.0 , temp_factor = temp_factor )[:,:,0,0]
              #print('post',np.std( stateens,axis=1) ) 
           #=================================================================
@@ -298,9 +316,7 @@ def assimilation_hybrid_run( conf ) :
                TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
                [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
                             obsloc=ObsLocW , x=stateens , obstype=ObsTypeW , obserr=ObsErrorW , obsval=YObsW ,
-                            xloc=ModelConf['XLoc'] , tloc= TLoc , gross_check_factor = DAConf['GrossCheckFactor'] , 
-                            low_dbz_per_thresh = DAConf['LowDbzPerThresh'] )
-
+                            xloc=ModelConf['XLoc'] , tloc= TLoc )
                YFmask = np.ones( YFqc.shape ).astype(bool)
                YFmask[ YFqc != 1 ] = False
 
@@ -321,7 +337,9 @@ def assimilation_hybrid_run( conf ) :
                                            multinf=DAConf['InfCoefs'][0] , w_in = prior_weights )
                 stateens = tmp_ens[:,:,0,0]
 
-       stateens = inflation( stateens , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS_t and RTPP_t for tempering
+
+       stateens = inflation( stateens , XF[:,:,it] )  #Additive inflation, RTPS_t and RTPP_t for tempering
+
        XA[:,:,it] = np.copy( stateens )
        
        #PARAMETER ESTIMATION
@@ -405,33 +423,33 @@ def assimilation_hybrid_run( conf ) :
 
 def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
 
-   #This function consideres inflation approaches that are applied after the analysis. In particular when these approaches
-   #are used in combination with tempering.
-   DaLength = nature.shape[2]
-   NEns = ensemble_post.shape[1]
+#This function consideres inflation approaches that are applied after the analysis. In particular when these approaches
+#are used in combination with tempering.
+DaLength = XNature.shape[2]
+NEns = ensemble_post.shape[1]
 
    if inf_coefs[5] > 0.0 :
      #=================================================================
      #  RTPS  : Relaxation to prior spread (compatible with tempering iterations) 
      #=================================================================
-     prior_spread = np.std( ensemble_prior , axis=1 )
-     post_spread  = np.std( ensemble_post  , axis=1 )
-     PostMean = np.mean( ensemble_post , axis=1 )
-     EnsPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
+     prior_spread = np.std( ensemble_prior , 1 )
+     post_spread  = np.std( ensemble_post  , 1 )
+     PostMean = np.mean( ensemble_post ,1)
+     EnsPert = ensemble_post - np.repeat( PostMean[:,np.newwaxis,:] , NEns , 1 )
      inf_factor = ( prior_spread / post_spread ) * inf_coefs[5]
-     EnsPert = EnsPert * np.repeat( inf_factor[:,np.newaxis] , NEns , axis=1 )
-     ensemble_post = EnsPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
+     EnsPert = EnsPert * np.repeat( inf_factor[:,np.newaxis,:] , NEns , 1 )
+     ensemble_post = EnsPert + np.repeat( PostMean[:,np.newwaxis,:] , NEns , 1 )
 
    if inf_coefs[6] > 0.0 :
      #=================================================================
      #  RTPP  : Relaxation to prior perturbations (compatible with tempering iterations) 
      #=================================================================
-     PostMean = np.mean( ensemble_post , axis=1 )
-     PriorMean= np.mean( ensemble_prior, axis=1 )
-     PostPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
-     PriorPert= ensemble_prior- np.repeat( PriorMean[:,np.newaxis] , NEns , axis=1 )
+     PostMean = np.mean( ensemble_post ,1)
+     PriorMean= np.mean( ensemble_prior,1)
+     PostPert = ensemble_post - np.repeat( PostMean[:,np.newwaxis,:] , NEns , 1 )
+     PriorPert= ensemble_prior- np.repeat( PriorMean[:,np.newwaxis,:] , NEns , 1 )
      PostPert = (1.0 - inf_coefs[6] ) * PostPert + inf_coefs[6] * PriorPert 
-     ensemble_post = PostPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 ) 
+     ensemble_post = PostPert + np.repeat( PostMean[:,np.newwaxis,:] , NEns , 1 ) 
 
    if inf_coefs[4] > 0.0 :
      #=================================================================
@@ -443,9 +461,12 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      RandInd1=(np.round(np.random.rand(NEns)*DALength)).astype(int)
      RandInd2=(np.round(np.random.rand(NEns)*DALength)).astype(int)
      AddInfPert = np.squeeze( nature[:,0,RandInd1] - nature[:,0,RandInd2] ) * inf_coefs[4]
-     #Shift perturbations to obtain zero-mean perturbations and add it to the ensemble.
-     ensemble_post = ensemble_post + AddInfPert - np.repeat( np.mean(AddInfPert,1)[:,np.newaxis] , NEns , axis=1 )
 
-   return ensemble_post
+     #Shift perturbations to obtain zero-mean perturbations and add it to the ensemble.
+     ensemble_post = ensemble_post + AddInfPert - np.repeat( np.mean(AddInfPert,1)[:,np.newwaxis,:] , NEns , 1 )
+
+
+
+return ensemble_post_inflated
 
 

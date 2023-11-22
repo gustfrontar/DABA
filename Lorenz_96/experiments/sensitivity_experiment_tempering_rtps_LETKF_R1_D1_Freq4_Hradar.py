@@ -54,13 +54,13 @@ if RunTheExperiment  :
     for iinf , inf in enumerate( inf_range ) :
         for intemp , AlphaTemp in enumerate( AlphaTempList )  :
             
-            conf.DAConf['InfCoefs']=np.array([1.0,0.0,inf,0.0,0.0])
+            conf.DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.0,inf,0.0])
             conf.DAConf['AlphaTemp'] = AlphaTemp
             conf.DAConf['NTemp']=len(AlphaTemp)
             
             results.append( ahm.assimilation_hybrid_run( conf ) )
                  
-            print('RTPP',inf)
+            print('RTPS',inf)
             print('Tempering iterations',conf.DAConf['NTemp'])
             print('AlphaTemp',AlphaTemp)
             print('Analisis RMSE: ',np.mean(results[-1]['XASRmse']))
