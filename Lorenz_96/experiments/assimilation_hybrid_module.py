@@ -104,6 +104,7 @@ def assimilation_hybrid_run( conf ) :
     XF=np.zeros([Nx,NEns,DALength])                         #Forecast ensemble
     PA=np.zeros([Nx,NEns,NCoef,DALength])                   #Analized parameters
     PF=np.zeros([Nx,NEns,NCoef,DALength])                   #Forecasted parameters
+    NAssimObs=np.zeros(DALength)
     
     F=np.zeros([Nx,NEns,DALength])                          #Total forcing on large scale variables.
     
@@ -170,15 +171,14 @@ def assimilation_hybrid_run( conf ) :
     
        #Run the ensemble forecast
        #print('Runing the ensemble')
-       if np.any( np.isnan( XA[:,:,it-1] ) ) :
+       if ( np.any( np.isnan( XA[:,:,it-1] ) ) or np.any( np.isinf( XA[:,:,it-1] ) ) ) :
             #Stop the cycle before the fortran code hangs because of NaNs
-            print('Error: The analysis contains NaN, Iteration number :',it,' will dump some variables to a temporal file')
+            print('Error: The analysis contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
             np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
             break
 
     
        ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
-       
        [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
                                                x0=XA[:,:,it-1]     , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma,
                                                c0=PA[:,:,:,it-1]   , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
@@ -186,12 +186,11 @@ def assimilation_hybrid_run( conf ) :
 
 
 
-       if np.any( np.isnan( XFtmp[:,:,-1] ) ) :
+       if ( np.any( np.isnan( XFtmp[:,:,-1] ) ) or np.any( np.isinf( XFtmp[:,:,-1] ) ) ) :
             #Stop the cycle before the fortran code hangs because of NaNs
-            print('Error: The analysis contains NaN, Iteration number :',it,' will dump some variables to a temporal file')
-            np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
+            print('Error: The forecast contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
+            np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1], obs=YObsW , obsloc=ObsLocW , yf=YF )
             break
-
 
     
        PF[:,:,:,it] = CFtmp[:,:,:,-1]       #Store the parameter at the end of the window. 
@@ -253,9 +252,9 @@ def assimilation_hybrid_run( conf ) :
              NObsWStep=YObsWStep.size
              ObsErrorWStep= ObsErrorW[ YFmask , : ] 
              YFStep= YF[ YFmask , : ] 
+             
              #print( YObsWStep , YFmask , YFqc )
              #print('YFqc',YFqc )
-
           #=================================================================
           #  Compute time step in pseudo time  : 
           #=================================================================
@@ -323,13 +322,13 @@ def assimilation_hybrid_run( conf ) :
 
        stateens = inflation( stateens , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS_t and RTPP_t for tempering
        XA[:,:,it] = np.copy( stateens )
+       NAssimObs[it] = NObsWStep 
        
        #PARAMETER ESTIMATION
        if DAConf['EstimateParameters']   : 
           
         if DAConf['ParameterLocalizationType'] == 1  :
            #GLOBAL PARAMETER ESTIMATION (Note that ETKF is used in this case)
-       
            PA[:,:,:,it] = das.da_etkf( no=NObsWStep , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it]     ,
                                                 obs=YObsWStep , ofens=YFStep  , rdiag=ObsErrorWStep   ,
                                                 inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
@@ -390,7 +389,7 @@ def assimilation_hybrid_run( conf ) :
     output['XFSSprd']=np.mean(XFSpread,1)
     
     output['XATSprd']=np.mean(XASpread,0)
-    output['XFTSprd']=np.mean(XFSpread,0)
+    
     
     output['XASBias']=np.mean( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
     output['XFSBias']=np.mean( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
@@ -398,7 +397,7 @@ def assimilation_hybrid_run( conf ) :
     output['XATBias']=np.mean(  XAMean - XNature[:,0,0:DALength]  , axis=0 ) 
     output['XFTBias']=np.mean(  XFMean - XNature[:,0,0:DALength]  , axis=0 ) 
     
-
+    output['Nobs'] = NAssimObs
 
     return output
 
@@ -407,7 +406,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
 
    #This function consideres inflation approaches that are applied after the analysis. In particular when these approaches
    #are used in combination with tempering.
-   DaLength = nature.shape[2]
+   DALength = nature.shape[2] - 1
    NEns = ensemble_post.shape[1]
 
    if inf_coefs[5] > 0.0 :
@@ -418,7 +417,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      post_spread  = np.std( ensemble_post  , axis=1 )
      PostMean = np.mean( ensemble_post , axis=1 )
      EnsPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
-     inf_factor = ( prior_spread / post_spread ) * inf_coefs[5]
+     inf_factor = ( 1.0 - inf_coefs[5] ) + ( prior_spread / post_spread ) * inf_coefs[5]
      EnsPert = EnsPert * np.repeat( inf_factor[:,np.newaxis] , NEns , axis=1 )
      ensemble_post = EnsPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
 

@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
-import nature_conf_R4_Den05_Freq8_Hradar as conf
+import nature_conf_R5_Den1_Freq4_Hradar as conf
 import os
 
 
@@ -159,9 +159,10 @@ TLoc=np.arange(1,ntout+1)
 
 #Get the observed value (without observation error)
 [YObs , YObsMask]=hoperator.model_to_obs( nx=Nx   , no=NObs   , nt=ntout , nens=1    ,
-                                      obsloc=ObsLoc , x=XNature , obstype=ObsType ,
-                                      xloc=ModelConf['XLoc']    , tloc= TLoc )
-
+                                      obsloc=ObsLoc , x=XNature , obstype=ObsType    ,
+                                      obsval=np.zeros(NObs) , obserr=np.ones(NObs)   ,
+                                      xloc=ModelConf['XLoc']    , tloc= TLoc         ,
+                                      gross_check_factor = 1.0e9 , low_dbz_per_thresh = 1.1 )
 
 #Get the time reference in number of time step since nature run starts.
 ObsLoc[:,1]=( ObsLoc[:,1] - 1 )*ObsConf['Freq']

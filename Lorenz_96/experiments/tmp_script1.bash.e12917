@@ -1,0 +1,14 @@
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+Traceback (most recent call last):
+  File "./sensitivity_experiment_grosserr_multinf_LETKF_R1_D1_Freq4_Hradar.py", line 71, in <module>
+    total_analysis_rmse[iinf,intemp] = np.mean(results[-1]['XASRmse'])
+NameError: name 'iinf' is not defined

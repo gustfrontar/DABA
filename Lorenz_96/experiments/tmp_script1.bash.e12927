@@ -1,0 +1,18 @@
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+Traceback (most recent call last):
+  File "./sensitivity_experiment_tempering_addinf_LETKF_R1_D1_Freq4_Hradar.py", line 64, in <module>
+    results.append( ahm.assimilation_hybrid_run( conf ) )
+  File "/salidas3/jruiz/DABA/Lorenz_96/experiments/assimilation_hybrid_module.py", line 321, in assimilation_hybrid_run
+    stateens = inflation( stateens , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS_t and RTPP_t for tempering
+  File "/salidas3/jruiz/DABA/Lorenz_96/experiments/assimilation_hybrid_module.py", line 439, in inflation
+    RandInd1=(np.round(np.random.rand(NEns)*DALength)).astype(int)
+NameError: name 'DALength' is not defined

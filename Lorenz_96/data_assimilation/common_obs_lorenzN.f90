@@ -187,7 +187,7 @@ DO io=1,no
            low_dbz_count = low_dbz_count + 1
          ENDIF
       ENDDO     
-      IF ( REAL( low_dbz_count / nens , r_size ) > low_dbz_per_thresh ) THEN
+      IF ( REAL( low_dbz_count , r_size ) / REAL( nens , r_size ) > low_dbz_per_thresh ) THEN
          valid_obs(io) = -2
       ENDIF
    ENDIF

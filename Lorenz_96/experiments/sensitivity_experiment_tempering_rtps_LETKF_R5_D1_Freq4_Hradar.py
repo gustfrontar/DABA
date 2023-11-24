@@ -21,12 +21,12 @@ else                        :
    PlotTheExperiment = True
 
 
-conf.GeneralConf['NatureName']='NatureR1_Den1_Freq4_Hradar'
-out_filename='./npz/Sesitivity_experiment_tempering_rtpp_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+conf.GeneralConf['NatureName']='NatureR5_Den1_Freq4_Hradar'
+out_filename='./npz/Sesitivity_experiment_tempering_rtps_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
-conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
+conf.DAConf['ExpLength'] = None                          #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
@@ -37,9 +37,7 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
-conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized low ref threshold
-
-
+conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized low ref thresh
 
 
 AlphaTempList=[np.array([1]) , np.array([90,1]) , np.array([90,5,1])  , np.array([90,10,5,1]) ]
@@ -59,13 +57,13 @@ if RunTheExperiment  :
     for iinf , inf in enumerate( inf_range ) :
         for intemp , AlphaTemp in enumerate( AlphaTempList )  :
             
-            conf.DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.0,0.0,inf])
+            conf.DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.0,inf,0.0])
             conf.DAConf['AlphaTemp'] = AlphaTemp
             conf.DAConf['NTemp']=len(AlphaTemp)
             
             results.append( ahm.assimilation_hybrid_run( conf ) )
                  
-            print('RTPP',inf)
+            print('RTPS',inf)
             print('Tempering iterations',conf.DAConf['NTemp'])
             print('AlphaTemp',AlphaTemp)
             print('Analisis RMSE: ',np.mean(results[-1]['XASRmse']))

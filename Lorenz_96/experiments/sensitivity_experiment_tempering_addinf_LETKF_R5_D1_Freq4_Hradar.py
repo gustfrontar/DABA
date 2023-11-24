@@ -21,12 +21,12 @@ else                        :
    PlotTheExperiment = True
 
 
-conf.GeneralConf['NatureName']='NatureR1_Den1_Freq4_Hradar'
-out_filename='./npz/Sesitivity_experiment_tempering_rtpp_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+conf.GeneralConf['NatureName']='NatureR5_Den1_Freq4_Hradar'
+out_filename='./npz/Sesitivity_experiment_tempering_addinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
-conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
+conf.DAConf['ExpLength'] = None                          #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
@@ -37,9 +37,7 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
-conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized low ref threshold
-
-
+conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized Low ref thresh.
 
 
 AlphaTempList=[np.array([1]) , np.array([90,1]) , np.array([90,5,1])  , np.array([90,10,5,1]) ]
@@ -49,23 +47,24 @@ if RunTheExperiment  :
 
     results=list()
     
-    inf_range = np.arange(0.4,0.8,0.02)
+    add_inf_range = np.arange(0.1,0.4,0.02)
+    print( add_inf_range )
     
-    total_analysis_rmse = np.zeros( (len(inf_range),NAlphaTemp) )
-    total_analysis_sprd = np.zeros( (len(inf_range),NAlphaTemp) )
-    total_forecast_rmse = np.zeros( (len(inf_range),NAlphaTemp) )
-    total_forecast_sprd = np.zeros( (len(inf_range),NAlphaTemp) )
+    total_analysis_rmse = np.zeros( (len(add_inf_range),NAlphaTemp) )
+    total_analysis_sprd = np.zeros( (len(add_inf_range),NAlphaTemp) )
+    total_forecast_rmse = np.zeros( (len(add_inf_range),NAlphaTemp) )
+    total_forecast_sprd = np.zeros( (len(add_inf_range),NAlphaTemp) )
     
-    for iinf , inf in enumerate( inf_range ) :
+    for iinf , add_inf in enumerate( add_inf_range ) :
         for intemp , AlphaTemp in enumerate( AlphaTempList )  :
             
-            conf.DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.0,0.0,inf])
+            conf.DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,add_inf,0.0,0.0])
             conf.DAConf['AlphaTemp'] = AlphaTemp
             conf.DAConf['NTemp']=len(AlphaTemp)
             
             results.append( ahm.assimilation_hybrid_run( conf ) )
                  
-            print('RTPP',inf)
+            print('Additive Inflation',add_inf)
             print('Tempering iterations',conf.DAConf['NTemp'])
             print('AlphaTemp',AlphaTemp)
             print('Analisis RMSE: ',np.mean(results[-1]['XASRmse']))
@@ -79,18 +78,18 @@ if RunTheExperiment  :
             total_forecast_sprd[iinf,intemp] = np.mean(results[-1]['XFSSprd'])
             
     f=open(out_filename,'wb')
-    pickle.dump([results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
+    pickle.dump([results,add_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
     
 if PlotTheExperiment  :
     
     f=open(out_filename,'rb')
-    [results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
+    [results,add_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
     f.close()
     
     import matplotlib.pyplot as plt 
 
-    plt.pcolormesh(np.arange(NAlphaTemp),inf_range,total_analysis_rmse)
+    plt.pcolormesh(np.arange(NAlphaTemp),add_inf_range,total_analysis_rmse)
     plt.colorbar()
     plt.title('Analysis Rmse')
     plt.xlabel('Tempering Iterantions')
