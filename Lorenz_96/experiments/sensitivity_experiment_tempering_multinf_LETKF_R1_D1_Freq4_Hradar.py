@@ -81,21 +81,29 @@ if RunTheExperiment  :
     f.close()
     
 if PlotTheExperiment  :
-    
-    f=open(out_filename,'rb')
-    [results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
-    f.close()
-    
-    import matplotlib.pyplot as plt 
 
-    plt.pcolormesh(np.arange(NAlphaTemp),mult_inf_range,total_analysis_rmse)
+    f=open(out_filename,'rb')
+    [results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
+    f.close()
+
+    import matplotlib.pyplot as plt
+
+    plt.pcolormesh(np.arange(NAlphaTemp),inf_range,total_analysis_rmse)
     plt.colorbar()
     plt.title('Analysis Rmse')
     plt.xlabel('Tempering Iterantions')
     plt.ylabel('Multiplicative Inflation')
     plt.show()
 
-    plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
-
+    plt.figure()
+    plt.plot(inf_range,total_analysis_rmse[:,0]);plt.plot(inf_range,total_analysis_rmse[:,1]);plt.plot(inf_range,total_analysis_rmse[:,2]);plt.plot(inf_range,total_analysis_rmse[:,3])
+    plt.xlabel('Inflation')
+    plt.ylabel('Analysis RMSE')
     plt.show()
+
+    plt.figure()
+    plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
+    plt.show()
+
+
 

@@ -36,8 +36,8 @@ conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
-conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
-conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized Low ref thresh.
+conf.DAConf['GrossCheckFactor'] = 7.0                     #Optimized gross error check
+conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
 
 
 AlphaTempList=[np.array([1]) , np.array([90,1]) , np.array([90,5,1])  , np.array([90,10,5,1]) ]
@@ -79,23 +79,30 @@ if RunTheExperiment  :
     f=open(out_filename,'wb')
     pickle.dump([results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
-    
-if PlotTheExperiment  :
-    
-    f=open(out_filename,'rb')
-    [results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
-    f.close()
-    
-    import matplotlib.pyplot as plt 
 
-    plt.pcolormesh(np.arange(NAlphaTemp),mult_inf_range,total_analysis_rmse)
+
+if PlotTheExperiment  :
+
+    f=open(out_filename,'rb')
+    [results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
+    f.close()
+
+    import matplotlib.pyplot as plt
+
+    plt.pcolormesh(np.arange(NAlphaTemp),inf_range,total_analysis_rmse)
     plt.colorbar()
     plt.title('Analysis Rmse')
     plt.xlabel('Tempering Iterantions')
     plt.ylabel('Multiplicative Inflation')
     plt.show()
 
-    plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
-
+    plt.figure()
+    plt.plot(inf_range,total_analysis_rmse[:,0]);plt.plot(inf_range,total_analysis_rmse[:,1]);plt.plot(inf_range,total_analysis_rmse[:,2]);plt.plot(inf_range,total_analysis_rmse[:,3])
+    plt.xlabel('Inflation')
+    plt.ylabel('Analysis RMSE')
     plt.show()
+
+    plt.figure()
+    plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
+    plt.show()    
 

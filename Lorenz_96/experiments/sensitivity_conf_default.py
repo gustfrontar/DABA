@@ -10,7 +10,7 @@ GeneralConf['DataPath']='./data/Assimilation/'                          #Data ou
 GeneralConf['FigPath']='./figs/Assimilation/'                           #Figures output path
 GeneralConf['RunSave']=True                                             #Save the output
 GeneralConf['OutFile']='Assimilation' + GeneralConf['ExpName'] + '.npz' #Output file
-GeneralConf['RunPlotState']=False                                        #Plot State Estimation Diagnostics
+GeneralConf['RunPlotState']=False                                       #Plot State Estimation Diagnostics
 GeneralConf['RunPlotForcing']=False                                     #Plot Forcing Estimation Diagnostics
 GeneralConf['RunPlotParameters']=False                                  #Plot Parameter Estimation Diagnostics
 #Obs data, obs configuration and nature run configuration are stored
@@ -25,7 +25,7 @@ ModelConf=dict()
 ModelConf['nx'] =  40                                   #Number of large-scale state variables
 ModelConf['dt']  =0.0125                                #Time step for large-scale variables (do not change)
 #Forcing section
-ModelConf['Coef']=np.array([8.0])                     #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... ) 
+ModelConf['Coef']=np.array([8.0])                       #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... ) 
 ModelConf['NCoef']=np.size(ModelConf['Coef'])
 #Space dependent parameter
 ModelConf['FSpaceDependent']=False                      #If the forcing parameters will depend on the location.
@@ -67,9 +67,14 @@ DAConf['UpdateSmoothCoefP']=0.0                      #Data assimilation update s
 DAConf['EstimateParameters']=False                   #Wether parameters will be estimated or not.
 DAConf['ParameterLocalizationType']=1                #1-Global parameter (no loc), 2-Averaged local estimation , 3-Full local estimation
 DAConf['LocScalesP']=np.array([3.0,-1.0])            #To be used with ParameterLocalizationTypes 2 or 3.
+DAConf['NTemp']=1.0                                  #Number of tempering iterations (automatically computed as the length of 'AlphaTemp' )
+DAConf['AlphaTempScale']=0.0                         #If > 0.0 then the tempering steps are computed using and exponential law. 
+                                                     # if <= 0.0 then the steps defined in AlphaTemp will be used [See AlphaTemp]
 DAConf['AlphaTemp']=np.array([1.0])                  #Alpha temp is used to fix the tempering steps in pseudo-time. 
                                                      #Larger values means smaller steps (normalization is performed in the code)
-DAConf['NTemp']=np.size(DAConf['AlphaTemp'] )        #Number of tempering iterations (automatically computed as the length of 'AlphaTemp' )
+                                                     # AlphaTemp.size must be == to NTemp.
+DAConf['AddaptiveTemp'] = False                      # Turn On/Off addaptive estimation of tempering stpes. If true, then tempering steps are
+                                                     # computed online (AlphaTemp and AlphaTempScale are both ignored in this case)
 DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 DAConf['NKalmanSpinUp']=10                           #Number of pure Kalman cycles before switching to ETPF or Hybrid.
 DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)

@@ -3776,7 +3776,7 @@ Tempering iterations 2
 AlphaTemp [90  1]
 Analisis RMSE:  0.9277550483186466
 Forecast RMSE:  0.9502556404173539
-Analisis SPRD:  0.3866163654180559
+Analisis SPRD:  0.38661636541805583
 Forecast SPRD:  0.4275386963593707
 Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
 
@@ -6714,7 +6714,7 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4500000000000004
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.5707446469005281
+Analisis RMSE:  0.5707446469005282
 Forecast RMSE:  0.6259116244079423
 Analisis SPRD:  0.7388675749407658
 Forecast SPRD:  0.8212332821326918
@@ -8394,7 +8394,7 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5500000000000005
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.6849153292369969
+Analisis RMSE:  0.684915329236997
 Forecast RMSE:  0.7525247051540432
 Analisis SPRD:  0.9415755163574925
 Forecast SPRD:  1.0451831732517531
@@ -10074,7 +10074,7 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6500000000000006
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.8129877867023186
+Analisis RMSE:  0.8129877867023187
 Forecast RMSE:  0.8896013184481261
 Analisis SPRD:  1.1332479151705452
 Forecast SPRD:  1.255115505468273
@@ -10916,7 +10916,7 @@ Tempering iterations 4
 AlphaTemp [90 10  5  1]
 Analisis RMSE:  0.8929011067166275
 Forecast RMSE:  0.9729922430167436
-Analisis SPRD:  1.2141052020609486
+Analisis SPRD:  1.2141052020609489
 Forecast SPRD:  1.3429195053377037
 Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
 
@@ -11756,5 +11756,5 @@ Tempering iterations 4
 AlphaTemp [90 10  5  1]
 Analisis RMSE:  0.9696246868818428
 Forecast RMSE:  1.0504424248220676
-Analisis SPRD:  1.3021448403571672
+Analisis SPRD:  1.3021448403571667
 Forecast SPRD:  1.438641810211746

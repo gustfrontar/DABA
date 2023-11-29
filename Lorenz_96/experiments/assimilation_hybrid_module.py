@@ -71,9 +71,16 @@ def assimilation_hybrid_run( conf ) :
     #=================================================================
     # INITIALIZATION : 
     #=================================================================
+    if DAConf['AlphaTempScale'] > 0.0 :
+       print('Using AlphaTempScale to compute tempering dt')
+       TempSteps = get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] )
+    else   :
+       TempSteps = DAConf['AlphaTemp']
    
     #Compute normalized pseudo_time tempering steps:
-    dt_pseudo_time_vec = ( 1.0/DAConf['AlphaTemp'] ) /  np.sum( 1.0/DAConf['AlphaTemp'] ) 
+    dt_pseudo_time_vec = ( 1.0 / TempSteps ) /  np.sum( 1.0 / TempSteps ) 
+    print('Tempering steps: ',TempSteps)
+    print('Dt pseudo times: ',dt_pseudo_time_vec)
     
     #We set the length of the experiment according to the length of the 
     #observation array.
@@ -446,5 +453,17 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      ensemble_post = ensemble_post + AddInfPert - np.repeat( np.mean(AddInfPert,1)[:,np.newaxis] , NEns , axis=1 )
 
    return ensemble_post
+
+def get_temp_steps( NTemp , Alpha ) :
+    
+   #NTemp is the number of tempering steps to be performed.
+   #Alpha is a slope coefficient. Larger alpha means only a small part of the information
+   #will be assimilated in the first step (and the largest part will be assimilated in the last step).
+
+   dt=1.0/float(NTemp+1)
+   steps = np.exp( 1.0 * Alpha / np.arange( dt , 1.0-dt/100.0 , dt ) )
+   steps = steps / np.sum(steps)
+
+   return steps 
 
 

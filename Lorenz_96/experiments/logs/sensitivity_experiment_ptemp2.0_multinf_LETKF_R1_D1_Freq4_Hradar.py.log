@@ -1,7 +1,10 @@
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -201,17 +204,20 @@ Data assimilation cycle #  19600
 Data assimilation cycle #  19700
 Data assimilation cycle #  19800
 Data assimilation cycle #  19900
-RTPP 0.4
+Multiplicative Inflation 1.1
 Tempering iterations 1
-AlphaTemp [1]
-Analisis RMSE:  4.83865249529822
-Forecast RMSE:  4.852318864378505
-Analisis SPRD:  0.11012202954055055
-Forecast SPRD:  0.12074606514288892
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+AlphaTemp [1.]
+Analisis RMSE:  5.064865683833058
+Forecast RMSE:  5.063798789591012
+Analisis SPRD:  0.3030102391814332
+Forecast SPRD:  0.3337296483519528
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -411,17 +417,20 @@ Data assimilation cycle #  19600
 Data assimilation cycle #  19700
 Data assimilation cycle #  19800
 Data assimilation cycle #  19900
-RTPP 0.4
+Multiplicative Inflation 1.1
 Tempering iterations 2
-AlphaTemp [90  1]
-Analisis RMSE:  4.8420601398297896
-Forecast RMSE:  4.856371326989394
-Analisis SPRD:  0.10678231332925898
-Forecast SPRD:  0.11691023751944422
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.9658088188303
+Forecast RMSE:  4.967739977117057
+Analisis SPRD:  0.3703631057085972
+Forecast SPRD:  0.4076391690691764
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -621,17 +630,20 @@ Data assimilation cycle #  19600
 Data assimilation cycle #  19700
 Data assimilation cycle #  19800
 Data assimilation cycle #  19900
-RTPP 0.4
+Multiplicative Inflation 1.1
 Tempering iterations 3
-AlphaTemp [90  5  1]
-Analisis RMSE:  4.906148425975013
-Forecast RMSE:  4.919859703076544
-Analisis SPRD:  0.10154675110917796
-Forecast SPRD:  0.11145918985364209
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  5.024311198737034
+Forecast RMSE:  5.0274786481576275
+Analisis SPRD:  0.30107667045015757
+Forecast SPRD:  0.3314817835010353
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [9.91509048e-01 6.68073542e-03 1.26182793e-03 5.48388158e-04]
+Dt pseudo times:  [3.64534103e-04 5.41016578e-02 2.86440689e-01 6.59093119e-01]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -831,17 +843,20 @@ Data assimilation cycle #  19600
 Data assimilation cycle #  19700
 Data assimilation cycle #  19800
 Data assimilation cycle #  19900
-RTPP 0.4
+Multiplicative Inflation 1.1
 Tempering iterations 4
-AlphaTemp [90 10  5  1]
-Analisis RMSE:  4.907443420523175
-Forecast RMSE:  4.9225440394928945
-Analisis SPRD:  0.09675361205747546
-Forecast SPRD:  0.10615749555302637
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+AlphaTemp [9.91509048e-01 6.68073542e-03 1.26182793e-03 5.48388158e-04]
+Analisis RMSE:  4.988009237363802
+Forecast RMSE:  4.993284876409801
+Analisis SPRD:  0.3164218851317825
+Forecast SPRD:  0.3487779261013588
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1041,17 +1056,20 @@ Data assimilation cycle #  19600
 Data assimilation cycle #  19700
 Data assimilation cycle #  19800
 Data assimilation cycle #  19900
-RTPP 0.42000000000000004
+Multiplicative Inflation 1.1500000000000001
 Tempering iterations 1
-AlphaTemp [1]
-Analisis RMSE:  4.862530773424213
-Forecast RMSE:  4.876720060619524
-Analisis SPRD:  0.11520691399028882
-Forecast SPRD:  0.1263264737269997
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+AlphaTemp [1.]
+Analisis RMSE:  4.911922253444498
+Forecast RMSE:  4.9110603024254065
+Analisis SPRD:  0.45333928145884095
+Forecast SPRD:  0.49768086728047206
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1090,892 +1108,3 @@ Data assimilation cycle #  3500
 Data assimilation cycle #  3600
 Data assimilation cycle #  3700
 Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Data assimilation cycle #  10000
-Data assimilation cycle #  10100
-Data assimilation cycle #  10200
-Data assimilation cycle #  10300
-Data assimilation cycle #  10400
-Data assimilation cycle #  10500
-Data assimilation cycle #  10600
-Data assimilation cycle #  10700
-Data assimilation cycle #  10800
-Data assimilation cycle #  10900
-Data assimilation cycle #  11000
-Data assimilation cycle #  11100
-Data assimilation cycle #  11200
-Data assimilation cycle #  11300
-Data assimilation cycle #  11400
-Data assimilation cycle #  11500
-Data assimilation cycle #  11600
-Data assimilation cycle #  11700
-Data assimilation cycle #  11800
-Data assimilation cycle #  11900
-Data assimilation cycle #  12000
-Data assimilation cycle #  12100
-Data assimilation cycle #  12200
-Data assimilation cycle #  12300
-Data assimilation cycle #  12400
-Data assimilation cycle #  12500
-Data assimilation cycle #  12600
-Data assimilation cycle #  12700
-Data assimilation cycle #  12800
-Data assimilation cycle #  12900
-Data assimilation cycle #  13000
-Data assimilation cycle #  13100
-Data assimilation cycle #  13200
-Data assimilation cycle #  13300
-Data assimilation cycle #  13400
-Data assimilation cycle #  13500
-Data assimilation cycle #  13600
-Data assimilation cycle #  13700
-Data assimilation cycle #  13800
-Data assimilation cycle #  13900
-Data assimilation cycle #  14000
-Data assimilation cycle #  14100
-Data assimilation cycle #  14200
-Data assimilation cycle #  14300
-Data assimilation cycle #  14400
-Data assimilation cycle #  14500
-Data assimilation cycle #  14600
-Data assimilation cycle #  14700
-Data assimilation cycle #  14800
-Data assimilation cycle #  14900
-Data assimilation cycle #  15000
-Data assimilation cycle #  15100
-Data assimilation cycle #  15200
-Data assimilation cycle #  15300
-Data assimilation cycle #  15400
-Data assimilation cycle #  15500
-Data assimilation cycle #  15600
-Data assimilation cycle #  15700
-Data assimilation cycle #  15800
-Data assimilation cycle #  15900
-Data assimilation cycle #  16000
-Data assimilation cycle #  16100
-Data assimilation cycle #  16200
-Data assimilation cycle #  16300
-Data assimilation cycle #  16400
-Data assimilation cycle #  16500
-Data assimilation cycle #  16600
-Data assimilation cycle #  16700
-Data assimilation cycle #  16800
-Data assimilation cycle #  16900
-Data assimilation cycle #  17000
-Data assimilation cycle #  17100
-Data assimilation cycle #  17200
-Data assimilation cycle #  17300
-Data assimilation cycle #  17400
-Data assimilation cycle #  17500
-Data assimilation cycle #  17600
-Data assimilation cycle #  17700
-Data assimilation cycle #  17800
-Data assimilation cycle #  17900
-Data assimilation cycle #  18000
-Data assimilation cycle #  18100
-Data assimilation cycle #  18200
-Data assimilation cycle #  18300
-Data assimilation cycle #  18400
-Data assimilation cycle #  18500
-Data assimilation cycle #  18600
-Data assimilation cycle #  18700
-Data assimilation cycle #  18800
-Data assimilation cycle #  18900
-Data assimilation cycle #  19000
-Data assimilation cycle #  19100
-Data assimilation cycle #  19200
-Data assimilation cycle #  19300
-Data assimilation cycle #  19400
-Data assimilation cycle #  19500
-Data assimilation cycle #  19600
-Data assimilation cycle #  19700
-Data assimilation cycle #  19800
-Data assimilation cycle #  19900
-RTPP 0.42000000000000004
-Tempering iterations 2
-AlphaTemp [90  1]
-Analisis RMSE:  4.890500415500534
-Forecast RMSE:  4.904420420672657
-Analisis SPRD:  0.1139985548279036
-Forecast SPRD:  0.12506336788543043
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Data assimilation cycle #  10000
-Data assimilation cycle #  10100
-Data assimilation cycle #  10200
-Data assimilation cycle #  10300
-Data assimilation cycle #  10400
-Data assimilation cycle #  10500
-Data assimilation cycle #  10600
-Data assimilation cycle #  10700
-Data assimilation cycle #  10800
-Data assimilation cycle #  10900
-Data assimilation cycle #  11000
-Data assimilation cycle #  11100
-Data assimilation cycle #  11200
-Data assimilation cycle #  11300
-Data assimilation cycle #  11400
-Data assimilation cycle #  11500
-Data assimilation cycle #  11600
-Data assimilation cycle #  11700
-Data assimilation cycle #  11800
-Data assimilation cycle #  11900
-Data assimilation cycle #  12000
-Data assimilation cycle #  12100
-Data assimilation cycle #  12200
-Data assimilation cycle #  12300
-Data assimilation cycle #  12400
-Data assimilation cycle #  12500
-Data assimilation cycle #  12600
-Data assimilation cycle #  12700
-Data assimilation cycle #  12800
-Data assimilation cycle #  12900
-Data assimilation cycle #  13000
-Data assimilation cycle #  13100
-Data assimilation cycle #  13200
-Data assimilation cycle #  13300
-Data assimilation cycle #  13400
-Data assimilation cycle #  13500
-Data assimilation cycle #  13600
-Data assimilation cycle #  13700
-Data assimilation cycle #  13800
-Data assimilation cycle #  13900
-Data assimilation cycle #  14000
-Data assimilation cycle #  14100
-Data assimilation cycle #  14200
-Data assimilation cycle #  14300
-Data assimilation cycle #  14400
-Data assimilation cycle #  14500
-Data assimilation cycle #  14600
-Data assimilation cycle #  14700
-Data assimilation cycle #  14800
-Data assimilation cycle #  14900
-Data assimilation cycle #  15000
-Data assimilation cycle #  15100
-Data assimilation cycle #  15200
-Data assimilation cycle #  15300
-Data assimilation cycle #  15400
-Data assimilation cycle #  15500
-Data assimilation cycle #  15600
-Data assimilation cycle #  15700
-Data assimilation cycle #  15800
-Data assimilation cycle #  15900
-Data assimilation cycle #  16000
-Data assimilation cycle #  16100
-Data assimilation cycle #  16200
-Data assimilation cycle #  16300
-Data assimilation cycle #  16400
-Data assimilation cycle #  16500
-Data assimilation cycle #  16600
-Data assimilation cycle #  16700
-Data assimilation cycle #  16800
-Data assimilation cycle #  16900
-Data assimilation cycle #  17000
-Data assimilation cycle #  17100
-Data assimilation cycle #  17200
-Data assimilation cycle #  17300
-Data assimilation cycle #  17400
-Data assimilation cycle #  17500
-Data assimilation cycle #  17600
-Data assimilation cycle #  17700
-Data assimilation cycle #  17800
-Data assimilation cycle #  17900
-Data assimilation cycle #  18000
-Data assimilation cycle #  18100
-Data assimilation cycle #  18200
-Data assimilation cycle #  18300
-Data assimilation cycle #  18400
-Data assimilation cycle #  18500
-Data assimilation cycle #  18600
-Data assimilation cycle #  18700
-Data assimilation cycle #  18800
-Data assimilation cycle #  18900
-Data assimilation cycle #  19000
-Data assimilation cycle #  19100
-Data assimilation cycle #  19200
-Data assimilation cycle #  19300
-Data assimilation cycle #  19400
-Data assimilation cycle #  19500
-Data assimilation cycle #  19600
-Data assimilation cycle #  19700
-Data assimilation cycle #  19800
-Data assimilation cycle #  19900
-RTPP 0.42000000000000004
-Tempering iterations 3
-AlphaTemp [90  5  1]
-Analisis RMSE:  4.898903145003531
-Forecast RMSE:  4.913877242584374
-Analisis SPRD:  0.10343752567696449
-Forecast SPRD:  0.11347094039445146
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Data assimilation cycle #  10000
-Data assimilation cycle #  10100
-Data assimilation cycle #  10200
-Data assimilation cycle #  10300
-Data assimilation cycle #  10400
-Data assimilation cycle #  10500
-Data assimilation cycle #  10600
-Data assimilation cycle #  10700
-Data assimilation cycle #  10800
-Data assimilation cycle #  10900
-Data assimilation cycle #  11000
-Data assimilation cycle #  11100
-Data assimilation cycle #  11200
-Data assimilation cycle #  11300
-Data assimilation cycle #  11400
-Data assimilation cycle #  11500
-Data assimilation cycle #  11600
-Data assimilation cycle #  11700
-Data assimilation cycle #  11800
-Data assimilation cycle #  11900
-Data assimilation cycle #  12000
-Data assimilation cycle #  12100
-Data assimilation cycle #  12200
-Data assimilation cycle #  12300
-Data assimilation cycle #  12400
-Data assimilation cycle #  12500
-Data assimilation cycle #  12600
-Data assimilation cycle #  12700
-Data assimilation cycle #  12800
-Data assimilation cycle #  12900
-Data assimilation cycle #  13000
-Data assimilation cycle #  13100
-Data assimilation cycle #  13200
-Data assimilation cycle #  13300
-Data assimilation cycle #  13400
-Data assimilation cycle #  13500
-Data assimilation cycle #  13600
-Data assimilation cycle #  13700
-Data assimilation cycle #  13800
-Data assimilation cycle #  13900
-Data assimilation cycle #  14000
-Data assimilation cycle #  14100
-Data assimilation cycle #  14200
-Data assimilation cycle #  14300
-Data assimilation cycle #  14400
-Data assimilation cycle #  14500
-Data assimilation cycle #  14600
-Data assimilation cycle #  14700
-Data assimilation cycle #  14800
-Data assimilation cycle #  14900
-Data assimilation cycle #  15000
-Data assimilation cycle #  15100
-Data assimilation cycle #  15200
-Data assimilation cycle #  15300
-Data assimilation cycle #  15400
-Data assimilation cycle #  15500
-Data assimilation cycle #  15600
-Data assimilation cycle #  15700
-Data assimilation cycle #  15800
-Data assimilation cycle #  15900
-Data assimilation cycle #  16000
-Data assimilation cycle #  16100
-Data assimilation cycle #  16200
-Data assimilation cycle #  16300
-Data assimilation cycle #  16400
-Data assimilation cycle #  16500
-Data assimilation cycle #  16600
-Data assimilation cycle #  16700
-Data assimilation cycle #  16800
-Data assimilation cycle #  16900
-Data assimilation cycle #  17000
-Data assimilation cycle #  17100
-Data assimilation cycle #  17200
-Data assimilation cycle #  17300
-Data assimilation cycle #  17400
-Data assimilation cycle #  17500
-Data assimilation cycle #  17600
-Data assimilation cycle #  17700
-Data assimilation cycle #  17800
-Data assimilation cycle #  17900
-Data assimilation cycle #  18000
-Data assimilation cycle #  18100
-Data assimilation cycle #  18200
-Data assimilation cycle #  18300
-Data assimilation cycle #  18400
-Data assimilation cycle #  18500
-Data assimilation cycle #  18600
-Data assimilation cycle #  18700
-Data assimilation cycle #  18800
-Data assimilation cycle #  18900
-Data assimilation cycle #  19000
-Data assimilation cycle #  19100
-Data assimilation cycle #  19200
-Data assimilation cycle #  19300
-Data assimilation cycle #  19400
-Data assimilation cycle #  19500
-Data assimilation cycle #  19600
-Data assimilation cycle #  19700
-Data assimilation cycle #  19800
-Data assimilation cycle #  19900
-RTPP 0.42000000000000004
-Tempering iterations 4
-AlphaTemp [90 10  5  1]
-Analisis RMSE:  4.874214393193027
-Forecast RMSE:  4.888674058099828
-Analisis SPRD:  0.09937735666388772
-Forecast SPRD:  0.10875698219690007
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Data assimilation cycle #  10000
-Data assimilation cycle #  10100
-Data assimilation cycle #  10200
-Data assimilation cycle #  10300
-Data assimilation cycle #  10400
-Data assimilation cycle #  10500
-Data assimilation cycle #  10600
-Data assimilation cycle #  10700
-Data assimilation cycle #  10800
-Data assimilation cycle #  10900
-Data assimilation cycle #  11000
-Data assimilation cycle #  11100
-Data assimilation cycle #  11200
-Data assimilation cycle #  11300
-Data assimilation cycle #  11400
-Data assimilation cycle #  11500
-Data assimilation cycle #  11600
-Data assimilation cycle #  11700
-Data assimilation cycle #  11800
-Data assimilation cycle #  11900
-Data assimilation cycle #  12000
-Data assimilation cycle #  12100
-Data assimilation cycle #  12200
-Data assimilation cycle #  12300
-Data assimilation cycle #  12400
-Data assimilation cycle #  12500
-Data assimilation cycle #  12600
-Data assimilation cycle #  12700
-Data assimilation cycle #  12800
-Data assimilation cycle #  12900
-Data assimilation cycle #  13000
-Data assimilation cycle #  13100
-Data assimilation cycle #  13200
-Data assimilation cycle #  13300
-Data assimilation cycle #  13400
-Data assimilation cycle #  13500
-Data assimilation cycle #  13600
-Data assimilation cycle #  13700
-Data assimilation cycle #  13800
-Data assimilation cycle #  13900
-Data assimilation cycle #  14000
-Data assimilation cycle #  14100
-Data assimilation cycle #  14200
-Data assimilation cycle #  14300
-Data assimilation cycle #  14400
-Data assimilation cycle #  14500
-Data assimilation cycle #  14600
-Data assimilation cycle #  14700
-Data assimilation cycle #  14800
-Data assimilation cycle #  14900
-Data assimilation cycle #  15000
-Data assimilation cycle #  15100
-Data assimilation cycle #  15200
-Data assimilation cycle #  15300
-Data assimilation cycle #  15400
-Data assimilation cycle #  15500
-Data assimilation cycle #  15600
-Data assimilation cycle #  15700
-Data assimilation cycle #  15800
-Data assimilation cycle #  15900
-Data assimilation cycle #  16000
-Data assimilation cycle #  16100
-Data assimilation cycle #  16200
-Data assimilation cycle #  16300
-Data assimilation cycle #  16400
-Data assimilation cycle #  16500
-Data assimilation cycle #  16600
-Data assimilation cycle #  16700
-Data assimilation cycle #  16800
-Data assimilation cycle #  16900
-Data assimilation cycle #  17000
-Data assimilation cycle #  17100
-Data assimilation cycle #  17200
-Data assimilation cycle #  17300
-Data assimilation cycle #  17400
-Data assimilation cycle #  17500
-Data assimilation cycle #  17600
-Data assimilation cycle #  17700
-Data assimilation cycle #  17800
-Data assimilation cycle #  17900
-Data assimilation cycle #  18000
-Data assimilation cycle #  18100
-Data assimilation cycle #  18200
-Data assimilation cycle #  18300
-Data assimilation cycle #  18400
-Data assimilation cycle #  18500
-Data assimilation cycle #  18600
-Data assimilation cycle #  18700
-Data assimilation cycle #  18800
-Data assimilation cycle #  18900
-Data assimilation cycle #  19000
-Data assimilation cycle #  19100
-Data assimilation cycle #  19200
-Data assimilation cycle #  19300
-Data assimilation cycle #  19400
-Data assimilation cycle #  19500
-Data assimilation cycle #  19600
-Data assimilation cycle #  19700
-Data assimilation cycle #  19800
-Data assimilation cycle #  19900
-RTPP 0.44000000000000006
-Tempering iterations 1
-AlphaTemp [1]
-Analisis RMSE:  4.841479640240367
-Forecast RMSE:  4.85667531581979
-Analisis SPRD:  0.12293442435978977
-Forecast SPRD:  0.1348921919692987
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700

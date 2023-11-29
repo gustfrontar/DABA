@@ -22,11 +22,11 @@ else                        :
 
 
 conf.GeneralConf['NatureName']='NatureR1_Den1_Freq4_Hradar'
-out_filename='./npz/Sesitivity_experiment_tempering_addinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sesitivity_experiment_ptemp2.2_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
-conf.DAConf['ExpLength'] = None                          #None use the full nature run experiment. Else use this length.
+conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
@@ -36,37 +36,38 @@ conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
+conf.DAConf['AlphaTempScale'] = 2.2                       #Scale factor to obtain the tempering factors on each tempering iteration.
 conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
 conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized Low ref thresh.
+conf.DAConf['GrossCheckFactor'] = 7.0                     #Optimized gross error check
+conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
 
 
-AlphaTempList=[np.array([1]) , np.array([90,1]) , np.array([90,5,1])  , np.array([90,10,5,1]) ]
-NAlphaTemp = len( AlphaTempList )
+AlphaTempList=[]
+MaxTempSteps = 4
 
 if RunTheExperiment  :
 
     results=list()
     
-    add_inf_range = np.arange(0.1,0.4,0.02)
-    print( add_inf_range )
+    mult_inf_range = np.arange(1.1,1.8,0.05)
     
-    total_analysis_rmse = np.zeros( (len(add_inf_range),NAlphaTemp) )
-    total_analysis_sprd = np.zeros( (len(add_inf_range),NAlphaTemp) )
-    total_forecast_rmse = np.zeros( (len(add_inf_range),NAlphaTemp) )
-    total_forecast_sprd = np.zeros( (len(add_inf_range),NAlphaTemp) )
+    total_analysis_rmse = np.zeros( (len(mult_inf_range),MaxTempSteps) )
+    total_analysis_sprd = np.zeros( (len(mult_inf_range),MaxTempSteps) )
+    total_forecast_rmse = np.zeros( (len(mult_inf_range),MaxTempSteps) )
+    total_forecast_sprd = np.zeros( (len(mult_inf_range),MaxTempSteps) )
     
-    for iinf , add_inf in enumerate( add_inf_range ) :
-        for intemp , AlphaTemp in enumerate( AlphaTempList )  :
+    for iinf , mult_inf in enumerate( mult_inf_range ) :
+        for intemp in range( MaxTempSteps ) :
             
-            conf.DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,add_inf,0.0,0.0])
-            conf.DAConf['AlphaTemp'] = AlphaTemp
-            conf.DAConf['NTemp']=len(AlphaTemp)
+            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0,0.0,0.0])
+            conf.DAConf['NTemp']= intemp + 1
             
             results.append( ahm.assimilation_hybrid_run( conf ) )
-                 
-            print('Additive Inflation',add_inf)
+            AlphaTempList.append( ahm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
+            print('Multiplicative Inflation',mult_inf)
             print('Tempering iterations',conf.DAConf['NTemp'])
-            print('AlphaTemp',AlphaTemp)
+            print('AlphaTemp',AlphaTempList[-1])
             print('Analisis RMSE: ',np.mean(results[-1]['XASRmse']))
             print('Forecast RMSE: ',np.mean(results[-1]['XFSRmse']))
             print('Analisis SPRD: ',np.mean(results[-1]['XASSprd']))
@@ -78,7 +79,7 @@ if RunTheExperiment  :
             total_forecast_sprd[iinf,intemp] = np.mean(results[-1]['XFSSprd'])
             
     f=open(out_filename,'wb')
-    pickle.dump([results,add_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
+    pickle.dump([results,AlphaTempList,mult_inf_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
     
 if PlotTheExperiment  :
@@ -105,8 +106,6 @@ if PlotTheExperiment  :
     plt.figure()
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
     plt.show()
-
-
 
 
 

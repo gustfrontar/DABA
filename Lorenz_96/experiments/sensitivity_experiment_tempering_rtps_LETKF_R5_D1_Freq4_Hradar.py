@@ -36,8 +36,8 @@ conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
-conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
-conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized low ref thresh
+conf.DAConf['GrossCheckFactor'] = 7.0                     #Optimized gross error check
+conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized low ref thresh
 
 
 AlphaTempList=[np.array([1]) , np.array([90,1]) , np.array([90,5,1])  , np.array([90,10,5,1]) ]

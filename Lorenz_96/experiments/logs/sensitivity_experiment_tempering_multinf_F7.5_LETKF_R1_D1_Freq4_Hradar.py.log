@@ -1,4 +1,4 @@
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -204,11 +204,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  4.7467804916387895
-Forecast RMSE:  4.76486082936341
-Analisis SPRD:  0.13555448815100485
-Forecast SPRD:  0.14816446862484658
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  5.064865683833058
+Forecast RMSE:  5.063798789591012
+Analisis SPRD:  0.3030102391814332
+Forecast SPRD:  0.3337296483519528
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -414,11 +414,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  4.739667460134358
-Forecast RMSE:  4.758020487901575
-Analisis SPRD:  0.13351370740510707
-Forecast SPRD:  0.14603899394208636
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.926656843787063
+Forecast RMSE:  4.926647580721267
+Analisis SPRD:  0.40825958513174576
+Forecast SPRD:  0.448722302122485
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -624,11 +624,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  4.77644545185692
-Forecast RMSE:  4.795066140682566
-Analisis SPRD:  0.1212290890589105
-Forecast SPRD:  0.1328114711645489
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.987606467405923
+Forecast RMSE:  4.990667345871259
+Analisis SPRD:  0.35754996565019714
+Forecast SPRD:  0.39351752374926807
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -834,11 +834,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  4.785539574753621
-Forecast RMSE:  4.803727868502453
-Analisis SPRD:  0.1186081259077428
-Forecast SPRD:  0.12996857870555062
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.9569570776033895
+Forecast RMSE:  4.962426066366687
+Analisis SPRD:  0.3794446495140804
+Forecast SPRD:  0.417954212476907
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -1044,11 +1044,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1500000000000001
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  4.591370603745263
-Forecast RMSE:  4.613767988273313
-Analisis SPRD:  0.1786974820309415
-Forecast SPRD:  0.19562382769076608
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.911922253444498
+Forecast RMSE:  4.9110603024254065
+Analisis SPRD:  0.45333928145884095
+Forecast SPRD:  0.49768086728047206
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -1254,11 +1254,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1500000000000001
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  4.592111578091408
-Forecast RMSE:  4.615594039155825
-Analisis SPRD:  0.1765831339540353
-Forecast SPRD:  0.19332421670982008
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.657453220540882
+Forecast RMSE:  4.660421913346198
+Analisis SPRD:  0.6144461081568326
+Forecast SPRD:  0.6715028278360673
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -1464,11 +1464,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1500000000000001
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  4.658743899658899
-Forecast RMSE:  4.682307636140824
-Analisis SPRD:  0.16282574615748577
-Forecast SPRD:  0.17886219366544895
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.734780843802343
+Forecast RMSE:  4.741453181722354
+Analisis SPRD:  0.5106134615633547
+Forecast SPRD:  0.560393017368366
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -1674,11 +1674,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.1500000000000001
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  4.630678052246921
-Forecast RMSE:  4.65482089391214
-Analisis SPRD:  0.15927891398656852
-Forecast SPRD:  0.17502505971867152
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.647860372372295
+Forecast RMSE:  4.656688683720079
+Analisis SPRD:  0.5308101690560039
+Forecast SPRD:  0.5812637311184592
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -1884,11 +1884,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2000000000000002
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  4.158073103654248
-Forecast RMSE:  4.182790445595403
-Analisis SPRD:  0.2324570872914223
-Forecast SPRD:  0.25466056922023245
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  4.643454372055756
+Forecast RMSE:  4.644331889422371
+Analisis SPRD:  0.5927878820027098
+Forecast SPRD:  0.6481847545828856
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -2094,11 +2094,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2000000000000002
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  4.1446964861561755
-Forecast RMSE:  4.170942199270812
-Analisis SPRD:  0.23280130811791064
-Forecast SPRD:  0.25566768529653405
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  2.282221439085683
+Forecast RMSE:  2.289969291836497
+Analisis SPRD:  0.32897137654736613
+Forecast SPRD:  0.3588011455921123
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -2304,11 +2304,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2000000000000002
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  4.420263895461109
-Forecast RMSE:  4.448997894473051
-Analisis SPRD:  0.21090914258945065
-Forecast SPRD:  0.23181427220754705
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.5338270987974507
+Forecast RMSE:  1.541776765165751
+Analisis SPRD:  0.20491074523427644
+Forecast SPRD:  0.22560693184693373
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -2514,11 +2514,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2000000000000002
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  2.267599205177059
-Forecast RMSE:  2.284178070062679
-Analisis SPRD:  0.2636064301594816
-Forecast SPRD:  0.29187949050085704
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.6198650397485734
+Forecast RMSE:  0.6280238141446032
+Analisis SPRD:  0.15067959345342283
+Forecast SPRD:  0.1671250369859184
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -2724,11 +2724,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2500000000000002
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  3.3828508913737485
-Forecast RMSE:  3.4104174720198053
-Analisis SPRD:  0.29887582424463244
-Forecast SPRD:  0.3284164999121031
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  3.901597149187661
+Forecast RMSE:  3.90654336233091
+Analisis SPRD:  0.5994221755269845
+Forecast SPRD:  0.6525930148923725
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -2934,11 +2934,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2500000000000002
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  2.565974199605234
-Forecast RMSE:  2.5889834381027548
-Analisis SPRD:  0.3083599642221322
-Forecast SPRD:  0.3402430754455071
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.13208742404510618
+Forecast RMSE:  0.14819594549850454
+Analisis SPRD:  0.17092944171555646
+Forecast SPRD:  0.18974560351281475
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -3144,11 +3144,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2500000000000002
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  1.236327943264141
-Forecast RMSE:  1.2533359343721735
-Analisis SPRD:  0.3368685039040399
-Forecast SPRD:  0.37353627824999586
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.13238542590928834
+Forecast RMSE:  0.14851298352728554
+Analisis SPRD:  0.1702523214454045
+Forecast SPRD:  0.18954394245805034
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -3354,11 +3354,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.2500000000000002
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  1.9383636909378112
-Forecast RMSE:  1.9581662617486146
-Analisis SPRD:  0.33695031729134794
-Forecast SPRD:  0.37378371309085745
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.13923289182711468
+Forecast RMSE:  0.15522962051564937
+Analisis SPRD:  0.18065050377833797
+Forecast SPRD:  0.20109807373343508
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -3564,11 +3564,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3000000000000003
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.9205154618620175
-Forecast RMSE:  1.9431920340971005
-Analisis SPRD:  0.37577142151481724
-Forecast SPRD:  0.41481742200593336
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.59838567849774
+Forecast RMSE:  1.604451021498572
+Analisis SPRD:  0.30633452386076726
+Forecast SPRD:  0.3368855656780371
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -3774,11 +3774,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3000000000000003
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  0.9277550483186466
-Forecast RMSE:  0.9502556404173539
-Analisis SPRD:  0.3866163654180559
-Forecast SPRD:  0.4275386963593707
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.1667986042990178
+Forecast RMSE:  0.18679354292382225
+Analisis SPRD:  0.2191798038238552
+Forecast SPRD:  0.2437826412877845
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -3984,11 +3984,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3000000000000003
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.687910356933194
-Forecast RMSE:  0.7114652838423199
-Analisis SPRD:  0.42196113158136006
-Forecast SPRD:  0.46856113885849576
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.16037418938225512
+Forecast RMSE:  0.17996845561944635
+Analisis SPRD:  0.21486558602585398
+Forecast SPRD:  0.23974229403913597
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -4194,11 +4194,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3000000000000003
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.4378375562966629
-Forecast RMSE:  0.4723720608938546
-Analisis SPRD:  0.4447129205400643
-Forecast SPRD:  0.49460540844694345
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.16174419389046135
+Forecast RMSE:  0.18171444728917593
+Analisis SPRD:  0.2215925413087089
+Forecast SPRD:  0.24758436758742947
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -4404,11 +4404,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3500000000000003
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.369841474502881
-Forecast RMSE:  1.394855922248642
-Analisis SPRD:  0.450804372892715
-Forecast SPRD:  0.497711267107859
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.26490535145980276
+Forecast RMSE:  0.2892606083686598
+Analisis SPRD:  0.26831346983911425
+Forecast SPRD:  0.2976966586566857
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -4614,11 +4614,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3500000000000003
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  0.7162877084679811
-Forecast RMSE:  0.746735365339125
-Analisis SPRD:  0.46017364051982634
-Forecast SPRD:  0.5092498810341103
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.2237027445770999
+Forecast RMSE:  0.2486807740337235
+Analisis SPRD:  0.2758437298916693
+Forecast SPRD:  0.30726833031895595
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -4824,11 +4824,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3500000000000003
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  1.0229747496016193
-Forecast RMSE:  1.0506474647317745
-Analisis SPRD:  0.5045927741320122
-Forecast SPRD:  0.560172723587016
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.1945537799019919
+Forecast RMSE:  0.21824403619708987
+Analisis SPRD:  0.2693760882294451
+Forecast SPRD:  0.30102920881104156
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -5034,11 +5034,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.3500000000000003
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  1.1444731570792732
-Forecast RMSE:  1.1757357456708057
-Analisis SPRD:  0.5243273918859563
-Forecast SPRD:  0.5829971991990903
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.24115835910247313
+Forecast RMSE:  0.26285109662024675
+Analisis SPRD:  0.27983804732329576
+Forecast SPRD:  0.31303361498831334
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -5244,11 +5244,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4000000000000004
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.5331946822671834
-Forecast RMSE:  1.5651316142331315
-Analisis SPRD:  0.5164443379902176
-Forecast SPRD:  0.5696154248242815
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.214420303640603
+Forecast RMSE:  1.2255694049033248
+Analisis SPRD:  0.38989454818078895
+Forecast SPRD:  0.4297359248350567
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -5454,11 +5454,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4000000000000004
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  1.1109180721886314
-Forecast RMSE:  1.1415769495688994
-Analisis SPRD:  0.5319171291936842
-Forecast SPRD:  0.5882420689283513
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.29698635351396235
+Forecast RMSE:  0.3264297270485528
+Analisis SPRD:  0.3501127413878466
+Forecast SPRD:  0.390367238565284
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -5664,11 +5664,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4000000000000004
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.4458526488868082
-Forecast RMSE:  0.4948623116380279
-Analisis SPRD:  0.5993089429035152
-Forecast SPRD:  0.665873367754366
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.38128540695732827
+Forecast RMSE:  0.4049604288800296
+Analisis SPRD:  0.33499934542120713
+Forecast SPRD:  0.37453388507596286
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -5874,11 +5874,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4000000000000004
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.5342019654425428
-Forecast RMSE:  0.5816510954988795
-Analisis SPRD:  0.6390055260948289
-Forecast SPRD:  0.7108861333334564
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.25444860680453685
+Forecast RMSE:  0.2842359792266742
+Analisis SPRD:  0.34153213881917205
+Forecast SPRD:  0.38273232940463575
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -6084,11 +6084,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4500000000000004
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.4274253394096146
-Forecast RMSE:  1.463807108882651
-Analisis SPRD:  0.5791519738663611
-Forecast SPRD:  0.6387087954105146
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.036844079343741
+Forecast RMSE:  1.0558186819775535
+Analisis SPRD:  0.45153312082979413
+Forecast SPRD:  0.4984102145315372
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -6294,11 +6294,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4500000000000004
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  0.5921481085996965
-Forecast RMSE:  0.6421943032803168
-Analisis SPRD:  0.6061624376294863
-Forecast SPRD:  0.670597122591151
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.3857953534306366
+Forecast RMSE:  0.4213938757110016
+Analisis SPRD:  0.4445986437600335
+Forecast SPRD:  0.4954038462557461
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -6504,11 +6504,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4500000000000004
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.7021103207718018
-Forecast RMSE:  0.7479042893348582
-Analisis SPRD:  0.6895224284908129
-Forecast SPRD:  0.7651971675725548
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.31829905518229884
+Forecast RMSE:  0.35128630930194427
+Analisis SPRD:  0.40587814550811735
+Forecast SPRD:  0.45419189918026104
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -6714,11 +6714,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.4500000000000004
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.5707446469005281
-Forecast RMSE:  0.6259116244079423
-Analisis SPRD:  0.7388675749407658
-Forecast SPRD:  0.8212332821326918
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.3275419258465714
+Forecast RMSE:  0.36240716094522635
+Analisis SPRD:  0.41991975842852247
+Forecast SPRD:  0.4703143016063741
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -6924,11 +6924,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5000000000000004
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.3413049161113413
-Forecast RMSE:  1.3867002136444155
-Analisis SPRD:  0.6516664505279997
-Forecast SPRD:  0.7184310481037137
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.6949350507303624
+Forecast RMSE:  0.7265885640271252
+Analisis SPRD:  0.48371689420834124
+Forecast SPRD:  0.5360989847577817
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -7134,11 +7134,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5000000000000004
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  0.7627951357739928
-Forecast RMSE:  0.8122285362377422
-Analisis SPRD:  0.6801281320092037
-Forecast SPRD:  0.7521109165977723
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.6357093328659088
+Forecast RMSE:  0.6742376776247924
+Analisis SPRD:  0.608581822733109
+Forecast SPRD:  0.6741331203565878
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -7344,11 +7344,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5000000000000004
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.63143526120032
-Forecast RMSE:  0.6895487665722595
-Analisis SPRD:  0.7830086523863542
-Forecast SPRD:  0.8684902414789771
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.4036003964258531
+Forecast RMSE:  0.4415398981389769
+Analisis SPRD:  0.4861458845310424
+Forecast SPRD:  0.5437508883650096
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -7554,11 +7554,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5000000000000004
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.6238103610168948
-Forecast RMSE:  0.6863115149046102
-Analisis SPRD:  0.8407045188488859
-Forecast SPRD:  0.9340545599177983
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.4475587714314754
+Forecast RMSE:  0.48702697509473447
+Analisis SPRD:  0.5109442160898483
+Forecast SPRD:  0.5718791305434507
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -7764,11 +7764,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5500000000000005
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.1852182477839783
-Forecast RMSE:  1.234543901691532
-Analisis SPRD:  0.7186075962775542
-Forecast SPRD:  0.7922597053225205
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.3332897989978334
+Forecast RMSE:  1.3573301555859287
+Analisis SPRD:  0.6557340299516045
+Forecast SPRD:  0.72010429438998
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -7974,11 +7974,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5500000000000005
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  0.995104786443952
-Forecast RMSE:  1.043324163899789
-Analisis SPRD:  0.7442986690480821
-Forecast SPRD:  0.8222600441863278
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.9127651311223872
+Forecast RMSE:  0.9531836447281187
+Analisis SPRD:  0.8315483743007601
+Forecast SPRD:  0.9118598243724187
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -8184,11 +8184,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5500000000000005
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.6544609306221034
-Forecast RMSE:  0.7191634382936039
-Analisis SPRD:  0.8748258164941106
-Forecast SPRD:  0.9699572413303585
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.5434963188370263
+Forecast RMSE:  0.5863777584203614
+Analisis SPRD:  0.6007426281545837
+Forecast SPRD:  0.6703693440268435
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -8394,11 +8394,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.5500000000000005
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.6849153292369969
-Forecast RMSE:  0.7525247051540432
-Analisis SPRD:  0.9415755163574925
-Forecast SPRD:  1.0451831732517531
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.5728819596732861
+Forecast RMSE:  0.6169604112690943
+Analisis SPRD:  0.6279410717375729
+Forecast SPRD:  0.7013520083984004
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -8604,11 +8604,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6000000000000005
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.5308952863670584
-Forecast RMSE:  1.583064388631729
-Analisis SPRD:  0.7749415220303224
-Forecast SPRD:  0.8525889088767137
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.329325854227604
+Forecast RMSE:  1.3607704329953068
+Analisis SPRD:  0.7303154542007664
+Forecast SPRD:  0.8020754867408086
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -8814,11 +8814,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6000000000000005
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  0.9663068940271116
-Forecast RMSE:  1.023261728777874
-Analisis SPRD:  0.8119423233638653
-Forecast SPRD:  0.8966774963105036
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.6453898400391551
+Forecast RMSE:  1.6764120519813333
+Analisis SPRD:  1.4209181338388097
+Forecast SPRD:  1.5156210760209945
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -9024,11 +9024,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6000000000000005
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.7318602057913217
-Forecast RMSE:  0.7992984580224902
-Analisis SPRD:  0.954918237082552
-Forecast SPRD:  1.0573529230800474
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.8148324460599025
+Forecast RMSE:  0.8552710760655706
+Analisis SPRD:  0.7709682678118452
+Forecast SPRD:  0.852978622753539
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -9234,11 +9234,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6000000000000005
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.7487336551329247
-Forecast RMSE:  0.8223334390018392
-Analisis SPRD:  1.0420477993240935
-Forecast SPRD:  1.1550791565486154
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.8008528425308954
+Forecast RMSE:  0.8447618487746663
+Analisis SPRD:  0.7881471144935999
+Forecast SPRD:  0.8739195300591192
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -9444,11 +9444,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6500000000000006
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.3928720709380635
-Forecast RMSE:  1.4498337689370602
-Analisis SPRD:  0.841645066511943
-Forecast SPRD:  0.9261166584534898
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.98147279817973
+Forecast RMSE:  2.0081565850819176
+Analisis SPRD:  1.0086625625356427
+Forecast SPRD:  1.0915173462104686
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -9654,11 +9654,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6500000000000006
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  1.0112971006485996
-Forecast RMSE:  1.0687623820865868
-Analisis SPRD:  0.8774752276914277
-Forecast SPRD:  0.9682817724662712
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  2.2883867285706065
+Forecast RMSE:  2.30072142896199
+Analisis SPRD:  2.1450025355932096
+Forecast SPRD:  2.2320260647849794
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -9864,11 +9864,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6500000000000006
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.8134893413848218
-Forecast RMSE:  0.8859718727141473
-Analisis SPRD:  1.0393830825029746
-Forecast SPRD:  1.1498942304647164
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.0450398682149815
+Forecast RMSE:  1.0880537104177976
+Analisis SPRD:  0.9600313976328858
+Forecast SPRD:  1.0548885548243714
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -10074,11 +10074,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.6500000000000006
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.8129877867023186
-Forecast RMSE:  0.8896013184481261
-Analisis SPRD:  1.1332479151705452
-Forecast SPRD:  1.255115505468273
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  0.9963468753655638
+Forecast RMSE:  1.0426478982109855
+Analisis SPRD:  0.9681266758719664
+Forecast SPRD:  1.066162404242122
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -10284,11 +10284,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7000000000000006
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.4507200120790362
-Forecast RMSE:  1.508022196813179
-Analisis SPRD:  0.8988722468658719
-Forecast SPRD:  0.9882401165770677
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  2.441497074364977
+Forecast RMSE:  2.458325707885119
+Analisis SPRD:  1.2450589103114282
+Forecast SPRD:  1.3340257615942719
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -10494,11 +10494,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7000000000000006
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  1.0689836757254576
-Forecast RMSE:  1.1332695466391702
-Analisis SPRD:  0.9439553809666478
-Forecast SPRD:  1.0409130366609145
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  2.577667005951617
+Forecast RMSE:  2.5788952084779657
+Analisis SPRD:  2.578055101352914
+Forecast SPRD:  2.6565802386547044
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -10704,11 +10704,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7000000000000006
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.8517978156725713
-Forecast RMSE:  0.9282291845853592
-Analisis SPRD:  1.1209784799752496
-Forecast SPRD:  1.2389434310138134
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.4147030594820866
+Forecast RMSE:  1.4533498366612227
+Analisis SPRD:  1.2640847700476
+Forecast SPRD:  1.3673793288138092
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -10914,11 +10914,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7000000000000006
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.8929011067166275
-Forecast RMSE:  0.9729922430167436
-Analisis SPRD:  1.2141052020609486
-Forecast SPRD:  1.3429195053377037
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.2608092935442925
+Forecast RMSE:  1.3041697661764213
+Analisis SPRD:  1.2037952410562978
+Forecast SPRD:  1.3110446035819152
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -11124,11 +11124,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7500000000000007
 Tempering iterations 1
 AlphaTemp [1]
-Analisis RMSE:  1.7024890736177896
-Forecast RMSE:  1.759829841871912
-Analisis SPRD:  0.9493053837004443
-Forecast SPRD:  1.0422447649022284
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  2.680509442420002
+Forecast RMSE:  2.689220918720044
+Analisis SPRD:  1.4414584278918616
+Forecast SPRD:  1.5322737576584218
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -11334,11 +11334,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7500000000000007
 Tempering iterations 2
 AlphaTemp [90  1]
-Analisis RMSE:  1.1244306986869568
-Forecast RMSE:  1.187520582502771
-Analisis SPRD:  1.0041610569753563
-Forecast SPRD:  1.106452563305369
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  2.9221830958511896
+Forecast RMSE:  2.8940883461159927
+Analisis SPRD:  3.096091476733136
+Forecast SPRD:  3.158041526107638
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -11544,11 +11544,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7500000000000007
 Tempering iterations 3
 AlphaTemp [90  5  1]
-Analisis RMSE:  0.9079803893900152
-Forecast RMSE:  0.9851591691962064
-Analisis SPRD:  1.194561271975007
-Forecast SPRD:  1.3188782468159905
-Reading observations from file  ./data/Nature/NatureR5_Den1_Freq4_Hradar.npz
+Analisis RMSE:  1.6805948957174455
+Forecast RMSE:  1.7110309446491474
+Analisis SPRD:  1.5393525904737384
+Forecast SPRD:  1.6471422951128438
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
@@ -11754,7 +11754,7 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.7500000000000007
 Tempering iterations 4
 AlphaTemp [90 10  5  1]
-Analisis RMSE:  0.9696246868818428
-Forecast RMSE:  1.0504424248220676
-Analisis SPRD:  1.3021448403571672
-Forecast SPRD:  1.438641810211746
+Analisis RMSE:  1.4636255126891897
+Forecast RMSE:  1.5053242375493379
+Analisis SPRD:  1.4139682277527303
+Forecast SPRD:  1.53062632071499

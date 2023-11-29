@@ -95,7 +95,13 @@ if PlotTheExperiment  :
     plt.ylabel('Multiplicative Inflation')
     plt.show()
 
+    plt.figure()
+    plt.plot(inf_range,total_analysis_rmse[:,0]);plt.plot(inf_range,total_analysis_rmse[:,1]);plt.plot(inf_range,total_analysis_rmse[:,2]);plt.plot(inf_range,total_analysis_rmse[:,3])
+    plt.xlabel('Inflation')
+    plt.ylabel('Analysis RMSE')
+    plt.show()
+   
+    plt.figure()
     plt.plot(total_analysis_sprd[:,0],total_analysis_rmse[:,0]);plt.plot(total_analysis_sprd[:,1],total_analysis_rmse[:,1]);plt.plot(total_analysis_sprd[:,-1],total_analysis_rmse[:,-1])
-
     plt.show()
 
