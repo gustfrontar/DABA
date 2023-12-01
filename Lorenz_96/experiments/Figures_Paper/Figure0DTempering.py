@@ -112,11 +112,11 @@ axs[1].plot( 1.0e4*qrf_bins_plot , qrf_hist/np.sum(qrf_hist) , 'b-' ,label='Prio
 
 qra_hist , qra_bins = np.histogram(qr_a_ens,bins=np.arange(0.0,4.0e-4,0.2e-4))
 qra_bins_plot= 0.5 * ( qra_bins[0:-1] + qra_bins[1:] )
-axs[1].plot( 1.0e4*qra_bins_plot , qra_hist/np.sum(qra_hist) , 'r-' ,label='Posterior EnKF')
+axs[1].plot( 1.0e4*qra_bins_plot , qra_hist/np.sum(qra_hist) , 'r-' ,label='Posterior ETKF')
 
 qrat_hist , qrat_bins = np.histogram(qr_a_ens_temp,bins=np.arange(0.0,4.0e-4,0.2e-4))
 qrat_bins_plot= 0.5 * ( qrat_bins[0:-1] + qrat_bins[1:] )
-axs[1].plot( 1.0e4*qrat_bins_plot , qrat_hist/np.sum(qrat_hist) , 'm-' ,label='Posterior EnKF-T3')
+axs[1].plot( 1.0e4*qrat_bins_plot , qrat_hist/np.sum(qrat_hist) , 'm-' ,label='Posterior ETKF-T3')
 
 qrapf_hist , qrapf_bins = np.histogram(qr_ens,weights=pf_w,bins=np.arange(0.0,4.0e-4,0.2e-4))
 qrapf_bins_plot= 0.5 * ( qrapf_bins[0:-1] + qrapf_bins[1:] )
@@ -136,6 +136,8 @@ axs[2].set_xlabel('Graupel specific concentration')
 axs[2].set_ylabel('Pseudo time')
 axs[2].set_title('(c)')
 
+
+plt.savefig('./Figure0DTempering.png')
 
 # dbzf_hist , dbzf_bins = np.histogram(dbz_ens,bins=np.arange(-30,40,2.5))
 # dbzf_bins_plot= 0.5 * ( dbzf_bins[0:-1] + dbzf_bins[1:] )

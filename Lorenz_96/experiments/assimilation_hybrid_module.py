@@ -244,6 +244,14 @@ def assimilation_hybrid_run( conf ) :
            BridgeParam = DAConf['BridgeParam']
        
        for itemp in range( DAConf['NTemp'] ) :
+          #=================================================================
+          #  OBSERVATION OPERATOR  : 
+          #================================================================= 
+        
+          #Apply h operator and transform from model space to observation space. 
+          #This opearation is performed only at the end of the window.
+
+       
           if NObsW > 0 : 
              TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
              [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
@@ -278,7 +286,7 @@ def assimilation_hybrid_run( conf ) :
              dt_pseudo_time = dt_pseudo_time_vec[ itemp ] * np.ones( Nx )
            
           #=================================================================
-          #  OBS OPERATOR AND LETKF STEP  : 
+          #  LETKF STEP  : 
           #=================================================================
 
           if BridgeParam < 1.0 :
