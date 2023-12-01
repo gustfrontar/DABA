@@ -66,6 +66,7 @@ if RunTheExperiment  :
             conf.DAConf['NTemp']= intemp + 1
             
             results.append( ahm.assimilation_hybrid_run( conf ) )
+            AlphaTempList.append( ahm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
                  
             print('Multiplicative Inflation',mult_inf)
             print('Tempering iterations',conf.DAConf['NTemp'])

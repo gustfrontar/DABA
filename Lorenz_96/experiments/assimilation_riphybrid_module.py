@@ -50,7 +50,7 @@ def assimilation_hybrid_run( conf ) :
     ObsLoc  =  InputData['ObsLoc']       #Obs location (space , time)
     ObsType =  InputData['ObsType']      #Obs type ( x or x^2)
     ObsError=  InputData['ObsError']     #Obs error 
-    
+   
     #If this is a twin experiment copy the model configuration from the
     #nature run configuration.
     if DAConf['Twin']   :
@@ -71,6 +71,16 @@ def assimilation_hybrid_run( conf ) :
     #=================================================================
     # INITIALIZATION : 
     #=================================================================
+    if DAConf['AlphaTempScale'] > 0.0 :
+       print('Using AlphaTempScale to compute tempering dt')
+       TempSteps = get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] )
+    else   :
+       TempSteps = DAConf['AlphaTemp']
+   
+    #Compute normalized pseudo_time tempering steps:
+    dt_pseudo_time_vec = ( 1.0 / TempSteps ) /  np.sum( 1.0 / TempSteps ) 
+    print('Tempering steps: ',TempSteps)
+    print('Dt pseudo times: ',dt_pseudo_time_vec)
     
     #We set the length of the experiment according to the length of the 
     #observation array.
@@ -101,6 +111,7 @@ def assimilation_hybrid_run( conf ) :
     XF=np.zeros([Nx,NEns,DALength])                         #Forecast ensemble
     PA=np.zeros([Nx,NEns,NCoef,DALength])                   #Analized parameters
     PF=np.zeros([Nx,NEns,NCoef,DALength])                   #Forecasted parameters
+    NAssimObs=np.zeros(DALength)
     
     F=np.zeros([Nx,NEns,DALength])                          #Total forcing on large scale variables.
     
@@ -161,25 +172,7 @@ def assimilation_hybrid_run( conf ) :
        if np.mod(it,100) == 0  :
           print('Data assimilation cycle # ',str(it) )
     
-       #=================================================================
-       #  ADD ADDITIVE ENSEMBLE PERTURBATIONS  : 
-       #=================================================================
-       #Additive perturbations will be generated as scaled random
-       #differences of nature run states.
-       if DAConf['InfCoefs'][4] > 0.0 :
-          #Get random index to generate additive perturbations
-          RandInd1=(np.round(np.random.rand(NEns)*DALength)).astype(int)
-          RandInd2=(np.round(np.random.rand(NEns)*DALength)).astype(int)
-       
-          AddInfPert = np.squeeze( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) * DAConf['InfCoefs'][4]
     
-          #Shift perturbations to obtain zero-mean perturbations.   
-          AddInfPertMean = np.mean( AddInfPert , 1)
-          for ie in range(NEns)  :
-             AddInfPert[:,ie] = AddInfPert[:,ie] - AddInfPertMean
-          
-          XA[:,:,it-1] = XA[:,:,it-1] + AddInfPert 
-          
        #=================================================================
        #  GET THE OBSERVATIONS WITHIN THE TIME WINDOW  : 
        #=================================================================
@@ -199,7 +192,7 @@ def assimilation_hybrid_run( conf ) :
        YObsW=YObs[window_mask]                                           #Observations within the DA window
        NObsW=YObsW.size                                                  #Number of observations within the DA window
        ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window          
-          
+
        #=================================================================
        #  TEMPERED RUNNING IN PLACE  : 
        #================================================================= 
@@ -405,7 +398,7 @@ def assimilation_hybrid_run( conf ) :
     output['XFSSprd']=np.mean(XFSpread,1)
     
     output['XATSprd']=np.mean(XASpread,0)
-    output['XFTSprd']=np.mean(XFSpread,0)
+    
     
     output['XASBias']=np.mean( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
     output['XFSBias']=np.mean( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
@@ -413,7 +406,7 @@ def assimilation_hybrid_run( conf ) :
     output['XATBias']=np.mean(  XAMean - XNature[:,0,0:DALength]  , axis=0 ) 
     output['XFTBias']=np.mean(  XFMean - XNature[:,0,0:DALength]  , axis=0 ) 
     
-
+    output['Nobs'] = NAssimObs
 
     return output
 
