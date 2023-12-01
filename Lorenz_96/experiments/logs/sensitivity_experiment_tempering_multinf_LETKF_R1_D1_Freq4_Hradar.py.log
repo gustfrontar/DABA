@@ -2,6 +2,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -212,6 +214,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -422,6 +426,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -632,6 +638,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -842,6 +850,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1052,6 +1062,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1262,6 +1274,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1472,6 +1486,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1682,6 +1698,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1892,6 +1910,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2102,6 +2122,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2312,6 +2334,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2522,6 +2546,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2732,6 +2758,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2942,6 +2970,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3152,6 +3182,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3362,6 +3394,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3572,6 +3606,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3782,6 +3818,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3992,6 +4030,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4202,6 +4242,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4412,6 +4454,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4622,6 +4666,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4832,6 +4878,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5042,6 +5090,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5252,6 +5302,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5462,6 +5514,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5672,6 +5726,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5882,6 +5938,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6092,6 +6150,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6302,6 +6362,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6512,6 +6574,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6722,6 +6786,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6932,6 +6998,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -7142,6 +7210,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -7352,6 +7422,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -7562,6 +7634,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -7772,6 +7846,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -7982,6 +8058,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -8192,6 +8270,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -8402,6 +8482,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -8612,6 +8694,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -8822,6 +8906,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -9032,6 +9118,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -9242,6 +9330,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -9452,6 +9542,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -9662,6 +9754,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -9872,6 +9966,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -10082,6 +10178,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -10292,6 +10390,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -10502,6 +10602,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -10712,6 +10814,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -10922,6 +11026,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -11132,6 +11238,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  1]
+Dt pseudo times:  [0.01098901 0.98901099]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -11342,6 +11450,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90  5  1]
+Dt pseudo times:  [0.00917431 0.16513761 0.82568807]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -11552,6 +11662,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [90 10  5  1]
+Dt pseudo times:  [0.00847458 0.07627119 0.15254237 0.76271186]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
