@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Apr 10 17:36:06 2017
+
 @author: RISDA 2018
 """
 
@@ -13,40 +14,43 @@ sys.path.append('../data_assimilation/')
 
 from model  import lorenzn          as model          #Import the model (fortran routines)
 from obsope import common_obs       as hoperator      #Import the observation operator (fortran routines)
-from letkf_da  import letkf_da_tools  as das            #Import the data assimilation routines (fortran routines)
+from da     import common_da_tools  as das            #Import the data assimilation routines (fortran routines)
 
-import matplotlib.pyplot as plt
+import assimilation_conf_test as conf         #Load the experiment configuration
+
 import numpy as np
-import time
-import assimilation_conf_HybridPerfectModel_R8_Den05_Freq8_Hlinear as conf         #Load the experiment configuration
 from scipy import stats
 import os
 
-np.random.seed(20)
 
+np.random.seed(20)
+    
 #=================================================================
 # LOAD CONFIGURATION : 
 #=================================================================
-
+    
 GeneralConf=conf.GeneralConf
 DAConf     =conf.DAConf
 ModelConf  =conf.ModelConf
-
+    
 #=================================================================
 #  LOAD OBSERVATIONS AND NATURE RUN CONFIGURATION
 #=================================================================
-
+    
 print('Reading observations from file ',GeneralConf['ObsFile'])
-
+    
 InputData=np.load(GeneralConf['ObsFile'],allow_pickle=True)
-
+    
 ObsConf=InputData['ObsConf'][()]
+DAConf['Freq']=ObsConf['Freq']
+DAConf['TSFreq']=ObsConf['Freq']
 
+    
 YObs    =  InputData['YObs']         #Obs value
 ObsLoc  =  InputData['ObsLoc']       #Obs location (space , time)
 ObsType =  InputData['ObsType']      #Obs type ( x or x^2)
 ObsError=  InputData['ObsError']     #Obs error 
-
+   
 #If this is a twin experiment copy the model configuration from the
 #nature run configuration.
 if DAConf['Twin']   :
@@ -54,23 +58,20 @@ if DAConf['Twin']   :
   print('This is a TWIN experiment')
   print('')
   ModelConf=InputData['ModelConf'][()]
-  
+      
 #Times are measured in number of time steps. It is important to keep
 #consistency between dt in the nature run and inthe assimilation experiments.
 ModelConf['dt'] = InputData['ModelConf'][()]['dt']
-
+    
 #Store the true state evolution for verfication 
 XNature = InputData['XNature']   #State variables
 CNature = InputData['CNature']   #Parameters
 FNature = InputData['FNature']   #Large scale forcing.
-
+    
 #=================================================================
 # INITIALIZATION : 
 #=================================================================
-
-#We set the length of the experiment according to the length of the 
-#observation array.
-
+    
 if DAConf['ExpLength'] == None :
    DALength = int( max( ObsLoc[:,1] ) / DAConf['Freq'] )
 else:
@@ -78,10 +79,9 @@ else:
    XNature = XNature[:,:,0:DALength+1]
    CNature = CNature[:,:,:,0:DALength+1] 
    FNature = FNature[:,:,0:DALength+1]
-   
-   
+       
 #DALength = 3
-
+    
 #Get the number of parameters
 NCoef=ModelConf['NCoef']
 #Get the size of the state vector
@@ -90,16 +90,17 @@ Nx=ModelConf['nx']
 NxSS=ModelConf['nxss']
 #Get the number of ensembles
 NEns=DAConf['NEns']
-
+    
 #Memory allocation and variable definition.
-
+    
 XA=np.zeros([Nx,NEns,DALength])                         #Analisis ensemble
 XF=np.zeros([Nx,NEns,DALength])                         #Forecast ensemble
 PA=np.zeros([Nx,NEns,NCoef,DALength])                   #Analized parameters
 PF=np.zeros([Nx,NEns,NCoef,DALength])                   #Forecasted parameters
-
+NAssimObs=np.zeros(DALength)
+    
 F=np.zeros([Nx,NEns,DALength])                          #Total forcing on large scale variables.
-
+    
 #Initialize model configuration, parameters and state variables.
 if not ModelConf['EnableSRF']    :
   XSigma=0.0
@@ -114,78 +115,53 @@ if not ModelConf['EnablePRF']    :
 else                     :
   CSigma=ModelConf['CSigma']
   CPhi  =ModelConf['CPhi']
-
-
+    
+    
 if not ModelConf['FSpaceDependent'] :
   FSpaceAmplitude=np.zeros(NCoef)
 else                   :
   FSpaceAmplitude=ModelConf['FSpaceAmplitude']
-
+ 
 FSpaceFreq=ModelConf['FSpaceFreq']
-
+    
 #Initialize random forcings
 CRF=np.zeros([NEns,NCoef])
 RF =np.zeros([Nx,NEns])
-
+ 
 #Initialize small scale variables and forcing
 XSS=np.zeros((NxSS,NEns))
 SFF=np.zeros((Nx,NEns))
-
+ 
 C0=np.zeros((NCoef,Nx,NEns))
-
+    
 #Generate a random initial conditions and initialize deterministic parameters
 for ie in range(0,NEns)  :
    RandInd1=(np.round(np.random.rand(1)*DALength)).astype(int)
    RandInd2=(np.round(np.random.rand(1)*DALength)).astype(int)
-
-   #XA[:,ie,0]=ModelConf['Coef'][0]/2 + DAConf['InitialXSigma'] * np.random.normal( size=Nx )
+  
    #Reemplazo el perturbado totalmente random por un perturbado mas inteligente.
    XA[:,ie,0]=ModelConf['Coef'][0]/2 + np.squeeze( DAConf['InitialXSigma'] * ( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) )
-     
-    
+         
+        
    for ic in range(0,NCoef) : 
-#       if DAConf['ParameterLocalizationType']==3 :
-#           PA[:,ie,ic,0]=ModelConf['Coef'][ic] + DAConf['InitialPSigma'][ic] * np.random.normal( size=Nx )
-#       else                                      :
-           PA[:,ie,ic,0]=ModelConf['Coef'][ic] + DAConf['InitialPSigma'][ic] * np.random.normal( size=1 )
-           
+       PA[:,ie,ic,0]=ModelConf['Coef'][ic] + DAConf['InitialPSigma'][ic] * np.random.normal( size=1 )
+               
 #=================================================================
 #  MAIN DATA ASSIMILATION LOOP : 
 #=================================================================
-start_cycle = time.time()
-
+    
 for it in range( 1 , DALength  )         :
    if np.mod(it,100) == 0  :
       print('Data assimilation cycle # ',str(it) )
-
-   #=================================================================
-   #  ADD ADDITIVE ENSEMBLE PERTURBATIONS  : 
-   #=================================================================
-   #Additive perturbations will be generated as scaled random
-   #differences of nature run states.
-   if DAConf['InfCoefs'][4] > 0.0 :
-      #Get random index to generate additive perturbations
-      RandInd1=(np.round(np.random.rand(NEns)*DALength)).astype(int)
-      RandInd2=(np.round(np.random.rand(NEns)*DALength)).astype(int)
-   
-      AddInfPert = np.squeeze( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) * DAConf['InfCoefs'][4]
-
-      #Shift perturbations to obtain zero-mean perturbations.   
-      AddInfPertMean = np.mean( AddInfPert , 1)
-      for ie in range(NEns)  :
-         AddInfPert[:,ie] = AddInfPert[:,ie] - AddInfPertMean
-      
-      XA[:,:,it-1] = XA[:,:,it-1] + AddInfPert 
-      
+    
    #=================================================================
    #  ENSEMBLE FORECAST  : 
    #=================================================================   
-
+    
    #Run the ensemble forecast
    #print('Runing the ensemble')
-
+    
    ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
-   
    [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
                                            x0=XA[:,:,it-1]     , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma,
                                            c0=PA[:,:,:,it-1]   , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
@@ -193,132 +169,80 @@ for it in range( 1 , DALength  )         :
 
    PF[:,:,:,it] = CFtmp[:,:,:,-1]       #Store the parameter at the end of the window. 
    XF[:,:,it]=XFtmp[:,:,-1]             #Store the state variables ensemble at the end of the window.
-
+    
    F[:,:,it] =DFtmp[:,:,-1]+RFtmp[:,:,-1]+SSFtmp[:,:,-1]  #Store the total forcing 
-   
+       
    XSS=XSStmp[:,:,-1]
    CRF=CRFtmp[:,:,-1]
    RF=RFtmp[:,:,-1]
-   
-   #print('Ensemble forecast took ', time.time()-start, 'seconds.')
-
+       
    #=================================================================
    #  GET THE OBSERVATIONS WITHIN THE TIME WINDOW  : 
    #=================================================================
-
-   #print('Observation selection')
-   #start = time.time()
-
+    
    da_window_start  = (it -1) * DAConf['Freq']
    da_window_end    = da_window_start + DAConf['Freq']
    da_analysis_time = da_window_end
-
+    
    #Screen the observations and get only the onew within the da window
    window_mask=np.logical_and( ObsLoc[:,1] > da_window_start , ObsLoc[:,1] <= da_window_end )
- 
+     
    ObsLocW=ObsLoc[window_mask,:]                                     #Observation location within the DA window.
    ObsTypeW=ObsType[window_mask]                                     #Observation type within the DA window
    YObsW=YObs[window_mask]                                           #Observations within the DA window
    NObsW=YObsW.size                                                  #Number of observations within the DA window
-   ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window         
- 
+   ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window  
+
    #=================================================================
    #  HYBRID-TEMPERED DA  : 
    #================================================================= 
-
-   gamma = 1.0/DAConf['NTemp']
-
+    
    stateens = np.copy(XF[:,:,it])
-   
- 
-   
-   for itemp in range( DAConf['NTemp'] ) :
-       
-       
-      #=================================================================
-      #  OBSERVATION OPERATOR  : 
-      #================================================================= 
 
-      #Apply h operator and transform from model space to observation space. 
-      #This opearation is performed only at the end of the window.
+   #=================================================================
+   #  OBSERVATION OPERATOR  : 
+   #================================================================= 
+        
+   #Apply h operator and transform from model space to observation space. 
+   #This opearation is performed only at the end of the window.
 
-      #Set the time coordinate corresponding to the model output.
-      TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
-      #Call the observation operator and transform the ensemble from the state space 
-      #to the observation space. 
-      [YF , YFmask] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
-                             obsloc=ObsLocW , x=stateens , obstype=ObsTypeW ,
-                             xloc=ModelConf['XLoc'] , tloc= TLoc )
        
-      #=================================================================
-      #  LETKF STEP  : 
-      #=================================================================
-      
-      tmp=np.zeros((Nx,NEns,1,1))
+   if NObsW > 0 : 
+       TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+       [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
+                     obsloc=ObsLocW , x=stateens , obstype=ObsTypeW , obserr=ObsErrorW , obsval=YObsW ,
+                     xloc=ModelConf['XLoc'] , tloc= TLoc , gross_check_factor = DAConf['GrossCheckFactor'] ,
+                     low_dbz_per_thresh = DAConf['LowDbzPerThresh'] )
+       YFmask = np.ones( YFqc.shape ).astype(bool)
+       YFmask[ YFqc != 1 ] = False 
 
-      local_obs_error = ObsErrorW * DAConf['NTemp'] 
-      das.da_letkf()
-      #das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']               ,
-      #               tloc=da_window_end    , nvar=1                        , xfens=tmp               ,
-      #               obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-      #               rdiag=local_obs_error , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs=DAConf['InfCoefs']   ,
-      #                )
+       ObsLocW= ObsLocW[ YFmask , : ] 
+       ObsTypeW= ObsTypeW[ YFmask ] 
+       YObsW= YObsW[ YFmask , : ] 
+       NObsW=YObsW.size
+       ObsErrorW= ObsErrorW[ YFmask , : ] 
+       YF= YF[ YFmask , : ] 
+             
+       #=================================================================
+       #  LETKF STEP  : 
+       #=================================================================
 
-                 
-                             
-  
-   XA[:,:,it] = np.copy( stateens )
-   
-   #PARAMETER ESTIMATION
-   if DAConf['EstimateParameters']   : 
-      
-    if DAConf['ParameterLocalizationType'] == 1  :
-       #GLOBAL PARAMETER ESTIMATION (Note that ETKF is used in this case)
-   
-       PA[:,:,:,it] = das.da_etkf( no=NObsW , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it] ,
-                                            obs=YObsW, ofens=YF  , rdiag=ObsErrorW   ,
-                                            inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
-       
-       
-    if DAConf['ParameterLocalizationType'] == 2  :
-       #GLOBAL AVERAGED PARAMETER ESTIMATION (Parameters are estiamted locally but the agregated globally)
-       #LETKF is used but a global parameter is estimated.
-       
-       #First estimate a local value for the parameters at each grid point.
-       PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
-                              tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                              rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
-                              update_smooth_coef=0.0 )[:,:,:,0]
-       
-       #Spatially average the estimated parameters so we get the same parameter values
-       #at each model grid point.
-       for ic in range(0,NCoef)  :
-           for ie in range(0,NEns)  :
-              PA[:,ie,ic,it]=np.mean( PA[:,ie,ic,it] , axis = 0 )
-              
-    if DAConf['ParameterLocalizationType'] == 3 :
-       #LOCAL PARAMETER ESTIMATION (Parameters are estimated at each model grid point and the forecast uses 
-       #the locally estimated parameters)
-       #LETKF is used to get the local value of the parameter.
-       PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
-                              tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                              obs=YObsW             , obsloc=ObsLocW                , ofens=YF                       ,
-                              rdiag=ObsErrorW       , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
-                              update_smooth_coef=0.0 )[:,:,:,0]
-       
-       
-   else :
-    #If Parameter estimation is not activated we keep the parameters as in the first analysis cycle.  
-    PA[:,:,:,it]=PA[:,:,:,0]
+       stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                        ,
+                              tloc=da_window_end   , nvar=1                        , xfens=stateens                           ,
+                              obs=YObsW        , obsloc=ObsLocW            , ofens=YF                             ,
+                              rdiag=ObsErrorW  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs= DAConf['InfCoefs'][0:5]  ,
+                              update_smooth_coef=0.0 , temp_factor = np.ones(Nx) )[:,:,0,0]
 
-   #print('Data assimilation took ', time.time()-start,'seconds.')
+       XA[:,:,it] = np.copy( stateens )
+       PA[:,:,:,it]=PA[:,:,:,0]
 
-print('Data assimilation took ', time.time()-start_cycle,'seconds.')
+#End of the DA Cycle
+
+
 #=================================================================
-#  DIAGNOSTICS  : 
+#  VERIFICATION DIAGNOSTICS  : 
 #================================================================= 
-
+    
 SpinUp=200 #Number of assimilation cycles that will be conisdered as spin up 
 
 XASpread=np.std(XA,axis=1)
@@ -351,37 +275,14 @@ FTBias=np.mean( FMean - FNature[:,0,0:DALength]  , axis=0 )
 
 print(' Analysis RMSE ',np.mean(XASRmse),' Analysis SPREAD ',np.mean(XASpread))
 
-#Additional computations for the parameter
-
-PAMean=np.mean(PA,axis=1)
-PASpread=np.std(PA,axis=1)
-
-PFMean=np.mean(PF,axis=1)
-PFSpread=np.std(PF,axis=1)
-
-PASRmse=np.sqrt( np.mean( np.power( PAMean[:,:,SpinUp:DALength] - CNature[:,0,:,SpinUp:DALength] , 2 ) , axis=2 ) )
-PFSRmse=np.sqrt( np.mean( np.power( PFMean[:,:,SpinUp:DALength] - CNature[:,0,:,SpinUp:DALength] , 2 ) , axis=2 ) )
-
-PATRmse=np.sqrt( np.mean( np.power( PAMean - CNature[:,0,:,0:DALength] , 2 ) , axis=0 ) )
-PFTRmse=np.sqrt( np.mean( np.power( PFMean - CNature[:,0,:,0:DALength] , 2 ) , axis=0 ) )
-
-PASBias=np.mean( PAMean[:,:,SpinUp:DALength] - CNature[:,0,:,SpinUp:DALength] , axis=2 ) 
-PFSBias=np.mean( PFMean[:,:,SpinUp:DALength] - CNature[:,0,:,SpinUp:DALength]  , axis=2 ) 
-
-PATBias=np.mean(  PAMean - CNature[:,0,:,0:DALength]  , axis=0 ) 
-PFTBias=np.mean(  PFMean - CNature[:,0,:,0:DALength]  , axis=0 )
-
 #=================================================================
 #  SAVE OUTPUT  : 
 #================================================================= 
 
-
 if GeneralConf['RunSave']   :
     filename= GeneralConf['DataPath'] + '/' + GeneralConf['OutFile'] 
     print('Saving the output to ' + filename  )
-    start = time.time()
 
-    
     if not os.path.exists( GeneralConf['DataPath'] + '/' )  :
       os.makedirs(  GeneralConf['DataPath'] + '/'  )
 
@@ -392,20 +293,18 @@ if GeneralConf['RunSave']   :
                      ,   F =F
                      ,   XAMean=XAMean         , XFMean=XFMean
                      ,   XASpread=XASpread     , XFSpread=XFSpread
-                     ,   PAMean=PAMean         , PASpread=PASpread
-                     ,   FMean=FMean           , FSpread=FSpread
                      ,   XASRmse=XASRmse       , XFSRmse=XFSRmse
                      ,   XATRmse=XATRmse       , XFTRmse=XFTRmse 
                      ,   XASBias=XASBias       , XFSBias=XFSBias
                      ,   XATBias=XATBias       , XFTBias=XFTBias
-                     ,   PASRmse=PASRmse       , PASBias=PASBias
-                     ,   PATRmse=PATRmse       , PATBias=PATBias
                      ,   ModelConf=ModelConf   , DAConf=DAConf
                      ,   GeneralConf=GeneralConf )
 
 #=================================================================
 #  PLOT OUTPUT  : 
 #=================================================================
+
+import matplotlib.pyplot as plt
 
 #Plot analysis and forecast RMSE and spread.
 if GeneralConf['RunPlotState']   :
@@ -534,171 +433,8 @@ if GeneralConf['RunPlotState']   :
    plt.show(block=False)
    #plt.close()
 
-   #Estimated value, RMSE and SPREAD for the PARAMETERS
    
-for ic in range(0,NCoef)  :
-   if GeneralConf['RunPlotParameters'] & (DAConf['InitialPSigma'][ic] > 0)  :
-
-      CString=str(ic)
-      
-      #Time series of spatially averaged parameters
-      plt.figure()
-      plt.plot( np.mean( PAMean[:,ic,0:DALength], axis=0) ,'b-')
-      plt.plot( np.mean( CNature[:,0,ic,0:DALength] , axis=0) , 'k--')
-      plt.xlabel('Time')
-      plt.ylim(PAMean[:,ic,0:DALength].min()-0.25,PAMean[:,ic,0:DALength].max()+0.25 )
-      plt.ylabel('Parameter value')
-      plt.title('Estimated parameter ' + CString + ' value')
-      plt.grid(True)
-      plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/PEstimated' + CString + 'vsTime.png', facecolor='w', format='png' )
-      plt.show(block=False)
-      #plt.close()
-     
-      #Spatiall distribution of time averaged parameters
-      plt.figure()
-      meanPA=np.mean( PAMean[:,ic,SpinUp:DALength], axis=1)
-      meanPNature=np.mean( CNature[:,0,ic,SpinUp:DALength] , axis=1)
-      plt.plot( meanPA ,'b-')
-      plt.plot( meanPNature , 'k--')
-      plt.xlabel('Grid point')
-      plt.ylim(meanPA.min()-0.25,meanPA.max()+0.25 )
-      plt.ylabel('Parameter value')
-      plt.title('Estimated parameter ' + CString + ' value')
-      plt.grid(True)
-      plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/PEstimated' + CString + 'vsGridPoint.png', facecolor='w', format='png' )
-      plt.show(block=False)
-      #plt.close()
-     
- 
-       
-      plt.figure()
-      rmse, =plt.plot(PATRmse[ic,:],'b-')
-      sprd, =plt.plot(np.mean(PASpread[:,ic,:],axis=0),'r-')
-      plt.legend([rmse,sprd],['RMSE anl','SPRD anl'])
-      plt.ylabel('RMSE - SPRD')
-      plt.xlabel('Time')
-      plt.ylim( (0,PATRmse[ic,SpinUp:].max()+0.5) )
-      plt.grid(True)
-      plt.title('Parameter ' + CString)
-      plt.show(block=False)
-      plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/RMSEP_Anl_LETKF_run.png', facecolor='w', format='png' )
-      #plt.close()
-
-      plt.figure()
-      rmse, =plt.plot(PASRmse[:,ic],'b-')
-      sprd, =plt.plot(np.mean(PASpread[:,ic,SpinUp:DALength],axis=1),'r-')
-      plt.legend([rmse,sprd],['RMSE anl','SPRD anl'])
-      plt.ylim( (0,PASRmse[:,ic].max()+0.5) )
-      plt.xlabel('Grid Point')
-      plt.ylabel('RMSE')
-      plt.grid(True)
-     
-      plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/RMSEP_For_LETKF_run.png', facecolor='w', format='png' )
-      plt.show(block=False)
-      #plt.close()
-     
-      plt.figure()
-      plt.pcolor( PAMean[:,ic,:] - CNature[:,0,ic,0:DALength])
-      plt.xlabel('Time')
-      plt.ylabel('Grid Point')
-      plt.title('Parameter ' + CString + ' error')
-      plt.colorbar()
-      plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/P' + CString + 'Error.png', facecolor='w', format='png' )
-      plt.show(block=False)
-      #plt.close()
-     
-      #Space-Time estimated parameter
-      plt.figure()
-      plt.pcolor( PAMean[:,ic,0:DALength] )
-      plt.xlabel('Time')
-      plt.ylabel('Grid Point')
-      plt.title('Estimated Parameter ' + CString )
-      plt.colorbar()
-      plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/PEstimated' + CString + '_SpaceTime.png', facecolor='w', format='png' )
-      plt.show(block=False)
-      #plt.close()
-      
-      #Space-Time true parameter
-      plt.figure()
-      plt.pcolor( CNature[:,0,ic,0:DALength] )
-      plt.xlabel('Time')
-      plt.ylabel('Grid Point')
-      plt.title('True Parameter ' + CString )
-      plt.colorbar()
-      plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/PTrue' + CString + '_SpaceTime.png', facecolor='w', format='png' )
-      plt.show(block=False)
-      #plt.close() 
-   
-    
-if GeneralConf['RunPlotForcing']     :
-   
-   #Forcing errors
-   plt.figure()
-   plt.pcolor( FMean[:,:] - FNature[:,0,0:DALength] , vmin=-4 , vmax=4 )
-   plt.xlabel('Time')
-   plt.ylabel('Grid Point')
-   plt.title('F error')
-   plt.colorbar()
-   plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/FError.png', facecolor='w', format='png' )
-   plt.show(block=False)
-   #plt.close()
-   
-
-   #Plot total forcing as a function of X
-   plt.figure()
-   tmpX=np.reshape( XAMean[:,SpinUp:DALength] , [ FMean[:,SpinUp:DALength].shape[0] * FMean[:,SpinUp:DALength].shape[1] ] ) #A vector containing all X
-   tmpF=np.reshape( PAMean[:,0,SpinUp:DALength] , [ FMean[:,SpinUp:DALength].shape[0] * FMean[:,SpinUp:DALength].shape[1] ] ) #A vector containing all Forcings
-   plt.scatter(tmpX,tmpF,s=0.5,c="g", alpha=0.5, marker='o')
-   [a,b,r,p,std_err]= stats.linregress(tmpX,tmpF)
-   
-   LinearX=np.arange(round(tmpX.min())-1,round(tmpX.max())+1)
-   LinearF=b + LinearX * a
-   reg, =plt.plot(LinearX,LinearF,'--k')
-   plt.legend([reg],['Linear Reg a=' + str(a) + ' b=' + str(b) ])
-   plt.title('Forcing vs X')
-   plt.xlabel('X')
-   plt.ylabel('Estimated forcing')
-   plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/Forcing_vs_X.png', facecolor='w', format='png' )
-   plt.show(block=False)
-   #plt.close()
-
-   plt.figure()
-   truef,=plt.plot(FNature[0,0,SpinUp:])
-   estf,=plt.plot(PAMean[0,0,SpinUp:])
-   plt.legend([truef,estf],['True','Est.'])
-   plt.title('True and estimated forcing at 1st grid point')
-   plt.xlabel('Time')
-   plt.ylabel('Forcing')
-   plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/Forcing_at_first_gridpoint.png', facecolor='w', format='png' )
-   plt.show(block=False)
-   #plt.close()
-   
-   #FORECAST FORCING RMSE and BIAS
-
-   plt.figure()
-
-   plt.subplot(2,1,1)
-
-   rmse, =plt.plot(FTRmse,'b-')
-   plt.legend([rmse],['RMSE Forcing'])
-   plt.ylim( (0,FTRmse[SpinUp:].max()+1) )
-   plt.grid(True)
-   plt.ylabel('RMSE')
-
-   plt.subplot(2,1,2)
-
-   bias, =plt.plot(FTBias,'b-')
-   plt.legend([bias],['BIAS Forcing'])
-   plt.ylim( (FTBias[SpinUp:].min()-1,FTBias[SpinUp:].max()+1) )
-   plt.grid(True)
-
-   plt.xlabel('Time')
-   plt.ylabel('Bias')
-
-   plt.savefig( GeneralConf['FigPath'] + '/' + GeneralConf['ExpName'] + '/ForcingError_LETKF_run.png', facecolor='w', format='png' )
-   plt.show(block=False)
-   #plt.close()
-
-
 plt.show()
+
+
 
