@@ -33,7 +33,7 @@ conf.ModelConf['NCoef']=np.size(conf.ModelConf['Coef'])
     
 conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
-conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
+conf.DAConf['Twin'] = False                               #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
 conf.DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
 conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)

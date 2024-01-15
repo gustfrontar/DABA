@@ -8,6 +8,18 @@ Created on Mon Oct  2 10:45:01 2023
 import numpy as np
 from scipy.linalg import sqrtm
 
+def get_temp_steps( NTemp , Alpha ) :
+
+   #NTemp is the number of tempering steps to be performed.
+   #Alpha is a slope coefficient. Larger alpha means only a small part of the information
+   #will be assimilated in the first step (and the largest part will be assimilated in the last step).
+
+   dt=1.0/float(NTemp+1)
+   steps = np.exp( 1.0 * Alpha / np.arange( dt , 1.0-dt/100.0 , dt ) )
+   steps = steps / np.sum(steps)
+
+   return steps
+
 
 def calc_ref( qr )  :
     #Compute radar reflectivity based on grauple concentration.
@@ -29,6 +41,18 @@ def calc_ref( qr )  :
     #zr = 10.0e4 * qr + 2.0e-5  #Linear test for debug only. 
     
     return zr
+
+def calc_ref_bis( x ) :
+
+    c = 1221.2518127994958
+
+    if x < 5.0 :
+       ref = 0.0
+    else       :
+       ref = 10.0 * np.log10( c * ( x-5.0)**1.75 + 1.0 )
+
+
+    return ref 
 
 def calc_stoc_filter_update( dbz_ens , qr_ens , dbz_obs , R_dbz ) :
     
@@ -60,11 +84,11 @@ def calc_etkf_filter_update( dbz_ens , qr_ens , dbz_obs , R_dbz ) :
     
     y_ens = np.zeros( qr_ens.size )
     for ii in range( qr_ens.size ) :
-        y_ens[ii] = calc_ref( qr_ens[ii] )
+        y_ens[ii] = calc_ref_bis( qr_ens[ii] )
     y_mean = np.mean( y_ens )
     y_pert = y_ens - y_mean
     
-    dy = dbz_obs - calc_ref( qr_ens_mean )
+    dy = dbz_obs - calc_ref_bis( qr_ens_mean )
     Rinv = 1/R_dbz
     
     Pahat =np.linalg.inv(   np.outer( y_pert.T , Rinv*y_pert ) + ( qr_ens.size -1)*np.identity(qr_ens.size) )
@@ -79,7 +103,7 @@ def calc_etkf_filter_update( dbz_ens , qr_ens , dbz_obs , R_dbz ) :
     
     qr_a_ens[qr_a_ens < 0.0]=0.0
     for ii in range( qr_ens.size ) :
-        dbz_a_ens[ii] = calc_ref( qr_a_ens[ii] )
+        dbz_a_ens[ii] = calc_ref_bis( qr_a_ens[ii] )
 
     
     return dbz_a_ens , qr_a_ens 

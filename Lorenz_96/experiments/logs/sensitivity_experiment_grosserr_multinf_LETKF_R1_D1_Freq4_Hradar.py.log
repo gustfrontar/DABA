@@ -2,6 +2,8 @@ Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -103,14 +105,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 1.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -212,14 +216,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 1.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -321,14 +327,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 1.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  3.7294949245071116
-Forecast RMSE:  3.729495705066268
-Analisis SPRD:  3.5156735426123857
-Forecast SPRD:  3.5151074338036326
+Analisis RMSE:  3.731168601172622
+Forecast RMSE:  3.7311689180589815
+Analisis SPRD:  3.5159273105687774
+Forecast SPRD:  3.5153112280690664
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -430,14 +438,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 1.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  3.742047930414876
-Forecast RMSE:  3.7420397459006844
-Analisis SPRD:  3.5664272411084452
-Forecast SPRD:  3.560138735998804
+Analisis RMSE:  3.7360676045199974
+Forecast RMSE:  3.736050193019352
+Analisis SPRD:  3.5692693675625464
+Forecast SPRD:  3.56244800899898
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -539,14 +549,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 1.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  3.7507399500744185
-Forecast RMSE:  3.75071274574128
-Analisis SPRD:  3.739936835764162
-Forecast SPRD:  3.7149940851654435
+Analisis RMSE:  3.735071698137825
+Forecast RMSE:  3.735030387796067
+Analisis SPRD:  3.7614753569488975
+Forecast SPRD:  3.7345567637436416
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -648,14 +660,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 1.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  3.7965529933051614
-Forecast RMSE:  3.7965030444493655
-Analisis SPRD:  4.52335686543619
-Forecast SPRD:  4.4232597868007275
+Analisis RMSE:  3.797850320533027
+Forecast RMSE:  3.797828714790685
+Analisis SPRD:  4.501322729729873
+Forecast SPRD:  4.403705148659143
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -757,14 +771,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 3.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -866,14 +882,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 3.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -975,14 +993,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 3.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  3.73914747266393
-Forecast RMSE:  3.739153150263056
-Analisis SPRD:  3.525081170686181
-Forecast SPRD:  3.523763559913783
+Analisis RMSE:  3.729056504401192
+Forecast RMSE:  3.729052058226125
+Analisis SPRD:  3.5211980773003306
+Forecast SPRD:  3.519939738114803
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1084,14 +1104,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 3.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  3.7567618630775925
-Forecast RMSE:  3.756823919546887
-Analisis SPRD:  3.673421942080773
-Forecast SPRD:  3.6552095342996225
+Analisis RMSE:  3.7470179356430426
+Forecast RMSE:  3.7471711391010145
+Analisis SPRD:  3.6782035583250234
+Forecast SPRD:  3.659910452232661
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1193,14 +1215,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 3.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  4.024570364818777
-Forecast RMSE:  4.019902098307372
-Analisis SPRD:  6.503242249591068
-Forecast SPRD:  6.254721371707163
+Analisis RMSE:  4.0212442388504215
+Forecast RMSE:  4.016481689719524
+Analisis SPRD:  6.4817584861117865
+Forecast SPRD:  6.234739418833341
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1302,14 +1326,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 3.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  4.254594423199698
-Forecast RMSE:  4.247173398670785
-Analisis SPRD:  8.383784294475424
-Forecast SPRD:  8.022879898392233
+Analisis RMSE:  4.259271354393969
+Forecast RMSE:  4.2522778154548115
+Analisis SPRD:  8.343226312955967
+Forecast SPRD:  7.985076977334967
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1411,14 +1437,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 5.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1520,14 +1548,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 5.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1629,14 +1659,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 5.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  3.739113128590179
-Forecast RMSE:  3.7391375481780584
-Analisis SPRD:  3.5316084063206263
-Forecast SPRD:  3.5293703974483153
+Analisis RMSE:  3.7288589123651676
+Forecast RMSE:  3.7288353634305302
+Analisis SPRD:  3.533300994949586
+Forecast SPRD:  3.5309615439524413
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1738,42 +1770,45 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 5.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  3.7429737989638654
-Forecast RMSE:  3.7432361317521
-Analisis SPRD:  3.8474350395536723
-Forecast SPRD:  3.811715893711623
+Analisis RMSE:  3.756168986821487
+Forecast RMSE:  3.7565283909213534
+Analisis SPRD:  3.8225191240737026
+Forecast SPRD:  3.78931192675642
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Error: The forecast contains NaN or Inf, Iteration number : 436  will dump some variables to a temporal file
+Error: The forecast contains NaN or Inf, Iteration number : 223  will dump some variables to a temporal file
 Gross errror check 5.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  4.719823085086821
-Forecast RMSE:  4.597185101887559
-Analisis SPRD:  1.0203444115592895
-Forecast SPRD:  0.9654709575031539
+Analisis RMSE:  4.33819952003633
+Forecast RMSE:  4.337960826927173
+Analisis SPRD:  0.509577316914331
+Forecast SPRD:  0.4804922005508773
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
-Data assimilation cycle #  200
-Error: The forecast contains NaN or Inf, Iteration number : 281  will dump some variables to a temporal file
+Error: The forecast contains NaN or Inf, Iteration number : 164  will dump some variables to a temporal file
 Gross errror check 5.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  4.3823796450039385
-Forecast RMSE:  4.38203935037202
-Analisis SPRD:  0.627392434016031
-Forecast SPRD:  0.5903189849020873
+Analisis RMSE:  4.324023840900072
+Forecast RMSE:  4.324023840900072
+Analisis SPRD:  0.4341998128580869
+Forecast SPRD:  0.4075621934972899
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1875,14 +1910,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 7.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -1984,14 +2021,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 7.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2093,193 +2132,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 7.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  3.738579576539093
-Forecast RMSE:  3.73858854580543
-Analisis SPRD:  3.5334220709274917
-Forecast SPRD:  3.530440063863965
+Analisis RMSE:  3.728918506242812
+Forecast RMSE:  3.7288928616732724
+Analisis SPRD:  3.5349616196198426
+Forecast SPRD:  3.53234207595973
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Error: The forecast contains NaN or Inf, Iteration number : 9593  will dump some variables to a temporal file
-Gross errror check 7.0
-Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  3.8164646088966085
-Forecast RMSE:  3.816970692866272
-Analisis SPRD:  4.17622334463943
-Forecast SPRD:  4.096598250082915
-Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Error: The forecast contains NaN or Inf, Iteration number : 6229  will dump some variables to a temporal file
-Gross errror check 7.0
-Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  3.9420004925913035
-Forecast RMSE:  3.9310719890163575
-Analisis SPRD:  1.6134431701878564
-Forecast SPRD:  1.644363943429638
-Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2380,15 +2242,204 @@ Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 7.0
-Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  4.049329167423339
-Forecast RMSE:  4.046517552073085
-Analisis SPRD:  1.4819733283186458
-Forecast SPRD:  1.559829692291631
+Min. ref. threshold 0.7000000000000001
+Analisis RMSE:  3.769882101055116
+Forecast RMSE:  3.770781661634905
+Analisis SPRD:  4.2500346680301035
+Forecast SPRD:  4.175940586977688
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Error: The forecast contains NaN or Inf, Iteration number : 6380  will dump some variables to a temporal file
+Gross errror check 7.0
+Min. ref. threshold 0.9000000000000001
+Analisis RMSE:  324087.94035099953
+Forecast RMSE:  530981.7156371749
+Analisis SPRD:  14656.911928697617
+Forecast SPRD:  22914.15393212497
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
+
+This is a TWIN experiment
+
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Gross errror check 7.0
+Min. ref. threshold 1.1000000000000003
+Analisis RMSE:  4.020281624724867
+Forecast RMSE:  4.017170981865064
+Analisis SPRD:  1.491071482045132
+Forecast SPRD:  1.5696592416298532
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
+
+This is a TWIN experiment
+
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2490,14 +2541,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 9.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2599,14 +2652,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 9.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2708,135 +2763,31 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 9.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  3.7303030248942965
-Forecast RMSE:  3.7303689507724394
-Analisis SPRD:  3.5599418755687156
-Forecast SPRD:  3.554692166740683
+Analisis RMSE:  3.726649227623227
+Forecast RMSE:  3.7265956813591488
+Analisis SPRD:  3.548562391823334
+Forecast SPRD:  3.5445866958196097
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Data assimilation cycle #  100
-Error: The forecast contains NaN or Inf, Iteration number : 156  will dump some variables to a temporal file
-Gross errror check 9.0
-Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  4.3260983732212335
-Forecast RMSE:  4.3260983732212335
-Analisis SPRD:  0.42428873448451815
-Forecast SPRD:  0.3940660637750522
-Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
+Error: The forecast contains NaN or Inf, Iteration number : 220  will dump some variables to a temporal file
 Gross errror check 9.0
-Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  1.8954444107316746
-Forecast RMSE:  1.9099062617256912
-Analisis SPRD:  0.8437524073102981
-Forecast SPRD:  0.9031231731894106
+Min. ref. threshold 0.7000000000000001
+Analisis RMSE:  4.584706367509793
+Forecast RMSE:  4.510478170255168
+Analisis SPRD:  0.3497286928247826
+Forecast SPRD:  0.3291959883917251
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -2937,15 +2888,128 @@ Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 9.0
-Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  1.070037581059878
-Forecast RMSE:  1.0820039192974558
-Analisis SPRD:  0.431733278040667
-Forecast SPRD:  0.4743189960242393
+Min. ref. threshold 0.9000000000000001
+Analisis RMSE:  2.653956094408546
+Forecast RMSE:  2.662033965324647
+Analisis SPRD:  1.1806713733441345
+Forecast SPRD:  1.2491162642789033
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Gross errror check 9.0
+Min. ref. threshold 1.1000000000000003
+Analisis RMSE:  2.0429925208364788
+Forecast RMSE:  2.0520493288340758
+Analisis SPRD:  0.6020743490120679
+Forecast SPRD:  0.6534929976330843
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
+
+This is a TWIN experiment
+
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3047,14 +3111,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 11.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3156,14 +3222,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 11.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3265,136 +3333,31 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 11.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  3.745464716498053
-Forecast RMSE:  3.74526097915509
-Analisis SPRD:  3.6037851104552496
-Forecast SPRD:  3.5948471312750967
+Analisis RMSE:  3.731497569172985
+Forecast RMSE:  3.73144229385284
+Analisis SPRD:  3.608638612561684
+Forecast SPRD:  3.59973762276866
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
-Error: The forecast contains NaN or Inf, Iteration number : 291  will dump some variables to a temporal file
+Error: The forecast contains NaN or Inf, Iteration number : 251  will dump some variables to a temporal file
 Gross errror check 11.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  4.398610674200864
-Forecast RMSE:  4.3883601957754035
-Analisis SPRD:  0.8394203282577216
-Forecast SPRD:  0.7978425975445103
+Analisis RMSE:  4.367612263717025
+Forecast RMSE:  4.362544792090185
+Analisis SPRD:  0.6272202720127644
+Forecast SPRD:  0.5983895456031825
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Data assimilation cycle #  7900
-Data assimilation cycle #  8000
-Data assimilation cycle #  8100
-Data assimilation cycle #  8200
-Data assimilation cycle #  8300
-Data assimilation cycle #  8400
-Data assimilation cycle #  8500
-Data assimilation cycle #  8600
-Data assimilation cycle #  8700
-Data assimilation cycle #  8800
-Data assimilation cycle #  8900
-Data assimilation cycle #  9000
-Data assimilation cycle #  9100
-Data assimilation cycle #  9200
-Data assimilation cycle #  9300
-Data assimilation cycle #  9400
-Data assimilation cycle #  9500
-Data assimilation cycle #  9600
-Data assimilation cycle #  9700
-Data assimilation cycle #  9800
-Data assimilation cycle #  9900
-Gross errror check 11.0
-Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  0.6257184286679195
-Forecast RMSE:  0.6522005523877179
-Analisis SPRD:  0.4315625800544991
-Forecast SPRD:  0.47627614980476807
-Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3495,15 +3458,128 @@ Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 11.0
-Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  2.052407244986957
-Forecast RMSE:  2.060425352120979
-Analisis SPRD:  0.5377062692441038
-Forecast SPRD:  0.5861493883922919
+Min. ref. threshold 0.9000000000000001
+Analisis RMSE:  0.8913137686251182
+Forecast RMSE:  0.9137419413172048
+Analisis SPRD:  0.4621705131906941
+Forecast SPRD:  0.5084481146134303
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Gross errror check 11.0
+Min. ref. threshold 1.1000000000000003
+Analisis RMSE:  0.627103413854511
+Forecast RMSE:  0.6442343217161592
+Analisis SPRD:  0.35115428407452937
+Forecast SPRD:  0.38855772407817957
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
+
+This is a TWIN experiment
+
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3605,14 +3681,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 13.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3714,127 +3792,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 13.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7261022672671658
-Forecast RMSE:  3.7261321293058125
-Analisis SPRD:  3.521804258538873
-Forecast SPRD:  3.52097834033964
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Data assimilation cycle #  1400
-Data assimilation cycle #  1500
-Data assimilation cycle #  1600
-Data assimilation cycle #  1700
-Data assimilation cycle #  1800
-Data assimilation cycle #  1900
-Data assimilation cycle #  2000
-Data assimilation cycle #  2100
-Data assimilation cycle #  2200
-Data assimilation cycle #  2300
-Data assimilation cycle #  2400
-Data assimilation cycle #  2500
-Data assimilation cycle #  2600
-Data assimilation cycle #  2700
-Data assimilation cycle #  2800
-Data assimilation cycle #  2900
-Data assimilation cycle #  3000
-Data assimilation cycle #  3100
-Data assimilation cycle #  3200
-Data assimilation cycle #  3300
-Data assimilation cycle #  3400
-Data assimilation cycle #  3500
-Data assimilation cycle #  3600
-Data assimilation cycle #  3700
-Data assimilation cycle #  3800
-Data assimilation cycle #  3900
-Data assimilation cycle #  4000
-Data assimilation cycle #  4100
-Data assimilation cycle #  4200
-Data assimilation cycle #  4300
-Data assimilation cycle #  4400
-Data assimilation cycle #  4500
-Data assimilation cycle #  4600
-Data assimilation cycle #  4700
-Data assimilation cycle #  4800
-Data assimilation cycle #  4900
-Data assimilation cycle #  5000
-Data assimilation cycle #  5100
-Data assimilation cycle #  5200
-Data assimilation cycle #  5300
-Data assimilation cycle #  5400
-Data assimilation cycle #  5500
-Data assimilation cycle #  5600
-Data assimilation cycle #  5700
-Data assimilation cycle #  5800
-Data assimilation cycle #  5900
-Data assimilation cycle #  6000
-Data assimilation cycle #  6100
-Data assimilation cycle #  6200
-Data assimilation cycle #  6300
-Data assimilation cycle #  6400
-Data assimilation cycle #  6500
-Data assimilation cycle #  6600
-Data assimilation cycle #  6700
-Data assimilation cycle #  6800
-Data assimilation cycle #  6900
-Data assimilation cycle #  7000
-Data assimilation cycle #  7100
-Data assimilation cycle #  7200
-Data assimilation cycle #  7300
-Data assimilation cycle #  7400
-Data assimilation cycle #  7500
-Data assimilation cycle #  7600
-Data assimilation cycle #  7700
-Data assimilation cycle #  7800
-Error: The forecast contains NaN or Inf, Iteration number : 7836  will dump some variables to a temporal file
-Gross errror check 13.0
-Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  3.9488678672011646
-Forecast RMSE:  3.9404446280968117
-Analisis SPRD:  3.155136373133562
-Forecast SPRD:  3.125592569716362
-Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
-Data assimilation cycle #  100
-Data assimilation cycle #  200
-Data assimilation cycle #  300
-Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Data assimilation cycle #  900
-Data assimilation cycle #  1000
-Data assimilation cycle #  1100
-Data assimilation cycle #  1200
-Data assimilation cycle #  1300
-Error: The forecast contains NaN or Inf, Iteration number : 1368  will dump some variables to a temporal file
-Gross errror check 13.0
-Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  2.823789932301137e+18
-Forecast RMSE:  4.5054534795181947e+18
-Analisis SPRD:  3.5373018823392216e+16
-Forecast SPRD:  1.9441436363207082e+17
-Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
-
-This is a TWIN experiment
-
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -3935,15 +3902,155 @@ Data assimilation cycle #  9700
 Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 13.0
-Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  0.7813089679733786
-Forecast RMSE:  0.7997001335397673
-Analisis SPRD:  0.39930753527486534
-Forecast SPRD:  0.44169050818885597
+Min. ref. threshold 0.5000000000000001
+Analisis RMSE:  3.754218308503441
+Forecast RMSE:  3.7529909879010446
+Analisis SPRD:  3.8337904203523765
+Forecast SPRD:  3.808531925191109
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Error: The forecast contains NaN or Inf, Iteration number : 1446  will dump some variables to a temporal file
+Gross errror check 13.0
+Min. ref. threshold 0.7000000000000001
+Analisis RMSE:  1.0467063106609467e+26
+Forecast RMSE:  1.374612705867803e+26
+Analisis SPRD:  1.5226959741977347e+24
+Forecast SPRD:  5.931577268897393e+24
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
+
+This is a TWIN experiment
+
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Data assimilation cycle #  6700
+Data assimilation cycle #  6800
+Data assimilation cycle #  6900
+Data assimilation cycle #  7000
+Data assimilation cycle #  7100
+Data assimilation cycle #  7200
+Data assimilation cycle #  7300
+Data assimilation cycle #  7400
+Data assimilation cycle #  7500
+Data assimilation cycle #  7600
+Data assimilation cycle #  7700
+Data assimilation cycle #  7800
+Data assimilation cycle #  7900
+Data assimilation cycle #  8000
+Data assimilation cycle #  8100
+Data assimilation cycle #  8200
+Data assimilation cycle #  8300
+Data assimilation cycle #  8400
+Data assimilation cycle #  8500
+Data assimilation cycle #  8600
+Data assimilation cycle #  8700
+Data assimilation cycle #  8800
+Data assimilation cycle #  8900
+Data assimilation cycle #  9000
+Data assimilation cycle #  9100
+Data assimilation cycle #  9200
+Data assimilation cycle #  9300
+Data assimilation cycle #  9400
+Data assimilation cycle #  9500
+Data assimilation cycle #  9600
+Data assimilation cycle #  9700
+Data assimilation cycle #  9800
+Data assimilation cycle #  9900
+Gross errror check 13.0
+Min. ref. threshold 0.9000000000000001
+Analisis RMSE:  1.0576484669498627
+Forecast RMSE:  1.0699809421561657
+Analisis SPRD:  0.4381573417116136
+Forecast SPRD:  0.48217243344326255
+Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
+
+This is a TWIN experiment
+
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4045,14 +4152,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 13.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  0.531411791556363
-Forecast RMSE:  0.5498693746156014
-Analisis SPRD:  0.3272727313368262
-Forecast SPRD:  0.3628365067229864
+Analisis RMSE:  2.5090953887024474
+Forecast RMSE:  2.5176894389074373
+Analisis SPRD:  0.5341093123415089
+Forecast SPRD:  0.5823546870770077
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4154,14 +4263,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 15.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4263,33 +4374,33 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 15.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7246021626415766
-Forecast RMSE:  3.724642523393257
-Analisis SPRD:  3.5295200519430994
-Forecast SPRD:  3.5282306107422747
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
 Data assimilation cycle #  400
-Data assimilation cycle #  500
-Data assimilation cycle #  600
-Data assimilation cycle #  700
-Data assimilation cycle #  800
-Error: The forecast contains NaN or Inf, Iteration number : 805  will dump some variables to a temporal file
+Error: The forecast contains NaN or Inf, Iteration number : 424  will dump some variables to a temporal file
 Gross errror check 15.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  1.791385752276542e+17
-Forecast RMSE:  1.647227254478584e+17
-Analisis SPRD:  7974122774859758.0
-Forecast SPRD:  7107933527505947.0
+Analisis RMSE:  4.337595836494547
+Forecast RMSE:  4.334741786316929
+Analisis SPRD:  0.2872537292365852
+Forecast SPRD:  0.2756601185162079
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4391,14 +4502,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 15.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  3.9622216827485888
-Forecast RMSE:  3.8388512543037647
-Analisis SPRD:  3.921379958620288
-Forecast SPRD:  3.950668066822563
+Analisis RMSE:  3.606610051206458
+Forecast RMSE:  3.4894961908421664
+Analisis SPRD:  3.35092663759322
+Forecast SPRD:  3.387267119650196
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4500,14 +4613,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 15.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  0.32224963258918643
-Forecast RMSE:  0.355138014867622
-Analisis SPRD:  0.3470927871809265
-Forecast SPRD:  0.38547282043783343
+Analisis RMSE:  0.5135705881250647
+Forecast RMSE:  0.5349360307089496
+Analisis SPRD:  0.3576158695173642
+Forecast SPRD:  0.3965403389853015
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4609,14 +4724,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 15.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  3.0062419273533445
-Forecast RMSE:  3.009915958384947
-Analisis SPRD:  0.5880375217640837
-Forecast SPRD:  0.64109846805662
+Analisis RMSE:  1.7513737340403615
+Forecast RMSE:  1.7554478255283719
+Analisis SPRD:  0.4027356444604456
+Forecast SPRD:  0.4428927526535805
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4718,14 +4835,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 17.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4827,26 +4946,29 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 17.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7246021626415766
-Forecast RMSE:  3.724642523393257
-Analisis SPRD:  3.5295200519430994
-Forecast SPRD:  3.5282306107422747
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Data assimilation cycle #  100
-Error: The forecast contains NaN or Inf, Iteration number : 112  will dump some variables to a temporal file
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 83  will dump some variables to a temporal file
 Gross errror check 17.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  4.3260983732212335
-Forecast RMSE:  4.3260983732212335
-Analisis SPRD:  0.27816395494453067
-Forecast SPRD:  0.2643905470424686
+Analisis RMSE:  4.324023840900072
+Forecast RMSE:  4.324023840900072
+Analisis SPRD:  0.17200113166083206
+Forecast SPRD:  0.1618381919390786
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -4948,14 +5070,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 17.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  2.0998687844586534
-Forecast RMSE:  2.086799070589291
-Analisis SPRD:  1.329666909617934
-Forecast SPRD:  1.3969324724571048
+Analisis RMSE:  1.1352147767581129
+Forecast RMSE:  1.1492178508099125
+Analisis SPRD:  0.7203870174732436
+Forecast SPRD:  0.7806601030857353
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5057,14 +5181,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 17.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  0.9805220193330317
-Forecast RMSE:  0.9946655541820941
-Analisis SPRD:  0.36843616233730453
-Forecast SPRD:  0.40785428636351845
+Analisis RMSE:  0.2751019383346267
+Forecast RMSE:  0.3054118262961866
+Analisis SPRD:  0.32184740003310647
+Forecast SPRD:  0.35787831383135277
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5166,14 +5292,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 17.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  2.564015012135356
-Forecast RMSE:  2.5721838585114645
-Analisis SPRD:  0.47013496894657847
-Forecast SPRD:  0.5157533997016583
+Analisis RMSE:  1.001332602999934
+Forecast RMSE:  1.0124547677560618
+Analisis SPRD:  0.3263412415035091
+Forecast SPRD:  0.3619406846570579
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5275,14 +5403,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 19.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5384,26 +5514,29 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 19.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7246021626415766
-Forecast RMSE:  3.724642523393257
-Analisis SPRD:  3.5295200519430994
-Forecast SPRD:  3.5282306107422747
+Analisis RMSE:  3.7346510864307434
+Forecast RMSE:  3.734653272587413
+Analisis SPRD:  3.5168943108609243
+Forecast SPRD:  3.516613906675162
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Data assimilation cycle #  100
-Error: The forecast contains NaN or Inf, Iteration number : 100  will dump some variables to a temporal file
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 92  will dump some variables to a temporal file
 Gross errror check 19.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  4.3260983732212335
-Forecast RMSE:  4.3260983732212335
-Analisis SPRD:  0.20010266196857202
-Forecast SPRD:  0.18912384852063543
+Analisis RMSE:  4.324023840900072
+Forecast RMSE:  4.324023840900072
+Analisis SPRD:  0.24984791182334404
+Forecast SPRD:  0.23513822617747016
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5505,14 +5638,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 19.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  0.9747278479850738
-Forecast RMSE:  0.9987338554466376
-Analisis SPRD:  0.5984720236470229
-Forecast SPRD:  0.655824461375764
+Analisis RMSE:  0.693959658805194
+Forecast RMSE:  0.7288894825160965
+Analisis SPRD:  0.5277073827475475
+Forecast SPRD:  0.5826287266957424
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5614,14 +5749,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 19.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  0.6181697812805267
-Forecast RMSE:  0.6354402101119834
-Analisis SPRD:  0.3434074433314201
-Forecast SPRD:  0.380612165435568
+Analisis RMSE:  1.699460695088348
+Forecast RMSE:  1.7094627849281572
+Analisis SPRD:  0.4154842263220696
+Forecast SPRD:  0.4574102769711333
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5723,14 +5860,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 19.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  1.2328819894568892
-Forecast RMSE:  1.240352847829317
-Analisis SPRD:  0.3285034301524071
-Forecast SPRD:  0.36382060901582236
+Analisis RMSE:  2.5406007921386995
+Forecast RMSE:  2.5440323232483992
+Analisis SPRD:  0.4352040684382764
+Forecast SPRD:  0.4782144834944333
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5832,14 +5971,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 21.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -5941,26 +6082,29 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 21.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.7337842189524224
-Forecast RMSE:  3.733826393100604
-Analisis SPRD:  3.5240735181924614
-Forecast SPRD:  3.5232468364370257
+Analisis RMSE:  3.7176889635640364
+Forecast RMSE:  3.7177105773267543
+Analisis SPRD:  3.515513057894227
+Forecast SPRD:  3.515209126712852
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Data assimilation cycle #  100
-Error: The forecast contains NaN or Inf, Iteration number : 118  will dump some variables to a temporal file
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 98  will dump some variables to a temporal file
 Gross errror check 21.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  4.3260983732212335
-Forecast RMSE:  4.3260983732212335
-Analisis SPRD:  0.3182122536518667
-Forecast SPRD:  0.3010434887290126
+Analisis RMSE:  4.324023840900072
+Forecast RMSE:  4.324023840900072
+Analisis SPRD:  0.2371892313753689
+Forecast SPRD:  0.22441762571621382
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6062,14 +6206,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 21.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  1.084861177646507
-Forecast RMSE:  1.1042079935342
-Analisis SPRD:  0.5502050215293194
-Forecast SPRD:  0.604885589835098
+Analisis RMSE:  0.8150199717762533
+Forecast RMSE:  0.8418099680152249
+Analisis SPRD:  0.499383975015429
+Forecast SPRD:  0.5514632879256742
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6171,14 +6317,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 21.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  2.4874869112275824
-Forecast RMSE:  2.4898638414410557
-Analisis SPRD:  0.48660207195674443
-Forecast SPRD:  0.5340252220007762
+Analisis RMSE:  2.0090860437248166
+Forecast RMSE:  2.0144043462281855
+Analisis SPRD:  0.4177574235720739
+Forecast SPRD:  0.46096676050664875
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6280,14 +6428,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 21.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  2.3646518057735895
-Forecast RMSE:  2.366102040586618
-Analisis SPRD:  0.38674619688090367
-Forecast SPRD:  0.4267544591680304
+Analisis RMSE:  1.9187061423594856
+Forecast RMSE:  1.923185508390881
+Analisis SPRD:  0.35928189154480683
+Forecast SPRD:  0.396942757268926
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6389,14 +6539,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 23.0
 Min. ref. threshold 0.1
-Analisis RMSE:  3.7181006317973795
-Forecast RMSE:  3.7181006317973795
-Analisis SPRD:  3.5178099079602716
-Forecast SPRD:  3.5175600435851564
+Analisis RMSE:  3.7202708595000593
+Forecast RMSE:  3.7202708595000593
+Analisis SPRD:  3.5120244557432896
+Forecast SPRD:  3.5117828457541584
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6498,25 +6650,31 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 23.0
 Min. ref. threshold 0.30000000000000004
-Analisis RMSE:  3.723131229754455
-Forecast RMSE:  3.7231916368948093
-Analisis SPRD:  3.5157174366263155
-Forecast SPRD:  3.515387089115907
+Analisis RMSE:  3.7176889635640364
+Forecast RMSE:  3.7177105773267543
+Analisis SPRD:  3.515513057894227
+Forecast SPRD:  3.515209126712852
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
-Error: The forecast contains NaN or Inf, Iteration number : 90  will dump some variables to a temporal file
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 206  will dump some variables to a temporal file
 Gross errror check 23.0
 Min. ref. threshold 0.5000000000000001
-Analisis RMSE:  4.3260983732212335
-Forecast RMSE:  4.3260983732212335
-Analisis SPRD:  0.1531007951283409
-Forecast SPRD:  0.1454041846559343
+Analisis RMSE:  4.329149791320414
+Forecast RMSE:  4.326970360532907
+Analisis SPRD:  0.519223479466157
+Forecast SPRD:  0.5026585904960177
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6618,14 +6776,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 23.0
 Min. ref. threshold 0.7000000000000001
-Analisis RMSE:  0.9813901932184603
-Forecast RMSE:  1.0060138796775768
-Analisis SPRD:  0.5065006353129773
-Forecast SPRD:  0.5600926605652419
+Analisis RMSE:  1.1492163275359477
+Forecast RMSE:  1.1686731174754121
+Analisis SPRD:  0.5129537391283817
+Forecast SPRD:  0.5661595846629603
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6727,14 +6887,16 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 23.0
 Min. ref. threshold 0.9000000000000001
-Analisis RMSE:  2.1994298175594382
-Forecast RMSE:  2.204256218500671
-Analisis SPRD:  0.4102205333486383
-Forecast SPRD:  0.45291728480428545
+Analisis RMSE:  2.802126240926965
+Forecast RMSE:  2.8054399034772537
+Analisis SPRD:  0.4710291645791225
+Forecast SPRD:  0.5185392731694392
 Reading observations from file  ./data/Nature/NatureR1_Den1_Freq4_Hradar.npz
 
 This is a TWIN experiment
 
+Tempering steps:  [1]
+Dt pseudo times:  [1.]
 Data assimilation cycle #  100
 Data assimilation cycle #  200
 Data assimilation cycle #  300
@@ -6836,7 +6998,7 @@ Data assimilation cycle #  9800
 Data assimilation cycle #  9900
 Gross errror check 23.0
 Min. ref. threshold 1.1000000000000003
-Analisis RMSE:  4.299237700407578
-Forecast RMSE:  4.296050651515334
-Analisis SPRD:  0.5457454539615091
-Forecast SPRD:  0.6002685965548824
+Analisis RMSE:  3.1254036145469164
+Forecast RMSE:  3.1261412837172045
+Analisis SPRD:  0.4283350672800278
+Forecast SPRD:  0.4723174172141717
