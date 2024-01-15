@@ -5,12 +5,13 @@ import numpy as np
 plt.rcParams.update({'font.size': 15})
 
 
-NatureName='NatureR1_Den1_Freq4_Hradar'
+NatureName='NatureR5_Den1_Freq4_Hradar'
 
 
-exp_filename='../npz/Sesitivity_experiment_ptemp2.0_multinf_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_tempering_multinf_LETKF_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
+print(exp_filename)
 [results,AlphaTempList,inf_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
 f.close()
 
@@ -30,7 +31,7 @@ axs[0].set_ylabel('Analysis RMSE')
 axs[0].set_title('(a)')
 
 
-exp_filename='../npz/Sesitivity_experiment_ptemp2.0_rtps_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_tempering_rtps_LETKF_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,AlphaTempList,inf_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -50,4 +51,4 @@ axs[1].set_ylabel('Analysis RMSE')
 axs[1].set_title('(b)')
 
 
-plt.savefig('FigureAnalRMSE_Temp_Multinf_R1_Den1_Freq4_Hradar.png')
+plt.savefig('FigureAnalRMSE_Temp_Multinf_R5_Den1_Freq4_Hradar.png')

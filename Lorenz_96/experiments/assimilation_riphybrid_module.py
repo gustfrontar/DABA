@@ -281,7 +281,7 @@ def assimilation_hybrid_run( conf ) :
               dt_pseudo_time =  a + b * (irip + 1)
            else :
               #Equal time steps in pseudo time.  
-              dt_pseudo_time = dt_pseudo_time_vec[ irip ] * np.ones( Nx )
+              dt_pseudo_time = dt_pseudo_time_vec[ irip ] * np.ones( ( Nx , 2 ) )
       
      
            #=================================================================
@@ -295,7 +295,7 @@ def assimilation_hybrid_run( conf ) :
                                    tloc=np.array([da_window_start,da_window_end]) , nvar=1                        , xfens=stateens ,
                                    obs=YObsWStep        , obsloc=ObsLocWStep            , ofens=YFStep                             ,
                                    rdiag=ObsErrorWStep  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs= DAConf['InfCoefs'][0:5]  ,
-                                   update_smooth_coef=0.0 , temp_factor = temp_factor )[:,:,0,0]
+                                   update_smooth_coef=0.0 , temp_factor = temp_factor )
         
            #=================================================================
            #  OBS OPERATOR AND ETPF STEP  : 
