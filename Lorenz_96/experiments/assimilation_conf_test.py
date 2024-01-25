@@ -6,7 +6,7 @@ import numpy as np
 
 GeneralConf=dict()
 
-GeneralConf['NatureName']='NatureR1_Den1_Freq4_Hlinear'
+GeneralConf['NatureName']='NatureR1_Den1_Freq5_Hlinear'
 
 
 GeneralConf['ExpName']='Test_'+GeneralConf['NatureName'] #Experiment name.
@@ -31,7 +31,7 @@ ModelConf=dict()
 #General model section
 
 ModelConf['nx'] =  40                                   #Number of large-scale state variables
-ModelConf['dt']  =0.0125                                #Time step for large-scale variables (do not change)
+ModelConf['dt']  =0.01                                  #Time step for large-scale variables (do not change)
 
 #Forcing section
 
@@ -61,7 +61,7 @@ ModelConf['XLoc'  ]=np.arange(1,ModelConf['nx']+1)      #Location of model grid 
 
 #Two scale model parameters
 
-ModelConf['TwoScaleParameters']=np.array([10,10,0])     #Small scale and coupling parameters C , B and Hint
+ModelConf['TwoScaleParameters']=np.array([0,0,0])     #Small scale and coupling parameters C , B and Hint
                                                         #Set Hint /= 0 to enable two scale model
                                               
 ModelConf['nxss']= ModelConf['nx'] * 8                  #Number of small scale variables
@@ -76,17 +76,16 @@ DAConf=dict()
 
 DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
 
-DAConf['NEns'] = 30                                  #Number of ensemble members
+DAConf['NEns'] = 20                                  #Number of ensemble members
 
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 
-DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
-DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
+DAConf['Freq'] = 5                                   #Assimilation frequency (in number of time steps)
+DAConf['TSFreq'] = 5                                 #Intra window ensemble output frequency (for 4D Data assimilation)
+DAConf['InfCoefs']=np.array([1.0,0.04,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
-DAConf['InfCoefs']=np.array([1.01,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
-
-DAConf['LocScalesLETKF']=np.array([3.0,-1.0])             #Localization scale is space and time (negative means no localization)
-DAConf['LocScalesLETPF']=np.array([3.0,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETKF']=np.array([3.9,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETPF']=np.array([2.5,-1.0])             #Localization scale is space and time (negative means no localization)
 
 #Initial state ensemble.
 DAConf['InitialXSigma']=0.5                          #Initial ensemble spread for state variables.
@@ -97,7 +96,7 @@ DAConf['UpdateSmoothCoef']=0.0                       #Data assimilation update s
 
 DAConf['InitialPSigma']=np.array([0,0,0])            #Initial ensemble spread for the parameters. (0 means no parameter estimation)
 
-DAConf['GrossCheckFactor'] = 20.0                    #Gross check error threshold (observations associated with innovations greather than GrossCheckFactor * R**0.5 will be rejected).
+DAConf['GrossCheckFactor'] = 1000.0                    #Gross check error threshold (observations associated with innovations greather than GrossCheckFactor * R**0.5 will be rejected).
 DAConf['LowDbzPerThresh']  = 1.01                    #If the percentaje of ensemble members with reflectivity values == to the lower limit, then the observation is not assimilated [reflectivity obs only]
 
 

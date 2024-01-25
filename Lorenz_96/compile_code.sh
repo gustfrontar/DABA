@@ -2,7 +2,7 @@
 
 #COMPILER=f2py3
 COMPILER='f2py -c ' #--fcompiler=intelem'
-FFLAGS='-O3 '
+FFLAGS='-O3'
 F90FLAGS='-fopenmp -lgomp'
 #FFLAGS='-O1 -fcheck=all'  #For debug
 

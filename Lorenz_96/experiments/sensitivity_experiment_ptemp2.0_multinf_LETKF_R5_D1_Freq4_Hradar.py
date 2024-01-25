@@ -11,7 +11,7 @@ sys.path.append('../data_assimilation/')
 
 import numpy as np
 import sensitivity_conf_default as conf
-import assimilation_hybrid_module as ahm
+import assimilation_letkf_module as alm
 
 if len(sys.argv) > 1 and sys.argv[1] == 'compute' :
    RunTheExperiment = True
@@ -37,7 +37,7 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
-conf.DAConf['GrossCheckFactor'] = 7.0                     #Optimized gross error check
+conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
 conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
 
 
@@ -58,11 +58,11 @@ if RunTheExperiment  :
     for iinf , mult_inf in enumerate( mult_inf_range ) :
         for intemp in range( MaxTempSteps ) :
             
-            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0,0.0,0.0])
+            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
             conf.DAConf['NTemp']= intemp + 1
             
-            results.append( ahm.assimilation_hybrid_run( conf ) )
-            AlphaTempList.append( ahm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
+            results.append( alm.assimilation_letkf_run( conf ) )
+            AlphaTempList.append( alm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
             print('Multiplicative Inflation',mult_inf)
             print('Tempering iterations',conf.DAConf['NTemp'])
             print('AlphaTemp',AlphaTempList[-1])
@@ -77,7 +77,7 @@ if RunTheExperiment  :
             total_forecast_sprd[iinf,intemp] = np.mean(results[-1]['XFSSprd'])
             
     f=open(out_filename,'wb')
-    pickle.dump([results,AlphaTempList,mult_inf_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
+    pickle.dump([results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
     
 if PlotTheExperiment  :

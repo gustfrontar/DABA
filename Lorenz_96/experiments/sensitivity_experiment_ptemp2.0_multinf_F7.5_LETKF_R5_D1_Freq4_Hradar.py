@@ -11,7 +11,7 @@ sys.path.append('../data_assimilation/')
 
 import numpy as np
 import sensitivity_conf_default as conf
-import assimilation_hybrid_module as ahm
+import assimilation_letkf_module as alm
 
 if len(sys.argv) > 1 and sys.argv[1] == 'compute' :
    RunTheExperiment = True
@@ -22,15 +22,15 @@ else                        :
 
 
 conf.GeneralConf['NatureName']='NatureR5_Den1_Freq4_Hradar'
-out_filename='./npz/Sesitivity_experiment_ptemp2.0_multinf_F7.5_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sesitivity_experiment_ptemp2.0_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
 
-#Add model error
-conf.ModelConf['Coef']=conf.ModelConf['Coef'] - 0.5       #Coefficient of parametrized forcing [Assuming constant forcing F]
-conf.ModelConf['NCoef']=np.size(conf.ModelConf['Coef'])
 
-    
+#Add model error
+conf.ModelConf['Coef']=conf.ModelConf['Coef'] - 0.5     #Coefficient of parametrized forcing.
+conf.ModelConf['NCoef']=np.size(conf.ModelConf['Coef'])   
+
 conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = False                               #When True, model configuration will be replaced by the model configuration in the nature run.
@@ -43,7 +43,8 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
 conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
-conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized Low ref thresh.
+conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
+
 
 AlphaTempList=[]
 MaxTempSteps = 4
@@ -62,12 +63,11 @@ if RunTheExperiment  :
     for iinf , mult_inf in enumerate( mult_inf_range ) :
         for intemp in range( MaxTempSteps ) :
             
-            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0,0.0,0.0])
+            conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
             conf.DAConf['NTemp']= intemp + 1
-
-            AlphaTempList.append( ahm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )            
-            results.append( ahm.assimilation_hybrid_run( conf ) )
-                 
+            
+            results.append( alm.assimilation_letkf_run( conf ) )
+            AlphaTempList.append( alm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
             print('Multiplicative Inflation',mult_inf)
             print('Tempering iterations',conf.DAConf['NTemp'])
             print('AlphaTemp',AlphaTempList[-1])
@@ -88,7 +88,7 @@ if RunTheExperiment  :
 if PlotTheExperiment  :
 
     f=open(out_filename,'rb')
-    [results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
+    [results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
     f.close()
 
     import matplotlib.pyplot as plt

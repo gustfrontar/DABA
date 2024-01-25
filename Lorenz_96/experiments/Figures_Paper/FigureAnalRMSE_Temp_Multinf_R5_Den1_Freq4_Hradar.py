@@ -8,7 +8,7 @@ plt.rcParams.update({'font.size': 15})
 NatureName='NatureR5_Den1_Freq4_Hradar'
 
 
-exp_filename='../npz/Sesitivity_experiment_tempering_multinf_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_ptemp2.0_multinf_LETKF_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 print(exp_filename)
@@ -31,10 +31,10 @@ axs[0].set_ylabel('Analysis RMSE')
 axs[0].set_title('(a)')
 
 
-exp_filename='../npz/Sesitivity_experiment_tempering_rtps_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_ptemp2.0_rtps_LETKF_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
-[results,AlphaTempList,inf_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
+[results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
 f.close()
 
 min_error = np.round( np.min( total_analysis_rmse , axis = 0 ) , 2 )

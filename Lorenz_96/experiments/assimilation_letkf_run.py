@@ -230,7 +230,7 @@ for it in range( 1 , DALength  )         :
        stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']                        ,
                               tloc=da_window_end   , nvar=1                        , xfens=stateens                           ,
                               obs=YObsW        , obsloc=ObsLocW            , ofens=YF                             ,
-                              rdiag=ObsErrorW  , loc_scale=DAConf['LocScalesLETKF'] , inf_coefs= DAConf['InfCoefs'][0:5]  ,
+                              rdiag=ObsErrorW  , loc_scale=DAConf['LocScalesLETKF'] , inf_coef= DAConf['InfCoefs'][0:5]  ,
                               update_smooth_coef=0.0 , temp_factor = np.ones(Nx) )[:,:,0,0]
 
        XA[:,:,it] = np.copy( stateens )

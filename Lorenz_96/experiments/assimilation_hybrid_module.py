@@ -66,8 +66,7 @@ def assimilation_hybrid_run( conf ) :
     #Store the true state evolution for verfication 
     XNature = InputData['XNature']   #State variables
     CNature = InputData['CNature']   #Parameters
-    FNature = InputData['FNature']   #Large scale forcing.
-    
+
     #=================================================================
     # INITIALIZATION : 
     #=================================================================
@@ -91,11 +90,8 @@ def assimilation_hybrid_run( conf ) :
        DALength = DAConf['ExpLength']
        XNature = XNature[:,:,0:DALength+1]
        CNature = CNature[:,:,:,0:DALength+1] 
-       FNature = FNature[:,:,0:DALength+1]
-       
-       
-    #DALength = 3
-    
+  
+
     #Get the number of parameters
     NCoef=ModelConf['NCoef']
     #Get the size of the state vector
@@ -109,11 +105,8 @@ def assimilation_hybrid_run( conf ) :
     
     XA=np.zeros([Nx,NEns,DALength])                         #Analisis ensemble
     XF=np.zeros([Nx,NEns,DALength])                         #Forecast ensemble
-    PA=np.zeros([Nx,NEns,NCoef,DALength])                   #Analized parameters
-    PF=np.zeros([Nx,NEns,NCoef,DALength])                   #Forecasted parameters
+    PA=np.zeros([Nx,NEns,NCoef])                            #Fixed parameters
     NAssimObs=np.zeros(DALength)
-    
-    F=np.zeros([Nx,NEns,DALength])                          #Total forcing on large scale variables.
     
     #Initialize model configuration, parameters and state variables.
     if not ModelConf['EnableSRF']    :
@@ -130,13 +123,7 @@ def assimilation_hybrid_run( conf ) :
       CSigma=ModelConf['CSigma']
       CPhi  =ModelConf['CPhi']
     
-    
-    if not ModelConf['FSpaceDependent'] :
-      FSpaceAmplitude=np.zeros(NCoef)
-    else                   :
-      FSpaceAmplitude=ModelConf['FSpaceAmplitude']
-    
-    FSpaceFreq=ModelConf['FSpaceFreq']
+
     
     #Initialize random forcings
     CRF=np.zeros([NEns,NCoef])
@@ -144,9 +131,7 @@ def assimilation_hybrid_run( conf ) :
     
     #Initialize small scale variables and forcing
     XSS=np.zeros((NxSS,NEns))
-    SFF=np.zeros((Nx,NEns))
     
-    C0=np.zeros((NCoef,Nx,NEns))
     
     #Generate a random initial conditions and initialize deterministic parameters
     for ie in range(0,NEns)  :
@@ -158,15 +143,13 @@ def assimilation_hybrid_run( conf ) :
        XA[:,ie,0]=ModelConf['Coef'][0]/2 + np.squeeze( DAConf['InitialXSigma'] * ( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) )
          
         
-       for ic in range(0,NCoef) : 
-    #       if DAConf['ParameterLocalizationType']==3 :
-    #           PA[:,ie,ic,0]=ModelConf['Coef'][ic] + DAConf['InitialPSigma'][ic] * np.random.normal( size=Nx )
-    #       else                                      :
-               PA[:,ie,ic,0]=ModelConf['Coef'][ic] + DAConf['InitialPSigma'][ic] * np.random.normal( size=1 )
+    for ic in range(0,NCoef) :
+            PA[:,:,ic]=ModelConf['Coef'][ic] 
                
     #=================================================================
     #  MAIN DATA ASSIMILATION LOOP : 
     #=================================================================
+    NormalEnd=True 
     
     for it in range( 1 , DALength  )         :
        if np.mod(it,100) == 0  :
@@ -181,14 +164,16 @@ def assimilation_hybrid_run( conf ) :
        if ( np.any( np.isnan( XA[:,:,it-1] ) ) or np.any( np.isinf( XA[:,:,it-1] ) ) ) :
             #Stop the cycle before the fortran code hangs because of NaNs
             print('Error: The analysis contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
-            np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
+            NormalEnd=False
+            #np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
+            
             break
 
     
        ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
        [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
                                                x0=XA[:,:,it-1]     , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma,
-                                               c0=PA[:,:,:,it-1]   , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
+                                               c0=PA               , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
                                                nx=Nx,  nxss=NxSS   , ncoef=NCoef  , dt=ModelConf['dt']   , dtss=ModelConf['dtss'])
 
 
@@ -196,15 +181,12 @@ def assimilation_hybrid_run( conf ) :
        if ( np.any( np.isnan( XFtmp[:,:,-1] ) ) or np.any( np.isinf( XFtmp[:,:,-1] ) ) ) :
             #Stop the cycle before the fortran code hangs because of NaNs
             print('Error: The forecast contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
-            np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1], obs=YObsW , obsloc=ObsLocW , yf=YF )
+            NormalEnd=False
+            #np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1], obs=YObsW , obsloc=ObsLocW , yf=YF )
             break
 
-    
-       PF[:,:,:,it] = CFtmp[:,:,:,-1]       #Store the parameter at the end of the window. 
        XF[:,:,it]=XFtmp[:,:,-1]             #Store the state variables ensemble at the end of the window.
     
-       F[:,:,it] =DFtmp[:,:,-1]+RFtmp[:,:,-1]+SSFtmp[:,:,-1]  #Store the total forcing 
-       
        XSS=XSStmp[:,:,-1]
        CRF=CRFtmp[:,:,-1]
        RF=RFtmp[:,:,-1]
@@ -220,7 +202,6 @@ def assimilation_hybrid_run( conf ) :
     
        da_window_start  = (it -1) * DAConf['Freq']
        da_window_end    = da_window_start + DAConf['Freq']
-       da_analysis_time = da_window_end
     
        #Screen the observations and get only the onew within the da window
        window_mask=np.logical_and( ObsLoc[:,1] > da_window_start , ObsLoc[:,1] <= da_window_end )
@@ -336,50 +317,9 @@ def assimilation_hybrid_run( conf ) :
                 stateens = tmp_ens[:,:,0,0]
 
        stateens = inflation( stateens , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS_t and RTPP_t for tempering
+
        XA[:,:,it] = np.copy( stateens )
        NAssimObs[it] = NObsWStep 
-       
-       #PARAMETER ESTIMATION
-       if DAConf['EstimateParameters']   : 
-          
-        if DAConf['ParameterLocalizationType'] == 1  :
-           #GLOBAL PARAMETER ESTIMATION (Note that ETKF is used in this case)
-           PA[:,:,:,it] = das.da_etkf( no=NObsWStep , nens=NEns , nvar=NCoef , xfens=PF[:,:,:,it]     ,
-                                                obs=YObsWStep , ofens=YFStep  , rdiag=ObsErrorWStep   ,
-                                                inf_coefs=DAConf['InfCoefsP'] )[:,:,:,0] 
-           
-           
-        if DAConf['ParameterLocalizationType'] == 2  :
-           #GLOBAL AVERAGED PARAMETER ESTIMATION (Parameters are estiamted locally but the agregated globally)
-           #LETKF is used but a global parameter is estimated.
-           
-           #First estimate a local value for the parameters at each grid point.
-           PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsW , nens=NEns ,  xloc=ModelConf['XLoc']      ,
-                                  tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                                  obs=YObsWStep         , obsloc=ObsLocWStep            , ofens=YFStep                    ,
-                                  rdiag=ObsErrorWStep   , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
-                                  update_smooth_coef=0.0 )[:,:,:,0]
-           
-           #Spatially average the estimated parameters so we get the same parameter values
-           #at each model grid point.
-           for ic in range(0,NCoef)  :
-               for ie in range(0,NEns)  :
-                  PA[:,ie,ic,it]=np.mean( PA[:,ie,ic,it] , axis = 0 )
-                  
-        if DAConf['ParameterLocalizationType'] == 3 :
-           #LOCAL PARAMETER ESTIMATION (Parameters are estimated at each model grid point and the forecast uses 
-           #the locally estimated parameters)
-           #LETKF is used to get the local value of the parameter.
-           PA[:,:,:,it] = das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']      ,
-                                  tloc=da_window_end    , nvar=NCoef                    , xfens=PF[:,:,:,it]             ,
-                                  obs=YObsWStep         , obsloc=ObsLocWStep            , ofens=YFStep                    ,
-                                  rdiag=ObsErrorWStep   , loc_scale=DAConf['LocScalesP'] , inf_coefs=DAConf['InfCoefsP']   ,
-                                  update_smooth_coef=0.0 )[:,:,:,0]
-           
-           
-       else :
-        #If Parameter estimation is not activated we keep the parameters as in the first analysis cycle.  
-        PA[:,:,:,it]=PA[:,:,:,0]
 
     #=================================================================
     #  DIAGNOSTICS  : 
@@ -387,7 +327,7 @@ def assimilation_hybrid_run( conf ) :
     output=dict()
     
     SpinUp=200 #Number of assimilation cycles that will be conisdered as spin up 
-    
+        
     XASpread=np.std(XA,axis=1)
     XFSpread=np.std(XF,axis=1)
     
@@ -405,7 +345,6 @@ def assimilation_hybrid_run( conf ) :
     
     output['XATSprd']=np.mean(XASpread,0)
     
-    
     output['XASBias']=np.mean( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
     output['XFSBias']=np.mean( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
     
@@ -413,6 +352,8 @@ def assimilation_hybrid_run( conf ) :
     output['XFTBias']=np.mean(  XFMean - XNature[:,0,0:DALength]  , axis=0 ) 
     
     output['Nobs'] = NAssimObs
+    
+    output['NormalEnd'] = NormalEnd 
 
     return output
 
@@ -423,6 +364,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
    #are used in combination with tempering.
    DALength = nature.shape[2] - 1
    NEns = ensemble_post.shape[1]
+   
 
    if inf_coefs[5] > 0.0 :
      #=================================================================
@@ -433,6 +375,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      PostMean = np.mean( ensemble_post , axis=1 )
      EnsPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
      inf_factor = ( 1.0 - inf_coefs[5] ) + ( prior_spread / post_spread ) * inf_coefs[5]
+     #print('Inf factor=',inf_factor)
      EnsPert = EnsPert * np.repeat( inf_factor[:,np.newaxis] , NEns , axis=1 )
      ensemble_post = EnsPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
 

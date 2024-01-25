@@ -11,7 +11,7 @@ sys.path.append('../data_assimilation/')
 
 import numpy as np
 import sensitivity_conf_default as conf
-import assimilation_hybrid_module as ahm
+import assimilation_letkf_module as alm
 
 if len(sys.argv) > 1 and sys.argv[1] == 'compute' :
    RunTheExperiment = True
@@ -34,7 +34,7 @@ conf.DAConf['TSFreq'] = 4                                 #Intra window ensemble
 conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
-conf.DAConf['InfCoefs']=np.array([1.41,0.0,0.0,0.0,0.0,0.0,0.0])  #Optimized multiplicative inflation for 1 tempering iteration.
+conf.DAConf['InfCoefs']=np.array([1.41,0.0,0.0,0.0,0.0])  #Optimized multiplicative inflation for 1 tempering iteration.
 conf.DAConf['NTemp']=1                                    #Single tempering iteration.
 conf.DAConf['AlphaTemp'] = np.array([1])
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
@@ -43,8 +43,8 @@ if RunTheExperiment  :
 
     results=list()
 
-    gross_error_check_range = np.arange( 1.0 , 9.0 , 0.2 )
-    min_dbz_thresh_range    = np.arange( 0.1 , 1.3 , 0.2 )
+    gross_error_check_range = np.arange( 1.0 , 15.0 , 0.5 )
+    min_dbz_thresh_range    = np.arange( 0.1 , 1.3 , 0.1 )
     #gross_error_check_range = np.array([11.0])
     #min_dbz_thresh_range    = np.array([0.7])
     
@@ -59,7 +59,7 @@ if RunTheExperiment  :
             conf.DAConf['GrossCheckFactor'] = grosse
             conf.DAConf['LowDbzPerThresh']  = mindbzthr
             
-            results.append( ahm.assimilation_hybrid_run( conf ) )
+            results.append( alm.assimilation_letkf_run( conf ) )
                  
             print('Gross errror check',grosse)
             print('Min. ref. threshold',mindbzthr)

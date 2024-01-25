@@ -34,14 +34,15 @@ CONTAINS
 !     rloc(nobsl)      : localization weigthning function
 !     dep(nobsl)       : observation departure (yo-Hxb)
 !     parm_infl        : covariance inflation parameter
-!     minfl            : (optional) minimum covariance inflation parameter       !GYL
+!     minfl            : minimum covariance inflation parameter                  !GYL
+!     temp_factor      : (optional) tempering factor
 !   OUTPUT
 !     parm_infl        : updated covariance inflation parameter
 !     trans(ne,ne)     : transformation matrix
-!     transm(ne)       : (optional) transformation matrix mean                   !GYL
-!     pao(ne,ne)       : (optional) analysis covariance matrix in ensemble space !GYL
+!     transm(ne)       : transformation matrix mean                   !GYL
+!     pao(ne,ne)       : analysis covariance matrix in ensemble space !GYL
 !=======================================================================
-SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,minfl)
+SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,minfl,temp_factor)
   IMPLICIT NONE
   INTEGER,INTENT(IN) :: ne                      !GYL
   INTEGER,INTENT(IN) :: nobsl
@@ -54,24 +55,32 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
   REAL(r_size),INTENT(OUT) :: transm(ne)
   REAL(r_size),INTENT(OUT) :: pao(ne,ne)
   REAL(r_size),INTENT(IN)  :: minfl     !GYL
+  REAL(r_size),INTENT(IN), optional  :: temp_factor
+
 
   REAL(r_size) :: hdxb_rinv(nobsl,ne)
+  REAL(r_size) :: hdxb_rinv_temp(nobsl,ne)
   REAL(r_size) :: eivec(ne,ne)
   REAL(r_size) :: eival(ne)
   REAL(r_size) :: pa(ne,ne)
   REAL(r_size) :: work1(ne,ne)
   REAL(r_size) :: work2(ne,nobsl)
   REAL(r_size) :: work3(ne)
-  REAL(r_size) :: rho
+  REAL(r_size) :: rho , parm_infl_temp
   REAL(r_size) :: parm(4),sigma_o,gain
   REAL(r_size),PARAMETER :: sigma_b = 0.04d0 !error stdev of parm_infl
   INTEGER :: i,j,k
 
-
+  IF (PRESENT( temp_factor ) )THEN
+     parm_infl_temp = parm_infl ** ( 1.0d0 / temp_factor ) 
+  ELSE 
+     parm_infl_temp = parm_infl
+  ENDIF
+  
   IF(nobsl == 0) THEN
     trans = 0.0d0
     DO i=1,ne
-      trans(i,i) = SQRT(parm_infl)
+      trans(i,i) = SQRT(parm_infl_temp)
     END DO
 !    IF (PRESENT(transm)) THEN   !GYL
       transm = 0.0d0            !GYL
@@ -79,7 +88,7 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !    IF (PRESENT(pao)) THEN                        !GYL
       pao = 0.0d0                                 !GYL
       DO i=1,ne                                   !GYL
-        pao(i,i) = parm_infl / REAL(ne-1,r_size)  !GYL
+        pao(i,i) = parm_infl_temp / REAL(ne-1,r_size)  !GYL
       END DO                                      !GYL
 !    END IF                                        !GYL
     RETURN
@@ -92,10 +101,13 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
         hdxb_rinv(i,j) = hdxb(i,j) / rdiag(i)     !GYL
       END DO                                      !GYL
     END DO                                        !GYL
+    IF (PRESENT( temp_factor ))  THEN
+       hdxb_rinv_temp = hdxb_rinv / temp_factor 
+    ENDIF
 !-----------------------------------------------------------------------
 !  hdxb^T Rinv hdxb
 !-----------------------------------------------------------------------
-  work1 = MATMUL( TRANSPOSE( hdxb_rinv ) , hdxb )
+  work1 = MATMUL( TRANSPOSE( hdxb_rinv_temp ) , hdxb )
 !  CALL dgemm('t','n',ne,ne,nobsl,1.0d0,hdxb_rinv,nobsl,hdxb(1:nobsl,:),&
 !    & nobsl,0.0d0,work1,ne)
 !  DO j=1,ne
@@ -110,11 +122,11 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !  hdxb^T Rinv hdxb + (m-1) I / rho (covariance inflation)
 !-----------------------------------------------------------------------
 !  IF (PRESENT(minfl)) THEN                           !GYL
-    IF (minfl > 0.0d0 .AND. parm_infl < minfl) THEN   !GYL
-      parm_infl = minfl                               !GYL
+    IF (minfl > 0.0d0 .AND. parm_infl_temp < minfl) THEN   !GYL
+      parm_infl_temp = minfl                               !GYL
     END IF                                            !GYL
 !  END IF                                             !GYL
-  rho = 1.0d0 / parm_infl
+  rho = 1.0d0 / parm_infl_temp
   DO i=1,ne
     work1(i,i) = work1(i,i) + REAL(ne-1,r_size) * rho
   END DO
@@ -148,7 +160,7 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !-----------------------------------------------------------------------
 !  Pa hdxb_rinv^T
 !-----------------------------------------------------------------------
-  work2 = MATMUL( pa , TRANSPOSE( hdxb_rinv ) )
+  work2 = MATMUL( pa , TRANSPOSE( hdxb_rinv_temp ) )
 !  CALL dgemm('n','t',ne,nobsl,ne,1.0d0,pa,ne,hdxb_rinv,&
 !    & nobsl,0.0d0,work2,ne)
 !  DO j=1,nobsl
@@ -192,7 +204,7 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !  T + Pa hdxb_rinv^T dep
 !-----------------------------------------------------------------------
 !  IF (PRESENT(transm)) THEN                !GYL - if transm is present,
-    transm = work3                         !GYL - return both trans and transm without adding them
+    transm = work3                          !GYL - return both trans and transm without adding them
 !  ELSE                                     !GYL
 !    DO j=1,ne
 !      DO i=1,ne
@@ -206,6 +218,7 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
 !-----------------------------------------------------------------------
 !  Inflation estimation
 !-----------------------------------------------------------------------
+  !Tempering should not affect this section. 
   parm = 0.0d0
     DO i=1,nobsl                                  !GYL
       parm(1) = parm(1) + dep(i)*dep(i)/rdiag(i)  !GYL
@@ -223,8 +236,9 @@ SUBROUTINE letkf_core(ne,nobsl,hdxb,rdiag,rloc,dep,parm_infl,trans,transm,pao,mi
   gain = sigma_b**2 / (sigma_o + sigma_b**2)
   parm_infl = parm_infl + gain * parm(4)
 
+
+  ENDIF
   RETURN
-  END IF
 END SUBROUTINE letkf_core
 
 !-----------------------------------------------------------------------

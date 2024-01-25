@@ -37,8 +37,8 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 conf.DAConf['AlphaTempScale'] = 1.8                       #Scale factor to obtain the tempering factors on each tempering iteration.
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
-conf.DAConf['GrossCheckFactor'] = 7.0                     #Optimized gross error check
-conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized low ref thresh
+conf.DAConf['GrossCheckFactor'] = 15.0                     #Optimized gross error check
+conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized low ref thresh
 
 AlphaTempList=[]
 MaxTempSteps = 4
@@ -76,7 +76,7 @@ if RunTheExperiment  :
             total_forecast_sprd[iinf,intemp] = np.mean(results[-1]['XFSSprd'])
             
     f=open(out_filename,'wb')
-    pickle.dump([results,AlphaTempList,inf_range,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
+    pickle.dump([results,inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
     
 if PlotTheExperiment  :

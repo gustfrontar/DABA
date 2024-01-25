@@ -54,7 +54,7 @@ DAConf['NEns'] = 20                                  #Number of ensemble members
 DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
-DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.0,0.0,0.0])  #Mult inf, RTPS, RTPP, EPES, Additive inflation , RTPS_t , RTPP_t (RTPS_t and RTPP_t are as RTPS and RTPP but compatible with tempering iterations)
+DAConf['InfCoefs']=np.array([1.0,0.0,0.0,0.0,0.0])   #Mult inf, RTPP, RTPS, Additive inflation
 DAConf['LocScalesLETKF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([2.0,-1.0])        #Localization scale is space and time (negative means no localization)
 #Initial state ensemble.
@@ -62,7 +62,7 @@ DAConf['InitialXSigma']=0.5                          #Initial ensemble spread fo
 DAConf['UpdateSmoothCoef']=0.0                       #Data assimilation update smooth (for parameter estimation only)
 #Parameter estimation/perturbation 
 DAConf['InitialPSigma']=np.array([0,0,0])            #Initial ensemble spread for the parameters. (0 means no parameter estimation)
-DAConf['InfCoefsP']=np.array([1.0,1.0,0.0,0.0,0.0])  #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefsP']=np.array([1.0,1.0,0.0,0.0,0.0])  #Mult inf, RTPP , RTPS , EPES, Additive inflation
 DAConf['UpdateSmoothCoefP']=0.0                      #Data assimilation update smooth (for parameter estimation only)
 DAConf['EstimateParameters']=False                   #Wether parameters will be estimated or not.
 DAConf['ParameterLocalizationType']=1                #1-Global parameter (no loc), 2-Averaged local estimation , 3-Full local estimation

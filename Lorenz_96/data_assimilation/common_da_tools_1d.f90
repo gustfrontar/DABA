@@ -18,7 +18,7 @@ CONTAINS
 !  LETKF DA for the 1D model
 !=======================================================================
 SUBROUTINE da_letkf(nx,nt,no,nens,nvar,xloc,tloc,xfens,xaens,obs,obsloc,ofens,Rdiag, &   
-         &          loc_scale,inf_coefs,update_smooth_coef,temp_factor)
+         &          loc_scale,inf_coef,update_smooth_coef,temp_factor)
 
 IMPLICIT NONE
 INTEGER,INTENT(IN)         :: nx , nt , nvar             !State dimensions, space, time and variables
@@ -32,9 +32,10 @@ REAL(r_size),INTENT(OUT)   :: xaens(nx,nens,nvar,nt)     !Analysis state ensembl
 REAL(r_size),INTENT(IN)    :: ofens(no,nens)             !Ensemble in observation space
 REAL(r_size),INTENT(IN)    :: obs(no)                    !Observations 
 REAL(r_size),INTENT(IN)    :: Rdiag(no)                  !Diagonal of observation error covariance matrix.
-REAL(r_size),INTENT(INOUT) :: inf_coefs(5)               !Mult inf, RTPS , RTPP , EPES, Additive inflation (State variables)
 REAL(r_size),INTENT(IN)    :: update_smooth_coef         !Update smooth parameter.
 REAL(r_size),INTENT(IN)    :: temp_factor(nx,nt)         !Tempering factor ( R -> R*temp_factor)
+REAL(r_size),INTENT(INOUT) :: inf_coef(5)                !Inflation coefficients mult-inf , rtpp , rtps , epes , additive
+REAL(r_size)               :: mult_inf                   !Multiplicative inflation factor
 REAL(r_size)               :: xfpert(nx,nens,nvar,nt)       !State and parameter forecast perturbations
 REAL(r_size)               :: xapert(nx,nens,nvar,nt)       !State and parameter analysis perturbations
 REAL(r_size)               :: xfmean(nx,nvar,nt)            !State and parameter ensemble mean (forecast)
@@ -55,7 +56,6 @@ REAL(r_size)               :: wamean(nens)                                      
 REAL(r_size)               :: pa(nens,nens)                                        !Analysis cov matrix in ensemble space)
 
 REAL(r_size),PARAMETER     :: min_infl=1.0d0                                       !Minumn allowed multiplicative inflation.
-REAL(r_size)               :: mult_inf
 REAL(r_size)               :: grid_loc(2)
 REAL(r_size)               :: work1d(nx)
 
@@ -121,6 +121,13 @@ DO it = 1,nt
 !$OMP &          ,mult_inf,Rdiag_loc,Rwf_loc,wa,wamean,pa,wainf,ie,iv,ke)
 
   DO ix = 1,nx
+  
+   !Set local multiplicative inflation factor
+   IF( inf_coef(1) < 0.0 ) THEN
+     mult_inf = -inf_coef(1) 
+   ELSE
+     mult_inf = inf_coef(1)
+   ENDIF  
 
    !Localize observations
    grid_loc(1)=xloc(ix)  !Set the grid point location in space
@@ -130,45 +137,34 @@ DO it = 1,nt
                      d_loc,Rdiag_loc,Rwf_loc,grid_loc,xloc(1),xloc(nx),dx,obsloc,loc_scale)
 
    !Aplly local tempering factor to the error covariance matrix.
-   Rdiag_loc(1:no_loc) = Rdiag_loc(1:no_loc) * temp_factor(ix,it)
-
-   !Set multiplicative inflation
-   IF ( inf_coefs(1) < 0.0 )THEN
-      mult_inf = -inf_coefs(1)
-   ELSE
-      mult_inf = inf_coefs(1)
-   ENDIF
-
+   !Rdiag_loc(1:no_loc) = Rdiag_loc(1:no_loc) * temp_factor(ix,it)
 
    IF( no_loc > 0 )THEN   
-    !We have observations for this grid point. Let's compute the analysis.
-
-    mult_inf = mult_inf ** ( 1.0d0 / temp_factor(ix,it) ) 
-  
+    !We have observations for this grid point. Let's compute the analysis
+    !mult_inf = mult_inf ** ( 1.0d0 / temp_factor(ix,it) ) 
     !Compute analysis weights
  
     CALL letkf_core( nens,no_loc,ofpert_loc(1:no_loc,:),Rdiag_loc(1:no_loc),   &
-                    Rwf_loc(1:no_loc),d_loc(1:no_loc),mult_inf,wa,wamean,pa,min_infl )
+                    Rwf_loc(1:no_loc),d_loc(1:no_loc),mult_inf,wa,wamean,pa,min_infl,temp_factor(ix,it) )
 
     !Update state variables (apply RTPP and RTPS )
-    IF( inf_coefs(2) /= 0.0d0) THEN                                                         !GYL - RTPP method (Zhang et al. 2005)
-      CALL weight_RTPP(nens,inf_coefs(2),wa,wainf)                                          !GYL
-    ELSE IF( inf_coefs(4) /= 0.0d0) THEN                                                    !EPES
-      CALL weight_EPES(nens,inf_coefs(4),wa,wainf)
-    !ELSE IF( inf_coefs(5) /= 0.0d0) THEN                                                    !TODO: Code additive inflation
-      !write(*,*)"[Warning]: Additive inflation not implemented for LETKF yet"
+    IF( inf_coef(2) /= 0.0d0) THEN                                                            !GYL - RTPP method (Zhang et al. 2005)
+      CALL weight_RTPP(nens,inf_coef(2),wa,wainf)                                             !GYL
+    ELSE IF( inf_coef(4) /= 0.0d0) THEN                                                       !EPES
+      CALL weight_EPES(nens,inf_coef(4),wa,wainf)
+    ELSE IF( inf_coef(5) /= 0.0d0) THEN                                                       !TODO: Code additive inflation
+      write(*,*)"[Warning]: Additive inflation not implemented for ETKF yet"
     ELSE
-      wainf = wa                                                                            !GYL
-    END IF  
+      wainf = wa                                                                               !GYL
+    END IF                                                                                     !GYL
 
     !Apply the weights and update the state variables. 
    
     DO iv=1,nvar
       !RTPS inflation is variable dependent, so we have to implement it here. 
-      IF( inf_coefs(3) /= 0.0d0) THEN
-        CALL weight_RTPS(nens,inf_coefs(3),wa,pa,xfens(ix,:,iv,it),wainf)
-      ENDIF
-
+      IF( inf_coef(3) /= 0.0d0) THEN
+        CALL weight_RTPS(nens,inf_coef(3),wa,pa,xfens(ix,:,iv,it),wainf)
+      ENDIF    
       DO ie=1,nens
        xaens(ix,ie,iv,it) = xfmean(ix,iv,it)
        DO ke = 1,nens
@@ -185,16 +181,12 @@ DO it = 1,nt
  
    ENDIF
 
-    IF ( inf_coefs(1) < 0.0 ) THEN
-       temp_inf(ix) = -mult_inf
-    ENDIF
-
+   temp_inf(ix) = mult_inf 
   END DO
-
-  
 !$OMP END PARALLEL DO
-IF ( inf_coefs(1) < 0.0 ) THEN
-    inf_coefs(1) = SUM( temp_inf ) / REAL( nx , r_size )
+
+IF ( inf_coef(1) < 0.0 ) THEN
+    inf_coef(1) = -1.0 * SUM( temp_inf ) / REAL( nx , r_size )
 ENDIF
 
 END DO  

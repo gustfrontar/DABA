@@ -19,7 +19,7 @@ PlotTheExperiment = False
 np.random.seed(10)
 
 
-conf.GeneralConf['NatureName']='NatureR4_Den05_Freq8_Hradar'
+conf.GeneralConf['NatureName']='NatureR5_Den1_Freq8_Hradar'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     

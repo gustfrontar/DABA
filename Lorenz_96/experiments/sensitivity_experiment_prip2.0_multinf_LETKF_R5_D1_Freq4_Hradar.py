@@ -37,7 +37,7 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
-conf.DAConf['GrossCheckFactor'] = 7.0                     #Optimized gross error check
+conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
 conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
 
 AlphaTempList=[]
