@@ -6,7 +6,7 @@ import numpy as np
 
 GeneralConf=dict()
 
-GeneralConf['ExpName']='R1_Den1_Freq4_Hcuadratic'           #Experiment name.
+GeneralConf['ExpName']='R1_Den1_Freq4_Hquadratic'           #Experiment name.
 GeneralConf['DataPath']='./data/Nature/'                  #Data output path
 GeneralConf['FigPath']='./figs/Nature/'                   #Figures output path
 GeneralConf['NatureFileName']='Nature' + GeneralConf['ExpName'] + '.npz'
@@ -20,7 +20,7 @@ ModelConf=dict()
 #General model section
 
 ModelConf['nx'] =  40                                   #Number of large-scale state variables
-ModelConf['dt']  =0.0125                                  #Time step for large-scale variables (do not change)
+ModelConf['dt']  =0.0125                                #Time step for large-scale variables (do not change)
 #Forcing section
 ModelConf['Coef']=np.array([8])                         #Coefficient of parametrized forcing (polynom coefficients starting from coef[0]*x^0 + coef[1]*x ... ) 
 ModelConf['NCoef']=np.size(ModelConf['Coef'])           #Get the total number of coefs.
@@ -57,7 +57,7 @@ NatureConf= dict()
 NatureConf['NEns']=1                               #Number of ensemble mebers for the nature run. (usually 1)
 
 NatureConf['RunSave']=True                         #Save nature run
-NatureConf['RunPlot']=True                         #Plot nature run
+NatureConf['RunPlot']=False                         #Plot nature run
 
 NatureConf['SPLength']=40                          #Spin up length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
 NatureConf['Length']=1000                           #Nature run length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
@@ -85,7 +85,7 @@ ObsConf['Error']=1.0                                  #Constant observation erro
 ObsConf['Bias']=0.0                                  #Constant Systematic observation error.
 
 #Set observation type 1-Observe X 
-ObsConf['Type']=1                                    #Observation type (1 observ x, 2 observe x**2)
+ObsConf['Type']=2                                    #Observation type (1 observ x, 2 observe x**2)
 
 
 
