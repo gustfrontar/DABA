@@ -6,7 +6,7 @@ import numpy as np
 
 GeneralConf=dict()
 
-GeneralConf['NatureName']='NatureR1_Den1_Freq5_Hlinear'
+GeneralConf['NatureName']='NatureR1_Den1_Freq4_Hquadratic'
 
 
 GeneralConf['ExpName']='Test_'+GeneralConf['NatureName'] #Experiment name.
@@ -82,7 +82,7 @@ DAConf['Twin'] = True                                #When True, model configura
 
 DAConf['Freq'] = 5                                   #Assimilation frequency (in number of time steps)
 DAConf['TSFreq'] = 5                                 #Intra window ensemble output frequency (for 4D Data assimilation)
-DAConf['InfCoefs']=np.array([1.0,0.04,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
+DAConf['InfCoefs']=np.array([1.01,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
 DAConf['LocScalesLETKF']=np.array([3.9,-1.0])             #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([2.5,-1.0])             #Localization scale is space and time (negative means no localization)
