@@ -12,9 +12,9 @@ GeneralConf['NatureName']='NatureR1_Den1_Freq4_Hquadratic'
 GeneralConf['ExpName']='Test_'+GeneralConf['NatureName'] #Experiment name.
 GeneralConf['DataPath']='./data/Assimilation/'                          #Data output path
 GeneralConf['FigPath']='./figs/Assimilation/'                           #Figures output path
-GeneralConf['RunSave']=True                                             #Save the output
+GeneralConf['RunSave']=False                                             #Save the output
 GeneralConf['OutFile']='Assimilation' + GeneralConf['ExpName'] + '.npz' #Output file
-GeneralConf['RunPlotState']=True                                        #Plot State Estimation Diagnostics
+GeneralConf['RunPlotState']=False                                        #Plot State Estimation Diagnostics
 GeneralConf['RunPlotForcing']=False                                     #Plot Forcing Estimation Diagnostics
 GeneralConf['RunPlotParameters']=False                                  #Plot Parameter Estimation Diagnostics
 #Obs data, obs configuration and nature run configuration are stored
@@ -84,7 +84,7 @@ DAConf['Freq'] = 5                                   #Assimilation frequency (in
 DAConf['TSFreq'] = 5                                 #Intra window ensemble output frequency (for 4D Data assimilation)
 DAConf['InfCoefs']=np.array([1.01,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
-DAConf['LocScalesLETKF']=np.array([3.9,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETKF']=np.array([2.0,-1.0])             #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([2.5,-1.0])             #Localization scale is space and time (negative means no localization)
 
 #Initial state ensemble.

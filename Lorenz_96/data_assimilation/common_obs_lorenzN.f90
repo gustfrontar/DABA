@@ -190,8 +190,9 @@ DO io=1,no
       IF ( REAL( low_dbz_count , r_size ) / REAL( nens , r_size ) > low_dbz_per_thresh ) THEN
          valid_obs(io) = -2
       ENDIF
-      IF ( low_dbz_cound == nens .AND. obs(io,ie) < low_dbz_thresh + 1.0e-3 )
-         valid_obs(io) = -2 !The observation has no reflectivity and non of the ensemble members have reflectivity.
+      !IF ( low_dbz_cound == nens .AND. obs(io,ie) < low_dbz_thresh + 1.0e-3 ) THEN
+      !   valid_obs(io) = -2 !The observation has no reflectivity and non of the ensemble members have reflectivity.
+      !ENDIF
    ENDIF
 ENDDO
 
