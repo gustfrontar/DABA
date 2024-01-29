@@ -1,4 +1,4 @@
-Reading observations from file  ./data/Nature/NatureR25_Den1_Freq4_Hquadratic.npz
+Reading observations from file  ./data/Nature/NatureR03_Den1_Freq4_Hquadratic.npz
 
 This is a TWIN experiment
 
@@ -207,11 +207,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.0
 Localization Scale 0.5
 AlphaTemp [1.]
-Analisis RMSE:  2.6077202892918123
-Forecast RMSE:  2.701251305667548
-Analisis SPRD:  2.470746539895296
-Forecast SPRD:  2.5862650887344882
-Reading observations from file  ./data/Nature/NatureR25_Den1_Freq4_Hquadratic.npz
+Analisis RMSE:  0.5276219345805945
+Forecast RMSE:  0.5670477092449214
+Analisis SPRD:  0.24957388537015865
+Forecast SPRD:  0.27669565449060746
+Reading observations from file  ./data/Nature/NatureR03_Den1_Freq4_Hquadratic.npz
 
 This is a TWIN experiment
 
@@ -420,11 +420,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.0
 Localization Scale 1.0
 AlphaTemp [1.]
-Analisis RMSE:  2.4547691786553942
-Forecast RMSE:  2.553493233134703
-Analisis SPRD:  2.143228379674439
-Forecast SPRD:  2.254899912298901
-Reading observations from file  ./data/Nature/NatureR25_Den1_Freq4_Hquadratic.npz
+Analisis RMSE:  1.093912356140482
+Forecast RMSE:  1.130135964208654
+Analisis SPRD:  0.18194166969739484
+Forecast SPRD:  0.19881625203820597
+Reading observations from file  ./data/Nature/NatureR03_Den1_Freq4_Hquadratic.npz
 
 This is a TWIN experiment
 
@@ -633,11 +633,11 @@ Data assimilation cycle #  19900
 Multiplicative Inflation 1.0
 Localization Scale 1.5
 AlphaTemp [1.]
-Analisis RMSE:  2.384492272698469
-Forecast RMSE:  2.485107614234619
-Analisis SPRD:  1.8879111660933223
-Forecast SPRD:  1.9932277753665897
-Reading observations from file  ./data/Nature/NatureR25_Den1_Freq4_Hquadratic.npz
+Analisis RMSE:  2.9753810510660617
+Forecast RMSE:  3.029348853156754
+Analisis SPRD:  0.15311471218151534
+Forecast SPRD:  0.166429075224163
+Reading observations from file  ./data/Nature/NatureR03_Den1_Freq4_Hquadratic.npz
 
 This is a TWIN experiment
 

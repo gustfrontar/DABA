@@ -6,7 +6,7 @@ import numpy as np
 
 GeneralConf=dict()
 
-GeneralConf['ExpName']='R1_Den1_Freq4_Hradar'           #Experiment name.
+GeneralConf['ExpName']='R03_Den1_Freq4_Hradar'           #Experiment name.
 GeneralConf['DataPath']='./data/Nature/'                  #Data output path
 GeneralConf['FigPath']='./figs/Nature/'                   #Figures output path
 GeneralConf['NatureFileName']='Nature' + GeneralConf['ExpName'] + '.npz'
@@ -79,13 +79,13 @@ ObsConf['TimeDensity']=1                             #Observation density in tim
                                                      #ObsFreq instead.
 
 #Set the diagonal of R
-ObsConf['Error']=1.0                                  #Constant observation error.
+ObsConf['Error']=0.3                                  #Constant observation error.
 
 #Set the systematic observation error
 ObsConf['Bias']=0.0                                  #Constant Systematic observation error.
 
 #Set observation type 1-Observe X 
-ObsConf['Type']=2                                    #Observation type (1 observ x, 2 observe x**2)
+ObsConf['Type']=3                                    #Observation type (1 observ x, 2 observe x**2)
 
 
 

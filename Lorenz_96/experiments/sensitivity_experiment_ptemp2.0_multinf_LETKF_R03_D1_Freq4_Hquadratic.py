@@ -21,8 +21,8 @@ else                        :
    PlotTheExperiment = True
 
 
-conf.GeneralConf['NatureName']='NatureR25_Den1_Freq4_Hquadratic'
-out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+conf.GeneralConf['NatureName']='NatureR03_Den1_Freq4_Hquadratic'
+out_filename='./npz/Sesitivity_experiment_ptemp2.0_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
@@ -31,54 +31,53 @@ conf.DAConf['NEns'] = 20                                  #Number of ensemble me
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
 conf.DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
-#conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
+conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
-conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
+conf.DAConf['GrossCheckFactor'] = 1000.0                  #Optimized gross error check
 conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
-conf.DAConf['NTemp'] = 1                                  #Number of tempering iterations.
 
+AlphaTempList=[]
+MaxTempSteps = 4
 
 if RunTheExperiment  :
 
     results=list()
     
-    mult_inf_range   = np.arange(1.0,1.6,0.05)
-    loc_scale_range = np.arange(0.5,5.0,0.5) 
-    AlphaTempList = []
+    mult_inf_range = np.arange(1.1,1.8,0.05)
     
-    total_analysis_rmse = np.zeros( (len(mult_inf_range),len(loc_scale_range)) )
-    total_analysis_sprd = np.zeros( (len(mult_inf_range),len(loc_scale_range)) )
-    total_forecast_rmse = np.zeros( (len(mult_inf_range),len(loc_scale_range)) )
-    total_forecast_sprd = np.zeros( (len(mult_inf_range),len(loc_scale_range)) )
+    total_analysis_rmse = np.zeros( (len(mult_inf_range),MaxTempSteps) )
+    total_analysis_sprd = np.zeros( (len(mult_inf_range),MaxTempSteps) )
+    total_forecast_rmse = np.zeros( (len(mult_inf_range),MaxTempSteps) )
+    total_forecast_sprd = np.zeros( (len(mult_inf_range),MaxTempSteps) )
     
     for iinf , mult_inf in enumerate( mult_inf_range ) :
-        for iloc , loc_scale in enumerate( loc_scale_range ) :
+        for intemp in range( MaxTempSteps ) :
             
             conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
-            conf.DAConf['LocScalesLETKF'] = np.array([loc_scale,-1.0])
+            conf.DAConf['NTemp']= intemp + 1
             
             results.append( alm.assimilation_letkf_run( conf ) )
             AlphaTempList.append( alm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
                  
             print('Multiplicative Inflation',mult_inf)
-            print('Localization Scale',loc_scale)
+            print('Tempering iterations',conf.DAConf['NTemp'])
             print('AlphaTemp',AlphaTempList[-1])
             print('Analisis RMSE: ',np.mean(results[-1]['XASRmse']))
             print('Forecast RMSE: ',np.mean(results[-1]['XFSRmse']))
             print('Analisis SPRD: ',np.mean(results[-1]['XASSprd']))
             print('Forecast SPRD: ',np.mean(results[-1]['XFSSprd']))
             
-            total_analysis_rmse[iinf,iloc] = np.mean(results[-1]['XASRmse'])
-            total_forecast_rmse[iinf,iloc] = np.mean(results[-1]['XFSRmse'])
-            total_analysis_sprd[iinf,iloc] = np.mean(results[-1]['XASSprd'])
-            total_forecast_sprd[iinf,iloc] = np.mean(results[-1]['XFSSprd'])
+            total_analysis_rmse[iinf,intemp] = np.mean(results[-1]['XASRmse'])
+            total_forecast_rmse[iinf,intemp] = np.mean(results[-1]['XFSRmse'])
+            total_analysis_sprd[iinf,intemp] = np.mean(results[-1]['XASSprd'])
+            total_forecast_sprd[iinf,intemp] = np.mean(results[-1]['XFSSprd'])
             
     f=open(out_filename,'wb')
-    pickle.dump([results,mult_inf_range,loc_scale_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
+    pickle.dump([results,mult_inf_range,AlphaTempList,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd],f)
     f.close()
     
 if PlotTheExperiment  :
