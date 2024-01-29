@@ -84,7 +84,7 @@ DAConf['Freq'] = 5                                   #Assimilation frequency (in
 DAConf['TSFreq'] = 5                                 #Intra window ensemble output frequency (for 4D Data assimilation)
 DAConf['InfCoefs']=np.array([1.01,0.0,0.0,0.0,0.0])   #Mult inf, RTPS, RTPP, EPES, Additive inflation
 
-DAConf['LocScalesLETKF']=np.array([2.0,-1.0])             #Localization scale is space and time (negative means no localization)
+DAConf['LocScalesLETKF']=np.array([3.0,-1.0])             #Localization scale is space and time (negative means no localization)
 DAConf['LocScalesLETPF']=np.array([2.5,-1.0])             #Localization scale is space and time (negative means no localization)
 
 #Initial state ensemble.
