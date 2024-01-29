@@ -22,7 +22,7 @@ else                        :
 
 
 conf.GeneralConf['NatureName']='NatureR5_Den1_Freq4_Hradar'
-out_filename='./npz/Sesitivity_experiment_ptemp2.0_multinf_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sesitivity_experiment_ptemp2.0_multinf_F7.5_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
 
