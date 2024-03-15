@@ -5,8 +5,7 @@ Created on Mon Apr 10 17:36:06 2017
 @author: RISDA 2018
 """
 
-#Run a Hybrid ETPF-LETKF experiment using the observations created by the script run_nature.py
-#Also a tempered ETPF or LETKF can be run using this script.
+#Run a tempered LETKS
 
 import sys
 sys.path.append('../model/')
@@ -17,9 +16,11 @@ from obsope import common_obs       as hoperator      #Import the observation op
 from da     import common_da_tools  as das            #Import the data assimilation routines (fortran routines)
 
 import numpy as np
+from scipy import stats
+import os
 
 
-def assimilation_letkf_run( conf ) :
+def assimilation_letks_run( conf ) :
 
     np.random.seed(20)
     
@@ -79,7 +80,6 @@ def assimilation_letkf_run( conf ) :
     print('Tempering steps: ',TempSteps)
     print('Dt pseudo times: ',dt_pseudo_time_vec)
     
-    
     #We set the length of the experiment according to the length of the 
     #observation array.
     
@@ -89,7 +89,6 @@ def assimilation_letkf_run( conf ) :
        DALength = DAConf['ExpLength']
        XNature = XNature[:,:,0:DALength+1]
        CNature = CNature[:,:,:,0:DALength+1] 
-  
 
     #Get the number of parameters
     NCoef=ModelConf['NCoef']
@@ -137,60 +136,22 @@ def assimilation_letkf_run( conf ) :
        RandInd1=(np.round(np.random.rand(1)*DALength)).astype(int)
        RandInd2=(np.round(np.random.rand(1)*DALength)).astype(int)
     
-       #XA[:,ie,0]=ModelConf['Coef'][0]/2 + DAConf['InitialXSigma'] * np.random.normal( size=Nx )
        #Reemplazo el perturbado totalmente random por un perturbado mas inteligente.
        XA[:,ie,0]=ModelConf['Coef'][0]/2 + np.squeeze( DAConf['InitialXSigma'] * ( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) )
          
-        
     for ic in range(0,NCoef) :
             PA[:,:,ic]=ModelConf['Coef'][ic] 
                
     #=================================================================
     #  MAIN DATA ASSIMILATION LOOP : 
     #=================================================================
-    NormalEnd=True 
+
+    NormalEnd=True
     
     for it in range( 1 , DALength  )         :
        if np.mod(it,100) == 0  :
           print('Data assimilation cycle # ',str(it) )
     
-       #=================================================================
-       #  ENSEMBLE FORECAST  : 
-       #=================================================================   
-    
-       #Run the ensemble forecast
-       #print('Runing the ensemble')
-       if ( np.any( np.isnan( XA[:,:,it-1] ) ) or np.any( np.isinf( XA[:,:,it-1] ) ) ) :
-            #Stop the cycle before the fortran code hangs because of NaNs
-            print('Error: The analysis contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
-            NormalEnd=False
-            #np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
-            
-            break
-
-    
-       ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
-       [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
-                                               x0=XA[:,:,it-1]     , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma,
-                                               c0=PA               , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
-                                               nx=Nx,  nxss=NxSS   , ncoef=NCoef  , dt=ModelConf['dt']   , dtss=ModelConf['dtss'])
-
-
-
-       if ( np.any( np.isnan( XFtmp[:,:,-1] ) ) or np.any( np.isinf( XFtmp[:,:,-1] ) ) ) :
-            #Stop the cycle before the fortran code hangs because of NaNs
-            print('Error: The forecast contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
-            NormalEnd=False
-            #np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1], obs=YObsW , obsloc=ObsLocW , yf=YF )
-            break
-
-       XF[:,:,it]=XFtmp[:,:,-1]             #Store the state variables ensemble at the end of the window.
-    
-       XSS=XSStmp[:,:,-1]
-       CRF=CRFtmp[:,:,-1]
-       RF=RFtmp[:,:,-1]
-       
-       #print('Ensemble forecast took ', time.time()-start, 'seconds.')
     
        #=================================================================
        #  GET THE OBSERVATIONS WITHIN THE TIME WINDOW  : 
@@ -209,93 +170,119 @@ def assimilation_letkf_run( conf ) :
        ObsTypeW=ObsType[window_mask]                                     #Observation type within the DA window
        YObsW=YObs[window_mask]                                           #Observations within the DA window
        NObsW=YObsW.size                                                  #Number of observations within the DA window
-       ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window  
+       ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window          
 
        #=================================================================
-       #  HYBRID-TEMPERED DA  : 
+       #  TEMPERED LETKS  : 
        #================================================================= 
+       stateens=np.zeros((Nx,NEns,1,2))    
+       stateens[:,:,0,0] = np.copy(XA[:,:,it-1])
+       
+       for itemp in range(DAConf['NTemp'])    :
     
-       stateens = np.copy(XF[:,:,it])
-
-       #Perform initial iterations using ETKF this helps to speed up convergence.
-       if it < DAConf['NKalmanSpinUp']  :
-           BridgeParam = 0.0  #Force pure Kalman step.
-       else                             :
-           BridgeParam = DAConf['BridgeParam']
-       
-       for itemp in range( DAConf['NTemp'] ) :
-          #=================================================================
-          #  OBSERVATION OPERATOR  : 
-          #================================================================= 
-        
-          #Apply h operator and transform from model space to observation space. 
-          #This opearation is performed only at the end of the window.
-
-       
-          if NObsW > 0 : 
-             TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
-             [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
-                          obsloc=ObsLocW , x=stateens , obstype=ObsTypeW , obserr=ObsErrorW , obsval=YObsW ,
-                          xloc=ModelConf['XLoc'] , tloc= TLoc , gross_check_factor = DAConf['GrossCheckFactor'] ,
-                          low_dbz_per_thresh = DAConf['LowDbzPerThresh'] )
-             YFmask = np.ones( YFqc.shape ).astype(bool)
-             YFmask[ YFqc != 1 ] = False 
-
-             ObsLocWStep= ObsLocW[ YFmask , : ] 
-             ObsTypeWStep= ObsTypeW[ YFmask ] 
-             YObsWStep= YObsW[ YFmask , : ] 
-             NObsWStep=YObsWStep.size
-             ObsErrorWStep= ObsErrorW[ YFmask , : ] 
-             YFStep= YF[ YFmask , : ] 
-             
-             #print( YObsWStep , YFmask , YFqc )
-             #print('YFqc',YFqc )
-          #=================================================================
-          #  Compute time step in pseudo time  : 
-          #=================================================================
-      
-          if DAConf['AddaptiveTemp']  : 
-             #Addaptive time step computation
-             if itemp == 0 : 
-                [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']   ,
-                            tloc=da_window_end    , nvar=1 , obsloc=ObsLocWStep  , ofens=YFStep                         ,
-                            rdiag=ObsErrorWStep , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
-             dt_pseudo_time =  a + b * (itemp + 1)
-          else :
-             #Equal time steps in pseudo time.  
-             dt_pseudo_time = dt_pseudo_time_vec[ itemp ] * np.ones( Nx )
+           #Perform initial iterations using ETKF this helps to speed up convergence.
            
-          #=================================================================
-          #  LETKF STEP  : 
-          #=================================================================
+           #=================================================================
+           #  ENSEMBLE FORECAST  : 
+           #=================================================================   
+        
+           ntout=int( DAConf['Freq'] / DAConf['TSFreq'] ) + 1  #Output the state every ObsFreq time steps.
 
-          if BridgeParam < 1.0 :
-             #print('iteration',itemp,NObsWStep,NObsW)
-             #print('pre',np.std( stateens,axis=1) )
-             #Compute the tempering parameter.
-             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )  
+           #print('Runing the ensemble')
+           if ( np.any( np.isnan( stateens ) ) or np.any( np.isinf( stateens ) ) ) :
+              #Stop the cycle before the fortran code hangs because of NaNs
+              print('Error: The analysis contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
+              NormalEnd=False
+              np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
+              break
+           
+           [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
+                                                   x0=stateens[:,:,0,0]  , xss0=XSS , rf0=RF    , phi=XPhi     , sigma=XSigma             ,
+                                                   c0=PA   , crf0=CRF             , cphi=CPhi    , csigma=CSigma, param=ModelConf['TwoScaleParameters'] , 
+                                                   nx=Nx,  nxss=NxSS   , ncoef=NCoef  , dt=ModelConf['dt']   , dtss=ModelConf['dtss'])
+                                                   
+           if ( np.any( np.isnan( XFtmp[:,:,-1] ) ) or np.any( np.isinf( XFtmp[:,:,-1] ) ) ) :
+              #Stop the cycle before the fortran code hangs because of NaNs
+              print('Error: The forecast contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
+              NormalEnd=False
+              np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1], obs=YObsW , obsloc=ObsLocW , yf=YF )
+              break                  
+                                                  
+           if itemp == 0   :
+              #The first iteration forecast will be stored as the forecast.
+              XF[:,:,it]=XFtmp[:,:,-1]             #Store the state variables ensemble at the end of the window.
+        
+           XSS=XSStmp[:,:,-1]
+           CRF=CRFtmp[:,:,-1]
+           RF=RFtmp[:,:,-1]
+           
+           stateens[:,:,0,:] = XFtmp[:,:,[0,-1]]  #We will store the first time and the last time.
+                                          #so the assimilation can update both.
 
-             if NObsWStep > 0 :
-                stateens =  das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']           ,
-                                  tloc=da_window_end   , nvar=1                        , xfens=stateens               ,
-                                  obs=YObsWStep        , obsloc=ObsLocWStep            , ofens=YFStep                 ,
-                                  rdiag=ObsErrorWStep  , loc_scale=DAConf['LocScalesLETKF'] , inf_coef = DAConf['InfCoefs'][0:5]  ,
-                                  update_smooth_coef=0.0 , temp_factor = temp_factor )[:,:,0,0] 
+           #=================================================================
+           #  OBSERVATION OPERATOR  : 
+           #================================================================= 
+        
+           #Apply h operator and transform from model space to observation space. 
+           #This opearation is performed only at the end of the window.
+        
+           #Set the time coordinate corresponding to the model output.                                 
+           if NObsW > 0 : 
+              TLoc= da_window_end #We are assuming that all observations are valid at the end of the assimilaation window.
+              [YF , YFqc ] = hoperator.model_to_obs(  nx=Nx , no=NObsW , nt=1 , nens=NEns ,
+                           obsloc=ObsLocW , x=stateens[:,:,:,-1] , obstype=ObsTypeW , obserr=ObsErrorW , obsval=YObsW ,
+                           xloc=ModelConf['XLoc'] , tloc= TLoc , gross_check_factor = DAConf['GrossCheckFactor'] ,
+                           low_dbz_per_thresh = DAConf['LowDbzPerThresh'] )
+              YFmask = np.ones( YFqc.shape ).astype(bool)
+              YFmask[ YFqc != 1 ] = False 
 
-             #print( DAConf['InfCoefs'][0] )
-
-       #stateens = inflation( stateens , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS and RTPP for tempering
-
-       XA[:,:,it] = np.copy( stateens )
+              ObsLocWStep= ObsLocW[ YFmask , : ] 
+              ObsTypeWStep= ObsTypeW[ YFmask ] 
+              YObsWStep= YObsW[ YFmask , : ] 
+              NObsWStep=YObsWStep.size
+              ObsErrorWStep= ObsErrorW[ YFmask , : ] 
+              YFStep= YF[ YFmask , : ] 
+                                 
+           #=================================================================
+           #  Compute time step in pseudo time  : 
+           #=================================================================
+      
+           if DAConf['AddaptiveTemp']  : 
+              #Addaptive time step computation
+              if itemp == 0 : 
+                 [a , b ] = das.da_pseudo_time_step( nx=Nx , nt=2 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']   ,
+                             tloc=np.array([da_window_start,da_window_end]) , nvar=1 , obsloc=ObsLocWStep  , ofens=YFStep                         ,
+                             rdiag=ObsErrorWStep , loc_scale=DAConf['LocScalesLETKF'] , niter = DAConf['NTemp']  )
+              dt_pseudo_time =  a + b * (itemp + 1)
+           else :
+              #Equal time steps in pseudo time.  
+              dt_pseudo_time = dt_pseudo_time_vec[ itemp ] * np.ones( ( Nx , 2 ) )
+      
+     
+           #=================================================================
+           #  LETKF STEP  : 
+           #=================================================================
+              
+           temp_factor = (1.0 / dt_pseudo_time )         
+           if NObsWStep > 0 :
+              stateens = das.da_letkf( nx=Nx , nt=2 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']                        ,
+                            tloc=np.array([da_window_start,da_window_end]) , nvar=1                        , xfens=stateens ,
+                            obs=YObsWStep        , obsloc=ObsLocWStep            , ofens=YFStep                             ,
+                            rdiag=ObsErrorWStep  , loc_scale=DAConf['LocScalesLETKF'] , inf_coef = DAConf['InfCoefs'][0:5]  ,
+                            update_smooth_coef=0.0 , temp_factor = temp_factor )
+                 
+       #XA[:,:,it] = inflation( stateens[:,:,0,-1] , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS_t and RTPP_t for tempering
        NAssimObs[it] = NObsWStep 
-
+       #After all iterations store the final analysis.    
+       XA[:,:,it] = np.copy( stateens[:,:,0,-1] )    
+    
     #=================================================================
     #  DIAGNOSTICS  : 
     #================================================================= 
     output=dict()
     
     SpinUp=200 #Number of assimilation cycles that will be conisdered as spin up 
-        
+    
     XASpread=np.std(XA,axis=1)
     XFSpread=np.std(XF,axis=1)
     
@@ -313,6 +300,7 @@ def assimilation_letkf_run( conf ) :
     
     output['XATSprd']=np.mean(XASpread,0)
     
+    
     output['XASBias']=np.mean( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
     output['XFSBias']=np.mean( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
     
@@ -320,7 +308,7 @@ def assimilation_letkf_run( conf ) :
     output['XFTBias']=np.mean(  XFMean - XNature[:,0,0:DALength]  , axis=0 ) 
     
     output['Nobs'] = NAssimObs
-    
+
     output['NormalEnd'] = NormalEnd 
 
     return output
@@ -332,7 +320,6 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
    #are used in combination with tempering.
    DALength = nature.shape[2] - 1
    NEns = ensemble_post.shape[1]
-   
 
    if inf_coefs[1] > 0.0 :
      #=================================================================
@@ -343,7 +330,6 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      PostMean = np.mean( ensemble_post , axis=1 )
      EnsPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
      inf_factor = ( 1.0 - inf_coefs[1] ) + ( prior_spread / post_spread ) * inf_coefs[1]
-     #print('Inf factor=',inf_factor)
      EnsPert = EnsPert * np.repeat( inf_factor[:,np.newaxis] , NEns , axis=1 )
      ensemble_post = EnsPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
 
@@ -384,4 +370,8 @@ def get_temp_steps( NTemp , Alpha ) :
    steps = steps / np.sum(steps)
 
    return steps 
+
+
+
+
 
