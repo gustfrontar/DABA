@@ -21,7 +21,7 @@ else                        :
    PlotTheExperiment = True
 
 
-conf.GeneralConf['NatureName']='NatureR25_Den1_Freq4_Hradar'
+conf.GeneralConf['NatureName']='NatureR5_Den05_Freq4_Hradar'
 out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF-T3_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'

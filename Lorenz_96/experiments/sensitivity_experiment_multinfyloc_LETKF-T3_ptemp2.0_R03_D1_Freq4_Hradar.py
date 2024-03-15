@@ -14,15 +14,15 @@ import sensitivity_conf_default as conf
 import assimilation_letkf_module as alm
 
 if len(sys.argv) > 1 and sys.argv[1] == 'compute' :
-   RunTheExperiment = True
-   PlotTheExperiment = False
+RunTheExperiment = True
+PlotTheExperiment = False
 else                        :
-   RunTheExperiment = False
-   PlotTheExperiment = True
+RunTheExperiment = False
+PlotTheExperiment = True
 
 
 conf.GeneralConf['NatureName']='NatureR03_Den1_Freq4_Hradar'
-out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF-T3_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     

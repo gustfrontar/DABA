@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
-import nature_conf_R1_Den1_Freq4_Hquadratic as conf
+import nature_conf_R03_Den05_Freq4_Hradar as conf
 import os
 
 

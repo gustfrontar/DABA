@@ -181,8 +181,27 @@ def da_statistics( ens_size , qr_mean , qr_std , dbz_tr , qr_model_bias , R_obs 
     
     return result
         
+
+def outlier_rmse_filter( rmse ) :
     
-    
+    nx , ny = rmse.shape
+    for ii in range(1,nx-1) :
+        for jj in range(1,ny-1):
+
+            count = 0
+            for iii in range(ii-1,ii+1):
+                for jjj in range(jj-1,jj+1):
+                    if rmse[iii,jjj] > rmse[ii,jj] * 3.0 :
+                        count = count + 1
+                    if np.isnan( rmse[iii,jjj] ) :
+                        count = count + 1
+            if count >= 3 :
+                rmse[ii,jj] = np.nan
+                
+    return rmse
+
+
+
     
 
 

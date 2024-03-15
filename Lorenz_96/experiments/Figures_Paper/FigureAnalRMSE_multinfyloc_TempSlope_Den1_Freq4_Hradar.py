@@ -7,7 +7,7 @@ plt.rcParams['text.usetex'] = True
 plt.rcParams.update({'font.size': 22})
 
 NatureName='NatureR03_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp0.0_' + NatureName + '.npz'
 
 
 
@@ -43,7 +43,7 @@ axs[0,0].set_title('(a) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR1_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp0.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -74,7 +74,7 @@ axs[1,0].set_title('(b) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR5_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp0.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -105,7 +105,7 @@ axs[2,0].set_title('(c) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR25_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp0.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -141,7 +141,7 @@ axs[3,0].set_title('(d) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR03_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp1.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -171,7 +171,7 @@ axs[0,1].set_title('(e) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR1_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp1.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -202,7 +202,7 @@ axs[1,1].set_title('(f) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR5_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp1.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -233,7 +233,7 @@ axs[2,1].set_title('(g) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR25_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp1.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -269,7 +269,7 @@ axs[3,1].set_title('(h) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR03_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T3_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -299,7 +299,7 @@ axs[0,2].set_title('(e) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR1_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T3_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -330,7 +330,7 @@ axs[1,2].set_title('(f) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR5_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T3_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -361,7 +361,7 @@ axs[2,2].set_title('(g) - Min. RMSE=' + min_error )
 
 
 NatureName='NatureR25_Den1_Freq4_Hradar'
-exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T3_ptemp2.0_' + NatureName + '.npz'
+exp_filename='../npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + NatureName + '.npz'
 
 f=open(exp_filename,'rb')
 [results,mult_inf_range,loc_scale_range,Alpha_temp_list,total_analysis_rmse,total_forecast_rmse,total_analysis_sprd,total_forecast_sprd] = pickle.load(f)
@@ -399,4 +399,4 @@ cbar_ax = fig.add_axes([0.85, 0.15, 0.02, 0.7])
 fig.colorbar(pcolor0,cax=cbar_ax)
 
 
-plt.savefig('FigureAnalRMSE_multinfyloc_Den1_Freq4_Hradar.png')
+plt.savefig('FigureAnalRMSE_multinfyloc_TempSlope_Den1_Freq4_Hradar.png')
