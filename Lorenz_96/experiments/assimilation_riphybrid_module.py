@@ -21,7 +21,7 @@ from scipy import stats
 import os
 
 
-def assimilation_hybrid_run( conf ) :
+def assimilation_letks_run( conf ) :
 
     np.random.seed(20)
     
@@ -66,8 +66,7 @@ def assimilation_hybrid_run( conf ) :
     #Store the true state evolution for verfication 
     XNature = InputData['XNature']   #State variables
     CNature = InputData['CNature']   #Parameters
-    FNature = InputData['FNature']   #Large scale forcing.
-    
+
     #=================================================================
     # INITIALIZATION : 
     #=================================================================
@@ -91,11 +90,7 @@ def assimilation_hybrid_run( conf ) :
        DALength = DAConf['ExpLength']
        XNature = XNature[:,:,0:DALength+1]
        CNature = CNature[:,:,:,0:DALength+1] 
-       FNature = FNature[:,:,0:DALength+1]
-       
-       
-    #DALength = 3
-    
+
     #Get the number of parameters
     NCoef=ModelConf['NCoef']
     #Get the size of the state vector
@@ -109,11 +104,8 @@ def assimilation_hybrid_run( conf ) :
     
     XA=np.zeros([Nx,NEns,DALength])                         #Analisis ensemble
     XF=np.zeros([Nx,NEns,DALength])                         #Forecast ensemble
-    PA=np.zeros([Nx,NEns,NCoef,DALength])                   #Analized parameters
-    PF=np.zeros([Nx,NEns,NCoef,DALength])                   #Forecasted parameters
+    PA=np.zeros([Nx,NEns,NCoef])                            #Fixed parameters
     NAssimObs=np.zeros(DALength)
-    
-    F=np.zeros([Nx,NEns,DALength])                          #Total forcing on large scale variables.
     
     #Initialize model configuration, parameters and state variables.
     if not ModelConf['EnableSRF']    :
@@ -130,13 +122,7 @@ def assimilation_hybrid_run( conf ) :
       CSigma=ModelConf['CSigma']
       CPhi  =ModelConf['CPhi']
     
-    
-    if not ModelConf['FSpaceDependent'] :
-      FSpaceAmplitude=np.zeros(NCoef)
-    else                   :
-      FSpaceAmplitude=ModelConf['FSpaceAmplitude']
-    
-    FSpaceFreq=ModelConf['FSpaceFreq']
+
     
     #Initialize random forcings
     CRF=np.zeros([NEns,NCoef])
@@ -144,9 +130,7 @@ def assimilation_hybrid_run( conf ) :
     
     #Initialize small scale variables and forcing
     XSS=np.zeros((NxSS,NEns))
-    SFF=np.zeros((Nx,NEns))
     
-    C0=np.zeros((NCoef,Nx,NEns))
     
     #Generate a random initial conditions and initialize deterministic parameters
     for ie in range(0,NEns)  :
@@ -155,9 +139,9 @@ def assimilation_hybrid_run( conf ) :
     
        #Reemplazo el perturbado totalmente random por un perturbado mas inteligente.
        XA[:,ie,0]=ModelConf['Coef'][0]/2 + np.squeeze( DAConf['InitialXSigma'] * ( XNature[:,0,RandInd1] - XNature[:,0,RandInd2] ) )
-        
-       for ic in range(0,NCoef) : 
-            PA[:,ie,ic,0]=ModelConf['Coef'][ic] + DAConf['InitialPSigma'][ic] * np.random.normal( size=1 )
+
+    for ic in range(0,NCoef) :
+            PA[:,:,ic]=ModelConf['Coef'][ic] 
                
     #=================================================================
     #  MAIN DATA ASSIMILATION LOOP : 
@@ -177,7 +161,6 @@ def assimilation_hybrid_run( conf ) :
     
        da_window_start  = (it -1) * DAConf['Freq']
        da_window_end    = da_window_start + DAConf['Freq']
-       da_analysis_time = da_window_end
     
        #Screen the observations and get only the onew within the da window
        window_mask=np.logical_and( ObsLoc[:,1] > da_window_start , ObsLoc[:,1] <= da_window_end )
@@ -189,7 +172,7 @@ def assimilation_hybrid_run( conf ) :
        ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window          
 
        #=================================================================
-       #  TEMPERED RUNNING IN PLACE  : 
+       #  TEMPERED LETKS  : 
        #================================================================= 
        stateens=np.zeros((Nx,NEns,1,2))    
        stateens[:,:,0,0] = np.copy(XA[:,:,it-1])
@@ -417,6 +400,8 @@ def assimilation_hybrid_run( conf ) :
     
     output['Nobs'] = NAssimObs
 
+    output['NormalEnd'] = NormalEnd 
+
     return output
 
 
@@ -427,7 +412,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
    DALength = nature.shape[2] - 1
    NEns = ensemble_post.shape[1]
 
-   if inf_coefs[5] > 0.0 :
+   if inf_coefs[1] > 0.0 :
      #=================================================================
      #  RTPS  : Relaxation to prior spread (compatible with tempering iterations) 
      #=================================================================
@@ -435,11 +420,11 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      post_spread  = np.std( ensemble_post  , axis=1 )
      PostMean = np.mean( ensemble_post , axis=1 )
      EnsPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
-     inf_factor = ( 1.0 - inf_coefs[5] ) + ( prior_spread / post_spread ) * inf_coefs[5]
+     inf_factor = ( 1.0 - inf_coefs[1] ) + ( prior_spread / post_spread ) * inf_coefs[1]
      EnsPert = EnsPert * np.repeat( inf_factor[:,np.newaxis] , NEns , axis=1 )
      ensemble_post = EnsPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
 
-   if inf_coefs[6] > 0.0 :
+   if inf_coefs[2] > 0.0 :
      #=================================================================
      #  RTPP  : Relaxation to prior perturbations (compatible with tempering iterations) 
      #=================================================================
@@ -447,10 +432,10 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      PriorMean= np.mean( ensemble_prior, axis=1 )
      PostPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
      PriorPert= ensemble_prior- np.repeat( PriorMean[:,np.newaxis] , NEns , axis=1 )
-     PostPert = (1.0 - inf_coefs[6] ) * PostPert + inf_coefs[6] * PriorPert 
+     PostPert = (1.0 - inf_coefs[2] ) * PostPert + inf_coefs[2] * PriorPert 
      ensemble_post = PostPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 ) 
 
-   if inf_coefs[4] > 0.0 :
+   if inf_coefs[3] > 0.0 :
      #=================================================================
      #  ADD ADDITIVE ENSEMBLE PERTURBATIONS  : 
      #=================================================================
@@ -459,7 +444,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      #Get random index to generate additive perturbations
      RandInd1=(np.round(np.random.rand(NEns)*DALength)).astype(int)
      RandInd2=(np.round(np.random.rand(NEns)*DALength)).astype(int)
-     AddInfPert = np.squeeze( nature[:,0,RandInd1] - nature[:,0,RandInd2] ) * inf_coefs[4]
+     AddInfPert = np.squeeze( nature[:,0,RandInd1] - nature[:,0,RandInd2] ) * inf_coefs[3]
      #Shift perturbations to obtain zero-mean perturbations and add it to the ensemble.
      ensemble_post = ensemble_post + AddInfPert - np.repeat( np.mean(AddInfPert,1)[:,np.newaxis] , NEns , axis=1 )
 
