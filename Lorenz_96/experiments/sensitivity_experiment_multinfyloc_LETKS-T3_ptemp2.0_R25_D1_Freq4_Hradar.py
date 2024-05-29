@@ -20,7 +20,6 @@ else                        :
    RunTheExperiment = False
    PlotTheExperiment = True
 
-
 conf.GeneralConf['NatureName']='NatureR25_Den1_Freq4_Hradar'
 out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKS-T3_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
@@ -29,9 +28,9 @@ conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.np
 conf.DAConf['ExpLength'] = 1000                           #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
-conf.DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
-conf.DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
-#conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
+conf.DAConf['Freq'] = 4                                  #Assimilation frequency (in number of time steps)
+conf.DAConf['TSFreq'] = 4                                #Intra window ensemble output frequency (for 4D Data assimilation)
+#conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])       #Localization scale is space and time (negative means no localization)
 conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 

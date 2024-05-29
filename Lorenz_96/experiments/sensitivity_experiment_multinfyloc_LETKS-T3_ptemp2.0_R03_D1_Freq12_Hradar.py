@@ -11,7 +11,7 @@ sys.path.append('../data_assimilation/')
 
 import numpy as np
 import sensitivity_conf_default as conf
-import assimilation_letkf_module as alm
+import assimilation_letks_module as alm
 
 if len(sys.argv) > 1 and sys.argv[1] == 'compute' :
    RunTheExperiment = True
@@ -21,8 +21,8 @@ else                        :
    PlotTheExperiment = True
 
 
-conf.GeneralConf['NatureName']='NatureR25_Den1_Freq12_Hradar'
-out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+conf.GeneralConf['NatureName']='NatureR03_Den1_Freq12_Hradar'
+out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKS-T3_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
@@ -37,9 +37,9 @@ conf.DAConf['BridgeParam']=0.0                            #Bridging parameter fo
 
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
 conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
-conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
-conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
-conf.DAConf['NTemp'] = 1                                  #Number of tempering iterations.
+conf.DAConf['GrossCheckFactor'] = 150.0                   #Optimized gross error check
+conf.DAConf['LowDbzPerThresh']  = 0.9                     #Optimized Low ref thresh.
+conf.DAConf['NTemp'] = 3                                  #Number of tempering iterations.
 
 
 if RunTheExperiment  :
@@ -61,7 +61,7 @@ if RunTheExperiment  :
             conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
             conf.DAConf['LocScalesLETKF'] = np.array([loc_scale,-1.0])
             
-            results.append( alm.assimilation_letkf_run( conf ) )
+            results.append( alm.assimilation_letks_run( conf ) )
             AlphaTempList.append( alm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
                  
             print('Multiplicative Inflation',mult_inf)

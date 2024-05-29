@@ -21,16 +21,16 @@ else                        :
    PlotTheExperiment = True
 
 
-conf.GeneralConf['NatureName']='NatureR25_Den1_Freq12_Hradar'
-out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF_' + conf.GeneralConf['NatureName'] + '.npz'
+conf.GeneralConf['NatureName']='NatureR5_Den025_Freq12_Hradar'
+out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF-T2_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
 conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
-conf.DAConf['Freq'] = 12                                   #Assimilation frequency (in number of time steps)
-conf.DAConf['TSFreq'] = 12                                 #Intra window ensemble output frequency (for 4D Data assimilation)
+conf.DAConf['Freq'] = 4                                   #Assimilation frequency (in number of time steps)
+conf.DAConf['TSFreq'] = 4                                 #Intra window ensemble output frequency (for 4D Data assimilation)
 #conf.DAConf['LocScalesLETKF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['LocScalesLETPF']=np.array([3.0,-1.0])        #Localization scale is space and time (negative means no localization)
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
@@ -39,7 +39,7 @@ conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive temp
 conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
 conf.DAConf['GrossCheckFactor'] = 15.0                    #Optimized gross error check
 conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
-conf.DAConf['NTemp'] = 1                                  #Number of tempering iterations.
+conf.DAConf['NTemp'] = 2                                  #Number of tempering iterations.
 
 
 if RunTheExperiment  :
