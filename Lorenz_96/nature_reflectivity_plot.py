@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct  4 14:52:08 2023
+...................................
 
 @author: jruiz
 """
