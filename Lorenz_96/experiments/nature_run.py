@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 import time
-import nature_conf_R25_Den025_Freq12_Hradar as conf
+import default_nature_conf as conf
 import os
 
 
