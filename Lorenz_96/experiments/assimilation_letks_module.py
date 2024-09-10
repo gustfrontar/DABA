@@ -280,36 +280,44 @@ def assimilation_letks_run( conf ) :
     #  DIAGNOSTICS  : 
     #================================================================= 
     output=dict()
-    
+
     SpinUp=200 #Number of assimilation cycles that will be conisdered as spin up 
-    
+
     XASpread=np.std(XA,axis=1)
     XFSpread=np.std(XF,axis=1)
-    
+
     XAMean=np.mean(XA,axis=1)
     XFMean=np.mean(XF,axis=1)
-    
+
+    output['YObs'] = YObs
+    output['ObsType'] = ObsType
+    output['ObsError'] = ObsError
+    output['ObsLoc'] = ObsLoc
+    output['XNature'] = XNature[:,0,0:DALength]
+
+    output['XAMean'] = XAMean
+    output['XFMean'] = XFMean
+
     output['XASRmse']=np.sqrt( np.mean( np.power( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength] , 2 ) , axis=1 ) )
     output['XFSRmse']=np.sqrt( np.mean( np.power( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength] , 2 ) , axis=1 ) )
-    
+
     output['XATRmse']=np.sqrt( np.mean( np.power( XAMean - XNature[:,0,0:DALength] , 2 ) , axis=0 ) )
     output['XFTRmse']=np.sqrt( np.mean( np.power( XFMean - XNature[:,0,0:DALength] , 2 ) , axis=0 ) )
-    
+
     output['XASSprd']=np.mean(XASpread,1)
     output['XFSSprd']=np.mean(XFSpread,1)
-    
+
     output['XATSprd']=np.mean(XASpread,0)
-    
-    
-    output['XASBias']=np.mean( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
-    output['XFSBias']=np.mean( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 ) 
-    
-    output['XATBias']=np.mean(  XAMean - XNature[:,0,0:DALength]  , axis=0 ) 
-    output['XFTBias']=np.mean(  XFMean - XNature[:,0,0:DALength]  , axis=0 ) 
-    
+
+    output['XASBias']=np.mean( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 )
+    output['XFSBias']=np.mean( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength]  , axis=1 )
+
+    output['XATBias']=np.mean(  XAMean - XNature[:,0,0:DALength]  , axis=0 )
+    output['XFTBias']=np.mean(  XFMean - XNature[:,0,0:DALength]  , axis=0 )
+
     output['Nobs'] = NAssimObs
 
-    output['NormalEnd'] = NormalEnd 
+    output['NormalEnd'] = NormalEnd
 
     return output
 

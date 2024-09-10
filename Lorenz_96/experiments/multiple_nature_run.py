@@ -20,7 +20,7 @@ import default_nature_conf as conf
 FreqList=[4,8,12,16,20]
 SpaceDensityList=[0.1,0.25,0.5,1.0]
 ObsOpe=[1,3]
-ObsError=[1,5,25] 
+ObsError=[0.3,1,5,25] 
 conf.GeneralConf['RandomSeed'] = 10  #Fix random seed
 
 for MyFreq in FreqList :
@@ -31,9 +31,9 @@ for MyFreq in FreqList :
               conf.ObsConf['Freq'] = MyFreq  
               conf.ObsConf['SpaceDensity'] = MyDen
               conf.ObsConf['Type'] = MyOO
-              conf.ObsConf['ObsError'] = MyOE
-              conf.GeneralConf['NatureFileName']='Nature_Freq' + str(MyFreq) + '_Den' + str(MyDen) + '_Type' + str(MyOO) + '_ObsErr' + str(MyOE) + '.npz' 
-
+              conf.ObsConf['Error'] = MyOE
+              conf.GeneralConf['ExpName']='Nature_Freq' + str(MyFreq) + '_Den' + str(MyDen) + '_Type' + str(MyOO) + '_ObsErr' + str(MyOE)  
+              conf.GeneralConf['NatureFileName']='MultipleNature_' + conf.GeneralConf['ExpName'] + '.npz'
               nature.nature_run( conf )
             
     

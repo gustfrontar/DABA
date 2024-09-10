@@ -57,7 +57,7 @@ NatureConf= dict()
 NatureConf['NEns']=1                               #Number of ensemble mebers for the nature run. (usually 1)
 
 NatureConf['RunSave']=True                         #Save nature run
-NatureConf['RunPlot']=False                         #Plot nature run
+NatureConf['RunPlot']=False                        #Plot nature run
 
 NatureConf['SPLength']=40                          #Spin up length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)
 NatureConf['Length']=1000                           #Nature run length in model time units (1 model time unit app. equivalent to 5 day time in the atmosphere)

@@ -1,0 +1,7 @@
+
+The following libraries, compiled with GNU 10.2.1 compilers, were loaded:
+* MPICH 3.4.2
+* NetCDF 4
+* HDF5 1.10.5
+* JASPER 2.0.33
+

@@ -301,6 +301,15 @@ def assimilation_letkf_run( conf ) :
     
     XAMean=np.mean(XA,axis=1)
     XFMean=np.mean(XF,axis=1)
+
+    output['YObs'] = YObs
+    output['ObsType'] = ObsType
+    output['ObsError'] = ObsError
+    output['ObsLoc'] = ObsLoc
+    output['XNature'] = XNature[:,0,0:DALength]
+
+    output['XAMean'] = XAMean
+    output['XFMean'] = XFMean
     
     output['XASRmse']=np.sqrt( np.mean( np.power( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength] , 2 ) , axis=1 ) )
     output['XFSRmse']=np.sqrt( np.mean( np.power( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength] , 2 ) , axis=1 ) )
