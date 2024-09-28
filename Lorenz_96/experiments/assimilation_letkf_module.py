@@ -212,7 +212,7 @@ def assimilation_letkf_run( conf ) :
        ObsErrorW=ObsError[window_mask]                                   #Observation error within the DA window  
 
        #=================================================================
-       #  HYBRID-TEMPERED DA  : 
+       #  LETKF-TEMPERED DA  : 
        #================================================================= 
     
        stateens = np.copy(XF[:,:,it])

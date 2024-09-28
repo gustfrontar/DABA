@@ -70,7 +70,7 @@ def assimilation_hybrid_run( conf ) :
     #=================================================================
     # INITIALIZATION : 
     #=================================================================
-    if DAConf['AlphaTempScale'] > 0.0 :
+    if DAConf['AlphaTempScale'] >= 0.0 :
        print('Using AlphaTempScale to compute tempering dt')
        TempSteps = get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] )
     else   :
@@ -274,7 +274,7 @@ def assimilation_hybrid_run( conf ) :
              #print('iteration',itemp,NObsWStep,NObsW)
              #print('pre',np.std( stateens,axis=1) )
              #Compute the tempering parameter.
-             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )        
+             temp_factor = (1.0 / dt_pseudo_time ) / ( 1.0 - BridgeParam )  
              if NObsWStep > 0 :
                 stateens = das.da_letkf( nx=Nx , nt=1 , no=NObsWStep , nens=NEns ,  xloc=ModelConf['XLoc']                        ,
                                   tloc=da_window_end   , nvar=1                        , xfens=stateens                           ,
@@ -316,7 +316,7 @@ def assimilation_hybrid_run( conf ) :
                                            multinf=DAConf['InfCoefs'][0] , w_in = prior_weights )
                 stateens = tmp_ens[:,:,0,0]
 
-       stateens = inflation( stateens , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS_t and RTPP_t for tempering
+       #stateens = inflation( stateens , XF[:,:,it] , XNature , DAConf['InfCoefs'] ) #Additive inflation, RTPS_t and RTPP_t for tempering
 
        XA[:,:,it] = np.copy( stateens )
        NAssimObs[it] = NObsWStep 
@@ -333,6 +333,15 @@ def assimilation_hybrid_run( conf ) :
     
     XAMean=np.mean(XA,axis=1)
     XFMean=np.mean(XF,axis=1)
+
+    output['YObs'] = YObs
+    output['ObsType'] = ObsType
+    output['ObsError'] = ObsError
+    output['ObsLoc'] = ObsLoc
+    output['XNature'] = XNature[:,0,0:DALength]
+
+    output['XAMean'] = XAMean
+    output['XFMean'] = XFMean
     
     output['XASRmse']=np.sqrt( np.mean( np.power( XAMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength] , 2 ) , axis=1 ) )
     output['XFSRmse']=np.sqrt( np.mean( np.power( XFMean[:,SpinUp:DALength] - XNature[:,0,SpinUp:DALength] , 2 ) , axis=1 ) )
@@ -366,7 +375,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
    NEns = ensemble_post.shape[1]
    
 
-   if inf_coefs[5] > 0.0 :
+   if inf_coefs[1] > 0.0 :
      #=================================================================
      #  RTPS  : Relaxation to prior spread (compatible with tempering iterations) 
      #=================================================================
@@ -374,12 +383,12 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      post_spread  = np.std( ensemble_post  , axis=1 )
      PostMean = np.mean( ensemble_post , axis=1 )
      EnsPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
-     inf_factor = ( 1.0 - inf_coefs[5] ) + ( prior_spread / post_spread ) * inf_coefs[5]
+     inf_factor = ( 1.0 - inf_coefs[1] ) + ( prior_spread / post_spread ) * inf_coefs[1]
      #print('Inf factor=',inf_factor)
      EnsPert = EnsPert * np.repeat( inf_factor[:,np.newaxis] , NEns , axis=1 )
      ensemble_post = EnsPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
 
-   if inf_coefs[6] > 0.0 :
+   if inf_coefs[2] > 0.0 :
      #=================================================================
      #  RTPP  : Relaxation to prior perturbations (compatible with tempering iterations) 
      #=================================================================
@@ -387,10 +396,10 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      PriorMean= np.mean( ensemble_prior, axis=1 )
      PostPert = ensemble_post - np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 )
      PriorPert= ensemble_prior- np.repeat( PriorMean[:,np.newaxis] , NEns , axis=1 )
-     PostPert = (1.0 - inf_coefs[6] ) * PostPert + inf_coefs[6] * PriorPert 
+     PostPert = (1.0 - inf_coefs[2] ) * PostPert + inf_coefs[2] * PriorPert 
      ensemble_post = PostPert + np.repeat( PostMean[:,np.newaxis] , NEns , axis=1 ) 
 
-   if inf_coefs[4] > 0.0 :
+   if inf_coefs[3] > 0.0 :
      #=================================================================
      #  ADD ADDITIVE ENSEMBLE PERTURBATIONS  : 
      #=================================================================
@@ -399,7 +408,7 @@ def inflation( ensemble_post , ensemble_prior , nature , inf_coefs )  :
      #Get random index to generate additive perturbations
      RandInd1=(np.round(np.random.rand(NEns)*DALength)).astype(int)
      RandInd2=(np.round(np.random.rand(NEns)*DALength)).astype(int)
-     AddInfPert = np.squeeze( nature[:,0,RandInd1] - nature[:,0,RandInd2] ) * inf_coefs[4]
+     AddInfPert = np.squeeze( nature[:,0,RandInd1] - nature[:,0,RandInd2] ) * inf_coefs[3]
      #Shift perturbations to obtain zero-mean perturbations and add it to the ensemble.
      ensemble_post = ensemble_post + AddInfPert - np.repeat( np.mean(AddInfPert,1)[:,np.newaxis] , NEns , axis=1 )
 
@@ -416,5 +425,4 @@ def get_temp_steps( NTemp , Alpha ) :
    steps = steps / np.sum(steps)
 
    return steps 
-
 
