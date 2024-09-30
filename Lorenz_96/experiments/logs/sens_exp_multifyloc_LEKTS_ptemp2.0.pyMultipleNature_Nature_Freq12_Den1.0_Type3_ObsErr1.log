@@ -10577,3 +10577,4637 @@ This is a TWIN experiment
 Using AlphaTempScale to compute tempering dt
 Tempering steps:  [0.97737992 0.01790134 0.00471874]
 Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.05
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.866145746244177
+Forecast RMSE:  4.907722194100461
+Analisis SPRD:  0.06017851984034543
+Forecast SPRD:  0.07792037131443631
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.05
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.888173729552102
+Forecast RMSE:  4.927002877991395
+Analisis SPRD:  0.05687219813410978
+Forecast SPRD:  0.07380699936120869
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.254594597257558
+Forecast RMSE:  4.387527984694481
+Analisis SPRD:  0.11928901855560807
+Forecast SPRD:  0.14812991461289085
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.483870511120424
+Forecast RMSE:  4.582862673913143
+Analisis SPRD:  0.09784606060893206
+Forecast SPRD:  0.12362600184829313
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.554248531593634
+Forecast RMSE:  4.634722757557922
+Analisis SPRD:  0.08597183787501203
+Forecast SPRD:  0.10977232393331224
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.703921489951995
+Forecast RMSE:  4.770056713889858
+Analisis SPRD:  0.07770890418554181
+Forecast SPRD:  0.10009510382657642
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.791702798446546
+Forecast RMSE:  4.8458302726307085
+Analisis SPRD:  0.072348604181669
+Forecast SPRD:  0.0936601691601289
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.814856686687492
+Forecast RMSE:  4.86437862465
+Analisis SPRD:  0.06742918970772324
+Forecast SPRD:  0.087541488203494
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.841840035248162
+Forecast RMSE:  4.885367488474422
+Analisis SPRD:  0.06469315502639199
+Forecast SPRD:  0.08419538352407079
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.06176750286027
+Forecast RMSE:  4.21031752790941
+Analisis SPRD:  0.13903819744076004
+Forecast SPRD:  0.1726767327119131
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.294223104994587
+Forecast RMSE:  4.409837570410742
+Analisis SPRD:  0.1160257309820091
+Forecast SPRD:  0.14590656813296782
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.509870946013612
+Forecast RMSE:  4.605294773295777
+Analisis SPRD:  0.09992995921919737
+Forecast SPRD:  0.12755552359129718
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.629107871540157
+Forecast RMSE:  4.7031805905568795
+Analisis SPRD:  0.08815557727143239
+Forecast SPRD:  0.11327702675821842
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.742419046232338
+Forecast RMSE:  4.802979050125563
+Analisis SPRD:  0.08451154342884064
+Forecast SPRD:  0.109658234900553
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.812400198498824
+Forecast RMSE:  4.865076496064273
+Analisis SPRD:  0.07608042591942107
+Forecast SPRD:  0.09836340027316423
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.862215485453438
+Forecast RMSE:  4.908037111398001
+Analisis SPRD:  0.07152462611807511
+Forecast SPRD:  0.0928595217363634
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  3.1096480455108426
+Forecast RMSE:  3.2446177550954522
+Analisis SPRD:  0.22081757230376012
+Forecast SPRD:  0.29053540238307696
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.260650525807622
+Forecast RMSE:  4.3921921381017
+Analisis SPRD:  0.13396708136504212
+Forecast SPRD:  0.1704784625362929
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.437333405930962
+Forecast RMSE:  4.5393454077230215
+Analisis SPRD:  0.11334024433783449
+Forecast SPRD:  0.14500483685294918
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.574036516359756
+Forecast RMSE:  4.659844256370535
+Analisis SPRD:  0.1022112661040158
+Forecast SPRD:  0.1317335950023779
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.668243076560146
+Forecast RMSE:  4.736111600617768
+Analisis SPRD:  0.09088096497740673
+Forecast SPRD:  0.11712479880427082
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.721878560878217
+Forecast RMSE:  4.779374936453465
+Analisis SPRD:  0.08521344751861348
+Forecast SPRD:  0.11016518464339335
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.743158723610096
+Forecast RMSE:  4.792773523079387
+Analisis SPRD:  0.08142102902058287
+Forecast SPRD:  0.10524571730897288
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.7587549878898233
+Forecast RMSE:  0.8478070751125989
+Analisis SPRD:  0.32498350176258517
+Forecast SPRD:  0.44365018134386486
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.11294436031438
+Forecast RMSE:  4.256162293333792
+Analisis SPRD:  0.1533873654068109
+Forecast SPRD:  0.1956788118204987
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.4420408374298095
+Forecast RMSE:  4.514804018045011
+Analisis SPRD:  0.12974270758414921
+Forecast SPRD:  0.1713585474560581
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.475726032187684
+Forecast RMSE:  4.570680673792472
+Analisis SPRD:  0.11336622611788223
+Forecast SPRD:  0.14569504289544716
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.619553836039777
+Forecast RMSE:  4.69200511886852
+Analisis SPRD:  0.102001446373952
+Forecast SPRD:  0.1317304815127279
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.629287132507486
+Forecast RMSE:  4.696818587459774
+Analisis SPRD:  0.09740249025637651
+Forecast SPRD:  0.12631789048471154
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.709051593476237
+Forecast RMSE:  4.763616771699523
+Analisis SPRD:  0.0903732985810565
+Forecast SPRD:  0.11745204840278907
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.6720492466607826
+Forecast RMSE:  0.7650297208716558
+Analisis SPRD:  0.37020217671279776
+Forecast SPRD:  0.5083139539850802
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.21501312213241902
+Forecast RMSE:  0.29454549977714495
+Analisis SPRD:  0.2586042746582784
+Forecast SPRD:  0.34896214921721824
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.214455218899159
+Forecast RMSE:  4.342123614202418
+Analisis SPRD:  0.14636063690465942
+Forecast SPRD:  0.1878730580680527
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.382870919012419
+Forecast RMSE:  4.484293503555219
+Analisis SPRD:  0.12819107981858519
+Forecast SPRD:  0.16536296966294886
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.527589601514743
+Forecast RMSE:  4.605633686795542
+Analisis SPRD:  0.11514953805131307
+Forecast SPRD:  0.14876596558747018
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.599357970611175
+Forecast RMSE:  4.666609000092465
+Analisis SPRD:  0.10615103840600548
+Forecast SPRD:  0.1377070667335658
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.640063191068579
+Forecast RMSE:  4.700148543112929
+Analisis SPRD:  0.10206004510595808
+Forecast SPRD:  0.13293577566411194
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.3218803225971273
+Forecast RMSE:  0.44458869797923467
+Analisis SPRD:  0.41519457226104795
+Forecast SPRD:  0.5714844016297562
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  2.094214716313663
+Forecast RMSE:  2.1935767509080812
+Analisis SPRD:  0.2602477871736105
+Forecast SPRD:  0.3490897507283039
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.1021694841919345
+Forecast RMSE:  4.229879580882783
+Analisis SPRD:  0.16501438617403
+Forecast SPRD:  0.21230871922346628
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.341773983685654
+Forecast RMSE:  4.445551427568377
+Analisis SPRD:  0.14218127777766779
+Forecast SPRD:  0.18414168004148287
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.4958305251016695
+Forecast RMSE:  4.5816190350253025
+Analisis SPRD:  0.12924937207881873
+Forecast SPRD:  0.16779032002660757
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.554748358747226
+Forecast RMSE:  4.625051150766154
+Analisis SPRD:  0.1193509346214712
+Forecast SPRD:  0.15632196285641653
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.661207905536014
+Forecast RMSE:  4.719745624160646
+Analisis SPRD:  0.10844407691707639
+Forecast SPRD:  0.1410679150495368
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.34606671660279864
+Forecast RMSE:  0.4747417934288222
+Analisis SPRD:  0.4542702417194301
+Forecast SPRD:  0.6262724595933965
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  2.2193754436857462
+Forecast RMSE:  2.3386633735306095
+Analisis SPRD:  0.2784296649121226
+Forecast SPRD:  0.3716888239808841
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  1.150809641861197
+Forecast RMSE:  1.2028972378811054
+Analisis SPRD:  0.24288718753011612
+Forecast SPRD:  0.32499648188066554
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.295796901040918
+Forecast RMSE:  4.408189150485995
+Analisis SPRD:  0.15669769290168162
+Forecast SPRD:  0.20395066477315799
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.430841314631314
+Forecast RMSE:  4.5224941376851175
+Analisis SPRD:  0.14231821145571993
+Forecast SPRD:  0.18564584008371218
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.523904215226888
+Forecast RMSE:  4.601066171010716
+Analisis SPRD:  0.12986536601644913
+Forecast SPRD:  0.17006705298266464
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Error: The forecast contains NaN or Inf, Iteration number : 2481  will dump some variables to a temporal file
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  6.163968828056818
+Forecast RMSE:  6.128837498007361
+Analisis SPRD:  0.04787522465447804
+Forecast SPRD:  0.06807984790144224
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.36326158605126385
+Forecast RMSE:  0.5010733380894873
+Analisis SPRD:  0.49604486687495203
+Forecast SPRD:  0.6845196489650907
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.6573461893111496
+Forecast RMSE:  0.7323171989263869
+Analisis SPRD:  0.3326485479679646
+Forecast SPRD:  0.45138683519263745
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.9912490520408118
+Forecast RMSE:  1.040752643637327
+Analisis SPRD:  0.266458558198867
+Forecast SPRD:  0.35786573265445226
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.1901523670359236
+Forecast RMSE:  0.2596972189144771
+Analisis SPRD:  0.23465253097628974
+Forecast SPRD:  0.31380358785086165
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  0.17537007386455872
+Forecast RMSE:  0.23888045721043935
+Analisis SPRD:  0.21078721625902785
+Forecast SPRD:  0.28065025721599046
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.504395541165211
+Forecast RMSE:  4.5873954061513675
+Analisis SPRD:  0.140922484486611
+Forecast SPRD:  0.1840200725792986
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq12_Den1.0_Type3_ObsErr1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Data assimilation cycle #  5000
+Data assimilation cycle #  5100
+Data assimilation cycle #  5200
+Data assimilation cycle #  5300
+Data assimilation cycle #  5400
+Data assimilation cycle #  5500
+Data assimilation cycle #  5600
+Data assimilation cycle #  5700
+Data assimilation cycle #  5800
+Data assimilation cycle #  5900
+Data assimilation cycle #  6000
+Data assimilation cycle #  6100
+Data assimilation cycle #  6200
+Data assimilation cycle #  6300
+Data assimilation cycle #  6400
+Data assimilation cycle #  6500
+Data assimilation cycle #  6600
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.627236330586239
+Forecast RMSE:  4.690878322368398
+Analisis SPRD:  0.13017152608798077
+Forecast SPRD:  0.1707376835395023

@@ -1,0 +1,7 @@
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq8_Den0.1_Type1_ObsErr0.3.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]

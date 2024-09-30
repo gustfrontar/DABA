@@ -1,7 +1,7 @@
 #!/bin/bash
 MY_EXP=$1
 BASEPATH=$(pwd)
-NCORES=10
+NCORES=12
 
 #Tempering and LETKF with linear operator.
 expnum=1

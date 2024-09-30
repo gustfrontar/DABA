@@ -5,8 +5,7 @@ Created on Mon Apr 10 17:36:06 2017
 @author: RISDA 2018
 """
 
-#Run a Hybrid ETPF-LETKF experiment using the observations created by the script run_nature.py
-#Also a tempered ETPF or LETKF can be run using this script.
+#Run a LETKF experiment using the observations created by the script run_nature.py
 
 import sys
 sys.path.append('../model/')

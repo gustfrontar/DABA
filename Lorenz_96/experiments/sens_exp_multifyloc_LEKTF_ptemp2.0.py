@@ -81,18 +81,18 @@ for itemp , ntemp in enumerate( temp_range ) :
 
         if itemp == 0 & iinf == 0 & iloc == 0 : 
            #This is the first iteration. Save additional output data.
-           Output['ObsLoc'] = results['ObsLoc']
-           Output['ObsType'] = results['ObsType']
-           Output['ObsError'] = results['ObsError']
-           Output['YObs'] = results['YObs']
-           Output['XNature'] = results['XNature']
+           Output['ObsLoc'] = np.copy( results['ObsLoc'] )
+           Output['ObsType'] = np.copy( results['ObsType'] )
+           Output['ObsError'] = np.copy( results['ObsError'] )
+           Output['YObs'] = np.copy( results['YObs'] )
+           Output['XNature'] = np.copy( results['XNature'] )
            DALength = np.shape( results['XNature'] )[1]
            NX = np.shape( results['XNature'] )[0]
            Output['XAMean'] = np.zeros( (len(mult_inf_range),len(loc_scale_range),len(temp_range),NX,DALength) )
            Output['XFMean'] = np.zeros( (len(mult_inf_range),len(loc_scale_range),len(temp_range),NX,DALength) )
 
-        Output['XAMean'][iinf,iloc,itemp,:,:] = results['XAMean']
-        Output['XFMean'][iinf,iloc,itemp,:,:] = results['XFMean']
+        Output['XAMean'][iinf,iloc,itemp,:,:] = np.copy( results['XAMean'] )
+        Output['XFMean'][iinf,iloc,itemp,:,:] = np.copy( results['XFMean'] )
 
 Output['NTempRange'] = temp_range
 Output['MultInfRange'] = mult_inf_range

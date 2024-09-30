@@ -1,0 +1,3861 @@
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 13  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.004385058977772825
+Forecast SPRD:  0.00897233930744278
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 14  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.003189433120615627
+Forecast SPRD:  0.006708838368507214
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 9  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0012977995353907613
+Forecast SPRD:  0.002380234474926103
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 9  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0021679074389633173
+Forecast SPRD:  0.006431972834832329
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007623120213431708
+Forecast SPRD:  0.0012576411711908413
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 5  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0009271479572323129
+Forecast SPRD:  0.001794245590182187
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 9  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0015637711616147375
+Forecast SPRD:  0.008210864771070928
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 22  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.006411600304291834
+Forecast SPRD:  0.012231010490306204
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 11  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0019640889443903013
+Forecast SPRD:  0.0030248967910330993
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 7  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0011257365363612683
+Forecast SPRD:  0.0015262469528042222
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 7  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0010080560930113387
+Forecast SPRD:  0.0017031779688998472
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007703275357824168
+Forecast SPRD:  0.0013131703374660846
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007051623247433962
+Forecast SPRD:  0.0010068054628916624
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 7  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001135700331153848
+Forecast SPRD:  0.0025692070373693615
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 6  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001552756454570845
+Forecast SPRD:  0.0018790197557509319
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 19  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.007109661245030702
+Forecast SPRD:  0.015729721448976858
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0022765633148094603
+Forecast SPRD:  0.0051909330956719565
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 17  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00857888639983281
+Forecast SPRD:  0.047727617741489016
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007819748839465017
+Forecast SPRD:  0.0013969098603825733
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007051326283194157
+Forecast SPRD:  0.001019209220206004
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 6  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0010171452739336528
+Forecast SPRD:  0.002400692493066859
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001923110838742193
+Forecast SPRD:  0.0024797900244553383
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002865894814680238
+Forecast SPRD:  0.005946894695207242
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 6  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001363272695598481
+Forecast SPRD:  0.00246746763161132
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 7  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0010165085447260552
+Forecast SPRD:  0.0015745413101453803
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007874663454037935
+Forecast SPRD:  0.0014985320223772493
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00072065446684491
+Forecast SPRD:  0.0010121364306575574
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 6  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0009482611900184928
+Forecast SPRD:  0.002982189656980368
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0022810115872493758
+Forecast SPRD:  0.003341306396748636
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 14  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0036716150934126045
+Forecast SPRD:  0.006828609333042313
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 10  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0027428246738936657
+Forecast SPRD:  0.006377646195146219
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 7  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0011950034901945256
+Forecast SPRD:  0.0022351133085752053
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0008116148013787965
+Forecast SPRD:  0.0015772975697964844
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007195645566682271
+Forecast SPRD:  0.0010228357892738788
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 5  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0006878637144055821
+Forecast SPRD:  0.0009818044194521852
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 13  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002820820978432287
+Forecast SPRD:  0.004142871344465513
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0032811197154772264
+Forecast SPRD:  0.006550353495333354
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 27  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.011992367503235592
+Forecast SPRD:  0.035776119968564724
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 14  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00547598986195026
+Forecast SPRD:  0.02064742759824461
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0008412268673917322
+Forecast SPRD:  0.0016207134442611632
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 5  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0009813849572865101
+Forecast SPRD:  0.0024203877569767057
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 6  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0010776808075288202
+Forecast SPRD:  0.0034007428070529323
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 10  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0024861347146573703
+Forecast SPRD:  0.00327380446234734
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 44  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.016072649550863793
+Forecast SPRD:  0.036437339608330496
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0025348019405590826
+Forecast SPRD:  0.006060783055171559
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 10  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002831492346767689
+Forecast SPRD:  0.010481781038915556
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0008804697610321742
+Forecast SPRD:  0.0018054513023013888
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 5  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001015666084274109
+Forecast SPRD:  0.0019044942816037378
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 6  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0009661530493994431
+Forecast SPRD:  0.0036781362443294454
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 16  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0033556020111988063
+Forecast SPRD:  0.00451962500880416
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 21  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.005264449063871228
+Forecast SPRD:  0.00950003683993871
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 7  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0020914991587697427
+Forecast SPRD:  0.004070660693678458
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002140967688077132
+Forecast SPRD:  0.0062802449507350895
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0008822171652987157
+Forecast SPRD:  0.001971037710892114
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007196437853485887
+Forecast SPRD:  0.001067912912424434
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 6  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0009965926656789745
+Forecast SPRD:  0.003593048249551805
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 133  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.03813900559804349
+Forecast SPRD:  0.06408165754934465
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 19  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.004332817555846222
+Forecast SPRD:  0.00704595713910953
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 7  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002248522141559102
+Forecast SPRD:  0.003859651050571068
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 8  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002282840252517188
+Forecast SPRD:  0.006815651855222857
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.000917460277988412
+Forecast SPRD:  0.0020863544128792446
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 4  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.5
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007343491482174344
+Forecast SPRD:  0.001078707670944175
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [1.]
+Dt pseudo times:  [1.]
+Error: The forecast contains NaN or Inf, Iteration number : 5  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 4.0
+AlphaTemp [1.]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0007104929678389251
+Forecast SPRD:  0.0012094665639231024
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 119  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.005163364249592404
+Forecast SPRD:  0.007395999257827672
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 162  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.011785392437701877
+Forecast SPRD:  0.030995664374249766
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 113  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.006799252876162208
+Forecast SPRD:  0.02251461351935366
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 375  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.600035967198418
+Forecast RMSE:  4.398956548731588
+Analisis SPRD:  0.009639045229034332
+Forecast SPRD:  0.03562444913757322
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 129  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002319215102837882
+Forecast SPRD:  0.004350206789279906
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 13  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0014325247579739958
+Forecast SPRD:  0.006459064565006162
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 129  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0017335759623328978
+Forecast SPRD:  0.0026521972799378223
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Error: The forecast contains NaN or Inf, Iteration number : 516  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.452467964511753
+Forecast RMSE:  4.35288128363758
+Analisis SPRD:  0.022924609851707658
+Forecast SPRD:  0.03739716013088084
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 205  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.394786621324146
+Forecast RMSE:  4.34809129897343
+Analisis SPRD:  0.008271279639960615
+Forecast SPRD:  0.01666350078383971
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 26  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0019450995642736695
+Forecast SPRD:  0.005573374183070095
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 341  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.515259033737072
+Forecast RMSE:  4.404998972294026
+Analisis SPRD:  0.00829143127811335
+Forecast SPRD:  0.0200116693069269
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 52  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0015094456355893733
+Forecast SPRD:  0.002791515675273854
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 17  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001137695624902885
+Forecast SPRD:  0.00249604342034897
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 91  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0016515334097947463
+Forecast SPRD:  0.0026978946948934303
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Error: The forecast contains NaN or Inf, Iteration number : 947  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.5174609732859015
+Forecast RMSE:  4.373273477958652
+Analisis SPRD:  0.06393497196189642
+Forecast SPRD:  0.1176403435880355
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 241  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.446412980671338
+Forecast RMSE:  4.3609558612038795
+Analisis SPRD:  0.011948052275389628
+Forecast SPRD:  0.025465839651390276
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 67  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.003423687309337306
+Forecast SPRD:  0.007337109845363782
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 49  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00888926918660704
+Forecast SPRD:  0.0421337440308671
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 130  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00249851581083847
+Forecast SPRD:  0.004033633184872156
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 13  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0009948849456663327
+Forecast SPRD:  0.0016359593652531042
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 27  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0022946841792708095
+Forecast SPRD:  0.009120253240844606
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 322  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.4835643769881175
+Forecast RMSE:  4.383159446275686
+Analisis SPRD:  0.03313351904776628
+Forecast SPRD:  0.06481189010968448
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 125  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.014937328337871819
+Forecast SPRD:  0.03811059533527368
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 58  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0024430524294045243
+Forecast SPRD:  0.005134486283328757
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 50  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.005842004517478077
+Forecast SPRD:  0.01974661809770875
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 73  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0019434110535050668
+Forecast SPRD:  0.0030209504835461798
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 104  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0030773369622184785
+Forecast SPRD:  0.010091178761881703
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 135  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.003024459390025691
+Forecast SPRD:  0.013172471046805273
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Error: The forecast contains NaN or Inf, Iteration number : 685  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.484351384719604
+Forecast RMSE:  4.373036190011797
+Analisis SPRD:  0.05130535559902834
+Forecast SPRD:  0.08861541660083609
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 49  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00458218346932014
+Forecast SPRD:  0.009918400908410216
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 26  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0021747764778458204
+Forecast SPRD:  0.005126577632059782
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 18  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0012211227524712039
+Forecast SPRD:  0.0018754709645400843
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 30  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0030127845224702217
+Forecast SPRD:  0.011877645998686492
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 17  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0011204577057982925
+Forecast SPRD:  0.0018310668683389896
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 43  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00189347649063017
+Forecast SPRD:  0.005424464517940879
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Error: The forecast contains NaN or Inf, Iteration number : 1041  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.44167039827645
+Forecast RMSE:  4.3401669203659825
+Analisis SPRD:  0.07547462304749712
+Forecast SPRD:  0.1252944600385802
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 301  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.465750406591556
+Forecast RMSE:  4.369949089115385
+Analisis SPRD:  0.027021756383643736
+Forecast SPRD:  0.060871740922312755
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 57  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.002924562955890434
+Forecast SPRD:  0.005655237647673483
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 51  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0023847144789845656
+Forecast SPRD:  0.005016578182479604
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 25  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0020877019287319242
+Forecast SPRD:  0.004218353063223193
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 22  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0013236514979790785
+Forecast SPRD:  0.0027631829758418933
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 16  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0012613079397521966
+Forecast SPRD:  0.002306720686890353
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Error: The forecast contains NaN or Inf, Iteration number : 980  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.267998166170803
+Forecast RMSE:  4.169788798404253
+Analisis SPRD:  0.06718142075556907
+Forecast SPRD:  0.10887061202325307
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 20  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0018536677667849682
+Forecast SPRD:  0.00320995606194038
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 96  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.015673763364888082
+Forecast SPRD:  0.045499462748617235
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 41  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.004060927464298302
+Forecast SPRD:  0.012433086590507349
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 16  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001228100866848349
+Forecast SPRD:  0.0019151139801552857
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 56  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001898542200643202
+Forecast SPRD:  0.0031768023707219595
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 14  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0012737384720333293
+Forecast SPRD:  0.003386971030142835
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 33  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0036665817463088527
+Forecast SPRD:  0.0055920053124133215
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 197  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.020617457076261156
+Forecast SPRD:  0.04321364333723001
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 41  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.005234885430950082
+Forecast SPRD:  0.013384884123153421
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 33  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0035207838503312798
+Forecast SPRD:  0.008779865357332769
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 17  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.001360596767863724
+Forecast SPRD:  0.0036138799877968608
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 14  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0022465202816033146
+Forecast SPRD:  0.008731812949659062
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 12  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0011657100146750788
+Forecast SPRD:  0.002779189767705492
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Error: The forecast contains NaN or Inf, Iteration number : 2123  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.0044209636221995
+Forecast RMSE:  3.916111939259212
+Analisis SPRD:  0.1685944756850077
+Forecast SPRD:  0.2652477307928212
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 24  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0023667045996737064
+Forecast SPRD:  0.003845198877734257
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 10  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0013323674107321114
+Forecast SPRD:  0.002052004907427013
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 12  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0013798355871070347
+Forecast SPRD:  0.002171422526836151
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 33  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0024234846091626136
+Forecast SPRD:  0.005592390110667999
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 31  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.5
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0025050645899906145
+Forecast SPRD:  0.0078115924307053915
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.95257413 0.04742587]
+Dt pseudo times:  [0.04742587 0.95257413]
+Error: The forecast contains NaN or Inf, Iteration number : 15  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 4.0
+AlphaTemp [0.95257413 0.04742587]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0014113192564043533
+Forecast SPRD:  0.0032661349245646253
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.05
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.259253296975711
+Forecast RMSE:  4.3783467320700185
+Analisis SPRD:  0.07432524970944399
+Forecast SPRD:  0.10541857306280729
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Error: The forecast contains NaN or Inf, Iteration number : 2479  will dump some variables to a temporal file
+Multiplicative Inflation 1.05
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.529451153620811
+Forecast RMSE:  4.492101114682106
+Analisis SPRD:  0.02499941214447813
+Forecast SPRD:  0.0363843813877756
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.05
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.683422988860864
+Forecast RMSE:  4.746863652981742
+Analisis SPRD:  0.0378325123111084
+Forecast SPRD:  0.053685029185995894
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.05
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.844370333040608
+Forecast RMSE:  4.88185835971369
+Analisis SPRD:  0.03430006179751036
+Forecast SPRD:  0.05175134203018165
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.05
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.887280574393314
+Forecast RMSE:  4.919680177543519
+Analisis SPRD:  0.02959624952510615
+Forecast SPRD:  0.042653399823514515
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.05
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.967518841113409
+Forecast RMSE:  4.991905776894172
+Analisis SPRD:  0.027676033870917372
+Forecast SPRD:  0.039899371483237966
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.05
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.98108191343318
+Forecast RMSE:  4.995902658028594
+Analisis SPRD:  0.02639115999035055
+Forecast SPRD:  0.03866024444635856
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.1
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.362586427636408
+Forecast RMSE:  4.349143709985272
+Analisis SPRD:  0.11867533638774538
+Forecast SPRD:  0.1882543114954654
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Error: The forecast contains NaN or Inf, Iteration number : 1095  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.448418098774534
+Forecast RMSE:  4.402085443636475
+Analisis SPRD:  0.012514597300478459
+Forecast SPRD:  0.01928686483975624
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Error: The forecast contains NaN or Inf, Iteration number : 3388  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.639674478932091
+Forecast RMSE:  4.603538377881842
+Analisis SPRD:  0.031496851808451236
+Forecast SPRD:  0.04688069204518258
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Error: The forecast contains NaN or Inf, Iteration number : 4293  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  5.0864551621085115
+Forecast RMSE:  4.868528147086534
+Analisis SPRD:  0.04112866748922236
+Forecast SPRD:  0.08202154156106883
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.1
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.860440203115202
+Forecast RMSE:  4.896134611795488
+Analisis SPRD:  0.03377556847712855
+Forecast SPRD:  0.04860195129654297
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Error: The forecast contains NaN or Inf, Iteration number : 74  will dump some variables to a temporal file
+Multiplicative Inflation 1.1
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0013235594996229313
+Forecast SPRD:  0.00291126504407553
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.1
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.934475832575676
+Forecast RMSE:  4.955653832228469
+Analisis SPRD:  0.029163840140482587
+Forecast SPRD:  0.0423544677960116
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Error: The forecast contains NaN or Inf, Iteration number : 1611  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.557289099041159
+Forecast RMSE:  4.345268188035028
+Analisis SPRD:  0.05494080102986759
+Forecast SPRD:  0.09143578276512629
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 391  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.417771836496546
+Forecast RMSE:  4.354579445993027
+Analisis SPRD:  0.007138685671424651
+Forecast SPRD:  0.010760419726773602
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 182  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0026931411246014407
+Forecast SPRD:  0.004324360031410477
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Error: The forecast contains NaN or Inf, Iteration number : 1892  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.610559039383633
+Forecast RMSE:  4.540721243214662
+Analisis SPRD:  0.020386209934202038
+Forecast SPRD:  0.03561424068072923
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Data assimilation cycle #  3600
+Data assimilation cycle #  3700
+Data assimilation cycle #  3800
+Data assimilation cycle #  3900
+Data assimilation cycle #  4000
+Data assimilation cycle #  4100
+Data assimilation cycle #  4200
+Data assimilation cycle #  4300
+Data assimilation cycle #  4400
+Data assimilation cycle #  4500
+Data assimilation cycle #  4600
+Data assimilation cycle #  4700
+Data assimilation cycle #  4800
+Data assimilation cycle #  4900
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.9054392618091445
+Forecast RMSE:  4.907016373587516
+Analisis SPRD:  0.039350135104859726
+Forecast SPRD:  0.060056996756040246
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Error: The forecast contains NaN or Inf, Iteration number : 3012  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.845526673523319
+Forecast RMSE:  4.704947199337849
+Analisis SPRD:  0.022854246055969817
+Forecast SPRD:  0.03901767834252377
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Error: The forecast contains NaN or Inf, Iteration number : 2158  will dump some variables to a temporal file
+Multiplicative Inflation 1.1500000000000001
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.6804155150486455
+Forecast RMSE:  4.630373707716475
+Analisis SPRD:  0.014816258124097214
+Forecast SPRD:  0.022294398522350725
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Error: The forecast contains NaN or Inf, Iteration number : 867  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.519972437234884
+Forecast RMSE:  4.349908803772953
+Analisis SPRD:  0.03549819665895341
+Forecast SPRD:  0.05743408247766128
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 228  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.377547870130807
+Forecast RMSE:  4.339481320061951
+Analisis SPRD:  0.007646087508368463
+Forecast SPRD:  0.016223724481600938
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Error: The forecast contains NaN or Inf, Iteration number : 17  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0017703695863238
+Forecast SPRD:  0.0033847350498711183
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Error: The forecast contains NaN or Inf, Iteration number : 3522  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.751402412012597
+Forecast RMSE:  4.709061386806703
+Analisis SPRD:  0.036974978559561465
+Forecast SPRD:  0.0582001094586766
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Error: The forecast contains NaN or Inf, Iteration number : 1312  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.574645244849907
+Forecast RMSE:  4.49946869541084
+Analisis SPRD:  0.013566796532880721
+Forecast SPRD:  0.025481950212713766
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Error: The forecast contains NaN or Inf, Iteration number : 1339  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.552234075528945
+Forecast RMSE:  4.512291147856044
+Analisis SPRD:  0.012098684950804697
+Forecast SPRD:  0.01949484526374167
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Error: The forecast contains NaN or Inf, Iteration number : 1395  will dump some variables to a temporal file
+Multiplicative Inflation 1.2000000000000002
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.667065010873254
+Forecast RMSE:  4.5127334111829684
+Analisis SPRD:  0.012723980049229672
+Forecast SPRD:  0.02647161752391607
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Error: The forecast contains NaN or Inf, Iteration number : 498  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.461150169926369
+Forecast RMSE:  4.335695722478244
+Analisis SPRD:  0.026827587401694452
+Forecast SPRD:  0.0442561187873378
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Error: The forecast contains NaN or Inf, Iteration number : 1478  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.660767031929474
+Forecast RMSE:  4.4872762363156635
+Analisis SPRD:  0.0414292119173077
+Forecast SPRD:  0.07767708291282445
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Error: The forecast contains NaN or Inf, Iteration number : 21  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0028128003149639905
+Forecast SPRD:  0.006632865059660787
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 128  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0039136183034245865
+Forecast SPRD:  0.008824225517266254
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Error: The forecast contains NaN or Inf, Iteration number : 35  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0013616519470208658
+Forecast SPRD:  0.002815064639677307
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 399  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.419245623587584
+Forecast RMSE:  4.36599056213077
+Analisis SPRD:  0.0042306939090679205
+Forecast SPRD:  0.006824398404638504
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 399  will dump some variables to a temporal file
+Multiplicative Inflation 1.2500000000000002
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.435901244956846
+Forecast RMSE:  4.378627946354362
+Analisis SPRD:  0.004371504097415039
+Forecast SPRD:  0.008785691852717192
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Error: The forecast contains NaN or Inf, Iteration number : 2659  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.573862559420712
+Forecast RMSE:  4.318663265298097
+Analisis SPRD:  0.1740625414002855
+Forecast SPRD:  0.28877222654774837
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 161  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.006065652981934411
+Forecast SPRD:  0.010156432054087658
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 337  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.688604118045984
+Forecast RMSE:  4.355268708708186
+Analisis SPRD:  0.0066557681757226485
+Forecast SPRD:  0.011035443585835438
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 109  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0035248375600902674
+Forecast SPRD:  0.007813375596589772
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 290  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.379925768691011
+Forecast RMSE:  4.34806777033664
+Analisis SPRD:  0.003990498173602179
+Forecast SPRD:  0.006030449323369357
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Error: The forecast contains NaN or Inf, Iteration number : 1136  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.4987000003797295
+Forecast RMSE:  4.449833608746411
+Analisis SPRD:  0.012368960339412236
+Forecast SPRD:  0.01864034514334007
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Error: The forecast contains NaN or Inf, Iteration number : 18  will dump some variables to a temporal file
+Multiplicative Inflation 1.3000000000000003
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0010776133242038383
+Forecast SPRD:  0.002665107080115744
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Error: The forecast contains NaN or Inf, Iteration number : 946  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.447350416104105
+Forecast RMSE:  4.327158335933797
+Analisis SPRD:  0.06949023718519608
+Forecast SPRD:  0.11529432261191985
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Error: The forecast contains NaN or Inf, Iteration number : 606  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.572422748805304
+Forecast RMSE:  4.3686906263019285
+Analisis SPRD:  0.020980035531733353
+Forecast SPRD:  0.03535853997497919
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 104  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.004750497291571403
+Forecast SPRD:  0.010212016658712905
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 260  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.433344987568125
+Forecast RMSE:  4.368357226638793
+Analisis SPRD:  0.006373065182852989
+Forecast SPRD:  0.01369051119871198
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 274  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.487690247778224
+Forecast RMSE:  4.351208159426369
+Analisis SPRD:  0.003979629084361676
+Forecast SPRD:  0.006430898087161593
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Error: The forecast contains NaN or Inf, Iteration number : 748  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.50517743444325
+Forecast RMSE:  4.418457473862263
+Analisis SPRD:  0.008537293553625314
+Forecast SPRD:  0.013900223657239466
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Error: The forecast contains NaN or Inf, Iteration number : 1400  will dump some variables to a temporal file
+Multiplicative Inflation 1.3500000000000003
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.709046741270013
+Forecast RMSE:  4.509542605371985
+Analisis SPRD:  0.015587192806111965
+Forecast SPRD:  0.026388522353269495
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 216  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.376948322418636
+Forecast RMSE:  4.341077743923266
+Analisis SPRD:  0.015049055287231503
+Forecast SPRD:  0.02210922563217672
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Error: The forecast contains NaN or Inf, Iteration number : 610  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.656301866278355
+Forecast RMSE:  4.432189952116273
+Analisis SPRD:  0.03710286891293837
+Forecast SPRD:  0.0766851450442061
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 196  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.004748049379012072
+Forecast SPRD:  0.007092975417577557
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 365  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.413892324189677
+Forecast RMSE:  4.358228274236856
+Analisis SPRD:  0.007775105038115264
+Forecast SPRD:  0.013040131532995014
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 156  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.003011722963134479
+Forecast SPRD:  0.004686124325624525
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Error: The forecast contains NaN or Inf, Iteration number : 58  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0017193017433532614
+Forecast SPRD:  0.0032090111663931123
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 219  will dump some variables to a temporal file
+Multiplicative Inflation 1.4000000000000004
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.378012247884028
+Forecast RMSE:  4.345520532168222
+Analisis SPRD:  0.0032967449492106947
+Forecast SPRD:  0.0055406648095536245
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Data assimilation cycle #  700
+Data assimilation cycle #  800
+Data assimilation cycle #  900
+Data assimilation cycle #  1000
+Data assimilation cycle #  1100
+Data assimilation cycle #  1200
+Data assimilation cycle #  1300
+Data assimilation cycle #  1400
+Data assimilation cycle #  1500
+Data assimilation cycle #  1600
+Data assimilation cycle #  1700
+Data assimilation cycle #  1800
+Data assimilation cycle #  1900
+Data assimilation cycle #  2000
+Data assimilation cycle #  2100
+Data assimilation cycle #  2200
+Data assimilation cycle #  2300
+Data assimilation cycle #  2400
+Data assimilation cycle #  2500
+Data assimilation cycle #  2600
+Data assimilation cycle #  2700
+Data assimilation cycle #  2800
+Data assimilation cycle #  2900
+Data assimilation cycle #  3000
+Data assimilation cycle #  3100
+Data assimilation cycle #  3200
+Data assimilation cycle #  3300
+Data assimilation cycle #  3400
+Data assimilation cycle #  3500
+Error: The forecast contains NaN or Inf, Iteration number : 3596  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  2.915604101381559
+Forecast RMSE:  2.8529705630582414
+Analisis SPRD:  0.2777977422453649
+Forecast SPRD:  0.43376061860742016
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Data assimilation cycle #  600
+Error: The forecast contains NaN or Inf, Iteration number : 665  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 1.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.6210696652492
+Forecast RMSE:  4.409455640007832
+Analisis SPRD:  0.04803551969599793
+Forecast SPRD:  0.09946629359089931
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Error: The forecast contains NaN or Inf, Iteration number : 185  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.00516273274450735
+Forecast SPRD:  0.008742854462157725
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Error: The forecast contains NaN or Inf, Iteration number : 272  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 2.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.540973335222879
+Forecast RMSE:  4.3611184221568795
+Analisis SPRD:  0.006286031439250939
+Forecast SPRD:  0.010663012900809331
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Error: The forecast contains NaN or Inf, Iteration number : 35  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.336339630253689
+Forecast RMSE:  4.336339630253689
+Analisis SPRD:  0.0013941640953628453
+Forecast SPRD:  0.0029232216306750497
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Error: The forecast contains NaN or Inf, Iteration number : 350  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 3.5
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.418415738736667
+Forecast RMSE:  4.372022436583942
+Analisis SPRD:  0.005804146909729381
+Forecast SPRD:  0.009535116910733102
+Reading observations from file  ./data/Nature/MultipleNature_Nature_Freq16_Den1.0_Type3_ObsErr0.1.npz
+
+This is a TWIN experiment
+
+Using AlphaTempScale to compute tempering dt
+Tempering steps:  [0.97737992 0.01790134 0.00471874]
+Dt pseudo times:  [0.00380626 0.20781451 0.78837923]
+Data assimilation cycle #  100
+Data assimilation cycle #  200
+Data assimilation cycle #  300
+Data assimilation cycle #  400
+Data assimilation cycle #  500
+Error: The forecast contains NaN or Inf, Iteration number : 574  will dump some variables to a temporal file
+Multiplicative Inflation 1.4500000000000004
+Localization Scale 4.0
+AlphaTemp [0.97737992 0.01790134 0.00471874]
+Analisis RMSE:  4.477446618915488
+Forecast RMSE:  4.399265174877552
+Analisis SPRD:  0.008138164542820115
+Forecast SPRD:  0.013936625328878613

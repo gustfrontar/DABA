@@ -193,7 +193,7 @@ def assimilation_letks_run( conf ) :
               #Stop the cycle before the fortran code hangs because of NaNs
               print('Error: The analysis contains NaN or Inf, Iteration number :',it,' will dump some variables to a temporal file')
               NormalEnd=False
-              np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
+              #np.savez('./tmp.npz',xf=XF[:,:,it-1],xa=XA[:,:,it-1],obs=YObsW,obsloc=ObsLocW,yf=YF)
               break
            
            [ XFtmp , XSStmp , DFtmp , RFtmp , SSFtmp , CRFtmp, CFtmp ]=model.tinteg_rk4( nens=NEns  , nt=DAConf['Freq'] ,  ntout=ntout ,
