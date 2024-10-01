@@ -13,13 +13,13 @@ sys.path.append('../data_assimilation/')
 
 import numpy as np
 import sensitivity_conf_default as conf
-import assimilation_hybridf_module as alm
+import assimilation_letks_module as alm
 
 Force=False #When false we will check if the output exist before running the experiment again.
 NatureName = sys.argv[1]
 
 conf.GeneralConf['NatureName']=NatureName
-out_filename='./npz/Sensitivity_experiment_multinfyloc_HYBRIDF_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sensitivity_experiment_multinfyloc_LETKS_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
@@ -31,9 +31,6 @@ conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive temp
 conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
 conf.DAConf['GrossCheckFactor'] = 1000.0                  #Optimized gross error check
 conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
-conf.DAConf['BridgeParam']=0.5                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
-conf.DAConf['RejuvParam']=0.0                             #Global particle rejuvenestion (For the ETPF only)
-
 
 results=list()
 
@@ -64,7 +61,7 @@ for itemp , ntemp in enumerate( temp_range ) :
         conf.DAConf['LocScalesLETKF'] = np.array([loc_scale,-1.0])
         conf.DAConf['NTemp']=ntemp
             
-        results = alm.assimilation_hybridf_run( conf ) 
+        results = alm.assimilation_letks_run( conf ) 
         AlphaTempList.append( alm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
                  
         print('Multiplicative Inflation',mult_inf)
