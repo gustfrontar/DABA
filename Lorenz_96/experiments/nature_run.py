@@ -62,7 +62,6 @@ else                     :
   CSigma=ModelConf['CSigma']
   CPhi  =ModelConf['CPhi']
 
-
 if not ModelConf['FSpaceDependent'] :
   FSpaceAmplitude=np.zeros(NCoef) 
 else                   :
