@@ -13,22 +13,22 @@ sys.path.append('../data_assimilation/')
 
 import numpy as np
 import sensitivity_conf_default as conf
-import assimilation_letks_module as alm
+import assimilation_letkf_module as alm
 
 Force=False #When false we will check if the output exist before running the experiment again.
 NatureName = sys.argv[1]
 
 conf.GeneralConf['NatureName']=NatureName
-out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKS_ptemp0.0_' + conf.GeneralConf['NatureName'] + '.npz'
+out_filename='./npz/Sesitivity_experiment_multinfyloc_LETKF_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
     
-conf.DAConf['ExpLength'] = None                           #None use the full nature run experiment. Else use this length.
+conf.DAConf['ExpLength'] = 250                           #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
 conf.DAConf['BridgeParam']=0.0                            #Bridging parameter for the hybrid 0-pure LETKF, 1.0-pure ETPF
 conf.DAConf['AddaptiveTemp']=False                        #Enable addaptive tempering time step in pseudo time.
-conf.DAConf['AlphaTempScale'] = 0.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
+conf.DAConf['AlphaTempScale'] = 2.0                       #Scale factor to obtain the tempering factors on each tempering iteration.
 conf.DAConf['GrossCheckFactor'] = 1000.0                  #Optimized gross error check
 conf.DAConf['LowDbzPerThresh']  = 1.1                     #Optimized Low ref thresh.
 
@@ -39,8 +39,8 @@ if ( os.path.exists(out_filename) & ~Force  ) :
    print( out_filename )
    quit()
     
-mult_inf_range  = np.arange(1.05,1.5,0.05)  #Inflation range
-loc_scale_range = np.arange(1.0,4.5,0.5)    #Localization range
+mult_inf_range  = np.arange(1.05,1.2,0.1)  #Inflation range
+loc_scale_range = np.arange(1.0,1.5,0.5)    #Localization range
 temp_range      = np.array([1,2,3])          #N iteration range
 AlphaTempList = []
 
@@ -61,7 +61,7 @@ for itemp , ntemp in enumerate( temp_range ) :
         conf.DAConf['LocScalesLETKF'] = np.array([loc_scale,-1.0])
         conf.DAConf['NTemp']=ntemp
             
-        results = alm.assimilation_letks_run( conf ) 
+        results = alm.assimilation_letkf_run( conf ) 
         AlphaTempList.append( alm.get_temp_steps( conf.DAConf['NTemp'] , conf.DAConf['AlphaTempScale'] ) )
                  
         print('Multiplicative Inflation',mult_inf)
@@ -79,7 +79,7 @@ for itemp , ntemp in enumerate( temp_range ) :
         Output['total_analysis_bias'][iinf,iloc,itemp] = np.mean(results['XASBias'])
         Output['total_forecast_bias'][iinf,iloc,itemp] = np.mean(results['XFSBias'])
 
-        if (itemp == 0) & (iinf == 0) & (iloc == 0) : 
+        if (itemp == 0 ) & ( iinf == 0 ) & ( iloc == 0) : 
            #This is the first iteration. Save additional output data.
            Output['ObsLoc'] = np.copy( results['ObsLoc'] )
            Output['ObsType'] = np.copy( results['ObsType'] )
@@ -93,6 +93,8 @@ for itemp , ntemp in enumerate( temp_range ) :
 
         Output['XAMean'][iinf,iloc,itemp,:,:] = np.copy( results['XAMean'] )
         Output['XFMean'][iinf,iloc,itemp,:,:] = np.copy( results['XFMean'] )
+
+        print('XAMean',Output['XAMean'][0,0,0,10,10],Output['XAMean'].shape)
 
 Output['NTempRange'] = temp_range
 Output['MultInfRange'] = mult_inf_range
