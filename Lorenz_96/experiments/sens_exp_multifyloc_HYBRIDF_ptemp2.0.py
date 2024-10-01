@@ -62,6 +62,7 @@ for itemp , ntemp in enumerate( temp_range ) :
             
         conf.DAConf['InfCoefs']=np.array([mult_inf,0.0,0.0,0.0,0.0])
         conf.DAConf['LocScalesLETKF'] = np.array([loc_scale,-1.0])
+        conf.DAConf['LocScalesLETPF'] = np.array([loc_scale,-1.0])
         conf.DAConf['NTemp']=ntemp
             
         results = alm.assimilation_hybridf_run( conf ) 
@@ -82,7 +83,7 @@ for itemp , ntemp in enumerate( temp_range ) :
         Output['total_analysis_bias'][iinf,iloc,itemp] = np.mean(results['XASBias'])
         Output['total_forecast_bias'][iinf,iloc,itemp] = np.mean(results['XFSBias'])
 
-        if itemp == 0 & iinf == 0 & iloc == 0 : 
+        if (itemp == 0) & (iinf == 0) & (iloc == 0) : 
            #This is the first iteration. Save additional output data.
            Output['ObsLoc'] = np.copy( results['ObsLoc'] )
            Output['ObsType'] = np.copy( results['ObsType'] )

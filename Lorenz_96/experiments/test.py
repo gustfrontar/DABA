@@ -22,7 +22,6 @@ conf.GeneralConf['NatureName']=NatureName
 out_filename='./npz/Sensitivity_experiment_multinfyloc_LETKF_ptemp2.0_' + conf.GeneralConf['NatureName'] + '.npz'
 #Define the source of the observations
 conf.GeneralConf['ObsFile']='./data/Nature/'+conf.GeneralConf['NatureName']+'.npz'
-    
 conf.DAConf['ExpLength'] = 100                            #None use the full nature run experiment. Else use this length.
 conf.DAConf['NEns'] = 20                                  #Number of ensemble members
 conf.DAConf['Twin'] = True                                #When True, model configuration will be replaced by the model configuration in the nature run.
@@ -39,8 +38,8 @@ if ( os.path.exists(out_filename) & ~Force  ) :
    print( out_filename )
    quit()
     
-mult_inf_range  = np.arange(1.05,1.5,0.05)  #Inflation range
-loc_scale_range = np.arange(1.0,4.5,0.5)    #Localization range
+mult_inf_range  = np.arange(1.05,1.2,0.1)  #Inflation range
+loc_scale_range = np.arange(1.0,1.5,0.5)    #Localization range
 temp_range      = np.array([1,2,3])          #N iteration range
 AlphaTempList = []
 
@@ -79,7 +78,11 @@ for itemp , ntemp in enumerate( temp_range ) :
         Output['total_analysis_bias'][iinf,iloc,itemp] = np.mean(results['XASBias'])
         Output['total_forecast_bias'][iinf,iloc,itemp] = np.mean(results['XFSBias'])
 
+<<<<<<< HEAD
         if itemp == 0 & iinf == 0 & iloc == 0 : 
+=======
+        if (itemp == 0 ) & ( iinf == 0 ) & ( iloc == 0) : 
+>>>>>>> d6d9eb1f65b9d05d98f081dca54734b9879ac1d2
            #This is the first iteration. Save additional output data.
            Output['ObsLoc'] = np.copy( results['ObsLoc'] )
            Output['ObsType'] = np.copy( results['ObsType'] )
@@ -94,7 +97,11 @@ for itemp , ntemp in enumerate( temp_range ) :
         Output['XAMean'][iinf,iloc,itemp,:,:] = np.copy( results['XAMean'] )
         Output['XFMean'][iinf,iloc,itemp,:,:] = np.copy( results['XFMean'] )
 
+<<<<<<< HEAD
         print('XAMEAN' + Output['XAMean'][iinf,iloc,itemp,10,10])
+=======
+        print('XAMean',Output['XAMean'][0,0,0,10,10],Output['XAMean'].shape)
+>>>>>>> d6d9eb1f65b9d05d98f081dca54734b9879ac1d2
 
 Output['NTempRange'] = temp_range
 Output['MultInfRange'] = mult_inf_range
