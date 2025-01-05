@@ -8,12 +8,12 @@ plt.rcParams.update({'font.size': 22})
 
 Method='LETKF'
 Ptemp='2.0'
-Freq='20'
-Den='0.5'
-ObsOpe='1'
+Freq='4'
+Den='1.0'
+ObsOpe='3'
 ObsErrList = ['0.3','1','5','25']
 
-fig , axs = plt.subplots( 4 , 3 , figsize=(20,24)  )
+fig , axs = plt.subplots( 4 , 3 , figsize=(18,24) )
 
 for iObsErr , ObsErr in enumerate( ObsErrList ) :
 #NatureName='NatureR03_Den1_Freq12_Hlinear'
@@ -36,34 +36,33 @@ for iObsErr , ObsErr in enumerate( ObsErrList ) :
                 NormalEnd[ii,jj,kk] = ~np.any( np.isnan( Output['XAMean'][ii,jj,kk,:,:] ) ) 
 
     
-    x_error_loc = np.zeros( len(temp_range) )
-    y_error_loc = np.zeros( len(temp_range) )
+    x_error_loc = np.zeros( len(temp_range) ).astype(int)
+    y_error_loc = np.zeros( len(temp_range) ).astype(int)
     min_error = list()
-    max_error = list()
+    
     for kk in range(len(temp_range)) :    
         total_analysis_rmse[:,:,kk] = cf.outlier_rmse_filter( total_analysis_rmse[:,:,kk] )
-        max_error.append( min( ( np.round( np.nanmax( total_analysis_rmse[:,:,kk] ) , 2) ) , 4) )
-        min_error.append( ( np.round( np.nanmin( total_analysis_rmse[:,:,kk] ) , 2) ))
+
+        min_error.append( str( np.round( np.nanmin( total_analysis_rmse[:,:,kk] ) , 2) ) )
         min_error_loc =  np.where(total_analysis_rmse[:,:,kk] == np.nanmin( total_analysis_rmse[:,:,kk] ) ) 
-        x_error_loc[kk] = min_error_loc[0][0]
-        y_error_loc[kk] = min_error_loc[1][0]
+        x_error_loc[kk] =  min_error_loc[0][0] 
+        y_error_loc[kk] =  min_error_loc[1][0] 
 
 
     for kk in range(len(temp_range)) : 
+        ana_err = ( Output['XAMean'][x_error_loc[kk],y_error_loc[kk],kk,0:20,-100:] - Output['XNature'][0:20,-100:] ).flatten()
+        for_err = ( Output['XFMean'][x_error_loc[kk],y_error_loc[kk],kk,0:20,-100:] - Output['XNature'][0:20,-100:] ).flatten()
 
-        pcolor0=axs[iObsErr,kk].pcolor( mult_inf_range , loc_scale_range  , total_analysis_rmse[:,:,kk].T , vmin=min(min_error) , vmax=max(max_error) , cmap='YlGn' )
-        axs[iObsErr,kk].plot(mult_inf_range[int(x_error_loc[kk])],loc_scale_range[int(y_error_loc[kk])],'ok')
-        
-        if kk == 0 :
-           axs[iObsErr,kk].set_ylabel('Loc. Scale')
-        if iObsErr == ( len( ObsErrList ) -1 ) :
-           axs[iObsErr,kk].set_xlabel('Inflation')
-        #if kk == ( len(temp_range) -1 ) :
-        #    plt.colorbar(pcolor0,ax=axs[iObsErr,kk])
-        axs[iObsErr,kk].set_title('Min. RMSE=' + str( min_error[kk] ) )
-    fig.colorbar( pcolor0 , ax=axs[iObsErr,:] )
-
-
+        axs[iObsErr,kk].scatter( ana_err , for_err )
+        axs[iObsErr,kk].plot( np.array([-10,10]) , np.array([-10,10]) )
+        #axs[iObsErr,kk].plot(mult_inf_range[int(x_error_loc[kk])],loc_scale_range[int(y_error_loc[kk])],'ok')
+        #plt.colorbar(pcolor0,ax=axs[0,0])
+        axs[iObsErr,kk].set_ylabel('X')
+        axs[iObsErr,kk].set_xlabel('Time')
+        axs[iObsErr,kk].set_title('Min. RMSE=' + min_error[kk] )
+        axs[iObsErr,kk].set_xlim([-4,4])
+        axs[iObsErr,kk].set_ylim([-4,4])
 
 
-plt.savefig('FigureAnalRMSE_SensObsErr_'+Method+'_multinfyloc_Den'+Den+'_Freq'+Freq+'_ObsOpe' +ObsOpe +'.png')
+
+plt.savefig('Figure_Anaerrvsfcsterr_'+Method+'_multinfyloc_Den'+Den+'_Freq'+Freq+'_ObsOpe' +ObsOpe +'.png')

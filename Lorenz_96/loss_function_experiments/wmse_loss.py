@@ -54,11 +54,11 @@ CSigma=np.zeros(NCoef)
 CPhi=1.0
 
 split_ratios = np.array([ 0.8 , 0.1 ]) #Train data ratio , test data ratio (val data ratio is computed later)
-batch_size = 200
+batch_size = 100
 expand_factor = 4 #Number of hidden layer neurons per input layer neurons.
-learning_rate = 0.5e-4
+learning_rate = 1.0e-3
 weight_decay  = 0.0 
-max_epochs=1000 
+max_epochs=100 
 
 seed = 1020
 #=================================================================
