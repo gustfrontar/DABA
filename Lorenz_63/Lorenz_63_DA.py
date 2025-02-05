@@ -9,7 +9,7 @@ import numpy as np
 import scipy.linalg as linalg 
 import sys
 sys.path.append("../Lorenz_96/data_assimilation/")
-from mtx_oper import common_mtx as mo
+#from mtx_oper import common_mtx as mo
 
 
 def gen_obs( h , da_exp )  :
@@ -2288,8 +2288,8 @@ def obs_evolution( da_exp , ini_time , end_time , forward_operator )  :
        plt.plot(tmp_ao[:,iobs],'r',label='Analysis')
        plt.plot(tmp_fo[:,iobs],'b',label='First guess')
        for iens in range( nens ) :
-          plt.plot(tmp_foens[:,iobs,iens],'k',LineWidth=1)
-          plt.plot(tmp_aoens[:,iobs,iens],'r',LineWidth=1)
+          plt.plot(tmp_foens[:,iobs,iens],'k',linewidth=1)
+          plt.plot(tmp_aoens[:,iobs,iens],'r',linewidth=1)
        
        plt.legend()
        plt.xlabel('Ciclos de asimilacion')
