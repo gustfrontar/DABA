@@ -9,6 +9,9 @@
 *.cvs
 *.mod
 *.o
+*.log
+*.pyc
+*.swp
 nohup.out
 *.sh.*
 

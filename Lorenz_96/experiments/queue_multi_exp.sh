@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MY_EXP=sens_exp_multifyloc_LETKS_ptemp0.0.py
+MY_EXP=sens_exp_multifyloc_HYBRIDF_ptemp2.0.py
 
 NATURE_ARRAY=($(ls ./data/Nature/MultipleNature*.npz))
 

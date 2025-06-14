@@ -41,9 +41,9 @@ if ( os.path.exists(out_filename) & ~Force  ) :
    print('Warning: Output file exists, I will skip this experiment')
    print( out_filename )
    quit()
-    
-mult_inf_range  = np.arange(1.05,1.5,0.05)  #Inflation range
-loc_scale_range = np.arange(1.0,4.5,0.5)    #Localization range
+
+mult_inf_range  = np.arange(1.05,1.7,0.05)  #Inflation range
+loc_scale_range = np.arange(1.0,5.5,0.5)    #Localization range
 temp_range      = np.array([1,2,3])          #N iteration range
 AlphaTempList = []
 

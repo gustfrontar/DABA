@@ -2,7 +2,7 @@
 MY_EXP=$1
 MY_NATURE=$2
 BASEPATH=$(pwd)
-NCORES=12
+NCORES=2
 
 #Tempering and LETKF with linear operator.
 expnum=$RANDOM
