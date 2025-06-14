@@ -6,14 +6,16 @@ plt.rcParams['text.usetex'] = True
 
 plt.rcParams.update({'font.size': 22})
 
-Method='LETKS'
+Method='LETKF'
 Ptemp='2.0'
 Freq='20'
-Den='1.0'
+Den='0.5'
 ObsOpe='1'
 ObsErrList = ['0.3','1','5','25']
+ErrorThresh = 1
+Legend=[Method,Method+' T2',Method+' T3']
 
-fig , axs = plt.subplots( 4 , 3 , figsize=(18,24) )
+fig , axs = plt.subplots( 4 , 1 , figsize=(9,24) )
 
 for iObsErr , ObsErr in enumerate( ObsErrList ) :
 #NatureName='NatureR03_Den1_Freq12_Hlinear'
@@ -49,17 +51,30 @@ for iObsErr , ObsErr in enumerate( ObsErrList ) :
         y_error_loc[kk] =  min_error_loc[1][0] 
 
 
+    bins = np.arange(0,5.5,0.5)
+    mean_ana_err = np.zeros( len(bins) )
+    
     for kk in range(len(temp_range)) : 
+        ana_err = np.abs( Output['XAMean'][x_error_loc[kk],y_error_loc[kk],kk,:,:] - Output['XNature'][:,:] ).flatten()
+        for_err = np.abs( Output['XFMean'][x_error_loc[kk],y_error_loc[kk],kk,:,:] - Output['XNature'][:,:] ).flatten()
+        
+        for ibin , mybin in enumerate(bins) :
+            mask = ( for_err  > mybin-0.25 ) & ( for_err < mybin+0.25 )
+            mean_ana_err[ibin] = np.mean( ana_err[ mask ] )
+        axs[iObsErr,].plot( bins , mean_ana_err , label=Legend[kk] , linewidth = 4)
 
-        pcolor0=axs[iObsErr,kk].pcolor( Output['XAMean'][x_error_loc[kk],y_error_loc[kk],kk,0:20,-100:] - Output['XNature'][0:20,-100:] , vmin=-3 , vmax=3 , cmap='bwr' )
+        #axs[iObsErr,kk].scatter( ana_err , for_err )
+        #axs[iObsErr,kk].plot( np.array([-10,10]) , np.array([-10,10]) )
         #axs[iObsErr,kk].plot(mult_inf_range[int(x_error_loc[kk])],loc_scale_range[int(y_error_loc[kk])],'ok')
         #plt.colorbar(pcolor0,ax=axs[0,0])
-        axs[iObsErr,kk].set_ylabel('X')
-        axs[iObsErr,kk].set_xlabel('Time')
-        axs[iObsErr,kk].set_title('Min. RMSE=' + min_error[kk] )
+    axs[iObsErr].legend()
+    axs[iObsErr].set_ylabel('Frequency')
+    if iObsErr == len( ObsErrList ) :
+       axs[iObsErr].set_xlabel('Analisys Error')
+    axs[iObsErr].set_title('Min. RMSE=' + min_error[kk] )
+    axs[iObsErr].set_xlim([0,5])
+    #axs[iObsErr,0].set_ylim([0,0.5])
 
 
 
-
-
-plt.savefig('Figure_AnalysisError_'+Method+'_multinfyloc_Den'+Den+'_Freq'+Freq+'_ObsOpe' +ObsOpe +'.png')
+plt.savefig('Figure_Anaerrvsfcsterr_'+Method+'_multinfyloc_Den'+Den+'_Freq'+Freq+'_ObsOpe' +ObsOpe +'.png')
